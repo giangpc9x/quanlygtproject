@@ -1,0 +1,79 @@
+﻿/* ICQ button */
+.dxbButton_icq {
+    border: 1px solid #51CF04;
+    padding: 4px;
+    color: #51CF04;
+    background-color: #E0FFBB;
+    font-size: 8pt;
+    font-weight: bold;
+    cursor: pointer;
+}
+.dxbButton_icq div.dxb
+{
+    padding: 1px 5px;
+	border: 0px;
+}
+.dxbButton_icq div.dxbf
+{
+    padding: 0px 4px;
+	border: dotted 1px black;
+}
+.dxbButton_icq div.dxb table
+{    
+  	color: #51CF04;
+	font-size: 8pt;
+	font-family: Tahoma;
+}
+.dxbButton_icq div.dxb td.dxb {
+    background-color: transparent!important;
+    background-image: url('')!important;
+    border-width: 0px!important;
+    padding: 0px!important;
+}
+.dxbButtonHover_icq {
+    background-color: #EFFFDC;
+}
+.dxbButtonPressed_icq {
+    border-color: #CECF40;
+    padding: 5px 3px 3px 5px;
+}
+
+/* Mail button */
+.dxbButton_mail {
+    border: 1px solid #55A2D7;
+    padding: 4px;
+    color: #55A2D7;
+    background-color: #C6E8FF;
+    font-size: 8pt;
+    font-weight: bold;
+    cursor: pointer;
+}
+.dxbButton_mail div.dxb
+{    
+    padding: 1px 5px;
+	border: 0px;
+}
+.dxbButton_mail div.dxbf
+{     
+    padding: 0px 4px;
+	border: dotted 1px black;		
+}
+.dxbButton_mail div.dxb table
+{    
+  	color: #55A2D7;    
+	font-size: 8pt;
+	font-family: Tahoma;
+}
+.dxbButton_mail div.dxb td.dxb {    
+    background-color: transparent!important;
+    background-image: url('')!important;
+    border-width: 0px!important;
+    padding: 0px!important;
+}
+.dxbButtonHover_mail {
+    background-color: #DCF1FF;
+}
+.dxbButtonPressed_mail {
+    border-color: #FC3;
+    padding: 5px 3px 3px 5px;
+}
