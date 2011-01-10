@@ -1,0 +1,45 @@
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v9.1, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dxrp" Namespace="DevExpress.Web.ASPxRoundPanel" Assembly="DevExpress.Web.v9.1, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<dxrp:ASPxRoundPanel runat="server" CssPostfix="Soft_Orange" CssFilePath="~/App_Themes/Soft Orange/{0}/styles.css">
+    <Border BorderStyle="None" />
+    <ContentPaddings PaddingTop="10px" PaddingBottom="10px" PaddingLeft="12px" />
+    <HeaderStyle BackColor="#F9F9F9" Height="24px">
+        <Paddings PaddingTop="1px" PaddingBottom="1px" PaddingLeft="12px" />
+        <BackgroundImage Repeat="RepeatX" VerticalPosition="bottom" ImageUrl="~/App_Themes/Soft Orange/Web/rpHeaderBack.gif" />
+        <Border BorderStyle="None" />
+    </HeaderStyle>
+    <%-- Corner parts --%>
+    <TopLeftCorner Height="9px" Width="9px" Url="~/App_Themes/Soft Orange/Web/rpTopLeftCorner.png" />
+    <NoHeaderTopLeftCorner Height="9px" Width="9px" Url="~/App_Themes/Soft Orange/Web/rpNoHeaderTopLeftCorner.png" />
+    <TopRightCorner Height="9px" Width="9px" Url="~/App_Themes/Soft Orange/Web/rpTopRightCorner.png" />
+    <NoHeaderTopRightCorner Height="9px" Width="9px" Url="~/App_Themes/Soft Orange/Web/rpNoHeaderTopRightCorner.png" />
+    <BottomLeftCorner Height="9px" Width="9px" Url="~/App_Themes/Soft Orange/Web/rpBottomLeftCorner.png" />
+    <BottomRightCorner Height="9px" Width="9px" Url="~/App_Themes/Soft Orange/Web/rpBottomRightCorner.png" />
+    <%-- Header parts --%>
+    <HeaderLeftEdge>
+        <BackgroundImage Repeat="NoRepeat" VerticalPosition="bottom" ImageUrl="~/App_Themes/Soft Orange/Web/rpHeaderLeftEdge.gif" />
+    </HeaderLeftEdge>
+    <HeaderContent>
+        <BackgroundImage Repeat="RepeatX" VerticalPosition="bottom" ImageUrl="~/App_Themes/Soft Orange/Web/rpHeaderBack.gif" />
+    </HeaderContent>
+    <HeaderRightEdge>
+        <BackgroundImage Repeat="NoRepeat" VerticalPosition="bottom" ImageUrl="~/App_Themes/Soft Orange/Web/rpHeaderRightEdge.gif" />
+    </HeaderRightEdge>
+    <%-- Middle parts --%>
+    <Content BackColor="White" />
+    <RightEdge BackColor="White">
+        <BackgroundImage Repeat="RepeatY" HorizontalPosition="right" ImageUrl="~/App_Themes/Soft Orange/Web/rpRightEdge.gif" />
+    </RightEdge>
+    <TopEdge BackColor="White">
+        <BackgroundImage ImageUrl="~/App_Themes/Soft Orange/Web/rpTopEdge.gif" />
+    </TopEdge>
+    <NoHeaderTopEdge BackColor="White">
+        <BackgroundImage ImageUrl="~/App_Themes/Soft Orange/Web/rpNoHeaderTopEdge.gif" />
+    </NoHeaderTopEdge>
+    <LeftEdge BackColor="White">
+        <BackgroundImage Repeat="RepeatY" HorizontalPosition="left" ImageUrl="~/App_Themes/Soft Orange/Web/rpLeftEdge.gif" />
+    </LeftEdge>
+    <BottomEdge BackColor="White">
+        <BackgroundImage Repeat="RepeatX" VerticalPosition="bottom" ImageUrl="~/App_Themes/Soft Orange/Web/rpBottomEdge.gif" />
+    </BottomEdge>
+</dxrp:ASPxRoundPanel>

@@ -1,0 +1,9 @@
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v9.1, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dxpc" Namespace="DevExpress.Web.ASPxPopupControl" Assembly="DevExpress.Web.v9.1, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<dxpc:ASPxPopupControl runat="server" ImageFolder="~/App_Themes/Soft Orange/{0}/" CssFilePath="~/App_Themes/Soft Orange/{0}/styles.css" CssPostfix="Soft_Orange">
+<HeaderStyle>
+<Paddings PaddingTop="3px" PaddingBottom="3px"></Paddings>
+</HeaderStyle>
+<CloseButtonImage Height="18px" Width="18px"></CloseButtonImage>
+<SizeGripImage Height="12px" Width="12px" />
+</dxpc:ASPxPopupControl>

@@ -1,0 +1,85 @@
+﻿body {
+    background-color: #F6F6F6;
+    color: #171D2D;
+
+    background-image: url('Gradient.jpg'); 
+    background-position: -20px top; 
+    background-repeat: repeat-x;
+}
+
+.BannerLime a { color: #FCD8D2; }
+.BannerLime { color: #FCD8D2; }
+.BannerVersion { color: White; }
+.Copyright { color: #B6B6B6; }
+
+.Features b * { font-weight: normal; color: #171D2D; font-size: 16px; font-family: Tahoma; }
+.RootPage {
+    color: #171D2D; 
+}
+.RootPage a { color: #171D2D; }
+
+/* Label for Appearance combobox */
+.lblSkins { color: #282828; }
+.Title h1.h1Blue { color: #484848; }
+.Slogan { color: #F15E34!important; }
+.MiniSlogan { color: #818181!important; }
+.ContentMargin { margin-left: 0px!important; }
+.HeaderPanel { padding-bottom: 45px!important; }
+
+/* Icon menu */
+.dxmMenu_Demo
+{
+	color: #282828;
+}
+.dxmMenuSeparator_Demo
+{
+    width: 1px!important;
+    height: 15px!important;
+	background-color: #282828;
+}
+.dxmMenu_Demo a
+{
+	color: #282828;
+	text-decoration: underline;
+}
+/* Header for TitleImage Area*/
+.DetailsPageHeader 
+{
+	color: #484848;
+    background-color: #DFDFDF;
+    padding-top: 0px;
+    padding-left: 7px;
+    width: 100%;
+    height: 56px;
+    border-top: Solid 1px #C6C6C6;
+}
+.DetailsPageHeaderBottom {
+    height: 0px; 
+    background-color: #DFDFDF;
+    border: Solid 1px #C6C6C6;
+    border-top-width: 0px;
+}
+.DetailsPageLeftEdgeHeader { display: none; }
+.DetailsPageRightEdgeHeader { display: none; }
+.DetailsPageLeftEdge { display: none; }
+.DetailsPageRightEdge {	display: none; }
+.DetailsPageContent {
+    background-color: White;
+    border-left: solid 1px #D2D2D2;
+	border-right: solid 1px #D2D2D2;
+    padding: 27px 20px 11px;
+}
+.DetailsPageFooter 
+{
+	background-color: White;
+	border-bottom: solid 1px #D2D2D2;
+    width: 100%; 
+}
+.DetailsSorceCodeArea {
+    width: 100%; 
+    background-color: White;
+    border-left: solid 1px #D2D2D2;
+    border-right: solid 1px #D2D2D2;
+    padding-top: 8px;
+    padding-bottom: 20px;
+}

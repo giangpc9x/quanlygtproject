@@ -1,0 +1,250 @@
+.dxtlControl_Soft_Orange
+{
+	cursor: default;
+	font: 9pt Tahoma;
+	color: black;
+	border: solid 4px #d3d3d3;
+	background: white;
+}
+.dxtlControl_Soft_Orange caption
+{
+	background: #ACACAC;
+	color: white;
+	border: solid 4px #d3d3d3;
+    border-bottom: 0;
+    font-size: 15px;
+	font-weight: normal;
+	padding: 4px 3px 4px 3px;
+	text-align: center;	
+}
+
+/* Indent cells */
+.dxtlIndent_Soft_Orange, .dxtlIndentWithButton_Soft_Orange
+{			
+	background: white;
+	vertical-align: top;
+	background-position: center top;
+	background-repeat: no-repeat;
+}
+.dxtlIndent_Soft_Orange
+{
+	padding: 0 11px;
+}
+.dxtlIndentWithButton_Soft_Orange
+{
+	padding: 4px 5px;
+}
+.dxtlSelectionCell_Soft_Orange
+{
+	padding: 0 2px;
+	border: solid 1px #c5c5c5;
+}
+
+/* Tree-lines cells */
+.dxtlLineFirst_Soft_Orange
+{
+	background-image: url(CssImages/TreeLineFirst.gif);	
+}
+.dxtlLineMiddle_Soft_Orange
+{
+	background-image: url(CssImages/TreeLineMiddle.gif);
+	
+}
+.dxtlLineLast_Soft_Orange
+{
+	background-image: url(CssImages/TreeLineLast.gif);
+	
+}
+.dxtlLineRoot_Soft_Orange
+{
+	background-image: url(CssImages/TreeLineRoot.gif);
+	background-repeat: repeat-y;	
+}
+
+/* Headers */
+.dxtlHeader_Soft_Orange 
+{
+	background: #969696;	
+	border: dotted 1px #5c5c5c;
+	padding: 5px 8px 6px;
+	font-weight: normal;		
+}
+.dxtlHeader_Soft_Orange table.dxtl 
+{
+	border-collapse: collapse;
+	width: 100%;
+}
+.dxtlHeader_Soft_Orange td.dxtl
+{
+	padding: 0;
+}
+.dxtlHeader_Soft_Orange, .dxtlHeader_Soft_Orange td.dxtl 
+{	
+    color: white;
+	font: 9pt Tahoma;
+	white-space: nowrap;
+	text-align: left;
+}
+
+/* Nodes */
+.dxtlNode_Soft_Orange
+{
+	background: white;	
+}
+.dxtlAltNode_Soft_Orange
+{
+	background: #f0f0f0;	
+}
+.dxtlSelectedNode_Soft_Orange
+{
+	background: #ff9460;
+	color: white;
+}
+.dxtlFocusedNode_Soft_Orange
+{
+	background: #f16a39;
+    color: white;
+}
+.dxtlInlineEditNode_Soft_Orange
+{
+	background: #f8f8f8;
+}
+.dxtlEditFormDisplayNode_Soft_Orange 
+{
+	background: white;
+}
+.dxtlNode_Soft_Orange td.dxtl, 
+.dxtlAltNode_Soft_Orange  td.dxtl, 
+.dxtlSelectedNode_Soft_Orange td.dxtl, 
+.dxtlFocusedNode_Soft_Orange td.dxtl,
+.dxtlEditFormDisplayNode_Soft_Orange td.dxtl,
+.dxtlCommandCell_Soft_Orange
+{
+	padding: 3px 8px 4px;
+	border: solid 1px #c5c5c5;
+	white-space: nowrap;
+	font-size: 9pt;
+    font-family: Tahoma;
+}
+.dxtlInlineEditNode_Soft_Orange td.dxtl
+{
+	border: solid 1px #c5c5c5;
+	padding: 1px;
+}
+
+/* Preview */
+.dxtlPreview_Soft_Orange
+{
+	background: white;
+	color: black;
+	padding: 14px;
+	border: solid 1px #c5c5c5;
+	font: 9pt Tahoma;	
+}
+
+/* Footers */
+.dxtlGroupFooter_Soft_Orange
+{
+	background-color: #E0E0E0;	
+}
+.dxtlFooter_Soft_Orange
+{
+	background-color: #dddddd;	
+}
+.dxtlGroupFooter_Soft_Orange td.dxtl,
+.dxtlFooter_Soft_Orange td.dxtl
+{
+	padding: 4px 8px 5px;
+	white-space: nowrap;
+	text-align: left;
+	border: solid 1px #c5c5c5;
+	font: 9pt Tahoma;
+}
+
+/* Pagers */
+.dxtlPagerTopPanel_Soft_Orange 
+{
+	border-bottom: solid 1px #c5c5c5;	
+}
+.dxtlPagerBottomPanel_Soft_Orange 
+{	
+	border-top: solid 1px #c5c5c5;	
+}
+.dxtlPagerTopPanel_Soft_Orange,
+.dxtlPagerBottomPanel_Soft_Orange 
+{
+	padding: 1px 2px;
+	background: #f9f9f9;
+}
+
+/* Editing */
+.dxtlEditForm_Soft_Orange
+{
+	background: #FCFCFC;
+	border: solid 1px #c5c5c5;
+	padding: 8px 10px 10px;
+}
+.dxtlEditFormCaption_Soft_Orange,
+.dxtlEditFormEditCell_Soft_Orange
+{
+	padding: 4px;
+}
+.dxtlEditFormCaption_Soft_Orange
+{
+	padding-left: 10px;
+	white-space: nowrap;
+}
+.dxtlError_Soft_Orange
+{
+	background: #FFC8C8;
+	color: #FF0000;
+	padding: 6px 10px;
+	border: solid 1px #cfcfcf;
+	font: 9pt Tahoma;		
+}
+
+/* Links */
+.dxtlControl_Soft_Orange a,
+.dxtlCommandCell_Soft_Orange a 
+{
+	color: #bc3f26;
+}
+.dxtlControl_Soft_Orange a:hover 
+{
+	color:  #f15e34;
+}
+.dxtlHeader_Soft_Orange a,
+.dxtlHeader_Soft_Orange a:hover,
+.dxtlFocusedNode_Soft_Orange a,
+.dxtlFocusedNode_Soft_Orange a:hover,
+.dxtlSelectedNode_Soft_Orange a, 
+.dxtlSelectedNode_Soft_Orange a:hover 
+{
+	color: White;
+}
+.dxtlCommandCell_Soft_Orange a
+{
+    margin-right: 3px;
+}
+
+/* Loading panel */
+.dxtlLoadingPanel_Soft_Orange
+{
+}
+.dxtlLoadingPanel_Soft_Orange td.dx
+{
+}
+.dxtlLoadingDiv_Soft_Orange
+{
+	background: white;
+	opacity: 0.01;
+	filter: alpha(opacity=1);
+}
+
+/* Disabled */
+.dxtlDisabled_Soft_Orange,
+.dxtlDisabled_Soft_Orange .dxtl_Soft_Orange
+{
+	color: #808080;
+	cursor: default;
+}

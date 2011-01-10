@@ -1,0 +1,6 @@
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v9.1, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dxnb" Namespace="DevExpress.Web.ASPxNavBar" Assembly="DevExpress.Web.v9.1, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<dxnb:ASPxNavBar runat="server" GroupSpacing="0px" ImageFolder="~/App_Themes/Soft Orange/{0}/" CssFilePath="~/App_Themes/Soft Orange/{0}/styles.css" CssPostfix="Soft_Orange" LoadingPanelText="">
+<CollapseImage Height="18px" Width="18px"></CollapseImage>
+<ExpandImage Height="18px" Width="18px"></ExpandImage>
+</dxnb:ASPxNavBar>

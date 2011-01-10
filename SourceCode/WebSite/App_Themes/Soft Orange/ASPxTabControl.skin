@@ -1,0 +1,5 @@
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v9.1, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dxtc" Namespace="DevExpress.Web.ASPxTabControl" Assembly="DevExpress.Web.v9.1, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<dxtc:ASPxTabControl runat="server" CssPostfix="Soft_Orange" TabSpacing="2px" CssFilePath="~/App_Themes/Soft Orange/{0}/styles.css">
+<Paddings Padding="4px"></Paddings>
+</dxtc:ASPxTabControl>

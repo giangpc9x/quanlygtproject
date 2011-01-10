@@ -1,0 +1,11 @@
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v9.1, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dxhl" Namespace="DevExpress.Web.ASPxHeadline" Assembly="DevExpress.Web.v9.1, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<dxhl:ASPxHeadline runat="server" CssFilePath="~/App_Themes/Office2003 Olive/{0}/styles.css"
+    CssPostfix="Office2003_Olive">
+    <DateStyle Spacing="0px" />
+    <ContentStyle LineHeight="18px" />
+    <LeftPanelStyle Spacing="21px">
+        <Paddings PaddingTop="2px" />
+    </LeftPanelStyle>
+    <TailImage Height="9px" Url="~/App_Themes/Office2003 Olive/Web/hlTail.gif" Width="13px" />
+</dxhl:ASPxHeadline>

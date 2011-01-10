@@ -1,0 +1,38 @@
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v9.1, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register Assembly="DevExpress.Web.ASPxPivotGrid.v9.1, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxPivotGrid" TagPrefix="dxwpg" %>
+<%@ Register Assembly="DevExpress.XtraPivotGrid.v9.1.Core, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.XtraPivotGrid" TagPrefix="temp" %>
+<dxwpg:ASPxPivotGrid runat="server">
+	<Styles CssFilePath="~/App_Themes/Aqua/{0}/styles.css" CssPostfix="Aqua">
+        <MenuStyle GutterWidth="0px" />   
+    </Styles>
+    <OptionsLoadingPanel Text="" />
+    <OptionsPager CurrentPageNumberFormat="{0}">
+        <AllButton>
+            <Image Height="19px" Width="27px" ></Image>
+        </AllButton>
+        <NextPageButton>
+            <Image Height="19px" Width="19px"></Image>
+        </NextPageButton>
+        <PrevPageButton>
+            <Image Height="19px" Width="19px"></Image>
+        </PrevPageButton>
+        <FirstPageButton>
+            <Image Height="19px" Width="23px"></Image>
+        </FirstPageButton>
+        <LastPageButton>
+            <Image Height="19px" Width="23px"></Image>
+        </LastPageButton>
+    </OptionsPager>
+    <Images ImageFolder="~/App_Themes/Aqua/{0}/">        
+        <CustomizationFieldsClose Url="~/App_Themes/Aqua/PivotGrid/pcCloseButton.png" Width="19px" Height="19px" />
+        <HeaderSortUp Url="~/App_Themes/Aqua/PivotGrid/pgHeaderSortUp.png" Width="11px" Height="15px" />
+        <HeaderSortDown Url="~/App_Themes/Aqua/PivotGrid/pgHeaderSortDown.png" Width="11px" Height="15px" />
+        <FilterWindowSizeGrip Url="~/App_Themes/Aqua/PivotGrid/pgFilterResizer.png" Width="12px" Height="12px" />
+        <FieldValueCollapsed Url="~/App_Themes/Aqua/PivotGrid/pgCollapsedButton.png" Width="15px" Height="15px" />
+        <FieldValueExpanded Url="~/App_Themes/Aqua/PivotGrid/pgExpandedButton.png" Width="15px" Height="15px" />
+        <HeaderFilter Url="~/App_Themes/Aqua/PivotGrid/pgFilterButton.png" Width="19px" Height="19px" />
+        <HeaderActiveFilter Url="~/App_Themes/Aqua/PivotGrid/pgFilterButtonActive.png" Width="19px" Height="19px" />
+        <CustomizationFieldsBackground Url="~/App_Themes/Aqua/PivotGrid/pcHeaderBack.gif" />
+		<SortByColumn Url="~/App_Themes/Aqua/PivotGrid/pgSortByColumn.png" Width="15px" Height="14px" />
+    </Images>
+</dxwpg:ASPxPivotGrid>

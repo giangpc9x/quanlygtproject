@@ -1,0 +1,19 @@
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v9.1, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dxwtl" Namespace="DevExpress.Web.ASPxTreeList" Assembly="DevExpress.Web.ASPxTreeList.v9.1, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<dxwtl:ASPxTreeList runat="server">
+    <Styles CssFilePath="~/App_Themes/Plastic Blue/{0}/styles.css" CssPostfix="PlasticBlue">
+        <CustomizationWindowContent VerticalAlign="Top" />
+    </Styles>
+    <Images ImageFolder="~/App_Themes/Plastic Blue/{0}/">
+        <ExpandedButton Url="~/App_Themes/Plastic Blue/TreeList/ExpandedButton.png" Width="9px" Height="9px" />
+        <CollapsedButton Url="~/App_Themes/Plastic Blue/TreeList/CollapsedButton.png" Width="9px" Height="9px" />
+        <SortAscending Url="~/App_Themes/Plastic Blue/TreeList/SortAsc.png" Width="11px" Height="11px" />
+        <SortDescending Url="~/App_Themes/Plastic Blue/TreeList/SortDesc.png" Width="11px" Height="11px" />
+        <CustomizationWindowClose Width="14px" Height="14px" />
+    </Images>
+	<SettingsPager ShowDefaultImages="False" CurrentPageNumberFormat="{0}">
+		<AllButton Text="All" />
+		<NextPageButton Text="Next &gt;" />
+		<PrevPageButton Text="&lt; Prev" />
+	</SettingsPager>	
+</dxwtl:ASPxTreeList>

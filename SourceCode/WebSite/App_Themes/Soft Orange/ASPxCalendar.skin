@@ -1,0 +1,16 @@
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v9.1, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register Assembly="DevExpress.Web.ASPxEditors.v9.1, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxEditors" TagPrefix="dxe" %>
+<dxe:ASPxCalendar runat="server" ImageFolder="~/App_Themes/Soft Orange/{0}/" CssFilePath="~/App_Themes/Soft Orange/{0}/styles.css" CssPostfix="Soft_Orange">
+<FooterStyle Spacing="17px"></FooterStyle>
+<HeaderStyle Spacing="1px"></HeaderStyle>
+<ValidationSettings>
+<ErrorFrameStyle ImageSpacing="4px">
+<ErrorTextPaddings PaddingLeft="4px"></ErrorTextPaddings>
+</ErrorFrameStyle>
+<ErrorImage Height="14px" Width="14px" Url="~/App_Themes/Soft Orange/Editors/edtError.png"></ErrorImage>
+</ValidationSettings>
+<PrevMonthImage Url="~/App_Themes/Soft Orange/Editors/edtCalendarPrevMonth.png" UrlDisabled="~/App_Themes/Soft Orange/Editors/edtCalendarPrevMonthDisabled.png" Width="19px" Height="19px" />
+<NextMonthImage Url="~/App_Themes/Soft Orange/Editors/edtCalendarNextMonth.png" UrlDisabled="~/App_Themes/Soft Orange/Editors/edtCalendarNextMonthDisabled.png" Width="19px" Height="19px"/>
+<NextYearImage Url="~/App_Themes/Soft Orange/Editors/edtCalendarNextYear.png" UrlDisabled="~/App_Themes/Soft Orange/Editors/edtCalendarNextYearDisabled.png" Width="23px" Height="19px"/>
+<PrevYearImage Url="~/App_Themes/Soft Orange/Editors/edtCalendarPrevYear.png" UrlDisabled="~/App_Themes/Soft Orange/Editors/edtCalendarPrevYearDisabled.png" Width="23px" Height="19px"/>
+</dxe:ASPxCalendar>

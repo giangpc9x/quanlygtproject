@@ -1,0 +1,11 @@
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v9.1, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dxti" Namespace="DevExpress.Web.ASPxTitleIndex" Assembly="DevExpress.Web.v9.1, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<dxti:ASPxTitleIndex runat="server" LoadingPanelText=""  GroupSpacing="15px" ImageFolder="~/App_Themes/Soft Orange/{0}/" CssFilePath="~/App_Themes/Soft Orange/{0}/styles.css" CssPostfix="Soft_Orange">
+<BackToTopImage Height="7px" Width="5px" Url="~/App_Themes/Soft Orange/Web/tiBackToTop.png"></BackToTopImage>
+<FilterBox Caption="Filter:&amp;nbsp;" HorizontalPosition="Left"></FilterBox>
+<GroupContentStyle ItemSpacing="7px">
+<Paddings PaddingTop="8px"></Paddings>
+</GroupContentStyle>
+<IndexPanelSeparatorStyle BackColor="Transparent"></IndexPanelSeparatorStyle>
+<DisabledStyle ForeColor="#ababab"></DisabledStyle>
+</dxti:ASPxTitleIndex>

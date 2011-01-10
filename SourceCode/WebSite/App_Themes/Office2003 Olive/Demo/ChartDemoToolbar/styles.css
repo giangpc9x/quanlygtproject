@@ -1,0 +1,103 @@
+﻿/* -- ASPxMenu -- */
+.dxmControl_Office2003_OliveChartDemoToolbar 
+{
+	font: 9pt Tahoma;
+	color: black;
+}
+.dxmControl_Office2003_OliveChartDemoToolbar a, .dxmMenu_Office2003_OliveChartDemoToolbar a
+{
+	color: black;
+	text-decoration: none;
+}
+.dxmMenu_Office2003_OliveChartDemoToolbar
+{
+	font: 9pt Tahoma;
+	color: black;	
+	background: url(../../Web/mItemBack.gif) repeat-y left top #F2F0E4;
+	border: solid 1px #758D5E;
+	padding: 3px;
+}
+.dxmMenuGutter_Office2003_OliveChartDemoToolbar
+{
+}
+.dxmMenuSeparator_Office2003_OliveChartDemoToolbar
+{
+	background-image: url(../../Web/mItemSeparatorBack.gif);
+	background-position: left top;
+	background-repeat: repeat-y;
+}
+.dxmMenuItem_Office2003_OliveChartDemoToolbar, .dxmMenuItemWithImage_Office2003_OliveChartDemoToolbar
+{
+	font: 9pt Tahoma;
+	color: black;
+	white-space: nowrap;
+}
+.dxmMenuItem_Office2003_OliveChartDemoToolbar, .dxmMenuItemWithImage_Office2003_OliveChartDemoToolbar
+{
+	padding-top: 2px;
+	padding-right: 2px;
+	padding-bottom: 2px;
+	padding-left: 2px;
+}
+.dxmMenuItemWithImage_Office2003_OliveChartDemoToolbar
+{
+	padding-right: 5px;
+	padding-left: 5px;
+}
+.dxmMenuItemSelected_Office2003_OliveChartDemoToolbar, .dxmMenuItemSelectedWithImage_Office2003_OliveChartDemoToolbar
+{
+	background: url(../../Web/mItemSBack.gif) repeat-x center top #FFAD55;
+	border: solid 1px #002D96;
+}
+.dxmMenuItemSelected_Office2003_OliveChartDemoToolbar, .dxmMenuItemSelectedWithImage_Office2003_OliveChartDemoToolbar
+{
+	padding-top: 1px;
+	padding-right: 1px;
+	padding-bottom: 1px;
+	padding-left: 1px;
+}
+.dxmMenuItemSelectedWithImage_Office2003_OliveChartDemoToolbar
+{
+	padding-right: 4px;
+	padding-left: 4px;
+}
+.dxmMenuItemChecked_Office2003_OliveChartDemoToolbar, .dxmMenuItemCheckedWithImage_Office2003_OliveChartDemoToolbar
+{
+	background: url(../../Web/mItemSBack.gif) repeat-x center top #FFAD55;
+	border: solid 1px #002D96;
+}
+.dxmMenuItemChecked_Office2003_OliveChartDemoToolbar, .dxmMenuItemCheckedWithImage_Office2003_OliveChartDemoToolbar
+{
+	padding-top: 1px;
+	padding-right: 1px;
+	padding-bottom: 1px;
+	padding-left: 1px;
+}
+.dxmMenuItemCheckedWithImage_Office2003_OliveChartDemoToolbar
+{
+	padding-right: 4px;
+	padding-left: 4px;
+}
+.dxmMenuItemHover_Office2003_OliveChartDemoToolbar, .dxmMenuItemHoverWithImage_Office2003_OliveChartDemoToolbar
+{
+	background: url(../../Web/mItemHBack.gif) repeat-x center top #FFD69A;
+	border: solid 1px #3F5D38;
+}
+.dxmMenuItemHover_Office2003_OliveChartDemoToolbar, .dxmMenuItemHoverWithImage_Office2003_OliveChartDemoToolbar
+{
+	padding-top: 1px;
+	padding-right: 1px;
+	padding-bottom: 1px;
+	padding-left: 1px;
+}
+.dxmMenuItemHoverWithImage_Office2003_OliveChartDemoToolbar
+{
+	padding-right: 4px;
+	padding-left: 4px;
+}
+/* Disabled */
+.dxmDisabled_Office2003_OliveChartDemoToolbar
+{
+	color: #808080;
+	cursor: default;
+}

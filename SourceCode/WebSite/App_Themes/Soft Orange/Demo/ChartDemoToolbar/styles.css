@@ -1,0 +1,101 @@
+﻿/* --/* -- ASPxMenu -- */
+.dxmControl_Soft_OrangeChartDemoToolbar 
+{
+	font: 8pt Tahoma;
+	color: black;
+}
+.dxmControl_Soft_OrangeChartDemoToolbar a, .dxmMenu_Soft_OrangeChartDemoToolbar a
+{
+	color: #707070;
+	text-decoration: none;
+}
+.dxmMenu_Soft_OrangeChartDemoToolbar
+{
+	font: 8pt Tahoma;
+	color: #707070;
+	background-color: #FFFFFF;
+	border: solid 3px #D3D3D3;
+	padding: 1px 1px 1px 1px;
+}
+.dxmMenuGutter_Soft_OrangeChartDemoToolbar
+{
+}
+.dxmMenuSeparator_Soft_OrangeChartDemoToolbar
+{
+    background-color: #f4f4f4;
+    height: 100%;
+}
+.dxmMenuItem_Soft_OrangeChartDemoToolbar, .dxmMenuItemWithImage_Soft_OrangeChartDemoToolbar
+{
+	font: 9pt Tahoma;
+	color: #707070;
+	background: #F4F4F4 url('../../Web/mItemBack.png') repeat-x top left;
+	white-space: nowrap;
+
+	padding-top: 1px;
+	padding-right: 4px;
+	padding-bottom: 1px;
+	padding-left: 4px;
+}
+.dxmMenuItemWithImage_Soft_OrangeChartDemoToolbar
+{
+	padding-right: 6px;
+	padding-left: 6px;
+}
+
+.dxmMenuItemSelected_Soft_OrangeChartDemoToolbar, .dxmMenuItemSelectedWithImage_Soft_OrangeChartDemoToolbar
+{	
+	font: 9pt Tahoma;
+	color: #707070;
+	
+	background: #dfdfdf url('../../Web/mItemBackH.png') repeat-x top left;
+	border: Dotted 1px #5c5c5c;
+	
+	padding-top: 1px;
+	padding-right: 3px;
+	padding-bottom: 1px;
+	padding-left: 3px;	
+}
+.dxmMenuItemSelectedWithImage_Soft_OrangeChartDemoToolbar
+{
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+.dxmMenuItemChecked_Soft_OrangeChartDemoToolbar, .dxmMenuItemCheckedWithImage_Soft_OrangeChartDemoToolbar
+{
+}
+
+.dxmMenuItemHover_Soft_OrangeChartDemoToolbar, .dxmMenuItemHoverWithImage_Soft_OrangeChartDemoToolbar
+{
+	font: 9pt Tahoma;
+	color: #707070;
+	
+	background-image: none;
+	background-color: #F9F9F9;
+	border: Solid 1px #a8a8a8;
+	
+	padding-top: 1px;
+	padding-right: 3px;
+	padding-bottom: 1px;
+	padding-left: 3px;	
+}
+.dxmMenuItemHoverWithImage_Soft_OrangeChartDemoToolbar
+{
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+.dxmMenuSeparator_Soft_OrangeChartDemoToolbar
+{
+    width: 5px!important;
+    height: 27px!important;
+    background: #F4F4F4 url('../../Web/mSeparatorBack.png') no-repeat top center;
+}
+
+/* Disabled */
+.dxmDisabled_Soft_OrangeChartDemoToolbar
+{
+	color: #808080;
+	cursor: default;
+}

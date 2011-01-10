@@ -1,0 +1,57 @@
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v9.1, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register Assembly="DevExpress.Web.ASPxHtmlEditor.v9.1, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxHtmlEditor" TagPrefix="dxhe" %>
+<dxhe:ASPxHtmlEditor runat="server" >
+	<Styles CssPostfix="PlasticBlue" CssFilePath="~/App_Themes/Plastic Blue/{0}/styles.css">
+		<ViewArea>
+			<Border BorderStyle="Solid" BorderColor="#CCCCCC" BorderWidth="1px" />
+		</ViewArea>
+	</Styles>
+	<StylesToolbars>
+		<Toolbar ItemSpacing="0px" SeparatorHeight="100%" SeparatorWidth="2px" />
+	</StylesToolbars>
+	<Images ImageFolder="~/App_Themes/Plastic Blue/{0}/"></Images>
+    <Images>
+        <DialogFormCloseButton Height="14px" Width="14px" />
+    </Images>	
+	<PartsRoundPanel>
+	    <TopLeftCorner Height="4px" Width="4px" Url="~/App_Themes/Plastic Blue/HtmlEditor/RoundPanel/herpTopLeftCorner.png" />
+	    <NoHeaderTopLeftCorner Height="4px" Width="4px" Url="~/App_Themes/Plastic Blue/HtmlEditor/RoundPanel/herpNoHeaderTopLeftCorner.png" />
+	    <TopRightCorner Height="4px" Width="4px" Url="~/App_Themes/Plastic Blue/HtmlEditor/RoundPanel/herpTopRightCorner.png" />
+	    <NoHeaderTopRightCorner Height="4px" Width="4px" Url="~/App_Themes/Plastic Blue/HtmlEditor/RoundPanel/herpNoHeaderTopRightCorner.png" />
+	    <BottomLeftCorner Height="4px" Width="4px" Url="~/App_Themes/Plastic Blue/HtmlEditor/RoundPanel/herpBottomLeftCorner.png" />
+	    <BottomRightCorner Height="4px" Width="4px" Url="~/App_Themes/Plastic Blue/HtmlEditor/RoundPanel/herpBottomRightCorner.png" />
+	    <%-- Header parts --%>
+	    <HeaderLeftEdge>
+	        <BackgroundImage Repeat="RepeatX" VerticalPosition="bottom" ImageUrl="~/App_Themes/Plastic Blue/HtmlEditor/RoundPanel/herpHeaderLeftEdge.gif" />
+	    </HeaderLeftEdge>
+	    <HeaderContent>
+	        <BackgroundImage Repeat="RepeatX" VerticalPosition="bottom" ImageUrl="~/App_Themes/Plastic Blue/HtmlEditor/RoundPanel/herpHeaderSeparator.gif" />
+	    </HeaderContent>
+	    <HeaderRightEdge>
+	        <BackgroundImage Repeat="RepeatX" VerticalPosition="bottom" ImageUrl="~/App_Themes/Plastic Blue/HtmlEditor/RoundPanel/herpHeaderRightEdge.gif" />
+	    </HeaderRightEdge>
+	    <%-- Middle parts --%>
+	    <Content BackColor="WhiteSmoke" />
+	    <TopEdge>
+	        <BackgroundImage ImageUrl="~/App_Themes/Plastic Blue/HtmlEditor/RoundPanel/herpHeaderTopEdge.gif" />
+	    </TopEdge>
+	    <NoHeaderTopEdge BackColor="#F5F5F5">
+	        <BackgroundImage ImageUrl="~/App_Themes/Plastic Blue/HtmlEditor/RoundPanel/herpNoHeaderTopEdge.gif" />
+	    </NoHeaderTopEdge>
+	    <RightEdge>
+	        <BackgroundImage ImageUrl="~/App_Themes/Plastic Blue/HtmlEditor/RoundPanel/herpRightEdge.gif" />
+	    </RightEdge>
+	    <BottomEdge>
+	        <BackgroundImage ImageUrl="~/App_Themes/Plastic Blue/HtmlEditor/RoundPanel/herpBottomEdge.gif" />
+	    </BottomEdge>
+	    <LeftEdge>
+	        <BackgroundImage ImageUrl="~/App_Themes/Plastic Blue/HtmlEditor/RoundPanel/herpLeftEdge.gif" />
+	    </LeftEdge>
+	</PartsRoundPanel>
+	<StylesRoundPanel>            
+		<ControlStyle>
+		    <Border BorderWidth="1px" BorderStyle="None" BorderColor="#CCCCCC" />
+		    <BorderTop BorderStyle="None" />
+		</ControlStyle>
+	</StylesRoundPanel>	
+</dxhe:ASPxHtmlEditor>
