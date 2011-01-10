@@ -4,10 +4,194 @@
         <name>NTT.Web.Core</name>
     </assembly>
     <members>
+        <member name="T:NTT.Web.Core.XSQL.DBHelper">
+            <summary>
+            Summary description for DBHelper
+            </summary>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DBHelper.#ctor">
+            <summary>
+            Hàm tạo mặc định sẽ lấy chuỗi connection đã được mã hóa strong file config.xml:
+            </summary>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DBHelper.GetProviderNameFromConnectionStrings">
+            <summary>
+            Lấy ProviderName từ ConnectionStrings
+            <add name="ConnectionString" connectionString="chuỗi kết nối" providerName="System.Data.SqlClient" ></add>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DBHelper.GetProviderNameFromAppSettings">
+            <summary>
+            <appSettings>
+            <add key="ProviderName" value="System.Data.SqlClient"/>
+            </appSettings>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DBHelper.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Hàm tạo với các tham số truyền vào đã được mã hóa
+            <appSettings>
+            <add key="Provider" value="System.Data.SqlClient"/>
+            <add key="Server" value=""/>
+            <add key="DatabaseName" value=""/>
+            <add key="UserName" value=""/>
+            <add key="Password" value=""/>
+            </appSettings>
+            </summary>
+            <param name="Server"></param>
+            <param name="DatabaseName"></param>
+            <param name="UserName"></param>
+            <param name="Password"></param>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DBHelper.#ctor(System.String)">
+            <summary>
+            Hàm tạo với chuỗi Connection truyền vào có mã hóa
+            <connectionStrings>
+            <add name="ConnectionString" connectionString="server= ; user= ; pwd= ; database= " providerName="System.Data.SqlClient" ></add>
+            </connectionStrings>
+            </summary>
+            <param name="ConnectionString">Chuỗi kết nối</param>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DBHelper.#ctor(System.String,System.Boolean)">
+            <summary>
+            Hàm tạo với chuỗi Connection truyền vào
+            </summary>
+            <param name="ConnectionString"></param>
+            <param name="Encrypt">Chuỗi kết nối có mã hóa không. True: có, false: không</param>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DBHelper.#ctor(System.Boolean)">
+            <summary>
+            Hàm tạo từ file xml 'connect.xml' với các thẻ: ProviderName,Server,Database,UserID,Password
+            </summary>
+            <param name="open"></param>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DBHelper.Finalize">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DBHelper.Open">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DBHelper.Close">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DBHelper.Dispose">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DBHelper.Dispose(System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DBHelper.CreateParameter">
+            <summary>
+            Create parammeter overloads
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:NTT.Web.Core.XSQL.DBHelper.Connection">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:NTT.Web.Core.XSQL.DBHelper.ConnectionString">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:NTT.Web.Core.XSQL.DBHelper.Transaction">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:NTT.Web.Core.XSQL.DBHelper.State">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:NTT.Web.Core.Security.Cryto">
+            <summary>
+            Cryto
+            </summary>
+        </member>
+        <member name="M:NTT.Web.Core.Security.Cryto.Default_Encrypt(System.String)">
+            <summary>
+            Hàm này mã hóa ra dạng ký tự theo mã code đã được định sẵn .
+            </summary>
+        </member>
+        <member name="M:NTT.Web.Core.Security.Cryto.Default_Decrypt(System.String)">
+            <summary>
+            Hàm này Giải mã từ hàm 'Default_Encrypt(input)' theo mã code định sẵn trước đó.
+            </summary>
+        </member>
+        <member name="M:NTT.Web.Core.Security.Cryto.TripleDES_En(System.String,System.String)">
+            <summary>
+            Lớp này dùng để mã hóa mật khẩu hay dữ liệu đầu vào bằng các ký tự phức tạp dựa vào ký hiệu riêng là biến "key" .
+            </summary>
+        </member>
+        <member name="M:NTT.Web.Core.Security.Cryto.TripleDES_De(System.String,System.String)">
+            <summary>
+            Lớp này dùng để giải mã .
+            </summary>
+        </member>
+        <member name="M:NTT.Web.Core.Security.Cryto.MD5(System.String)">
+            <summary>
+            Mã hóa theo định dạng MD5 từ hàm MD5CryptoServiceProvider của thư viện Cryptography.
+            </summary>
+        </member>
+        <member name="M:NTT.Web.Core.Common.ReadAppicationSetting(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="fieldname"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NTT.Web.Core.Common.Convert2String(System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="num"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NTT.Web.Core.Common.ConvertMoneyFormat(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="num"></param>
+            <returns></returns>
+        </member>
         <member name="T:NTT.Web.Core.XSQL.DataObject">
             <summary>
             Summary description for DataObject
             </summary>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DataObject.#ctor">
+            <summary>
+            Khởi tạo mặt định
+            </summary>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DataObject.#ctor(System.String)">
+            <summary>
+            Hàm Khởi Tạo
+            </summary>
+            <param name="strConn"> Câu kệt nối có mã hóa </param>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DataObject.#ctor(System.String,System.Boolean)">
+            <summary>
+            Hàm Khởi Tạo
+            </summary>
+            <param name="strConn">Câu kệt nối </param>
+            <param name="Encrypt"> True : mã hóa</param>
         </member>
         <member name="M:NTT.Web.Core.XSQL.DataObject.ExcSql(System.String,System.Data.CommandType)">
             <summary>
@@ -418,172 +602,6 @@
             <param name="whereParam">Điều kiện where</param>
             <param name="TableName">Tên table cần delete</param>
             <returns>Thành công trả về giá trị lớn hơn 0 (số câu lệnh sql được thực hiện)</returns>
-        </member>
-        <member name="T:NTT.Web.Core.XSQL.DBHelper">
-            <summary>
-            Summary description for DBHelper
-            </summary>
-        </member>
-        <member name="M:NTT.Web.Core.XSQL.DBHelper.#ctor">
-            <summary>
-            Hàm tạo mặc định sẽ lấy chuỗi connection đã được mã hóa strong file config.xml:
-            </summary>
-        </member>
-        <member name="M:NTT.Web.Core.XSQL.DBHelper.GetProviderNameFromConnectionStrings">
-            <summary>
-            Lấy ProviderName từ ConnectionStrings
-            <add name="ConnectionString" connectionString="chuỗi kết nối" providerName="System.Data.SqlClient" ></add>
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:NTT.Web.Core.XSQL.DBHelper.GetProviderNameFromAppSettings">
-            <summary>
-            <appSettings>
-            <add key="ProviderName" value="System.Data.SqlClient"/>
-            </appSettings>
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:NTT.Web.Core.XSQL.DBHelper.#ctor(System.String,System.String,System.String,System.String)">
-            <summary>
-            Hàm tạo với các tham số truyền vào đã được mã hóa
-            <appSettings>
-            <add key="Provider" value="System.Data.SqlClient"/>
-            <add key="Server" value=""/>
-            <add key="DatabaseName" value=""/>
-            <add key="UserName" value=""/>
-            <add key="Password" value=""/>
-            </appSettings>
-            </summary>
-            <param name="Server"></param>
-            <param name="DatabaseName"></param>
-            <param name="UserName"></param>
-            <param name="Password"></param>
-        </member>
-        <member name="M:NTT.Web.Core.XSQL.DBHelper.#ctor(System.String)">
-            <summary>
-            Hàm tạo với chuỗi Connection truyền vào có mã hóa
-            <connectionStrings>
-            <add name="ConnectionString" connectionString="server= ; user= ; pwd= ; database= " providerName="System.Data.SqlClient" ></add>
-            </connectionStrings>
-            </summary>
-            <param name="ConnectionString">Chuỗi kết nối</param>
-        </member>
-        <member name="M:NTT.Web.Core.XSQL.DBHelper.#ctor(System.String,System.Boolean)">
-            <summary>
-            Hàm tạo với chuỗi Connection truyền vào
-            </summary>
-            <param name="ConnectionString"></param>
-            <param name="Encrypt">Chuỗi kết nối có mã hóa không. True: có, false: không</param>
-        </member>
-        <member name="M:NTT.Web.Core.XSQL.DBHelper.#ctor(System.Boolean)">
-            <summary>
-            Hàm tạo từ file xml 'connect.xml' với các thẻ: ProviderName,Server,Database,UserID,Password
-            </summary>
-            <param name="open"></param>
-        </member>
-        <member name="M:NTT.Web.Core.XSQL.DBHelper.Finalize">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:NTT.Web.Core.XSQL.DBHelper.Open">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:NTT.Web.Core.XSQL.DBHelper.Close">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:NTT.Web.Core.XSQL.DBHelper.Dispose">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:NTT.Web.Core.XSQL.DBHelper.Dispose(System.Boolean)">
-            <summary>
-            
-            </summary>
-            <param name="disposing"></param>
-        </member>
-        <member name="M:NTT.Web.Core.XSQL.DBHelper.CreateParameter">
-            <summary>
-            Create parammeter overloads
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="P:NTT.Web.Core.XSQL.DBHelper.Connection">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:NTT.Web.Core.XSQL.DBHelper.ConnectionString">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:NTT.Web.Core.XSQL.DBHelper.Transaction">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:NTT.Web.Core.XSQL.DBHelper.State">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="T:NTT.Web.Core.Security.Cryto">
-            <summary>
-            Cryto
-            </summary>
-        </member>
-        <member name="M:NTT.Web.Core.Security.Cryto.Default_Encrypt(System.String)">
-            <summary>
-            Hàm này mã hóa ra dạng ký tự theo mã code đã được định sẵn .
-            </summary>
-        </member>
-        <member name="M:NTT.Web.Core.Security.Cryto.Default_Decrypt(System.String)">
-            <summary>
-            Hàm này Giải mã từ hàm 'Default_Encrypt(input)' theo mã code định sẵn trước đó.
-            </summary>
-        </member>
-        <member name="M:NTT.Web.Core.Security.Cryto.TripleDES_En(System.String,System.String)">
-            <summary>
-            Lớp này dùng để mã hóa mật khẩu hay dữ liệu đầu vào bằng các ký tự phức tạp dựa vào ký hiệu riêng là biến "key" .
-            </summary>
-        </member>
-        <member name="M:NTT.Web.Core.Security.Cryto.TripleDES_De(System.String,System.String)">
-            <summary>
-            Lớp này dùng để giải mã .
-            </summary>
-        </member>
-        <member name="M:NTT.Web.Core.Security.Cryto.MD5(System.String)">
-            <summary>
-            Mã hóa theo định dạng MD5 từ hàm MD5CryptoServiceProvider của thư viện Cryptography.
-            </summary>
-        </member>
-        <member name="M:NTT.Web.Core.Common.ReadAppicationSetting(System.String)">
-            <summary>
-            
-            </summary>
-            <param name="fieldname"></param>
-            <returns></returns>
-        </member>
-        <member name="M:NTT.Web.Core.Common.Convert2String(System.Double)">
-            <summary>
-            
-            </summary>
-            <param name="num"></param>
-            <returns></returns>
-        </member>
-        <member name="M:NTT.Web.Core.Common.ConvertMoneyFormat(System.String)">
-            <summary>
-            
-            </summary>
-            <param name="num"></param>
-            <returns></returns>
         </member>
     </members>
 </doc>
