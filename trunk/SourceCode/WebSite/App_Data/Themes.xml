@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Themes>
+  <!--<Theme Text="Blue" Value="Blue" />-->
+  <Theme Text="Default" Value="Default" />
+  <Theme Text="Aqua" Value="Aqua" />
+  <Theme Text="Glass" Value="Glass" />
+  <Theme Text="Black Glass" Value="BlackGlass" />
+  <!--<Theme Text="Matrix" Value="Matrix" />-->
+  <Theme Text="Office2003 Blue" Value="Office2003 Blue" />
+  <Theme Text="Office2003 Olive" Value="Office2003 Olive" />
+  <Theme Text="Office2003 Silver" Value="Office2003 Silver" />
+  <Theme Text="Plastic Blue" Value="Plastic Blue" />
+  <Theme Text="Red Wine" Value="Red Wine" />
+  <Theme Text="Soft Orange" Value="Soft Orange" />
+  <Theme Text="Youthful" Value="Youthful" />
+</Themes>
