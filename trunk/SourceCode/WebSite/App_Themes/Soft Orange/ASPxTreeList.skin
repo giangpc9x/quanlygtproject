@@ -1,0 +1,29 @@
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v9.1, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dxwtl" Namespace="DevExpress.Web.ASPxTreeList" Assembly="DevExpress.Web.ASPxTreeList.v9.1, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<dxwtl:ASPxTreeList runat="server">
+    <Styles CssFilePath="~/App_Themes/Soft Orange/{0}/styles.css" CssPostfix="Soft_Orange" />
+    <Images ImageFolder="~/App_Themes/Soft Orange/{0}/">
+        <ExpandedButton Url="~/App_Themes/Soft Orange/TreeList/ExpandedButton.png" Width="13px" Height="13px" />
+        <CollapsedButton Url="~/App_Themes/Soft Orange/TreeList/CollapsedButton.png" Width="13px" Height="13px" />
+        <CustomizationWindowClose Width="18px" Height="18px" />
+    </Images>
+    <Settings SuppressOuterGridLines="true" />
+    <SettingsLoadingPanel Text="" />
+		<SettingsPager CurrentPageNumberFormat="{0}">
+			<AllButton>
+				<Image Height="19px" Width="28px" />
+			</AllButton>
+			<NextPageButton>
+				<Image Height="19px" Width="19px" />
+			</NextPageButton>
+			<PrevPageButton>
+				<Image Height="19px" Width="19px" />
+			</PrevPageButton>
+			<FirstPageButton>
+				<Image Height="19px" Width="23px" />
+			</FirstPageButton>
+			<LastPageButton>
+				<Image Height="19px" Width="23px" />
+			</LastPageButton>
+		</SettingsPager>    
+</dxwtl:ASPxTreeList>

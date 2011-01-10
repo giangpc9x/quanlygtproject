@@ -1,0 +1,41 @@
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v9.1, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register Assembly="DevExpress.Web.ASPxHtmlEditor.v9.1, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxHtmlEditor" TagPrefix="dxhe" %>
+<dxhe:ASPxHtmlEditor runat="server" >
+	<Styles CssPostfix="Office2003_Blue" CssFilePath="~/App_Themes/Office2003 Blue/{0}/styles.css">
+		<ViewArea>
+			<Border BorderStyle="Solid" BorderColor="#002D96" BorderWidth="1px" />
+		</ViewArea>
+	</Styles>
+	<StylesStatusBar>
+		<ActiveTab BackColor="White" />
+	</StylesStatusBar>
+	<Images ImageFolder="~/App_Themes/Office2003 Blue/{0}/"></Images>
+	<PartsRoundPanel>
+	    <TopLeftCorner Height="9px" Width="9px" Url="~/App_Themes/Office2003 Blue/HtmlEditor/RoundPanel/herpTopLeftCorner.png" />
+	    <TopRightCorner Height="9px" Width="9px" Url="~/App_Themes/Office2003 Blue/HtmlEditor/RoundPanel/herpTopRightCorner.png" />
+	    <NoHeaderTopLeftCorner Height="9px" Width="9px" Url="~/App_Themes/Office2003 Blue/HtmlEditor/RoundPanel/herpNoHeaderTopLeftCorner.png" />
+	    <NoHeaderTopRightCorner Height="9px" Width="9px" Url="~/App_Themes/Office2003 Blue/HtmlEditor/RoundPanel/herpNoHeaderTopRightCorner.png" />
+	    <BottomLeftCorner Height="9px" Width="9px" Url="~/App_Themes/Office2003 Blue/HtmlEditor/RoundPanel/herpBottomLeftCorner.png" />
+	    <BottomRightCorner Height="9px" Width="9px" Url="~/App_Themes/Office2003 Blue/HtmlEditor/RoundPanel/herpBottomRightCorner.png" />
+	    <%-- Middles --%>
+	    <TopEdge>
+	        <BackgroundImage Repeat="RepeatX" VerticalPosition="top" HorizontalPosition="left" ImageUrl="~/App_Themes/Office2003 Blue/HtmlEditor/RoundPanel/herpTopEdge.png" />
+	    </TopEdge>
+	    <NoHeaderTopEdge BackColor="#DDECFE" />
+	    <%-- Header --%>
+	    <HeaderLeftEdge>
+	        <BackgroundImage Repeat="RepeatX" VerticalPosition="top" HorizontalPosition="left" ImageUrl="~/App_Themes/Office2003 Blue/HtmlEditor/RoundPanel/herpHeader.png" />
+	    </HeaderLeftEdge>
+	    <HeaderContent>
+	        <BackgroundImage Repeat="RepeatX" VerticalPosition="top" HorizontalPosition="left" ImageUrl="~/App_Themes/Office2003 Blue/HtmlEditor/RoundPanel/herpHeader.png" />
+	    </HeaderContent>
+	    <HeaderRightEdge>
+	        <BackgroundImage Repeat="RepeatX" VerticalPosition="top" HorizontalPosition="left" ImageUrl="~/App_Themes/Office2003 Blue/HtmlEditor/RoundPanel/herpHeader.png" />
+	    </HeaderRightEdge>
+	</PartsRoundPanel>
+	<StylesRoundPanel>            
+		<ControlStyle BackColor="#DDECFE">
+			<Border BorderWidth="1px" BorderStyle="Solid" BorderColor="#002D96" />
+		</ControlStyle>
+	</StylesRoundPanel>	
+</dxhe:ASPxHtmlEditor>

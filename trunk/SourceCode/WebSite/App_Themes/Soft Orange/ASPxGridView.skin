@@ -1,0 +1,52 @@
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v9.1, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dxwgv" Namespace="DevExpress.Web.ASPxGridView" Assembly="DevExpress.Web.ASPxGridView.v9.1, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<dxwgv:ASPxGridView runat="server" CssPostfix="Soft_Orange" CssFilePath="~/App_Themes/Soft Orange/{0}/styles.css" >
+    <SettingsPager CurrentPageNumberFormat="{0}">
+        <AllButton>
+            <Image Height="19px" Width="28px"></Image>
+        </AllButton>
+        <NextPageButton>
+            <Image Height="19px" Width="19px"></Image>
+        </NextPageButton>
+        <PrevPageButton>
+            <Image Height="19px" Width="19px"></Image>
+        </PrevPageButton>
+        <FirstPageButton>
+            <Image Height="19px" Width="23px"></Image>
+        </FirstPageButton>
+        <LastPageButton>
+            <Image Height="19px" Width="23px"></Image>
+        </LastPageButton>
+    </SettingsPager>
+    <SettingsLoadingPanel Text=""></SettingsLoadingPanel>
+    <Images ImageFolder="~/App_Themes/Soft Orange/{0}/">
+        <PopupEditFormWindowClose Height="18px" Width="18px" />
+        <CustomizationWindowClose Height="18px" Width="18px" />
+        <FilterBuilderClose Height="18px" Width="18px" />
+        <HeaderSortDown Height="3px" Width="6px" Url="~/App_Themes/Soft Orange/GridView/gvHeaderSortDown.png"></HeaderSortDown>
+        <ExpandedButton Height="13px" Width="13px" Url="~/App_Themes/Soft Orange/GridView/gvExpandedButton.png"></ExpandedButton>
+        <CollapsedButton Height="14px" Width="13px" Url="~/App_Themes/Soft Orange/GridView/gvCollapsedButton.png"></CollapsedButton>
+        <HeaderFilter Height="19px" Width="19px" Url="~/App_Themes/Soft Orange/GridView/gvHeaderFilter.png"></HeaderFilter>
+        <DetailCollapsedButton Height="13px" Width="13px" Url="~/App_Themes/Soft Orange/GridView/gvDetailCollapsedButton.png"></DetailCollapsedButton>
+        <DetailExpandedButton Height="13px" Width="13px" Url="~/App_Themes/Soft Orange/GridView/gvDetailExpandedButton.png"></DetailExpandedButton>
+        <HeaderActiveFilter Height="19px" Width="19px" Url="~/App_Themes/Soft Orange/GridView/gvHeaderFilterActive.png"></HeaderActiveFilter>
+        <HeaderSortUp Height="3px" Width="6px" Url="~/App_Themes/Soft Orange/GridView/gvHeaderSortUp.png"></HeaderSortUp>
+        <WindowResizer Url="~/App_Themes/Soft Orange/GridView/WindowResizer.png" Width="12px" Height="12px" />
+        <FilterRowButton Width="13px" Height="13px" />
+    </Images>
+    <ImagesEditors>
+        <CalendarPrevYear Url="~/App_Themes/Soft Orange/Editors/edtCalendarPrevYear.png" Width="23px" Height="19px"/>
+        <CalendarPrevMonth Url="~/App_Themes/Soft Orange/Editors/edtCalendarPrevMonth.png" Width="19px" Height="19px" />
+        <CalendarNextMonth Url="~/App_Themes/Soft Orange/Editors/edtCalendarNextMonth.png" Width="19px" Height="19px"/>
+        <CalendarNextYear Url="~/App_Themes/Soft Orange/Editors/edtCalendarNextYear.png" Width="23px" Height="19px"/>        
+    </ImagesEditors>
+    <Styles CssPostfix="Soft_Orange" CssFilePath="~/App_Themes/Soft Orange/{0}/styles.css" GroupButtonWidth="28">
+        <LoadingPanel ImageSpacing="10px"></LoadingPanel>
+        <Header SortingImageSpacing="5px" ImageSpacing="5px"></Header>
+    </Styles>
+    <StylesEditors>
+        <ProgressBar Height="29px">
+        </ProgressBar>
+    </StylesEditors>    
+    <Paddings Padding="1px" />
+</dxwgv:ASPxGridView>

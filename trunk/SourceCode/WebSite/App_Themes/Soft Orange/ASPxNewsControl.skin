@@ -1,0 +1,22 @@
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v9.1, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dxnc" Namespace="DevExpress.Web.ASPxNewsControl" Assembly="DevExpress.Web.v9.1, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<dxnc:ASPxNewsControl runat="server" LoadingPanelText="" ImageFolder="~/App_Themes/Soft Orange/{0}/" CssFilePath="~/App_Themes/Soft Orange/{0}/styles.css" CssPostfix="Soft_Orange" >
+<BackToTopImage Height="7px" Width="5px" Url="~/App_Themes/Soft Orange/Web/tiBackToTop.png"></BackToTopImage>
+<PagerSettings CurrentPageNumberFormat="{0}">
+<AllButton>
+<Image Height="19px" Width="28px"></Image>
+</AllButton>
+<FirstPageButton>
+<Image Height="19px" Width="23px"></Image>
+</FirstPageButton>
+<LastPageButton>
+<Image Height="19px" Width="23px"></Image>
+</LastPageButton>
+<NextPageButton>
+<Image Height="19px" Width="19px"></Image>
+</NextPageButton>
+<PrevPageButton>
+<Image Height="19px" Width="19px"></Image>
+</PrevPageButton>
+</PagerSettings>
+</dxnc:ASPxNewsControl>

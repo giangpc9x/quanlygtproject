@@ -1,0 +1,103 @@
+﻿/* -- ASPxMenu -- */
+.dxmControl_Office2003_SilverChartDemoToolbar 
+{
+	font: 9pt Tahoma;
+	color: black;
+}
+.dxmControl_Office2003_SilverChartDemoToolbar a, .dxmMenu_Office2003_SilverChartDemoToolbar a
+{
+	color: black;
+	text-decoration: none;
+}
+.dxmMenu_Office2003_SilverChartDemoToolbar, .dxmVerticalMenu_Office2003_SilverChartDemoToolbar
+{
+	font: 9pt Tahoma;
+	color: black;	
+	background: url(../../Web/mItemBack.gif) repeat-y left top #F3F3F7;
+	border: solid 1px #7C7C94;
+	padding: 3px;
+}
+.dxmMenuGutter_Office2003_SilverChartDemoToolbar
+{
+}
+.dxmMenuSeparator_Office2003_SilverChartDemoToolbar
+{
+	background-image: url(../../Web/mItemSeparatorBack.gif);
+	background-position: left top;
+	background-repeat: repeat-y;
+}
+.dxmMenuItem_Office2003_SilverChartDemoToolbar, .dxmMenuItemWithImage_Office2003_SilverChartDemoToolbar
+{
+	font: 9pt Tahoma;
+	color: black;
+	white-space: nowrap;
+}
+.dxmMenuItem_Office2003_SilverChartDemoToolbar, .dxmMenuItemWithImage_Office2003_SilverChartDemoToolbar
+{
+	padding-top: 2px;
+	padding-right: 2px;
+	padding-bottom: 2px;
+	padding-left: 2px;
+}
+.dxmMenuItemWithImage_Office2003_SilverChartDemoToolbar
+{
+	padding-right: 5px;
+	padding-left: 5px;
+}
+.dxmMenuItemSelected_Office2003_SilverChartDemoToolbar, .dxmMenuItemSelectedWithImage_Office2003_SilverChartDemoToolbar
+{
+	background: url(../../Web/mItemSBack.gif) repeat-x center top #FFAD55;
+	border: solid 1px #002D96;
+}
+.dxmMenuItemSelected_Office2003_SilverChartDemoToolbar, .dxmMenuItemSelectedWithImage_Office2003_SilverChartDemoToolbar
+{
+	padding-top: 1px;
+	padding-right: 1px;
+	padding-bottom: 1px;
+	padding-left: 1px;
+}
+.dxmMenuItemSelectedWithImage_Office2003_SilverChartDemoToolbar
+{
+	padding-right: 4px;
+	padding-left: 4px;
+}
+.dxmMenuItemChecked_Office2003_SilverChartDemoToolbar, .dxmMenuItemCheckedWithImage_Office2003_SilverChartDemoToolbar
+{
+	background: url(../../Web/mItemSBack.gif) repeat-x center top #FFAD55;
+	border: solid 1px #002D96;
+}
+.dxmMenuItemChecked_Office2003_SilverChartDemoToolbar, .dxmMenuItemCheckedWithImage_Office2003_SilverChartDemoToolbar
+{
+	padding-top: 1px;
+	padding-right: 1px;
+	padding-bottom: 1px;
+	padding-left: 1px;
+}
+.dxmMenuItemCheckedWithImage_Office2003_SilverChartDemoToolbar
+{
+	padding-right: 4px;
+	padding-left: 4px;
+}
+.dxmMenuItemHover_Office2003_SilverChartDemoToolbar, .dxmMenuItemHoverWithImage_Office2003_SilverChartDemoToolbar
+{
+	background: url(../../Web/mItemHBack.gif) repeat-x center top #FFD69A;
+	border: solid 1px #002D96;
+}
+.dxmMenuItemHover_Office2003_SilverChartDemoToolbar, .dxmMenuItemHoverWithImage_Office2003_SilverChartDemoToolbar
+{
+	padding-top: 1px;
+	padding-right: 1px;
+	padding-bottom: 1px;
+	padding-left: 1px;
+}
+.dxmMenuItemHoverWithImage_Office2003_SilverChartDemoToolbar
+{
+	padding-right: 4px;
+	padding-left: 4px;
+}
+/* Disabled */
+.dxmDisabled_Office2003_SilverChartDemoToolbar
+{
+	color: #808080;
+	cursor: default;
+}

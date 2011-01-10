@@ -1,0 +1,449 @@
+/* ----------------- Main ----------------- */
+/* Loading panel */
+.dxheLoadingDiv_Office2003_Silver
+{
+    background: white;
+    opacity: 0.85;
+    filter: alpha(opacity=85);
+    cursor: wait;
+}
+.dxheLoadingPanel_Office2003_Silver
+{
+	font: 9pt Tahoma, Verdana, Arial;
+	color: #303030;
+}
+.dxheLoadingPanel_Office2003_Silver td.dx
+{
+	white-space: nowrap;
+	text-align: center;
+	padding: 12px 12px 12px 12px;
+}
+
+.dxheControl_Office2003_Silver
+{
+    border: Solid 1px #7C7C94;
+}
+
+/* Area */
+.dxheContentArea_Office2003_Silver
+{
+    padding: 4px;
+	padding-bottom: 6px;
+    background-color: #E3E3EC;
+}
+.dxheViewArea_Office2003_Silver
+{
+    border: Solid 1px #7C7C94;    
+}
+.dxheHtmlViewEdit_Office2003_Silver, .dxheDesignViewArea_Office2003_Silver, .dxhePreviewArea_Office2003_Silver 
+{
+    margin: 0px;
+    background-color: #FFFFFF;
+    background-image: none;
+    text-align: left;
+    font-size: smaller;
+    font: normal 12px Arial;
+}
+td.dxheHtmlViewEdit_Office2003_Silver, body.dxheDesignViewArea_Office2003_Silver, body.dxhePreviewArea_Office2003_Silver
+{
+    padding: 0px;
+    padding-left: 4px;
+    padding-bottom: 0px;
+}
+/* Status Bar */
+.dxheStatusBar_Office2003_Silver 
+{
+}
+.dxheStatusBarTab_Office2003_Silver 
+{    
+}
+.dxheStatusBarActiveTab_Office2003_Silver 
+{
+}
+
+/* ----------------- Dialog Forms ----------------- */
+#insertLinkForm .buttonsCell, #insertImageForm .buttonsCell, #pasteFromWordForm .buttonsCell
+{
+	background-color: #D4D4E2;
+	border-top: 1px #BBBBD1 solid;
+	
+    padding: 11px;
+}
+#insertLinkForm .captionIndent, #insertImageForm .captionIndent
+{
+	overflow: hidden;
+	height: 5px;
+}
+#insertLinkForm .contentCell, #insertImageForm .contentCell, #pasteFromWordForm .contentCell
+{
+	padding: 11px;
+}
+#insertLinkForm .typeRadionButtonListCell, #insertImageForm .typeRadionButtonListCell
+{
+	padding-bottom: 12px;
+}
+#insertLinkForm .separatorCell, #insertImageForm .separatorCell
+{
+	height: 7px;
+}
+#insertLinkForm .buttons, #insertImageForm .buttons
+{
+    padding-top: 3px;
+}
+#insertLinkForm .cancelButton, #insertImageForm .cancelButton, #pasteFromWordForm .cancelButton
+{
+    padding-left: 10px;
+}
+/* Insert Link Form */
+#insertLinkForm .displayPropertiesCell 
+{
+    font-weight: bold;
+    padding-top:10px;
+    padding-bottom: 10px;
+}
+#insertLinkForm .targetCheckBoxCell
+{
+    padding-top:10px;
+}
+#insertLinkForm .captionCell
+{
+    padding-right: 9px;
+    padding-top: 3px;
+    vertical-align: top;
+    white-space: nowrap;
+}
+#insertLinkForm .inputCell
+{
+    vertical-align: middle;
+}
+/* Insert Image Form */
+#insertImageForm .fieldSeparator 
+{
+    height: 9px;
+}
+#insertImageForm .imagePreview
+{
+    padding: 10px 0px;
+    padding-top: 5px;
+}
+#insertImageForm .fromTheWeb
+{
+    width: 100%;
+}
+#insertImageForm .imagePreviewCell
+{
+    color: #878787;
+    border: dashed 1px #cac8c8;
+    text-align:center;
+    width: 100%;
+    height: 170px;
+}
+#insertImageForm .imagePropertiesCell
+{
+    padding-left: 20px;
+    vertical-align:top;
+}
+#insertImageForm .moreOptionsCell
+{
+	padding-top: 11px;
+}
+#insertImageForm .radioButtonTable
+{
+	width: 317px;
+}
+#insertImageForm .saveToServerCheckBoxCell
+{
+    padding-top:0px;
+    padding-bottom: 13px;
+}
+/* Image Properties Form */
+#imagePropertiesForm .captionCell
+{
+    padding-right: 2px;
+}
+#imagePropertiesForm .imageSizeEditorsCell
+{
+    padding-top: 7px;
+    padding-bottom: 10px;
+}
+#imagePropertiesForm .pixelSizeCell
+{
+    padding-left: 7px;
+}
+#imagePropertiesForm .hSeparator
+{
+    width: 25px;
+    overflow: hidden;
+}
+#imagePropertiesForm .thumbnailFileNameArea
+{
+    padding-top: 8px;
+}
+/* IE, FireFox, WebKit*/
+#imagePropertiesForm .ckbWrapTextCell div
+{
+	margin-left: -4px;
+	padding-top: 2px;
+}
+/* Opera hack */
+@media not all and (-webkit-min-device-pixel-ratio) {   
+	#imagePropertiesForm .ckbWrapTextCell div
+	{
+		margin-left: 0px;
+	}
+}
+
+/* PasteFromWord Form */
+#pasteFromWordForm .pasteContainer
+{
+	width: 450px;
+	height: 300px;
+	border: none;
+	background-color: white;
+}
+#pasteFromWordForm .pasteContainerCell
+{
+	padding:0px;
+	padding-top: 10px;
+}
+#pasteFromWordForm .pasteContainerCell td
+{
+	border: Solid 1px #7C7C94;
+}
+#pasteFromWordForm .checkBoxCell
+{
+	padding-top: 10px;
+}
+#pasteFromWordForm .contentCell 
+{
+	padding-left: 20px;
+	padding-right: 20px;
+}
+/*----------------- Toolbars -----------------*/
+.dxtbSpacing_Office2003_Silver
+{
+	height: 1px;
+}
+.dxtbControl_Office2003_Silver 
+{
+	font: 9pt Tahoma;
+	color: black;
+	background-color: #9391B0;
+    border-bottom: Solid 1px #7C7C94;
+}
+
+.dxtbMenu_Office2003_Silver
+{
+	font: 9pt Tahoma;
+	color: black;	
+	background: url(tbItemBack.gif) repeat-y left top #C3DAF9;
+	border: 0px;
+	padding: 3px 4px 3px 4px;
+}
+.dxtbMenuSeparator_Office2003_Silver
+{
+	background-image: url(tbItemSeparatorBack.gif);
+	background-position: left top;
+	background-repeat: repeat-y;
+}
+.dxtbMenuItem_Office2003_Silver, .dxtbMenuItemWithImage_Office2003_Silver, .dxtbMenuItemWithPopOutImage_Office2003_Silver, .dxtbMenuItemWithImageWithPopOutImage_Office2003_Silver
+{
+	font: 9pt Tahoma;
+	color: black;
+	white-space: nowrap;
+}
+.dxtbMenuItem_Office2003_Silver, .dxtbMenuItemWithImage_Office2003_Silver
+{
+    padding-top: 3px;
+    padding-right: 4px; 
+    padding-bottom: 4px;
+    padding-left: 4px;
+}
+.dxtbMenuItemWithPopOutImage_Office2003_Silver, .dxtbMenuItemWithImageWithPopOutImage_Office2003_Silver
+{
+	padding-top: 3px;
+	padding-right: 4px;
+	padding-bottom: 4px;
+	padding-left: 4px;
+}	
+.dxtbComboBoxMenuItem_Office2003_Silver
+{
+    padding-top: 1px;
+}
+.dxtbMenuItemSelected_Office2003_Silver, .dxtbMenuItemSelectedWithImage_Office2003_Silver, .dxtbMenuItemSelectedWithPopOutImage_Office2003_Silver, .dxtbMenuItemSelectedWithImageWithPopOutImage_Office2003_Silver
+{
+	background: url(tbItemSBack.gif) repeat-x center top #FFAD55;
+	border: solid 1px #7C7C94;
+}
+.dxtbMenuItemSelected_Office2003_Silver, .dxtbMenuItemSelectedWithImage_Office2003_Silver
+{
+    padding-top: 2px;
+    padding-right: 3px;
+    padding-bottom: 3px;
+    padding-left: 3px;
+}
+.dxtbMenuItemSelectedWithPopOutImage_Office2003_Silver, .dxtbMenuItemSelectedWithImageWithPopOutImage_Office2003_Silver
+{
+	padding-top: 2px;
+	padding-right: 3px;
+	padding-bottom: 3px;
+	padding-left: 3px;
+}
+
+.dxtbMenuItemChecked_Office2003_Silver, .dxtbMenuItemCheckedWithImage_Office2003_Silver, .dxtbMenuItemCheckedWithPopOutImage_Office2003_Silver, .dxtbMenuItemCheckedWithImageWithPopOutImage_Office2003_Silver
+{
+	background: url(tbItemSBack.gif) repeat-x center top #FFAD55;
+	border: solid 1px #7C7C94;
+}
+.dxtbMenuItemChecked_Office2003_Silver, .dxtbMenuItemCheckedWithImage_Office2003_Silver
+{
+    padding-top: 2px;
+    padding-right: 3px;
+    padding-bottom: 3px;
+    padding-left: 3px;
+}
+.dxtbMenuItemCheckedWithPopOutImage_Office2003_Silver, .dxtbMenuItemCheckedWithImageWithPopOutImage_Office2003_Silver
+{
+	padding-top: 2px;
+	padding-right: 3px;
+	padding-bottom: 3px;
+	padding-left: 3px;
+}	
+
+.dxtbMenuItemHover_Office2003_Silver, .dxtbMenuItemHoverWithImage_Office2003_Silver, .dxtbMenuItemHoverWithPopOutImage_Office2003_Silver, .dxtbMenuItemHoverWithImageWithPopOutImage_Office2003_Silver
+{
+	background: url(tbItemHBack.gif) repeat-x center top #FFD69A;
+	border: solid 1px #7C7C94;
+}
+.dxtbMenuItemHover_Office2003_Silver, .dxtbMenuItemHoverWithImage_Office2003_Silver
+{
+    padding-top: 2px;
+    padding-right: 3px;
+    padding-bottom: 3px;
+    padding-left: 3px;
+}
+.dxtbMenuItemHoverWithPopOutImage_Office2003_Silver, .dxtbMenuItemHoverWithImageWithPopOutImage_Office2003_Silver
+{
+	padding-top: 2px;
+	padding-right: 3px;
+	padding-bottom: 3px;
+	padding-left: 3px;
+}
+
+.dxtbSubMenu_Office2003_Silver
+{
+	font: 9pt Tahoma;
+	color: black;
+	background-color: #F6F6F6;
+	border: solid 1px #7C7C94;
+	padding: 1px 1px 1px 1px;
+}
+
+.dxtbSubMenuBorderCorrector_Office2003_Silver
+{
+    position: absolute;
+    border: 0px;
+    padding: 0px;
+}
+
+/* ToolbarColorButton */
+.dxtcbControl_Office2003_Silver
+{
+	border-collapse:collapse;
+	border-width: 0px;
+}
+.dxtcbControl_Office2003_Silver td
+{
+	/*padding: 1px;	*/
+}
+.dxtcbImageCell_Office2003_Silver, .dxtcbColorCell_Office2003_Silver
+{
+	height:0px;
+}
+.dxtcbColorDiv_Office2003_Silver
+{
+	width: 16px;
+	height: 4px;
+	font-size:0pt;
+	background-color: Red;
+}
+/*----------------- ColorPicker -----------------*/
+.dxeColorPicker_Office2003_Silver 
+{
+    background-color: #F6F6F6;
+}
+.dxeColorPicker_Office2003_Silver td.dx
+{
+    padding: 2px;
+}
+/* TODO ColorPickerCellStyle */
+.dxeColorPicker_Office2003_Silver table td {
+    padding-left: 3px;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    padding-right: 3px;
+    cursor: pointer;
+    cursor: hand;
+}
+/* TODO ColorPickerBoxStyle */
+.dxeColorPicker_Office2003_Silver table div {
+    border: solid 1px #7C7C94;
+    width: 12px;
+    height: 12px;
+    font-size: 0px;
+}
+
+.dxeColorPickerCellSelected_Office2003_Silver {
+    padding-left: 2px!important;
+    padding-bottom: 2px!important;
+    padding-top: 2px!important;
+    padding-right: 2px!important;
+	
+    border: solid 1px #7C7C94;
+	background: url(tbItemSBack.gif) repeat-x center top #FFAD55;
+}
+.dxeColorPickerCellHover_Office2003_Silver {
+    padding-left: 2px!important;
+    padding-bottom: 2px!important;
+    padding-top: 2px!important;
+    padding-right: 2px!important;
+	
+    border: solid 1px #7C7C94;
+	background: url(tbItemHBack.gif) repeat-x center top #FFD69A;
+}
+
+/*----------------- RoundPanel -----------------*/
+.dxheRPControl_Office2003_Silver td.dxheRP
+{
+	font-size: 9pt;
+	font-family: Tahoma, Verdana, Arial;
+	color: #000000;	
+}
+/* Header */
+.dxheRPHeader_Office2003_Silver, .dxrpHeader_Office2003_Silver td.dxheRP
+{
+    font-size: 13px;
+    font-weight: bold;
+	font-family: Tahoma, Verdana, Arial;    
+	color: #313131;
+	text-align:left;	
+}
+/* Disabled */
+.dxheRPDisabled_Office2003_Silver, .dxheRPDisabled_Office2003_Silver td.dxheRP
+{
+	color: #808080;
+	cursor: default;
+}
+
+/*----------------- UploadControl -----------------*/
+.dxheucControl_Office2003_Silver, .dxheucEditArea_Office2003_Silver
+{
+    font: 9pt Tahoma, Verdana, Arial;
+}
+.dxheucErrorCell_Office2003_Silver
+{
+    padding-left: 4px;
+    font: 10px Tahoma, Verdana, Arial;
+    color: Red;
+    text-align: left;
+}

@@ -1,0 +1,29 @@
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v9.1, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dxwschs" Namespace="DevExpress.Web.ASPxScheduler" Assembly="DevExpress.Web.ASPxScheduler.v9.1, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<dxwschs:ASPxResourceNavigator runat="server" 
+	CssFilePath="~/App_Themes/Plastic Blue/{0}/styles.css" CssPostfix="PlasticBlue" 
+	ImageFolder="~/App_Themes/Plastic Blue/{0}/">
+	<Styles ButtonSpacing="3px"></Styles>
+	<Images>
+		<First Url="~/App_Themes/Plastic Blue/Scheduler/ResourceNavigator/First.gif" UrlDisabled="~/App_Themes/Plastic Blue/Scheduler/ResourceNavigator/FirstDisable.gif"
+			UrlHottracked="~/App_Themes/Plastic Blue/Scheduler/ResourceNavigator/First.gif" />
+		<PrevPage Url="~/App_Themes/Plastic Blue/Scheduler/ResourceNavigator/PrevPage.gif"
+			UrlDisabled="~/App_Themes/Plastic Blue/Scheduler/ResourceNavigator/PrevPageDisable.gif"
+			UrlHottracked="~/App_Themes/Plastic Blue/Scheduler/ResourceNavigator/PrevPage.gif" />
+		<Prev Url="~/App_Themes/Plastic Blue/Scheduler/ResourceNavigator/Prev.gif" UrlDisabled="~/App_Themes/Plastic Blue/Scheduler/ResourceNavigator/PrevDisable.gif"
+			UrlHottracked="~/App_Themes/Plastic Blue/Scheduler/ResourceNavigator/Prev.gif" />
+		<Next Url="~/App_Themes/Plastic Blue/Scheduler/ResourceNavigator/Next.gif" UrlDisabled="~/App_Themes/Plastic Blue/Scheduler/ResourceNavigator/NextDisable.gif"
+			UrlHottracked="~/App_Themes/Plastic Blue/Scheduler/ResourceNavigator/Next.gif" />
+		<NextPage Url="~/App_Themes/Plastic Blue/Scheduler/ResourceNavigator/NextPage.gif"
+			UrlDisabled="~/App_Themes/Plastic Blue/Scheduler/ResourceNavigator/NextPageDisable.gif"
+			UrlHottracked="~/App_Themes/Plastic Blue/Scheduler/ResourceNavigator/NextPage.gif" />
+		<Last Url="~/App_Themes/Plastic Blue/Scheduler/ResourceNavigator/Last.gif" UrlDisabled="~/App_Themes/Plastic Blue/Scheduler/ResourceNavigator/LastDisable.gif"
+			UrlHottracked="~/App_Themes/Plastic Blue/Scheduler/ResourceNavigator/Last.gif" />
+		<Decrease Url="~/App_Themes/Plastic Blue/Scheduler/ResourceNavigator/Decrease.gif"
+			UrlDisabled="~/App_Themes/Plastic Blue/Scheduler/ResourceNavigator/DecreaseDisable.gif"
+			UrlHottracked="~/App_Themes/Plastic Blue/Scheduler/ResourceNavigator/Decrease.gif" />
+		<Increase Url="~/App_Themes/Plastic Blue/Scheduler/ResourceNavigator/Increase.gif"
+			UrlDisabled="~/App_Themes/Plastic Blue/Scheduler/ResourceNavigator/IncreaseDisable.gif"
+			UrlHottracked="~/App_Themes/Plastic Blue/Scheduler/ResourceNavigator/Increase.gif" />
+	</Images>    
+</dxwschs:ASPxResourceNavigator>

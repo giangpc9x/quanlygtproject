@@ -1,0 +1,96 @@
+/* -- ASPxNavBar -- */
+.dxnbControl_Office2003BlueNavigation
+{
+	font: 9pt Tahoma;
+	color: Black;
+	background-color: #c8dcf7;
+	padding: 3px 0px;
+}
+.dxnbControl_Office2003BlueNavigation a
+{
+	color: Black; 
+	text-decoration: none;
+}
+.dxnbGroupHeaderCollapsed_Office2003BlueNavigation
+{
+    font: 11px Tahoma;
+	color: Black;
+
+	font-weight: normal;
+    					
+	border: 0px;
+	
+	padding: 4px 7px 5px 7px;
+}
+.dxnbGroupHeaderCollapsed_Office2003BlueNavigation table
+{
+    font: 11px Tahoma;
+	color: Black;
+}
+.dxnbGroupHeaderCollapsed_Office2003BlueNavigation table td
+{
+	white-space: nowrap;
+}
+.dxnbGroupHeaderCollapsedHover_Office2003BlueNavigation
+{
+	background-image: url('nbHeaderGroupHover.gif');
+    background-repeat: repeat-x;
+    background-color: #8FB3E6;
+    border: Solid 1px #7490BE;
+	padding: 3px 6px 4px 6px;
+}
+.dxnbGroupHeader_Office2003BlueNavigation
+{
+    font: 11px Tahoma;
+	color: Black;
+
+	background-color: #7BA4E0;
+	font-weight: bold;
+
+	background-image: url('nbHeaderGroup.gif');
+    background-repeat: repeat-x;	
+	
+	border: Solid 1px #002D96;
+	
+	padding: 3px 6px 3px 6px;
+}
+.dxnbGroupHeader_Office2003BlueNavigation table
+{
+    font: 11px Tahoma;
+	color: Black;
+	font-weight: bold;
+}
+.dxnbGroupHeader_Office2003BlueNavigation table td
+{
+	white-space: nowrap;
+	font-weight: bold;
+}
+.dxnbGroupContent_Office2003BlueNavigation
+{
+    font: 11px Tahoma;
+	background-color: #D6E7FC;
+	border: 0px;
+	border-bottom: Solid 1px #002D96;
+	
+	padding: 7px 0px 7px 0px;
+}
+.dxnbItem_Office2003BlueNavigation
+{
+    font: 11px Tahoma;
+    color: #535A62;
+    border: 0px;
+    padding: 1px 30px 3px;
+}
+.dxnbItemSelected_Office2003BlueNavigation
+{
+    color: #535A62;
+    font-weight: bold;
+	background-image: url('nbBullet.gif');
+	background-repeat: no-repeat;
+	background-position: 15px 4px;
+    padding: 1px 30px 3px 29px;
+}
+.dxnbItemHover_Office2003BlueNavigation
+{
+	background-color: #AAC7EF;
+}

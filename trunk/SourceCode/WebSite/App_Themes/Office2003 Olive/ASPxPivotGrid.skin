@@ -1,0 +1,17 @@
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v9.1, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register Assembly="DevExpress.Web.ASPxPivotGrid.v9.1, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxPivotGrid" TagPrefix="dxwpg" %>
+<%@ Register Assembly="DevExpress.XtraPivotGrid.v9.1.Core, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.XtraPivotGrid" TagPrefix="temp" %>
+<dxwpg:ASPxPivotGrid runat="server">
+	<Images ImageFolder="~/App_Themes/Office2003 Olive/{0}/">
+		<HeaderSortUp Url="~/App_Themes/Office2003 Olive/PivotGrid/pgHeaderSortUp.png" Width="7px" Height="8px" />
+		<HeaderSortDown Url="~/App_Themes/Office2003 Olive/PivotGrid/pgHeaderSortDown.png" Width="7px" Height="8px" />		
+		<FieldValueExpanded Url="~/App_Themes/Office2003 Olive/PivotGrid/pgExpandedButton.png" Width="11px" Height="12px" />
+		<FieldValueCollapsed Url="~/App_Themes/Office2003 Olive/PivotGrid/pgCollapsedButton.png" Width="11px" Height="12px" />
+		<SortByColumn Url="~/App_Themes/Office2003 Olive/PivotGrid/pgSortByColumn.png" Width="11px" Height="7px" />
+	</Images>
+	<Styles CssFilePath="~/App_Themes/Office2003 Olive/{0}/styles.css" CssPostfix="Office2003_Olive">
+		<CustomizationFieldsHeaderStyle>
+			<Paddings PaddingRight="6px" PaddingLeft="12px" />
+		</CustomizationFieldsHeaderStyle>	
+	</Styles>	
+</dxwpg:ASPxPivotGrid>

@@ -1,0 +1,16 @@
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v9.1, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dxm" Namespace="DevExpress.Web.ASPxMenu" Assembly="DevExpress.Web.v9.1, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<dxm:ASPxMenu runat="server" 
+	CssFilePath="~/App_Themes/Office2003 Silver/{0}/styles.css" CssPostfix="Office2003_Silver"
+	ImageFolder="~/App_Themes/Office2003 Silver/{0}/"
+	SeparatorColor="Transparent" SeparatorHeight="14px" SeparatorWidth="2px"
+	ShowPopOutImages="True" BorderBetweenItemAndSubMenu="HideRootOnly"
+	ItemSpacing="1px" SeparatorItemSpacing="0px">
+	<SeparatorPaddings PaddingRight="0px" PaddingBottom="1px"></SeparatorPaddings>
+	
+	<SubMenuStyle GutterWidth="17px" />
+	<ItemStyle HorizontalAlign="Left" />
+	
+	<ItemSubMenuOffset FirstItemX="2" LastItemX="2" X="2" />
+	
+</dxm:ASPxMenu>

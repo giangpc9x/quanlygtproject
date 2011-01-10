@@ -1,0 +1,52 @@
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v9.1, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dxwschs" Namespace="DevExpress.Web.ASPxScheduler" Assembly="DevExpress.Web.ASPxScheduler.v9.1, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register Assembly="DevExpress.XtraScheduler.v9.1.Core, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.XtraScheduler" TagPrefix="temp" %>
+<dxwschs:ASPxScheduler runat="server">
+	<Styles CssFilePath="~/App_Themes/Aqua/{0}/styles.css" CssPostfix="Aqua" SelectionColor="#ffd765">
+		<Menu>
+			<SubMenu GutterWidth="0px" />
+			<SubMenuItem ImageSpacing="4px" />
+		</Menu>
+		<FormEditors>
+			<CalendarFooter Spacing="17px" />
+			<CalendarHeader Spacing="1px" />
+		</FormEditors>
+		<ViewNavigator ButtonSpacing="2px" />
+		<ViewSelector ButtonSpacing="2px" />
+	</Styles>
+	<Images ImageFolder="~/App_Themes/Aqua/{0}/">
+		<ResourceNavigator>
+			<ComboBoxDropDown Width="7px" Height="7px" 
+				Url="~/App_Themes/Aqua/Editors/edtDropDown.png" 
+				UrlHottracked="~/App_Themes/Aqua/Editors/edtDropDownHottracked.png" 
+				UrlDisabled="~/App_Themes/Aqua/Editors/edtDropDownDisabled.png" />
+			<First Width="26px" Height="21px" />
+			<PrevPage Width="24px" Height="21px" />
+			<Prev Width="19px" Height="21px" />
+			<Next Width="19px" Height="21px" />
+			<NextPage Width="24px" Height="21px" />
+			<Last Width="26px" Height="21px" />
+			<Increase Width="20px" Height="20px" />
+			<Decrease Width="20px" Height="20px" />
+		</ResourceNavigator>  
+		<NavigationButton>
+			<Backward Width="31px" Height="21px" />
+			<Forward Width="31px" Height="21px" />
+		</NavigationButton>
+		<MoreButton>
+            <Top Width="21px" Height="19px" />
+            <Bottom Width="21px" Height="19px" />
+        </MoreButton>
+        <FormEditors>				
+            <CalendarFastNavNextYear Height="19px" Url="~/App_Themes/Aqua/Editors/edtCalendarFNNextYear.png" Width="19px" />
+            <CalendarFastNavPrevYear Height="19px" Url="~/App_Themes/Aqua/Editors/edtCalendarFNPrevYear.png" Width="19px" />    
+            <DropDownEditDropDown  Width="7px" Height="7px" Url="~/App_Themes/Aqua/Editors/edtDropDown.png" UrlHottracked="~/App_Themes/Aqua/Editors/edtDropDownHottracked.png" UrlDisabled="~/App_Themes/Aqua/Editors/edtDropDownDisabled.png" />
+            <SpinEditLargeIncrement Url="~/App_Themes/Aqua/Editors/edtSpinEditLargeIncImage.png" UrlHottracked="~/App_Themes/Aqua/Editors/edtSpinEditLargeIncHottrackedImage.png" UrlDisabled="~/App_Themes/Aqua/Editors/edtSpinEditLargeIncDisabledImage.png" Width="7px" Height="9px" />
+            <SpinEditDecrement Url="~/App_Themes/Aqua/Editors/edtSpinEditDecrementImage.png" UrlHottracked="~/App_Themes/Aqua/Editors/edtSpinEditDecrementHottrackedImage.png" UrlDisabled="~/App_Themes/Aqua/Editors/edtSpinEditDecrementDisabledImage.png" Width="7px" Height="7px" />
+            <SpinEditLargeDecrement Url="~/App_Themes/Aqua/Editors/edtSpinEditLargeDecImage.png" UrlHottracked="~/App_Themes/Aqua/Editors/edtSpinEditLargeDecHottrackedImage.png" UrlDisabled="~/App_Themes/Aqua/Editors/edtSpinEditLargeDecDisabledImage.png" Width="7px" Height="9px" />
+            <SpinEditIncrement Url="~/App_Themes/Aqua/Editors/edtSpinEditIncrementImage.png" UrlHottracked="~/App_Themes/Aqua/Editors/edtSpinEditIncrementHottrackedImage.png" UrlDisabled="~/App_Themes/Aqua/Editors/edtSpinEditIncrementDisabledImage.png" Width="7px" Height="6px" />					            
+        </FormEditors>        
+        <FormCloseButton Height="16px" Width="17px" />
+	</Images>
+    <OptionsLoadingPanel Text="" />
+</dxwschs:ASPxScheduler>

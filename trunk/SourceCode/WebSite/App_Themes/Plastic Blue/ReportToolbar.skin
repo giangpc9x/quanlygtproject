@@ -1,0 +1,20 @@
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v9.1, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dxxr" Namespace="DevExpress.XtraReports.Web" Assembly="DevExpress.XtraReports.v9.1.Web, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<dxxr:ReportToolbar runat="server" ItemSpacing="0px" SeparatorHeight="100%" SeparatorWidth="1px" Font-Names="Tahoma" Font-Size="9pt" BackColor="#3E5496">
+  <Styles CssPostfix="PlasticBlue" CssFilePath="~/App_Themes/Plastic Blue/{0}/styles.css">
+    <ButtonStyle VerticalAlign="Middle"  HorizontalAlign="Center">
+		<Paddings PaddingLeft="11px" PaddingTop="6px" PaddingRight="11px" PaddingBottom="6px"></Paddings>
+	</ButtonStyle>
+    <TextBoxStyle>
+        <Margins MarginLeft="2px" MarginRight="2px" />
+    </TextBoxStyle>
+    <ComboBoxStyle>
+        <Margins MarginLeft="2px" MarginRight="2px" />
+    </ComboBoxStyle>
+    <LabelStyle>
+        <Margins MarginLeft="3px" MarginRight="3px" />
+    </LabelStyle>
+  </Styles>
+  <BackgroundImage ImageUrl="~/App_Themes/Plastic Blue/Web/mItemBack.gif" Repeat="RepeatX"/>
+  <Images ImageFolder="~/App_Themes/Plastic Blue/{0}/" />
+</dxxr:ReportToolbar>

@@ -1,0 +1,12 @@
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v9.1, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dxm" Namespace="DevExpress.Web.ASPxMenu" Assembly="DevExpress.Web.v9.1, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<dxm:ASPxPopupMenu runat="server" ImageFolder="~/App_Themes/Soft Orange/{0}/" CssFilePath="~/App_Themes/Soft Orange/{0}/styles.css" GutterWidth="0px" CssPostfix="Soft_Orange" ItemSpacing="1px">
+<SubMenuStyle GutterWidth="0px"></SubMenuStyle>
+<HorizontalPopOutImage Height="4px" Width="6px" UrlSelected="~/App_Themes/Soft Orange/Web/mHorizontalPopOutH.png" Url="~/App_Themes/Soft Orange/Web/mHorizontalPopOut.png"></HorizontalPopOutImage>
+<SeparatorPaddings Padding="0px"></SeparatorPaddings>
+<ItemStyle ImageSpacing="6px" PopOutImageSpacing="10px">
+</ItemStyle>
+<SubMenuItemImage UrlChecked="~/App_Themes/Soft Orange/Web/mSubMenuItemChecked.gif"></SubMenuItemImage>
+<ItemImage UrlChecked="~/App_Themes/Soft Orange/Web/mItemChecked.gif"></ItemImage>
+<VerticalPopOutImage Height="8px" Width="4px" Url="~/App_Themes/Soft Orange/Web/mVerticalPopOut.png"></VerticalPopOutImage>
+</dxm:ASPxPopupMenu>

@@ -1,0 +1,32 @@
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v9.1, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dxwschs" Namespace="DevExpress.Web.ASPxScheduler" Assembly="DevExpress.Web.ASPxScheduler.v9.1, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register Assembly="DevExpress.XtraScheduler.v9.1.Core, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.XtraScheduler" TagPrefix="temp" %>
+<dxwschs:ASPxScheduler runat="server">
+	<Styles CssFilePath="~/App_Themes/Office2003 Silver/{0}/styles.css" CssPostfix="Office2003_Silver" 
+		SelectionColor="#9C9AB7">
+		<ResourceNavigator ButtonSpacing="3px" />
+		<ViewNavigator ButtonSpacing="3px" />
+	</Styles>
+	<Images ImageFolder="~/App_Themes/Office2003 Silver/{0}/">
+		<ResourceNavigator>
+			<First Width="26px" Height="20px" />
+			<Prev Width="20px" Height="20px" />
+			<PrevPage Width="23px" Height="20px" />
+			<NextPage Width="23px" Height="20px" />
+			<Next Width="20px" Height="20px" />
+			<Last Width="26px" Height="20px" />
+			<Decrease Width="20px" Height="20px" />
+			<Increase Width="20px" Height="20px" />
+		</ResourceNavigator>                                                          
+		<NavigationButton>
+			<Backward Width="21px" Height="40px" />
+			<Forward Width="21px" Height="40px" />
+		</NavigationButton>      
+		<StatusInfo>
+			<Error Width="48px" Height="48px" />
+			<Info Width="48px" Height="48px"/>
+			<Warning Width="48px" Height="48px" />
+		</StatusInfo>
+		<FormCloseButton Width="13px" Height="12px" />
+	</Images>
+</dxwschs:ASPxScheduler>

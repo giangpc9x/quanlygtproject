@@ -1,0 +1,99 @@
+/* -- ASPxNavBar -- */
+.dxnbControl_SoftOrangeNavigation
+{
+	font: 9pt Tahoma;
+	color: Black;
+	background-color: #F0F0F0;
+	padding: 3px 0px;
+}
+.dxnbControl_SoftOrangeNavigation a
+{
+	color: #5b5b5b; 
+	text-decoration: none;
+}
+.dxnbGroupHeaderCollapsed_SoftOrangeNavigation
+{
+    font: 11px Tahoma;
+	color: #5b5b5b;
+
+	font-weight: normal;
+    					
+	border: 0px;
+	
+	padding: 4px 7px 5px 7px;
+}
+.dxnbGroupHeaderCollapsed_SoftOrangeNavigation table
+{
+    font: 11px Tahoma;
+    color: #5b5b5b;
+}
+.dxnbGroupHeaderCollapsed_SoftOrangeNavigation table td
+{
+    white-space: nowrap;
+}
+.dxnbGroupHeaderCollapsedHover_SoftOrangeNavigation
+{
+    background-image: url('nbHeaderGroupHover.gif');
+    background-repeat: repeat-x;
+    background-color: #CFCFCF;
+    border-top: Dotted 1px #4B4B4B;
+    border-bottom: Dotted 1px #4B4B4B;
+    padding: 3px 7px 4px 7px;
+}
+.dxnbGroupHeader_SoftOrangeNavigation
+{
+    font: 11px Tahoma;
+    color: #707070;
+
+    background-color: #E3E3E3;
+    font-weight: bold;
+
+    background-image: url('nbHeaderGroup.gif');
+    background-repeat : repeat-x;
+
+    border-top: Dotted 1px #5C5C5C;
+    border-bottom: Dotted 1px #5C5C5C;
+
+    padding: 2px 7px 2px 7px;
+}
+.dxnbGroupHeader_SoftOrangeNavigation table
+{
+    font: 11px Tahoma;
+	color: #707070;
+	font-weight: bold;
+}
+.dxnbGroupHeader_SoftOrangeNavigation table td
+{
+	white-space: nowrap;
+	font-weight: bold;
+}
+.dxnbGroupContent_SoftOrangeNavigation
+{
+    font: 11px Tahoma;
+	background-color: White;
+	border: 0px;
+	border-bottom: Dotted 1px #767676;
+	
+	padding: 7px 0px 7px 0px;
+}
+.dxnbItem_SoftOrangeNavigation
+{
+    color: #707070;
+    font: 11px Tahoma;
+
+    border: 0px;
+    padding: 1px 30px 3px;
+}
+.dxnbItemSelected_SoftOrangeNavigation
+{
+    color: #707070;
+    font-weight: bold;
+    background-image: url('nbBullet.gif');
+	background-repeat: no-repeat;
+	background-position: 15px 4px;
+    padding: 1px 30px 3px 29px;
+}
+.dxnbItemHover_SoftOrangeNavigation
+{
+	background-color: #D3D3D3;
+}

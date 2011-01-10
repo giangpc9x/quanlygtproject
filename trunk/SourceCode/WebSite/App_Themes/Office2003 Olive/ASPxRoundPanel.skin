@@ -1,0 +1,33 @@
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v9.1, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dxrp" Namespace="DevExpress.Web.ASPxRoundPanel" Assembly="DevExpress.Web.v9.1, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<dxrp:ASPxRoundPanel runat="server" BackColor="#E2E8C9" EnableDefaultAppearance="False" CssFilePath="~/App_Themes/Office2003 Olive/{0}/styles.css" CssPostfix="Office2003_Olive" ImageFolder="~/App_Themes/Office2003 Olive/{0}/">
+    <Border BorderColor="#758D5E" BorderStyle="Solid" BorderWidth="1px" />
+    <ContentPaddings Padding="2px" PaddingTop="10px" PaddingBottom="10px" />
+    <HeaderStyle BackColor="#B5C48F">
+        <BorderBottom BorderColor="#758D5E" BorderStyle="Solid" BorderWidth="1px" />
+        <Paddings Padding="0" PaddingLeft="2px" PaddingRight="2px" PaddingBottom="7px" />
+    </HeaderStyle>
+    <%-- Corners --%>
+    <TopLeftCorner Height="9px" Width="9px" Url="~/App_Themes/Office2003 Olive/Web/rpTopLeftCorner.png" />
+    <TopRightCorner Height="9px" Width="9px" Url="~/App_Themes/Office2003 Olive/Web/rpTopRightCorner.png" />
+    <NoHeaderTopLeftCorner Height="9px" Width="9px" Url="~/App_Themes/Office2003 Olive/Web/rpNoHeaderTopLeftCorner.png" />
+    <NoHeaderTopRightCorner Height="9px" Width="9px" Url="~/App_Themes/Office2003 Olive/Web/rpNoHeaderTopRightCorner.png" />
+    <BottomLeftCorner Height="9px" Width="9px" Url="~/App_Themes/Office2003 Olive/Web/rpBottomLeftCorner.png" />
+    <BottomRightCorner Height="9px" Width="9px" Url="~/App_Themes/Office2003 Olive/Web/rpBottomRightCorner.png" />
+    <%-- Middles --%>
+    <TopEdge>
+        <BackgroundImage Repeat="RepeatX" VerticalPosition="top" HorizontalPosition="left" ImageUrl="~/App_Themes/Office2003 Olive/Web/rpTopEdge.png" />
+    </TopEdge>
+    <NoHeaderTopEdge BackColor="#E2E8C9" />
+    <%-- Header --%>
+    <HeaderLeftEdge>
+        <BackgroundImage Repeat="RepeatX" VerticalPosition="top" HorizontalPosition="left" ImageUrl="~/App_Themes/Office2003 Olive/Web/rpHeader.png" />
+    </HeaderLeftEdge>
+    <HeaderContent>
+        <BackgroundImage Repeat="RepeatX" VerticalPosition="top" HorizontalPosition="left" ImageUrl="~/App_Themes/Office2003 Olive/Web/rpHeader.png" />
+    </HeaderContent>
+    <HeaderRightEdge>
+        <BackgroundImage Repeat="RepeatX" VerticalPosition="top" HorizontalPosition="left" ImageUrl="~/App_Themes/Office2003 Olive/Web/rpHeader.png" />
+    </HeaderRightEdge>
+    <DisabledStyle ForeColor="#808080"></DisabledStyle>
+</dxrp:ASPxRoundPanel>
