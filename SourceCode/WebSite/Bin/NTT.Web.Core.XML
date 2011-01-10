@@ -564,5 +564,26 @@
             Mã hóa theo định dạng MD5 từ hàm MD5CryptoServiceProvider của thư viện Cryptography.
             </summary>
         </member>
+        <member name="M:NTT.Web.Core.Common.ReadAppicationSetting(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="fieldname"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NTT.Web.Core.Common.Convert2String(System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="num"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NTT.Web.Core.Common.ConvertMoneyFormat(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="num"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>
