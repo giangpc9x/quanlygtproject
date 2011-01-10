@@ -1,0 +1,568 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NTT.Web.Core</name>
+    </assembly>
+    <members>
+        <member name="T:NTT.Web.Core.XSQL.DataObject">
+            <summary>
+            Summary description for DataObject
+            </summary>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DataObject.ExcSql(System.String,System.Data.CommandType)">
+            <summary>
+            Hàm thực thi câu lệnh SQL hoặc Stored Procedure Insert, Update, Delete.
+            </summary>
+            <param name="strSql">Câu truy vấn SQL hoặc tên của Stored Procedures</param>
+            <param name="cmdType"> Kiểu của Command là Text hay StoredProcedure</param>
+            <returns>Thành công trả về giá trị lớn hơn 0 (số câu lệnh sql được thực hiện), trong trường hợp có giá trị return sẽ trả về giá trị này</returns>       
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DataObject.ExcSql(System.String,System.String@,System.Data.CommandType)">
+            <summary>
+             Hàm thực thi câu lệnh SQL hoặc Stored Procedure Insert, Update, Delete.
+            </summary>
+            <param name="strSql">Câu truy vấn SQL hoặc tên của Stored Procedures</param>
+            <param name="strGetValue">Giá trị trả về</param>
+            <param name="cmdType">Kiểu của Command là Text hay StoredProcedure</param>
+            <returns>Thành công trả về giá trị lớn hơn 0 (số câu lệnh sql được thực hiện), trong trường hợp có giá trị return sẽ trả về giá trị này</returns>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DataObject.ExcSql(System.String,System.String[],System.String[],System.Data.CommandType)">
+            <summary>
+             Hàm thực thi câu lệnh SQL hoặc Stored Procedure Insert, Update, Delete
+            </summary>
+            <param name="strSql">Câu truy vấn SQL hoặc tên của Stored Procedures</param>
+            <param name="arrParaNames">Tên param</param>
+            <param name="arrValues">Giá trị tương ứng với param</param>
+            <param name="cmdType">Kiểu của Command là Text hay StoredProcedure</param>
+            <returns>Thành công trả về giá trị lớn hơn 0 (số câu lệnh sql được thực hiện), trong trường hợp có giá trị return sẽ trả về giá trị này</returns>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DataObject.ExcSql(System.String,System.String[],System.Object[],System.Data.CommandType)">
+            <summary>
+             Hàm thực thi câu lệnh SQL hoặc Stored Procedure Insert, Update, Delete
+            </summary>
+            <param name="strSql">Câu truy vấn SQL hoặc tên của Stored Procedures</param>
+            <param name="arrParaNames">Tên param</param>
+            <param name="arrValues">Giá trị tương ứng với param</param>
+            <param name="cmdType">Kiểu của Command là Text hay StoredProcedure</param>
+            <returns>Thành công trả về giá trị lớn hơn 0 (số câu lệnh sql được thực hiện), trong trường hợp có giá trị return sẽ trả về giá trị này</returns>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DataObject.ExcSql(System.String,System.Collections.Specialized.ListDictionary,System.Data.CommandType)">
+            <summary>
+             Hàm thực thi câu lệnh SQL hoặc Stored Procedure Insert, Update, Delete
+            </summary>
+            <param name="strSql">Câu truy vấn SQL hoặc tên của Stored Procedures</param>
+            <param name="list">Chứa các key và value</param>
+            <param name="cmdType">Kiểu của Command là Text hay StoredProcedure</param>
+            <returns>Thành công trả về giá trị lớn hơn 0 (số câu lệnh sql được thực hiện), trong trường hợp có giá trị return sẽ trả về giá trị này</returns>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DataObject.ExcSql(System.String,System.String[],System.String[],System.Data.DataTable@,System.Data.CommandType)">
+            <summary>
+            Hàm thực thi câu lệnh SQL hoặc Stored Procedure Insert, Update, Delete. Và lấy về kết quả là datatable
+            </summary>
+            <param name="strSql">Câu truy vấn SQL hoặc tên của Stored Procedures</param>
+            <param name="arrParaNames">Tên param</param>
+            <param name="arrValues">Giá trị tương ứng với param</param>
+            <param name="cmdType">Kiểu của Command là Text hay StoredProcedure</param>
+            <param name="dt">Dữ liệu trả về sẽ lưu trong DataTable</param>
+            <param name="cmdType"></param>
+            <returns>true: thành công; false: thất bại</returns>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DataObject.ExcSql(System.String,System.String[],System.Object[],System.Data.DataTable@,System.Data.CommandType)">
+            <summary>
+            Hàm thực thi câu lệnh SQL hoặc Stored Procedure Insert, Update, Delete. Và lấy về kết quả là datatable
+            </summary>
+            <param name="strSql">Câu truy vấn SQL hoặc tên của Stored Procedures</param>
+            <param name="arrParaNames">Tên param</param>
+            <param name="arrValues">Giá trị tương ứng với param</param>
+            <param name="cmdType">Kiểu của Command là Text hay StoredProcedure</param>
+            <param name="dt">Dữ liệu trả về sẽ lưu trong DataTable</param>
+            <param name="cmdType"></param>
+            <returns>true: thành công; false: thất bại</returns>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DataObject.ExcSql(System.String,System.Collections.Specialized.ListDictionary,System.Data.DataTable@,System.Data.CommandType)">
+            <summary>
+            Hàm thực thi câu lệnh SQL hoặc Stored Procedure Insert, Update, Delete. Và lấy về kết quả là datatable
+            </summary>
+            <param name="strSql">Câu truy vấn SQL hoặc tên của Stored Procedures</param>
+            <param name="list">Chứa các key và value</param>
+            <param name="cmdType">Kiểu của Command là Text hay StoredProcedure</param>
+            <param name="dt">Dữ liệu trả về sẽ lưu trong DataTable</param>
+            <param name="cmdType"></param>
+            <returns>true: thành công; false: thất bại</returns>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DataObject.ExcSql(System.String,System.String[],System.String[],System.String@,System.Data.CommandType)">
+            <summary>
+            Hàm thực thi câu lệnh SQL hoặc Stored Procedure Insert, Update, Delete.
+            </summary>
+            <param name="strSql">Câu truy vấn SQL hoặc tên của Stored Procedures</param>
+            <param name="arrParaNames">Mảng tên </param>
+            <param name="arrValues">Mảng giá trị </param>
+            <param name="strGetValue">Tên tên biến cần lấy giá trị, giá trị trả về là dạng chuỗi</param>    
+            <param name="cmdType"> Kiểu của Command là Text hay StoredProcedure</param>
+            <returns>Thành công trả về giá trị lớn hơn 0 (số câu lệnh sql được thực hiện), trong trường hợp có giá trị return sẽ trả về giá trị này</returns>  
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DataObject.ExcSql(System.String,System.String[],System.Object[],System.String@,System.Data.CommandType)">
+            <summary>
+            Hàm thực thi câu lệnh SQL hoặc Stored Procedure Insert, Update, Delete.
+            </summary>
+            <param name="strSql">Câu truy vấn SQL hoặc tên của Stored Procedures</param>
+            <param name="arrParaNames">Mảng tên </param>
+            <param name="arrValues">Mảng giá trị </param>
+            <param name="strGetValue">Tên tên biến cần lấy giá trị, giá trị trả về là dạng chuỗi</param>    
+            <param name="cmdType"> Kiểu của Command là Text hay StoredProcedure</param>
+            <returns>Thành công trả về giá trị lớn hơn 0 (số câu lệnh sql được thực hiện), trong trường hợp có giá trị return sẽ trả về giá trị này</returns>  
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DataObject.ExcSql(System.String,System.Collections.Specialized.ListDictionary,System.String@,System.Data.CommandType)">
+            <summary>
+            Hàm thực thi câu lệnh SQL hoặc Stored Procedure Insert, Update, Delete.
+            </summary>
+            <param name="strSql">Câu truy vấn SQL hoặc tên của Stored Procedures</param>
+            <param name="list">Chứa các key và value</param>
+            <param name="strGetValue">Tên tên biến cần lấy giá trị, giá trị trả về là dạng chuỗi</param>    
+            <param name="cmdType"> Kiểu của Command là Text hay StoredProcedure</param>
+            <returns>Thành công trả về giá trị lớn hơn 0 (số câu lệnh sql được thực hiện), trong trường hợp có giá trị return sẽ trả về giá trị này</returns>  
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DataObject.ExcSql(System.String,System.String[],System.Object[],System.Data.DbType[],System.Data.CommandType)">
+             <summary>
+             Hàm thực thi câu lệnh SQL hoặc Stored Procedure Insert, Update, Delete.
+             </summary>
+             <param name="strSql">Câu truy vấn SQL hoặc tên của Stored Procedures</param>
+             <param name="arrParaNames">Mảng tên </param>
+             <param name="arrValues">Mảng giá trị thuộc kiểu object </param>
+            <param name="arrType">Mảng kiểu giá trị</param>
+             <param name="cmdType"> Kiểu của Command là Text hay StoredProcedure</param>
+             <returns>Thành công trả về giá trị lớn hơn 0 (số câu lệnh sql được thực hiện), trong trường hợp có giá trị return sẽ trả về giá trị này</returns> 
+             
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DataObject.ExcSql(System.String,System.String[],System.Object[],System.Data.DbType[],System.String@,System.Data.CommandType)">
+             <summary>
+             Hàm thực thi câu lệnh SQL hoặc Stored Procedure Insert, Update, Delete.
+             </summary>
+             <param name="strSql">Câu truy vấn SQL hoặc tên của Stored Procedures</param>
+             <param name="arrParaNames">Mảng tên </param>
+             <param name="arrValues">Mảng giá trị thuộc kiểu object </param>
+            <param name="arrType">Mảng kiểu giá trị</param>
+             <param name="strGetValue">Tên tên biến cần lấy giá trị, và biến này cũng chứa giá trị trả về là dạng chuỗi</param>
+             <param name="cmdType"> Kiểu của Command là Text hay StoredProcedure</param>
+             <returns>Thành công trả về giá trị lớn hơn 0 (số câu lệnh sql được thực hiện), trong trường hợp có giá trị return sẽ trả về giá trị này</returns> 
+             
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DataObject.ExecuteScalar(System.String,System.String[],System.String[],System.Data.CommandType)">
+            <summary>
+             Hàm thực thi câu lệnh SQL hoặc Stored Procedure Insert, Update, Delete
+            </summary>
+            <param name="strSql">Câu truy vấn SQL hoặc tên của Stored Procedures</param>
+            <param name="arrParaNames">Tên param</param>
+            <param name="arrValues">Giá trị tương ứng với param</param>
+            <param name="cmdType">Kiểu của Command là Text hay StoredProcedure</param>
+            <returns>Thành công trả về giá trị lớn hơn 0 (số câu lệnh sql được thực hiện), trong trường hợp có giá trị return sẽ trả về giá trị này</returns>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DataObject.ExecuteScalar(System.String,System.String[],System.Object[],System.Data.CommandType)">
+            <summary>
+             Hàm thực thi câu lệnh SQL hoặc Stored Procedure Insert, Update, Delete
+            </summary>
+            <param name="strSql">Câu truy vấn SQL hoặc tên của Stored Procedures</param>
+            <param name="arrParaNames">Tên param</param>
+            <param name="arrValues">Giá trị tương ứng với param</param>
+            <param name="cmdType">Kiểu của Command là Text hay StoredProcedure</param>
+            <returns>Thành công trả về giá trị lớn hơn 0 (số câu lệnh sql được thực hiện), trong trường hợp có giá trị return sẽ trả về giá trị này</returns>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DataObject.ExecuteScalar(System.String,System.Collections.Specialized.ListDictionary,System.Data.CommandType)">
+            <summary>
+            Hàm thực thi câu lệnh SQL hoặc Stored Procedure Insert, Update, Delete
+            Kết quả Trả về dòng đầu tiên, cột đầu tiên
+            </summary>
+            <param name="strSql">Câu truy vấn SQL hoặc tên của Stored Procedures</param>
+            <param name="list">Chứa các key và value</param>
+            <param name="cmdType">Kiểu của Command là Text hay StoredProcedure</param>
+            <returns>Kết quả Trả về dòng đầu tiên, cột đầu tiên</returns>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DataObject.GetDataSet(System.String,System.Data.CommandType)">
+            <summary>
+            Hàm thực thi câu truy vấn SQL hoặc Stored Procedure và trả về DataSet.
+            </summary>
+            <param name="strSql">Câu truy vấn SQL hoặc tên của Stored Procedures</param>
+            <param name="cmdType"> Kiểu của Command là Text hay StoredProcedure</param>
+            <returns>DataSet</returns>    
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DataObject.GetDataSet(System.String,System.Int32,System.Int32,System.Data.CommandType)">
+            <summary>
+            Hàm thực thi câu truy vấn SQL hoặc Stored Procedure và trả về DataSet.
+            </summary>
+            <param name="strSql">Câu truy vấn SQL hoặc tên của Stored Procedures</param>
+            <param name="StartRecord">Dòng bắt đầu</param>
+            <param name="PageSize">Số dòng trên 1 trang</param>
+            <param name="cmdType"> Kiểu của Command là Text hay StoredProcedure</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DataObject.GetDataSet(System.String,System.String[],System.String[],System.Int32,System.Int32,System.Data.CommandType)">
+            <summary>
+            Hàm thực thi câu truy vấn SQL hoặc Stored Procedure và trả về DataSet.
+            </summary>
+            <param name="strSql">Câu truy vấn SQL hoặc tên của Stored Procedures</param>
+            <param name="arrParaNames">Mảng tên</param>
+            <param name="arrValues">Mảng giá trị</param>
+            <param name="StartRecord">Dòng bắt đầu</param>
+            <param name="PageSize">Số dòng trên 1 trang</param>
+            <param name="cmdType"> Kiểu của Command là Text hay StoredProcedure</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DataObject.GetDataSet(System.String,System.String[],System.Object[],System.Int32,System.Int32,System.Data.CommandType)">
+            <summary>
+            Hàm thực thi câu truy vấn SQL hoặc Stored Procedure và trả về DataSet.
+            </summary>
+            <param name="strSql">Câu truy vấn SQL hoặc tên của Stored Procedures</param>
+            <param name="arrParaNames">Mảng tên</param>
+            <param name="arrValues">Mảng giá trị</param>
+            <param name="StartRecord">Dòng bắt đầu</param>
+            <param name="PageSize">Số dòng trên 1 trang</param>
+            <param name="cmdType"> Kiểu của Command là Text hay StoredProcedure</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DataObject.GetDataSet(System.String,System.Collections.Specialized.ListDictionary,System.Int32,System.Int32,System.Data.CommandType)">
+            <summary>
+            Hàm thực thi câu truy vấn SQL hoặc Stored Procedure và trả về DataSet.
+            </summary>
+            <param name="strSql">Câu truy vấn SQL hoặc tên của Stored Procedures</param>
+            <param name="list">Chứa các key và value</param>
+            <param name="StartRecord">Dòng bắt đầu</param>
+            <param name="PageSize">Số dòng trên 1 trang</param>
+            <param name="cmdType"> Kiểu của Command là Text hay StoredProcedure</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DataObject.GetDataSet(System.String,System.String[],System.String[],System.Data.CommandType)">
+            <summary>
+            Hàm thực thi câu truy vấn SQL hoặc Stored Procedure và trả về DataSet.
+            </summary>
+            <param name="strSql">Câu truy vấn SQL hoặc tên của Stored Procedures</param>
+            <param name="arrParaNames">Mảng tên</param>
+            <param name="arrValues">Mảng giá trị</param>  
+            <param name="cmdType"> Kiểu của Command là Text hay StoredProcedure</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DataObject.GetDataSet(System.String,System.String[],System.Object[],System.Data.CommandType)">
+            <summary>
+            Hàm thực thi câu truy vấn SQL hoặc Stored Procedure và trả về DataSet.
+            </summary>
+            <param name="strSql">Câu truy vấn SQL hoặc tên của Stored Procedures</param>
+            <param name="arrParaNames">Mảng tên</param>
+            <param name="arrValues">Mảng giá trị</param>  
+            <param name="cmdType"> Kiểu của Command là Text hay StoredProcedure</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DataObject.GetDataSet(System.String,System.Collections.Specialized.ListDictionary,System.Data.CommandType)">
+            <summary>
+            Hàm thực thi câu truy vấn SQL hoặc Stored Procedure và trả về DataSet.
+            </summary>
+            <param name="strSql">Câu truy vấn SQL hoặc tên của Stored Procedures</param>
+            <param name="list">Chứa các key và value</param>
+            <param name="cmdType"> Kiểu của Command là Text hay StoredProcedure</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DataObject.GetDataSet(System.String,System.String[],System.Data.DbType[],System.Object[],System.Data.CommandType)">
+            <summary>
+            Hàm thực thi câu truy vấn SQL hoặc Stored Procedure và trả về DataSet.
+            </summary>
+            <param name="strSql">Câu truy vấn SQL hoặc tên của Stored Procedures</param>
+            <param name="arrParaNames">Tên parram</param>
+            <param name="arrParaType">Kiểu giá trị</param>
+            <param name="arrValues">Giá trị</param>    
+            <param name="cmdType"> Kiểu của Command là Text hay StoredProcedure</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DataObject.GetDataTable(System.String,System.Data.CommandType)">
+            <summary>
+            Hàm thực thi câu truy vấn SQL hoặc Stored Procedure và trả về DataTable.
+            </summary>
+            <param name="strSql">Câu truy vấn SQL hoặc tên của Stored Procedures</param>
+            <param name="cmdType"> Kiểu của Command là Text hay StoredProcedure</param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DataObject.GetDataTable(System.String,System.String[],System.String[],System.Data.CommandType)">
+            <summary>
+            Hàm thực thi câu truy vấn SQL hoặc Stored Procedure và trả về DataTable.
+            </summary>
+            <param name="strSql">Câu truy vấn SQL hoặc tên của Stored Procedures</param>
+            <param name="arrParaNames">Tên parram</param>
+            <param name="arrValues">Giá trị tương ứng với tên</param>
+            <param name="cmdType"> Kiểu của Command là Text hay StoredProcedure</param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DataObject.GetDataTable(System.String,System.String[],System.Object[],System.Data.CommandType)">
+            <summary>
+            Hàm thực thi câu truy vấn SQL hoặc Stored Procedure và trả về DataTable.
+            </summary>
+            <param name="strSql">Câu truy vấn SQL hoặc tên của Stored Procedures</param>
+            <param name="arrParaNames">Tên parram</param>
+            <param name="arrValues">Giá trị tương ứng với tên</param>
+            <param name="cmdType"> Kiểu của Command là Text hay StoredProcedure</param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DataObject.GetDataTable(System.String,System.Collections.Specialized.ListDictionary,System.Data.CommandType)">
+            <summary>
+            Hàm thực thi câu truy vấn SQL hoặc Stored Procedure và trả về DataTable.
+            </summary>
+            <param name="strSql">Câu truy vấn SQL hoặc tên của Stored Procedures</param>
+            <param name="list">Chứa các key và value</param>
+            <param name="cmdType"> Kiểu của Command là Text hay StoredProcedure</param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DataObject.GetDataTable(System.String,System.String[],System.Data.DbType[],System.Object[],System.Data.CommandType)">
+            <summary>   
+            Hàm thực thi câu truy vấn SQL hoặc Stored Procedure và trả về DataTable.
+            </summary>
+            <param name="strSql">Câu truy vấn SQL hoặc tên của Stored Procedures</param>
+            <param name="arrParaNames">Tên parram</param>
+            <param name="arrParaType">Kiểu giá trị tương ứng với tên parram</param>
+            <param name="arrValues">Giá trị tương ứng với tên parram</param>
+            <param name="cmdType"> Kiểu của Command là Text hay StoredProcedure</param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DataObject.GetSingleRow(System.String,System.Data.CommandType)">
+            <summary>
+            Hàm thực thi câu truy vấn SQL hoặc Stored Procedure và trả về string[].
+            </summary>
+            <param name="strSql">Câu truy vấn SQL hoặc tên của Stored Procedures</param>
+            <param name="cmdType">Kiểu của Command là Text hay StoredProcedure</param>
+            <returns>Trả về null nếu không thành công</returns>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DataObject.GetSingleRow(System.String,System.String[],System.String[],System.Data.CommandType)">
+            <summary>
+            Hàm thực thi câu truy vấn SQL hoặc Stored Procedure và trả về string[].
+            </summary>
+            <param name="strSql">Câu truy vấn SQL hoặc tên của Stored Procedures</param>
+            <param name="arrParaNames">Tên param</param>
+            <param name="arrValues">Giá trị param tương ứng</param>
+            <param name="cmdType">Kiểu của Command là Text hay StoredProcedure</param>
+            <returns>Trả về null nếu không thành công</returns>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DataObject.GetSingleRow(System.String,System.String[],System.Object[],System.Data.CommandType)">
+            <summary>
+            Hàm thực thi câu truy vấn SQL hoặc Stored Procedure và trả về string[].
+            </summary>
+            <param name="strSql">Câu truy vấn SQL hoặc tên của Stored Procedures</param>
+            <param name="arrParaNames">Tên param</param>
+            <param name="arrValues">Giá trị param tương ứng</param>
+            <param name="cmdType">Kiểu của Command là Text hay StoredProcedure</param>
+            <returns>Trả về null nếu không thành công</returns>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DataObject.GetSingleRow(System.String,System.Collections.Specialized.ListDictionary,System.Data.CommandType)">
+            <summary>
+            Hàm thực thi câu truy vấn SQL hoặc Stored Procedure và trả về string[].
+            </summary>
+            <param name="strSql">Câu truy vấn SQL hoặc tên của Stored Procedures</param>
+            <param name="list">Chứa các key và value</param>
+            <param name="cmdType">Kiểu của Command là Text hay StoredProcedure</param>
+            <returns>Trả về null nếu không thành công</returns>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DataObject.GetSingleRow(System.String,System.String[],System.Data.DbType[],System.Object[],System.Data.CommandType)">
+            <summary>
+            Hàm thực thi câu truy vấn SQL hoặc Stored Procedure và trả về string[].
+            </summary>
+            <param name="strSql">Câu truy vấn SQL hoặc tên của Stored Procedures</param>
+            <param name="arrParaNames">Tên param</param>    
+            <param name="arrParaType">Kiểu giá trị tương ứng với tên param</param>
+            <param name="arrValues">Giá trị param tương ứng với tên param</param>
+            <param name="cmdType">Kiểu của Command là Text hay StoredProcedure</param>
+            <returns>Trả về null nếu không thành công</returns>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DataObject.GetDataRow(System.String,System.Data.CommandType)">
+            <summary>
+            Hàm thực thi câu truy vấn SQL hoặc Stored Procedure và trả về DataRow.
+            </summary>
+            <param name="strSql">Câu truy vấn SQL hoặc tên của Stored Procedures</param>
+            <param name="cmdType"> Kiểu của Command là Text hay StoredProcedure</param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DataObject.GetDataRow(System.String,System.Collections.Specialized.ListDictionary,System.Data.CommandType)">
+            <summary>
+            Hàm thực thi câu truy vấn SQL hoặc Stored Procedure và trả về DataRow.
+            </summary>
+            <param name="strSql">Câu truy vấn SQL hoặc tên của Stored Procedures</param>
+            <param name="list">Chứa các key và value</param>
+            <param name="cmdType"> Kiểu của Command là Text hay StoredProcedure</param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DataObject.GetIDMax(System.String,System.Collections.Specialized.ListDictionary,System.String)">
+            <summary>
+            Get Max ID của table. Kết quả trả về có tăng lên 1
+            </summary>
+            <param name="IDMax_Name"></param>
+            <param name="whereParam">điều kiện where</param>
+            <param name="TableName">Tên table cần get Max ID</param>
+            <returns>Thành công trả về giá trị cần lấy</returns>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DataObject.Update(System.String,System.Object,System.Collections.Specialized.ListDictionary,System.String)">
+            <summary>
+            Update table theo điều kiện truyền vào
+            </summary>
+            <param name="Column_Update">Tên cột cần update</param>
+            <param name="Value_Update">Giá trị cột cần update</param>
+            <param name="whereParam">Điều kiện where</param>
+            <param name="TableName">Tên table cần update</param>
+            <returns>Thành công trả về giá trị lớn hơn 0 (số câu lệnh sql được thực hiện)</returns>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DataObject.Update(System.Collections.Specialized.ListDictionary,System.Collections.Specialized.ListDictionary,System.String)">
+            <summary>
+            Update table theo điều kiện truyền vào
+            </summary>
+            <param name="setParam">Các cột cần set giá trị</param>
+            <param name="whereParam">Điều kiện where</param>
+            <param name="TableName">Tên table cần update</param>
+            <returns>Thành công trả về giá trị lớn hơn 0 (số câu lệnh sql được thực hiện)</returns>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DataObject.Delete(System.Collections.Specialized.ListDictionary,System.String)">
+            <summary>
+            Delete table theo điều kiện truyền vào
+            </summary>
+            <param name="whereParam">Điều kiện where</param>
+            <param name="TableName">Tên table cần delete</param>
+            <returns>Thành công trả về giá trị lớn hơn 0 (số câu lệnh sql được thực hiện)</returns>
+        </member>
+        <member name="T:NTT.Web.Core.XSQL.DBHelper">
+            <summary>
+            Summary description for DBHelper
+            </summary>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DBHelper.#ctor">
+            <summary>
+            Hàm tạo mặc định sẽ lấy chuỗi connection đã được mã hóa strong file config.xml:
+            </summary>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DBHelper.GetProviderNameFromConnectionStrings">
+            <summary>
+            Lấy ProviderName từ ConnectionStrings
+            <add name="ConnectionString" connectionString="chuỗi kết nối" providerName="System.Data.SqlClient" ></add>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DBHelper.GetProviderNameFromAppSettings">
+            <summary>
+            <appSettings>
+            <add key="ProviderName" value="System.Data.SqlClient"/>
+            </appSettings>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DBHelper.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Hàm tạo với các tham số truyền vào đã được mã hóa
+            <appSettings>
+            <add key="Provider" value="System.Data.SqlClient"/>
+            <add key="Server" value=""/>
+            <add key="DatabaseName" value=""/>
+            <add key="UserName" value=""/>
+            <add key="Password" value=""/>
+            </appSettings>
+            </summary>
+            <param name="Server"></param>
+            <param name="DatabaseName"></param>
+            <param name="UserName"></param>
+            <param name="Password"></param>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DBHelper.#ctor(System.String)">
+            <summary>
+            Hàm tạo với chuỗi Connection truyền vào có mã hóa
+            <connectionStrings>
+            <add name="ConnectionString" connectionString="server= ; user= ; pwd= ; database= " providerName="System.Data.SqlClient" ></add>
+            </connectionStrings>
+            </summary>
+            <param name="ConnectionString">Chuỗi kết nối</param>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DBHelper.#ctor(System.String,System.Boolean)">
+            <summary>
+            Hàm tạo với chuỗi Connection truyền vào
+            </summary>
+            <param name="ConnectionString"></param>
+            <param name="Encrypt">Chuỗi kết nối có mã hóa không. True: có, false: không</param>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DBHelper.#ctor(System.Boolean)">
+            <summary>
+            Hàm tạo từ file xml 'connect.xml' với các thẻ: ProviderName,Server,Database,UserID,Password
+            </summary>
+            <param name="open"></param>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DBHelper.Finalize">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DBHelper.Open">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DBHelper.Close">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DBHelper.Dispose">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DBHelper.Dispose(System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="M:NTT.Web.Core.XSQL.DBHelper.CreateParameter">
+            <summary>
+            Create parammeter overloads
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:NTT.Web.Core.XSQL.DBHelper.Connection">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:NTT.Web.Core.XSQL.DBHelper.ConnectionString">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:NTT.Web.Core.XSQL.DBHelper.Transaction">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:NTT.Web.Core.XSQL.DBHelper.State">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:NTT.Web.Core.Security.Cryto">
+            <summary>
+            Cryto
+            </summary>
+        </member>
+        <member name="M:NTT.Web.Core.Security.Cryto.Default_Encrypt(System.String)">
+            <summary>
+            Hàm này mã hóa ra dạng ký tự theo mã code đã được định sẵn .
+            </summary>
+        </member>
+        <member name="M:NTT.Web.Core.Security.Cryto.Default_Decrypt(System.String)">
+            <summary>
+            Hàm này Giải mã từ hàm 'Default_Encrypt(input)' theo mã code định sẵn trước đó.
+            </summary>
+        </member>
+        <member name="M:NTT.Web.Core.Security.Cryto.TripleDES_En(System.String,System.String)">
+            <summary>
+            Lớp này dùng để mã hóa mật khẩu hay dữ liệu đầu vào bằng các ký tự phức tạp dựa vào ký hiệu riêng là biến "key" .
+            </summary>
+        </member>
+        <member name="M:NTT.Web.Core.Security.Cryto.TripleDES_De(System.String,System.String)">
+            <summary>
+            Lớp này dùng để giải mã .
+            </summary>
+        </member>
+        <member name="M:NTT.Web.Core.Security.Cryto.MD5(System.String)">
+            <summary>
+            Mã hóa theo định dạng MD5 từ hàm MD5CryptoServiceProvider của thư viện Cryptography.
+            </summary>
+        </member>
+    </members>
+</doc>
