@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Products>
+  <Technology Name=".NET">
+    <Product Name="ASPxCallback" />
+    <Product Name="ASPxCallbackPanel" />
+    <Product Name="ASPxCloudControl" />
+    <Product Name="ASPxDataView" />
+    <Product Name="ASPxHeadline" />
+    <Product Name="ASPxMenu" />
+    <Product Name="ASPxPopupMenu" />
+    <Product Name="ASPxNavBar" />
+    <Product Name="ASPxNewsControl" />
+    <Product Name="ASPxObjectContainer" />
+    <Product Name="ASPxPager" />
+    <Product Name="ASPxPanel" />
+    <Product Name="ASPxPopupControl" />
+    <Product Name="ASPxRoundPanel" />
+    <Product Name="ASPxSiteMapControl" />
+    <Product Name="ASPxPageControl" />
+    <Product Name="ASPxTabControl" />
+    <Product Name="ASPxTimer" />
+    <Product Name="ASPxTitleIndex" />
+    <Product Name="ASPxUploadControl" />
+    <Product Name="ASPxGridView and Editors Suite" />
+    <Product Name="ASPxPivotGrid" />
+    <Product Name="ASPxHtmlEditor" />
+    <Product Name="ASPxScheduler" />
+    <Product Name="ASPxSpellChecker" />
+    <Product Name="ASPxTreeList" />
+  </Technology>
+  <Technology Name="DX Services">
+    <Product Name="Client Center" />
+    <Product Name="Community (Blogs and forums)" />
+    <Product Name="E-Mail" />
+    <Product Name="HelpTracker" />
+    <Product Name="Knowledge Base" />
+    <Product Name="Newsgroups" />
+    <Product Name="Online Documentation" />
+    <Product Name="Support Center" />
+    <Product Name="Web Site" />
+  </Technology>
+  <Technology Name="VCL.NET">
+    <Product Name="ExpressQuantumGrid for VCL.NET" />
+  </Technology>
+</Products>
