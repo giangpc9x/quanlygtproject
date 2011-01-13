@@ -8,7 +8,7 @@ using NTT.Web.UI;
 using System.Data;
 using DevExpress.Web.ASPxGridView;
 
-public partial class DiemThi_diemthi : BasePage
+public partial class DemoGridView_diemthi : BasePage
 {
     clsDiaDiemThi_DAL dthi;
     clsDiaDiemThi_DTO dthiDTO;
@@ -18,9 +18,9 @@ public partial class DiemThi_diemthi : BasePage
     {
         dthi = new clsDiaDiemThi_DAL();
         dthiDTO = new clsDiaDiemThi_DTO();
-        cmn = new clsCommon();        
+        cmn = new clsCommon();
         gvDiaDiemThi.DataSource = getDataToUI();
-        gvDiaDiemThi.DataBind();        
+        gvDiaDiemThi.DataBind();
     }
     private DataTable getDataToUI()
     {
@@ -42,7 +42,7 @@ public partial class DiemThi_diemthi : BasePage
         {
             GridViewDataColumn dataColumn = column as GridViewDataColumn;
             if (dataColumn == null || dataColumn.Caption == "Error") continue;
-            if (e.NewValues[dataColumn.FieldName] == null)
+            if (e.NewValues[dataColumn.FieldName] == null || e.NewValues[dataColumn.FieldName].ToString().Trim() == string.Empty)
             {
                 e.Errors[dataColumn] = "Vui lòng điền dữ liệu.";
             }
@@ -72,7 +72,7 @@ public partial class DiemThi_diemthi : BasePage
         dthiDTO.NgayThanhLap = cmn.Convert_DMY_To_MDY(e.NewValues["NgayThanhLap"].ToString());
         dthiDTO.SoDienThoai = e.NewValues["SoDienThoai"].ToString();
         dthiDTO.DiaChi = e.NewValues["DiaChi"].ToString();
-        int iReturn = dthi.InsertUpdate(dthiDTO);        
+        int iReturn = dthi.InsertUpdate(dthiDTO);
         if (iReturn >= 0)
         {
             gvDiaDiemThi.DataSource = getDataToUI();
@@ -93,7 +93,7 @@ public partial class DiemThi_diemthi : BasePage
         dthiDTO.NgayThanhLap = cmn.Convert_DMY_To_MDY(e.NewValues["NgayThanhLap"].ToString());
         dthiDTO.SoDienThoai = e.NewValues["SoDienThoai"].ToString();
         dthiDTO.DiaChi = e.NewValues["DiaChi"].ToString();
-        int iReturn = dthi.InsertUpdate(dthiDTO);     
+        int iReturn = dthi.InsertUpdate(dthiDTO);
         if (iReturn >= 0)
         {
             gvDiaDiemThi.DataSource = getDataToUI();
@@ -119,7 +119,7 @@ public partial class DiemThi_diemthi : BasePage
         foreach (object key in keyValues)
         {
             dthiDTO.MaDiemThi = key.ToString();
-            int iReturn = -1;// = dthi.Delete(dthiDTO);
+            int iReturn = dthi.Delete(dthiDTO);
             if (iReturn < 0)
                 strMess += " " + key.ToString();
         }
