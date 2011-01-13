@@ -65,7 +65,7 @@ function GetUpdateResult(errorText)
             CommandUpdate="Lưu" PopupEditFormCaption="Thông Tin Điểm Thi" 
             ConfirmDelete="Xác nhận xóa dữ liệu ?" />
         <Columns>
-            <dxwgv:GridViewCommandColumn ShowSelectCheckbox="True" VisibleIndex="0" Width = "20px">
+            <dxwgv:GridViewCommandColumn ShowSelectCheckbox="True" VisibleIndex="0" Width = "25px">
              <HeaderTemplate>
                      <input type="checkbox" onclick="gvDiaDiemThi.SelectAllRowsOnPage(this.checked);" style="vertical-align:middle;" title="Chọn/Bỏ chọn tất cả dòng trên trang này"></input>
                  </HeaderTemplate>
@@ -77,7 +77,7 @@ function GetUpdateResult(errorText)
                 </ClearFilterButton>
             </dxwgv:GridViewCommandColumn>
             <dxwgv:GridViewDataTextColumn Caption="Mã Điểm Thi" Name = "gtxtMaDiemThi" FieldName="MaDiemThi" 
-               VisibleIndex="1" Width="120px">
+               VisibleIndex="1" Width="90px">
                
                 <PropertiesTextEdit ClientInstanceName="gtxtMaDiemThi">
                     <ClientSideEvents Validation="function(s, e) {
@@ -88,7 +88,7 @@ function GetUpdateResult(errorText)
                 <EditFormSettings VisibleIndex="0" />
             </dxwgv:GridViewDataTextColumn>
             <dxwgv:GridViewDataDateColumn Caption="Ngày Thành Lập" FieldName="NgayThanhLap" 
-                Name="gcNgayThanhLap" VisibleIndex="2" Width="150px">
+                Name="gcNgayThanhLap" VisibleIndex="2" Width="100px">
                 <PropertiesDateEdit DisplayFormatString="dd/MM/yyyy">
                 </PropertiesDateEdit>
                 <EditFormSettings VisibleIndex="1" />
@@ -99,7 +99,7 @@ function GetUpdateResult(errorText)
                 <EditFormSettings ColumnSpan="3" VisibleIndex="3" />
             </dxwgv:GridViewDataTextColumn>
             <dxwgv:GridViewDataTextColumn Caption="Số Điện Thoại" FieldName="SoDienThoai" 
-                Name="gcSoDienThoai" VisibleIndex="4" Width="150px">
+                Name="gcSoDienThoai" VisibleIndex="4" Width="100px">
                 <EditFormSettings VisibleIndex="2" />
             </dxwgv:GridViewDataTextColumn>
             <dxwgv:GridViewCommandColumn VisibleIndex="5" Caption = "Sửa" Width = "30px">
