@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Demos Name="ASPxGridView" ColumnCount="3" Title="DevExpress ASPxGridView" TitleFormatString="{2} - {0}">
+<Demos Name="HeThongThiGiayPhepLaiXe" ColumnCount="3" Title="Hệ Thống Thi Giấy Phép Lại Xe Đường Bộ" TitleFormatString="{2} - {0}">
     <DemoGroup Text="Trang chủ" Caption="Build Your Best - Without Limits or Compromise" BeginCategory="true">
         <Demo Text="Bảng điều kiển" NavigateUrl="~/Default.aspx" UseFullTitle="false" Title="Hệ thống sát hạch giấy phép lại xe đường bộ">
             <GeneralTerms ShowHeader="false">
@@ -56,59 +56,25 @@
     <DemoGroup Text="Quản lý đề thi" ImageUrl="~/Images/TitleImages/GridView.png" ImageWidth="76px" ImageHeight="76px">
         <Demo Text="Quản lý câu hỏi" NavigateUrl="~/qlch/Grouping.aspx" Title="Outlook Style Data Grouping - AJAX Grid Control for ASP.NET">
             <Description>
-                <p>
-                    The ASPxGridView supports data grouping against one or more columns.
-                </p>
-                <p>
-                    Grouping is allowed if the following properties are set to <b>true</b>:
-                </p>
-                <ul>
-                    <li>
-                        <b>SettingsBehavior.AllowGroup</b>
-                    </li>
-                    <li>
-                        <b>SettingsBehavior.AllowSort</b>
-                    </li>
-                </ul>
-
-                <p>
-                    End-users can group data by dragging column headers to the <b>Group Panel</b>. This panel's visibility is controlled by the <b>Settings.ShowGroupPanel</b> option.
-                </p>
-                <p>
-                    Use the <b>GroupCount</b> property to lookup the number of columns used to group data. These columns can be obtained using the <b>GetSortedColumns()</b> method.
-                </p>
+              
             </Description>
         </Demo>
         <Demo Text="Quản lý loại câu hỏi" NavigateUrl="~/qlch/IntervalGrouping.aspx" Title="Advanced Data Grouping - AJAX DataGrid for ASP.NET">
             <Description>
-                <p>
-                    The <b>ASPxGridView</b> control supports interval grouping. This allows you to group text columns by the first characters. Date-time columns can be grouped by month, year, etc. This behavior is controlled by the column's <b>Settings.GroupInterval</b> property.
-                </p>
-                <p>
-                    In this demo, use the 'Date Group Interval' combo box to specify how data rows are grouped when grouping by the <b>Order Date</b> column is applied.
-                </p>
+           
             </Description>
         </Demo>
         <Demo Text="Quản lý loại bằng lái" NavigateUrl="~/qlch/Sorting.aspx" Title="Data Sorting - ASP.NET Grid Control">
             <Description>
-                <p>
-                    The ASPxGridView allows you to sort data displayed within an unlimited number of columns. The column's current sort order is indicated by a sort glyph displayed at the column header's right edge. If the column isn't sorted, the sort glyph is hidden.
-                </p>
-                <p>Click the column's header to sort data against a data column or change the column's sort order. To sort data against multiple columns, click column headers with the SHIFT key pressed down.</p>
-                <p>
-                    Set the <b>AllowSort</b> option to <b>true</b> to enable end-user sorting.
-                </p>
+              
             </Description>
         </Demo>
     </DemoGroup>
   
     <DemoGroup Text="Điểm Thi" ImageUrl="~/Images/TitleImages/GridView.png" ImageWidth="76px" ImageHeight="76px">
-        <Demo Text="Thông tin điểm thi" NavigateUrl="~/dt/Live.aspx" Title="Real-time Data Processing - ASP.NET AJAX Grid and Editors">
+        <Demo Text="Thông tin điểm thi" NavigateUrl="~/DiemThi/diemthi.aspx" Title="Danh sách các điểm thi bằng lái xe">
             <Description>
-                <p>This demo shows how to dynamically change images displayed within data cells.</p>
-                <p>
-                    The <b>HtmlRowCreated</b> event is handled to change images displayed within the <b>Change</b> column’s cells. These images are contained within the column’s <b>DataItemTemplate</b> and indicate how symbol values are changed on a market.
-                </p>
+            
             </Description>
         </Demo>
         <Demo Text="Thông tin phòng thi" NavigateUrl="~/dt/LinqDataSource.aspx" Title="Bind to Data Using LINQ Sources - ASP.NET DataGrid Control">
@@ -128,15 +94,7 @@
     <DemoGroup Text="Hồ sơ thí sinh" ImageUrl="~/Images/TitleImages/GridView.png" ImageWidth="76px" ImageHeight="76px">
         <Demo Text="Tiếp nhận hồ sơ" NavigateUrl="~/hs/FilterRow.aspx" Title="Filter Row - ASP.NET Grid and Data Editors">
             <Description>
-                <p>
-                    The <b>Filter Row</b> allows end-users to filter data by entering text within its cells.
-                </p>
-                <p>
-                    Set the <b>Settings.ShowFilterRow</b> property to <b>true</b> to display a filter row within the ASPxGridView.
-                </p>
-                <p>
-                    Enable the 'Show Filter Row Menu' check box to allow end-users select one of the nine filter conditions via the context menu, which is invoked by clicking a filter row button.
-                </p>
+           
             </Description>
         </Demo>        
     </DemoGroup>
@@ -144,15 +102,7 @@
     <DemoGroup Text="Tổ chức đợt thi" ImageUrl="~/Images/TitleImages/GridView.png" ImageWidth="76px" ImageHeight="76px">
         <Demo Text="Phân công coi thi" NavigateUrl="~/tc/Total.aspx" Title="Total Summary Calculation - AJAX DataGrid for ASP.NET">
             <Description>
-                <p>
-                    <b>Total summaries</b> are aggregate function values calculated over all the rows within the ASPxGridView and displayed within the <b>Footer</b>.
-                </p>
-                <p>
-                    The Footer is displayed if the <b>Settings.ShowFooter</b> property is set to <b>true</b>.
-                </p>
-                <p>
-                    The ASPxGridView stores its total summary items within the <b>TotalSummary</b> collection. Individual items are represented by <b>ASPxSummaryItem</b> objects.
-                </p>
+           
             </Description>
         </Demo>
         <Demo Text="Điểm danh thí sinh" NavigateUrl="~/tc/Group.aspx" Title="Group Summary Calculation - ASP.NET Grid Control">
@@ -717,6 +667,7 @@
           </p>
         </Description>
       </Demo>
+     
     </DemoGroup>
    
     <DemoGroup Text="Tutorials Popup" ImageUrl="~/Images/TitleImages/PopupControl.png" Title="PopupControl">
@@ -892,6 +843,20 @@
           Each newly created popup window overlaps those preceding it. You can drag a window by its header or close the window by clicking the window's <b>Close</b> button. Note that the position and state of a popup window is preserved between postbacks. The code of the <b>Button1_Click</b> event's handler demonstrates how an individual popup window is created and its content text, footer text and position are defined. (See VB or C# code)
         </p>
       </Description>
+    </Demo>
+  </DemoGroup>
+  <DemoGroup Text="Code Mẫu" Visible="true">
+    <Demo Text="Địa điểm thi" NavigateUrl="~/DemoGridView/diemthi.aspx" Title="Mẫu Thêm - Xóa - Sữ Địa điểm thi">
+      <Description>
+        <p>
+          Người viết: <br>Đỗ Quốc Khanh</br>
+        </p>
+
+      </Description>
+      <SourceCodeFiles>
+        <File Name="~/App_Code/clsDiaDiemThi_DAL.cs" />
+        <File Name="~/App_Code/clsDiaDiemThi_DTO.cs" />
+      </SourceCodeFiles>
     </Demo>
   </DemoGroup>
     <DemoGroup Text="" Visible="false">
