@@ -8,7 +8,7 @@ using NTT.Web.UI;
 using System.Data;
 using DevExpress.Web.ASPxGridView;
 
-public partial class DemoGridView_diemthi : BasePage
+public partial class DiemThi_diemthi : BasePage
 {
     clsDiaDiemThi_DAL dthi;
     clsDiaDiemThi_DTO dthiDTO;
