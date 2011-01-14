@@ -29,6 +29,7 @@ function GetUpdateResult(errorText)
 }
 </script>
 
+<%-- BeginRegion Button Thêm Mới và Xóa --%>
 <div style ="width:90px; float:left; padding-bottom:5px;">
     <dxe:ASPxButton ID="btnThemMoi" ClientInstanceName = "btnThemMoi" runat="server" 
          Text="Thêm Mới" Width = "90px" AutoPostBack="False">
@@ -44,6 +45,8 @@ function GetUpdateResult(errorText)
 	            StartDelete();
 }" />
 </dxe:ASPxButton></div>
+<%-- EndRegion --%>
+<%-- BeginRegion Danh sách địa điểm thi --%>
 <div style = "clear:both;">
     <dxwgv:ASPxGridView ID="gvDiaDiemThi" ClientInstanceName = "gvDiaDiemThi" 
         Width = "100%" KeyFieldName = "MaDiemThi" 
@@ -63,6 +66,8 @@ function GetUpdateResult(errorText)
         <SettingsText EmptyDataRow="Không có dữ liệu" CommandCancel="Hủy" 
             CommandUpdate="Lưu" PopupEditFormCaption="Thông Tin Điểm Thi" 
             ConfirmDelete="Xác nhận xóa dữ liệu ?" />
+<%-- EndRegion --%>
+<%-- BeginRegion Phần columns trên danh sách --%>
         <Columns>
             <dxwgv:GridViewCommandColumn ShowSelectCheckbox="True" VisibleIndex="0" Width = "25px">
              <HeaderTemplate>
@@ -114,6 +119,7 @@ function GetUpdateResult(errorText)
         <Settings ShowFilterRow="True" />
     </dxwgv:ASPxGridView>
     </div>
+    <%-- EndRegion --%>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="phOnceContent" Runat="Server">
 </asp:Content>
