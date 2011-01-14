@@ -1,4 +1,5 @@
-﻿using System;
+﻿#region Using
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -7,28 +8,34 @@ using System.Web.UI.WebControls;
 using NTT.Web.UI;
 using System.Data;
 using DevExpress.Web.ASPxGridView;
+#endregion
 
 public partial class DemoGridView_diemthi : BasePage
 {
+    #region Khai báo các đối tượng và các biến toàn cục
     clsDiaDiemThi_DAL dthi;
     clsDiaDiemThi_DTO dthiDTO;
     clsCommon cmn;
     string strMess = string.Empty;
+    #endregion
+
     protected void Page_Load(object sender, EventArgs e)
     {
         dthi = new clsDiaDiemThi_DAL();
         dthiDTO = new clsDiaDiemThi_DTO();
         cmn = new clsCommon();
-        gvDiaDiemThi.DataSource = getDataToUI();
+        gvDiaDiemThi.DataSource = loadDataToUI();
         gvDiaDiemThi.DataBind();
     }
-    private DataTable getDataToUI()
+    private DataTable loadDataToUI()
     {
 
         DataTable dt = new DataTable();
         dt = dthi.getDiaDiemThi(dthiDTO);
         return dt;
     }
+
+    #region Kiểm tra nhập dữ liệu trên GridView
     protected void gvDiaDiemThi_RowValidating(object sender, DevExpress.Web.Data.ASPxDataValidationEventArgs e)
     {
         string strOldValues;
@@ -42,7 +49,7 @@ public partial class DemoGridView_diemthi : BasePage
         {
             GridViewDataColumn dataColumn = column as GridViewDataColumn;
             if (dataColumn == null || dataColumn.Caption == "Error") continue;
-            if (e.NewValues[dataColumn.FieldName] == null)
+            if (e.NewValues[dataColumn.FieldName] == null || e.NewValues[dataColumn.FieldName].ToString().Trim() == string.Empty)
             {
                 e.Errors[dataColumn] = "Vui lòng điền dữ liệu.";
             }
@@ -65,6 +72,9 @@ public partial class DemoGridView_diemthi : BasePage
         if (errors.ContainsKey(column)) return;
         errors[column] = errorText;
     }
+    #endregion
+
+    #region Sự kiện thêm - Xóa - Sửa dữ liệu trên GridView
     protected void gvDiaDiemThi_RowInserting(object sender, DevExpress.Web.Data.ASPxDataInsertingEventArgs e)
     {
         e.Cancel = true;
@@ -75,7 +85,7 @@ public partial class DemoGridView_diemthi : BasePage
         int iReturn = dthi.InsertUpdate(dthiDTO);
         if (iReturn >= 0)
         {
-            gvDiaDiemThi.DataSource = getDataToUI();
+            gvDiaDiemThi.DataSource = loadDataToUI();
             gvDiaDiemThi.CancelEdit();
         }
         else
@@ -96,7 +106,7 @@ public partial class DemoGridView_diemthi : BasePage
         int iReturn = dthi.InsertUpdate(dthiDTO);
         if (iReturn >= 0)
         {
-            gvDiaDiemThi.DataSource = getDataToUI();
+            gvDiaDiemThi.DataSource = loadDataToUI();
             gvDiaDiemThi.CancelEdit();
         }
         else if (iReturn == -2)
@@ -110,6 +120,7 @@ public partial class DemoGridView_diemthi : BasePage
             gvDiaDiemThi.DoRowValidation();
         }
     }
+
     protected void gvDiaDiemThi_CustomDataCallback(object sender, ASPxGridViewCustomDataCallbackEventArgs e)
     {
         string strReturn = string.Empty;
@@ -119,7 +130,7 @@ public partial class DemoGridView_diemthi : BasePage
         foreach (object key in keyValues)
         {
             dthiDTO.MaDiemThi = key.ToString();
-            int iReturn = -1;// = dthi.Delete(dthiDTO);
+            int iReturn = dthi.Delete(dthiDTO);
             if (iReturn < 0)
                 strMess += " " + key.ToString();
         }
@@ -127,15 +138,16 @@ public partial class DemoGridView_diemthi : BasePage
             e.Result = "Do ràng buộc dữ liệu, không thể xóa " + strMess;
         else
             e.Result = string.Empty;
-        gvDiaDiemThi.DataSource = getDataToUI();
+        gvDiaDiemThi.DataSource = loadDataToUI();
         gvDiaDiemThi.Selection.SelectAll();
     }
     protected void gvDiaDiemThi_CustomCallback(object sender, ASPxGridViewCustomCallbackEventArgs e)
     {
         if (e.Parameters == "Update")
         {
-            gvDiaDiemThi.DataSource = getDataToUI();
+            gvDiaDiemThi.DataSource = loadDataToUI();
             gvDiaDiemThi.Selection.UnselectAll();
         }
     }
+    #endregion
 }
