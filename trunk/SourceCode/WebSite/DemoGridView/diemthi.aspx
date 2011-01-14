@@ -29,21 +29,22 @@ function GetUpdateResult(errorText)
 }
 </script>
 
-<div style ="width:80px; float:left; padding-bottom:5px;">
+<div style ="width:90px; float:left; padding-bottom:5px;">
     <dxe:ASPxButton ID="btnThemMoi" ClientInstanceName = "btnThemMoi" runat="server" 
-         Text="Thêm Mới" Width = "80px" AutoPostBack="False">
+         Text="Thêm Mới" Width = "90px" AutoPostBack="False">
         <ClientSideEvents Click="function(s, e) {
 	gvDiaDiemThi.AddNewRow();
 }" />
     </dxe:ASPxButton>
 </div>
-<div style = "float:left;padding-left:10px;width:80px;">
-<dxe:ASPxButton ID="btnXoa" ClientInstanceName = "btnXoa" Width = "80px" 
+<div style = "float:left;padding-left:10px;width:90px;">
+<dxe:ASPxButton ID="btnXoa" ClientInstanceName = "btnXoa" Width = "90px" 
         runat="server" Text="Xóa" AutoPostBack="False">
     <ClientSideEvents Click="function(s, e) {    
 	            StartDelete();
 }" />
 </dxe:ASPxButton></div>
+<div style = "clear:both;">
     <dxwgv:ASPxGridView ID="gvDiaDiemThi" ClientInstanceName = "gvDiaDiemThi" 
         Width = "100%" KeyFieldName = "MaDiemThi" 
         runat="server" AutoGenerateColumns="False" 
@@ -63,7 +64,7 @@ function GetUpdateResult(errorText)
             CommandUpdate="Lưu" PopupEditFormCaption="Thông Tin Điểm Thi" 
             ConfirmDelete="Xác nhận xóa dữ liệu ?" />
         <Columns>
-            <dxwgv:GridViewCommandColumn ShowSelectCheckbox="True" VisibleIndex="0" Width = "20px">
+            <dxwgv:GridViewCommandColumn ShowSelectCheckbox="True" VisibleIndex="0" Width = "25px">
              <HeaderTemplate>
                      <input type="checkbox" onclick="gvDiaDiemThi.SelectAllRowsOnPage(this.checked);" style="vertical-align:middle;" title="Chọn/Bỏ chọn tất cả dòng trên trang này"></input>
                  </HeaderTemplate>
@@ -75,7 +76,7 @@ function GetUpdateResult(errorText)
                 </ClearFilterButton>
             </dxwgv:GridViewCommandColumn>
             <dxwgv:GridViewDataTextColumn Caption="Mã Điểm Thi" Name = "gtxtMaDiemThi" FieldName="MaDiemThi" 
-               VisibleIndex="1">
+               VisibleIndex="1" Width="90px">
                
                 <PropertiesTextEdit ClientInstanceName="gtxtMaDiemThi">
                     <ClientSideEvents Validation="function(s, e) {
@@ -86,17 +87,18 @@ function GetUpdateResult(errorText)
                 <EditFormSettings VisibleIndex="0" />
             </dxwgv:GridViewDataTextColumn>
             <dxwgv:GridViewDataDateColumn Caption="Ngày Thành Lập" FieldName="NgayThanhLap" 
-                Name="gcNgayThanhLap" VisibleIndex="2">
+                Name="gcNgayThanhLap" VisibleIndex="2" Width="100px">
                 <PropertiesDateEdit DisplayFormatString="dd/MM/yyyy">
                 </PropertiesDateEdit>
                 <EditFormSettings VisibleIndex="1" />
             </dxwgv:GridViewDataDateColumn>
             <dxwgv:GridViewDataTextColumn Caption="Địa Chỉ" FieldName="DiaChi" 
                 Name="gcDiaChi" VisibleIndex="3">
+                <Settings AutoFilterCondition="Contains" />
                 <EditFormSettings ColumnSpan="3" VisibleIndex="3" />
             </dxwgv:GridViewDataTextColumn>
             <dxwgv:GridViewDataTextColumn Caption="Số Điện Thoại" FieldName="SoDienThoai" 
-                Name="gcSoDienThoai" VisibleIndex="4">
+                Name="gcSoDienThoai" VisibleIndex="4" Width="100px">
                 <EditFormSettings VisibleIndex="2" />
             </dxwgv:GridViewDataTextColumn>
             <dxwgv:GridViewCommandColumn VisibleIndex="5" Caption = "Sửa" Width = "30px">
@@ -111,6 +113,7 @@ function GetUpdateResult(errorText)
         </Columns>
         <Settings ShowFilterRow="True" />
     </dxwgv:ASPxGridView>
+    </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="phOnceContent" Runat="Server">
 </asp:Content>
