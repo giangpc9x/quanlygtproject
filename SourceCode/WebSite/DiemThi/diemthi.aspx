@@ -31,21 +31,22 @@ function GetUpdateResult(errorText)
 }
 </script>
 
-<div style ="width:80px; float:left; padding-bottom:5px;">
+<div style ="width:90px; float:left; padding-bottom:5px;">
     <dxe:ASPxButton ID="btnThemMoi" ClientInstanceName = "btnThemMoi" runat="server" 
-         Text="Thêm Mới" Width = "80px" AutoPostBack="False">
+         Text="Thêm Mới" Width = "90px" AutoPostBack="False">
         <ClientSideEvents Click="function(s, e) {
 	gvDiaDiemThi.AddNewRow();
 }" />
     </dxe:ASPxButton>
 </div>
-<div style = "float:left;padding-left:10px;width:80px;">
-<dxe:ASPxButton ID="btnXoa" ClientInstanceName = "btnXoa" Width = "80px" 
+<div style = "float:left;padding-left:10px;width:90px;">
+<dxe:ASPxButton ID="btnXoa" ClientInstanceName = "btnXoa" Width = "90px" 
         runat="server" Text="Xóa" AutoPostBack="False">
     <ClientSideEvents Click="function(s, e) {    
 	            StartDelete();
 }" />
 </dxe:ASPxButton></div>
+<div style = "clear:both;">
     <dxwgv:ASPxGridView ID="gvDiaDiemThi" ClientInstanceName = "gvDiaDiemThi" 
         Width = "100%" KeyFieldName = "MaDiemThi" 
         runat="server" AutoGenerateColumns="False" 
@@ -114,6 +115,7 @@ function GetUpdateResult(errorText)
         </Columns>
         <Settings ShowFilterRow="True" />
     </dxwgv:ASPxGridView>
+    </div>
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="phOnceContent" Runat="Server">
