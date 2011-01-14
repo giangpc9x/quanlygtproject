@@ -404,6 +404,7 @@
 .dxgvEditFormCaption_Soft_Orange
 {
 	padding: 4px 4px 4px 10px; 
+	white-space: nowrap;
 	font-size: 12px;
 }
 

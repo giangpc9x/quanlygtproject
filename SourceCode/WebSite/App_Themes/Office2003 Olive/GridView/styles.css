@@ -343,7 +343,8 @@
 }
 .dxgvEditFormCaption_Office2003_Olive
 {
-	padding: 4px 4px 4px 10px; 
+	padding: 4px 4px 4px 10px;
+	white-space: nowrap;
 }
 
 .dxgvInlineEditCell_Office2003_Olive

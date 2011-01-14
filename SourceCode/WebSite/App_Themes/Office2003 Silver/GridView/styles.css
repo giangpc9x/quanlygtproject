@@ -346,6 +346,7 @@
 .dxgvEditFormCaption_Office2003_Silver
 {
 	padding: 4px 4px 4px 10px; 
+	white-space: nowrap;
 }
 
 .dxgvInlineEditCell_Office2003_Silver
