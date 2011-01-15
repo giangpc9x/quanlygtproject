@@ -13,13 +13,13 @@ public class clsDiaDiemThi_DAL
 	{
         obj = new DataObject();
 	}
-    public DataTable getDiaDiemThi(clsDiaDiemThi_DTO diemthi)
+    public DataTable getDiaDiemThi(clsDiaDiemThi_DTO diemthiDTO)
     {
         ListDictionary _list = new ListDictionary();
-        _list.Add("MaDiemThi", diemthi.MaDiemThi);
-        _list.Add("DiaChi", diemthi.DiaChi);
-        _list.Add("SoDienThoai", diemthi.SoDienThoai);
-        _list.Add("NgayThanhLap", diemthi.NgayThanhLap);
+        _list.Add("MaDiemThi", diemthiDTO.MaDiemThi);
+        _list.Add("DiaChi", diemthiDTO.DiaChi);
+        _list.Add("SoDienThoai", diemthiDTO.SoDienThoai);
+        _list.Add("NgayThanhLap", diemthiDTO.NgayThanhLap);
         DataTable dt = new DataTable();
         try
         {
@@ -31,17 +31,17 @@ public class clsDiaDiemThi_DAL
         }
         return dt;
     }
-    public int InsertUpdate(clsDiaDiemThi_DTO diemthi)
+    public int InsertUpdate(clsDiaDiemThi_DTO diemthiDTO)
     {
         
         try
         {
             ListDictionary _list = new ListDictionary();
-            _list.Add("old_id", diemthi.OldID);
-            _list.Add("MaDiemThi", diemthi.MaDiemThi);
-            _list.Add("DiaChi", diemthi.DiaChi);
-            _list.Add("SoDienThoai", diemthi.SoDienThoai);
-            _list.Add("NgayThanhLap", diemthi.NgayThanhLap);
+            _list.Add("old_id", diemthiDTO.OldID);
+            _list.Add("MaDiemThi", diemthiDTO.MaDiemThi);
+            _list.Add("DiaChi", diemthiDTO.DiaChi);
+            _list.Add("SoDienThoai", diemthiDTO.SoDienThoai);
+            _list.Add("NgayThanhLap", diemthiDTO.NgayThanhLap);
             int iReturn = obj.ExcSql("Insert_Update_Dia_Diem_Thi", _list, CommandType.StoredProcedure);
             return iReturn;
         }        
@@ -51,13 +51,13 @@ public class clsDiaDiemThi_DAL
             return -1111; // Đặt số này làm ngoại lệ ko lường trước được. ở StoredProcedure không được return có số này tránh trường hợp trùng
         }
     }
-    public int Delete(clsDiaDiemThi_DTO diemthi)
+    public int Delete(clsDiaDiemThi_DTO diemthiDTO)
     {
 
         try
         {
             ListDictionary _list = new ListDictionary();
-            _list.Add("MaDiemThi", diemthi.MaDiemThi);
+            _list.Add("MaDiemThi", diemthiDTO.MaDiemThi);
             int iReturn = obj.ExcSql("Delete_Dia_Diem_Thi", _list, CommandType.StoredProcedure);
             return iReturn;
         }
