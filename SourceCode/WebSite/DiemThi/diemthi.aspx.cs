@@ -13,7 +13,7 @@ using NTT.Web.UI;
 public partial class DiemThi_diemthi : BasePage
 {
     #region Khai báo các đối tượng và các biến toàn cục
-    clsDiaDiemThi_DAL dthi;
+    clsDiaDiemThi_DAL dthiDAL;
     clsDiaDiemThi_DTO dthiDTO;
     clsCommon cmn;
     string strMess = string.Empty;
@@ -21,7 +21,7 @@ public partial class DiemThi_diemthi : BasePage
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        dthi = new clsDiaDiemThi_DAL();
+        dthiDAL = new clsDiaDiemThi_DAL();
         dthiDTO = new clsDiaDiemThi_DTO();
         cmn = new clsCommon();
         gvDiaDiemThi.DataSource = loadDataToUI();
@@ -31,7 +31,7 @@ public partial class DiemThi_diemthi : BasePage
     {
 
         DataTable dt = new DataTable();
-        dt = dthi.getDiaDiemThi(dthiDTO);
+        dt = dthiDAL.getDiaDiemThi(dthiDTO);
         return dt;
     }
     #region Kiểm tra nhập dữ liệu trên GridView
@@ -59,7 +59,7 @@ public partial class DiemThi_diemthi : BasePage
             return;
         }
         strOldValues = e.OldValues["MaDiemThi"] == null ? string.Empty : e.OldValues["MaDiemThi"].ToString();
-        if (e.NewValues["MaDiemThi"].ToString() != strOldValues && dthi.Check_MaDiemThi(e.NewValues["MaDiemThi"].ToString()) == 1)
+        if (e.NewValues["MaDiemThi"].ToString() != strOldValues && dthiDAL.Check_MaDiemThi(e.NewValues["MaDiemThi"].ToString()) == 1)
         {
             AddError(e.Errors, gvDiaDiemThi.Columns["MaDiemThi"], "Đã tồn tại Mã điểm thi, không thể lưu");
             e.RowError = "Trùng mã điểm thi, vui lòng kiểm tra lại";
@@ -81,7 +81,7 @@ public partial class DiemThi_diemthi : BasePage
         dthiDTO.NgayThanhLap = cmn.Convert_DMY_To_MDY(e.NewValues["NgayThanhLap"].ToString());
         dthiDTO.SoDienThoai = e.NewValues["SoDienThoai"].ToString();
         dthiDTO.DiaChi = e.NewValues["DiaChi"].ToString();
-        int iReturn = dthi.InsertUpdate(dthiDTO);
+        int iReturn = dthiDAL.InsertUpdate(dthiDTO);
         if (iReturn >= 0)
         {
             gvDiaDiemThi.DataSource = loadDataToUI();
@@ -102,7 +102,7 @@ public partial class DiemThi_diemthi : BasePage
         dthiDTO.NgayThanhLap = cmn.Convert_DMY_To_MDY(e.NewValues["NgayThanhLap"].ToString());
         dthiDTO.SoDienThoai = e.NewValues["SoDienThoai"].ToString();
         dthiDTO.DiaChi = e.NewValues["DiaChi"].ToString();
-        int iReturn = dthi.InsertUpdate(dthiDTO);
+        int iReturn = dthiDAL.InsertUpdate(dthiDTO);
         if (iReturn >= 0)
         {
             gvDiaDiemThi.DataSource = loadDataToUI();
@@ -129,7 +129,7 @@ public partial class DiemThi_diemthi : BasePage
         foreach (object key in keyValues)
         {
             dthiDTO.MaDiemThi = key.ToString();
-            int iReturn = dthi.Delete(dthiDTO);
+            int iReturn = dthiDAL.Delete(dthiDTO);
             if (iReturn < 0)
                 strMess += " " + key.ToString();
         }

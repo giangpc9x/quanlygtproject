@@ -10,6 +10,6 @@ public partial class Test : BasePage//System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        string a;
+        //string a;
     }
 }
