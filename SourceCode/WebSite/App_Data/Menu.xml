@@ -44,9 +44,7 @@
         </Demo>
         <Demo Text="Quản lý nhóm người dùng" NavigateUrl="~/HeThong/qlnhomnguoidung.aspx" Section="2" Title="Quản lý nhóm người sử dụng hệ thống">
             <GeneralTerms ShowHeader="false">
-                <p>Navigating from one grid page to the next sucks up server resources and can negatively impact the usability of your application.</p>
-                <p>Simply navigate from one page to the next using the pager control at the bottom of the following grid control and compare the performance of the ASPxGridView to our competition - the numbers don't lie - nothing comes close to the ASPxGridView.</p>
-                <br/>
+               
             </GeneralTerms>
             <Description>
             </Description>
