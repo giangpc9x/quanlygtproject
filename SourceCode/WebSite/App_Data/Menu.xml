@@ -52,12 +52,12 @@
     </DemoGroup>
 
     <DemoGroup Text="Quản lý đề thi" ImageUrl="~/Images/TitleImages/GridView.png" ImageWidth="76px" ImageHeight="76px">
-        <Demo Text="Quản lý câu hỏi" NavigateUrl="~/qlch/Grouping.aspx" Title="Outlook Style Data Grouping - AJAX Grid Control for ASP.NET">
+        <Demo Text="Quản lý câu hỏi" NavigateUrl="~/DeThi/qlcauhoi.aspx" Title="Outlook Style Data Grouping - AJAX Grid Control for ASP.NET">
             <Description>
               
             </Description>
         </Demo>
-        <Demo Text="Quản lý loại câu hỏi" NavigateUrl="~/qlch/IntervalGrouping.aspx" Title="Advanced Data Grouping - AJAX DataGrid for ASP.NET">
+        <Demo Text="Quản lý loại câu hỏi" NavigateUrl="~/DeThi/qlloaicauhoi.aspx" Title="Advanced Data Grouping - AJAX DataGrid for ASP.NET">
             <Description>
            
             </Description>
