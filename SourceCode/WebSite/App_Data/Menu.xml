@@ -42,13 +42,13 @@
             <Description>
             </Description>
         </Demo>
-        <Demo Text="Quản lý nhóm người dùng" NavigateUrl="~/HeThong/qlnhomnguoidung.aspx" Section="2" Title="Quản lý nhóm người sử dụng hệ thống">
-            <GeneralTerms ShowHeader="false">
-               
-            </GeneralTerms>
-            <Description>
-            </Description>
-        </Demo>       
+      <Demo Text="Quản lý nhóm người dùng" NavigateUrl="~/HeThong/qlnhomnguoidung.aspx" Section="2" Title="Quản lý nhóm người sử dụng hệ thống">
+        <GeneralTerms ShowHeader="false">
+
+        </GeneralTerms>
+        <Description>
+        </Description>
+      </Demo>
     </DemoGroup>
 
     <DemoGroup Text="Quản lý đề thi" ImageUrl="~/Images/TitleImages/GridView.png" ImageWidth="76px" ImageHeight="76px">
