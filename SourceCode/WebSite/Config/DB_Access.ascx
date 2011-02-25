@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="DB_Access.ascx.cs" Inherits="WebUserControl" %>
 <%@ Register assembly="DevExpress.Web.ASPxEditors.v9.1, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxEditors" tagprefix="dxe" %>
-<asp:Panel ID="Panel1" runat="server" Height="230px" Width="428px" BorderColor="Gray" BorderStyle="Double">
+<asp:Panel ID="Panel1" runat="server" Width="428px" BorderColor="Gray" BorderStyle="Double">
     <table style="width: 100%; height: 100%;">
         <tr>
             <td style="height: 20px; background-color: gainsboro" align="center">
