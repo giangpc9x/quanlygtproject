@@ -49,6 +49,13 @@
         <Description>
         </Description>
       </Demo>
+      <Demo Text="Quản lý quyền" NavigateUrl="~/HeThong/qlquyen.aspx" Section="1" Title="Quản lý quyền sử dụng hệ thống">
+        <GeneralTerms ShowHeader="false">
+
+        </GeneralTerms>
+        <Description>
+        </Description>
+      </Demo>
     </DemoGroup>
 
     <DemoGroup Text="Quản lý đề thi" ImageUrl="~/Images/TitleImages/GridView.png" ImageWidth="76px" ImageHeight="76px">
@@ -57,11 +64,11 @@
               
             </Description>
         </Demo>
-        <Demo Text="Quản lý loại câu hỏi" NavigateUrl="~/DeThi/qlloaicauhoi.aspx" Title="Advanced Data Grouping - AJAX DataGrid for ASP.NET">
-            <Description>
-           
-            </Description>
-        </Demo>
+      <Demo Text="Quản lý loại câu hỏi" NavigateUrl="~/DeThi/qlloaicauhoi.aspx" Title="Advanced Data Grouping - AJAX DataGrid for ASP.NET">
+        <Description>
+
+        </Description>
+      </Demo>
         <Demo Text="Quản lý loại bằng lái" NavigateUrl="~/qlch/Sorting.aspx" Title="Data Sorting - ASP.NET Grid Control">
             <Description>
               

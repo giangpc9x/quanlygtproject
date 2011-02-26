@@ -58,7 +58,7 @@ public partial class HeThong_qlquyen : NTT.Web.UI.BasePage
     protected void gvQuyen_RowInserting(object sender, DevExpress.Web.Data.ASPxDataInsertingEventArgs e)
     {
         e.Cancel = true;
-        quyenDTO.MaQuyen = e.NewValues["MaQuyen"].ToString();
+      
         quyenDTO.MoTa = e.NewValues["MoTa"].ToString();
         int iReturn = quyenDAL.InsertUpdate(quyenDTO);
         if (iReturn >= 0)
@@ -75,7 +75,7 @@ public partial class HeThong_qlquyen : NTT.Web.UI.BasePage
     protected void gvQuyen_RowUpdating(object sender, DevExpress.Web.Data.ASPxDataUpdatingEventArgs e)
     {
         e.Cancel = true;
-        quyenDTO.MaQuyen = e.NewValues["MaQuyen"].ToString();
+        
         quyenDTO.MoTa = e.NewValues["MoTa"].ToString();
         int iReturn = quyenDAL.InsertUpdate(quyenDTO);
         if (iReturn >= 0)
@@ -119,7 +119,11 @@ public partial class HeThong_qlquyen : NTT.Web.UI.BasePage
     }
     protected void gvQuyen_CustomCallback(object sender, ASPxGridViewCustomCallbackEventArgs e)
     {
-
+        if (e.Parameters == "Update")
+        {
+            gvQuyen.DataSource = loadDataToUI();
+            gvQuyen.Selection.UnselectAll();
+        }
     }
    
 }

@@ -1,8 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/giaothong.master" AutoEventWireup="true" CodeFile="qlloaicauhoi.aspx.cs" Inherits="DeThi_qlloaicauhoi" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/giaothong.master" AutoEventWireup="true" CodeFile="qlchitietquyen.aspx.cs" Inherits="HeThong_qlchitietquyen" %>
 
-<%@ Register assembly="DevExpress.Web.ASPxGridView.v9.1" namespace="DevExpress.Web.ASPxGridView" tagprefix="dxwgv" %>
 <%@ Register assembly="DevExpress.Web.ASPxEditors.v9.1" namespace="DevExpress.Web.ASPxEditors" tagprefix="dxe" %>
-<%@ Register assembly="DevExpress.Web.v9.1" namespace="DevExpress.Web.ASPxObjectContainer" tagprefix="dxoc" %>
+<%@ Register assembly="DevExpress.Web.ASPxGridView.v9.1" namespace="DevExpress.Web.ASPxGridView" tagprefix="dxwgv" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="localCssPlaceholder" Runat="Server">
 </asp:Content>
@@ -11,11 +10,15 @@
 
 
 
+
+
+
+
 <script type="text/javascript">
     function StartDelete() {
-        if (MaloaiCauHoi.GetSelectedRowCount()) {
+        if (gvCTQuyen.GetSelectedRowCount()) {
             if (confirm('Xác nhận xóa dữ liệu'))
-                MaloaiCauHoi.GetValuesOnCustomCallback("Delete", GetUpdateResult);
+                gvCTQuyen.GetValuesOnCustomCallback("Delete", GetUpdateResult);
         }
         else
             alert('Vui lòng chọn một hoặc nhiều dòng dữ liệu trước khi xóa');
@@ -23,7 +26,7 @@
     function GetUpdateResult(errorText) {
         if (errorText != "")
             alert(errorText);
-        MaloaiCauHoi.PerformCallback("Update");
+        gvCTQuyen.PerformCallback("Update");
     }
 </script>
 
@@ -31,7 +34,7 @@
     <dxe:ASPxButton ID="btnThemMoi" ClientInstanceName = "btnThemMoi" runat="server" 
          Text="Thêm Mới" Width = "90px" AutoPostBack="False">
         <ClientSideEvents Click="function(s, e) {
-	MaloaiCauHoi.AddNewRow();
+	gvCTQuyen.AddNewRow();
 }" />
     </dxe:ASPxButton>
 </div>
@@ -43,19 +46,20 @@
 }" />
 </dxe:ASPxButton></div>
 <div style = "clear:both;">
-    <dxwgv:ASPxGridView ID="gvLoaiCauHoi" ClientInstanceName = "gvLoaiCauHoi" 
-        Width = "100%" KeyFieldName = "MaLoaiCauHoi" 
+    <dxwgv:ASPxGridView ID="gvCTQuyen" ClientInstanceName = "gvCTQuyen" 
+        Width = "100%" KeyFieldName = "MaQuyen,MaNhom" 
         runat="server" AutoGenerateColumns="False" 
-        onrowvalidating="gvLoaiCauHoi_RowValidating" 
-        onrowinserting="gvLoaiCauHoi_RowInserting" 
-        onrowupdating="gvLoaiCauHoi_RowUpdating" 
-        oncustomdatacallback="gvLoaiCauHoi_CustomDataCallback" 
-        oncustomcallback="gvLoaiCauHoi_CustomCallback"> 
+        onrowinserting="gvCTQuyen_RowInserting" 
+        onrowvalidating="gvCTQuyen_RowValidating" 
+        oncustomcallback="gvCTQuyen_CustomCallback" 
+        oncustomdatacallback="gvCTQuyen_CustomDataCallback" 
+        onrowupdating="gvCTQuyen_RowUpdating" >
+      
         <SettingsBehavior ConfirmDelete="True" />
         <SettingsPager>
             <Summary Text="Trang {0}/{1} ({2} dòng)" />
         </SettingsPager>
-        <SettingsEditing EditFormColumnCount="3" Mode="EditForm" 
+        <SettingsEditing EditFormColumnCount="3" Mode="Inline" 
             PopupEditFormHorizontalAlign="Center" PopupEditFormModal="True" 
             PopupEditFormWidth="600px" />
         <SettingsText EmptyDataRow="Không có dữ liệu" CommandCancel="Hủy" 
@@ -64,7 +68,7 @@
         <Columns>
             <dxwgv:GridViewCommandColumn ShowSelectCheckbox="True" VisibleIndex="0" Width = "25px">
              <HeaderTemplate>
-                     <input type="checkbox" onclick="gvDiaDiemThi.SelectAllRowsOnPage(this.checked);" style="vertical-align:middle;" title="Chọn/Bỏ chọn tất cả dòng trên trang này"></input>
+                     <input type="checkbox" onclick="gvNhomNguoiDung.SelectAllRowsOnPage(this.checked);" style="vertical-align:middle;" title="Chọn/Bỏ chọn tất cả dòng trên trang này"></input>
                  </HeaderTemplate>
                  <HeaderStyle Paddings-PaddingTop="1" Paddings-PaddingBottom="1" 
                     HorizontalAlign="Center">
@@ -73,9 +77,8 @@
                 <ClearFilterButton Visible="True">
                 </ClearFilterButton>
             </dxwgv:GridViewCommandColumn>
-            <dxwgv:GridViewDataTextColumn Caption="Mã Loại Câu Hỏi" 
-                Name = "gtxtMaLoaiCauHoi" FieldName="MaLoaiCauHoi" 
-               VisibleIndex="1" Width="90px">
+            <dxwgv:GridViewDataTextColumn Caption="Mã Quyền" Name = "gtxtMaQuyen" FieldName="MaQuyen" 
+               VisibleIndex="1" Width="90px" ReadOnly="True">
                
                 <PropertiesTextEdit ClientInstanceName="gtxtMaDiemThi">
                     <ClientSideEvents Validation="function(s, e) {
@@ -83,14 +86,16 @@
 }" />
                 </PropertiesTextEdit>
                
-                <EditFormSettings VisibleIndex="0" />
+                <EditFormSettings VisibleIndex="0" Visible="False" />
             </dxwgv:GridViewDataTextColumn>
-            <dxwgv:GridViewDataTextColumn Caption="Tên Loại" FieldName="TenLoai" 
-                Name="gcTenLoai" VisibleIndex="2">
+            <dxwgv:GridViewDataTextColumn Caption="Mã Nhóm" FieldName="MaNhom" 
+                Name="gcMaNhom" VisibleIndex="2">
+                <PropertiesTextEdit Width="100%">
+                </PropertiesTextEdit>
                 <Settings AutoFilterCondition="Contains" />
-                <EditFormSettings ColumnSpan="3" VisibleIndex="3" />
+                <EditFormSettings VisibleIndex="1" />
             </dxwgv:GridViewDataTextColumn>
-            <dxwgv:GridViewCommandColumn VisibleIndex="3" Caption = "Sửa" Width = "30px">
+            <dxwgv:GridViewCommandColumn VisibleIndex="3" Caption = "Sửa" Width = "50px">
                 <EditButton Visible="True" Text = "Sửa">
                 </EditButton>
                 <ClearFilterButton Visible="True">
@@ -103,7 +108,6 @@
         <Settings ShowFilterRow="True" />
     </dxwgv:ASPxGridView>
     </div>
-
 
 
 
