@@ -56,6 +56,13 @@
         <Description>
         </Description>
       </Demo>
+      <Demo Text="Quản lý chi tiết quyền" NavigateUrl="~/HeThong/qlchitietquyen.aspx" Section="1" Title="Quản lý chi tiết quyền sử dụng hệ thống">
+        <GeneralTerms ShowHeader="false">
+
+        </GeneralTerms>
+        <Description>
+        </Description>
+      </Demo>
     </DemoGroup>
 
     <DemoGroup Text="Quản lý đề thi" ImageUrl="~/Images/TitleImages/GridView.png" ImageWidth="76px" ImageHeight="76px">
@@ -82,7 +89,7 @@
             
             </Description>
         </Demo>
-        <Demo Text="Thông tin phòng thi" NavigateUrl="~/dt/LinqDataSource.aspx" Title="Bind to Data Using LINQ Sources - ASP.NET DataGrid Control">
+        <Demo Text="Thông tin phòng thi" NavigateUrl="~/DiemThi/phongthi.aspx" Title="Bind to Data Using LINQ Sources - ASP.NET DataGrid Control">
             <Description>
             </Description>
         </Demo>
