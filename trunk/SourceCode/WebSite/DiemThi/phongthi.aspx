@@ -57,14 +57,14 @@ function GetUpdateResult(errorText)
         <SettingsPager>
             <Summary Text="Trang {0}/{1} ({2} dòng)" />
         </SettingsPager>
-        <SettingsEditing EditFormColumnCount="3" Mode="EditForm" 
-            PopupEditFormHorizontalAlign="Center" PopupEditFormModal="True" 
-            PopupEditFormWidth="600px" />
+      
+        <SettingsEditing EditFormColumnCount="3" />
+      
         <SettingsText EmptyDataRow="Không có dữ liệu" CommandCancel="Hủy" 
             CommandUpdate="Lưu" PopupEditFormCaption="Thông Tin Điểm Thi" 
             ConfirmDelete="Xác nhận xóa dữ liệu ?" />
         <Columns>
-            <dxwgv:GridViewCommandColumn ShowSelectCheckbox="True" VisibleIndex="1" 
+            <dxwgv:GridViewCommandColumn ShowSelectCheckbox="True" VisibleIndex="0" 
                 Width = "25px">
              <HeaderTemplate>
                      <input type="checkbox" onclick="gvPhongThi.SelectAllRowsOnPage(this.checked);" style="vertical-align:middle;" title="Chọn/Bỏ chọn tất cả dòng trên trang này"></input>
@@ -77,31 +77,43 @@ function GetUpdateResult(errorText)
                 </ClearFilterButton>
             </dxwgv:GridViewCommandColumn>
             <dxwgv:GridViewDataTextColumn Caption="Mã Phòng" Name = "gtxtMaPhong" FieldName="MaPhong" 
-               VisibleIndex="2" Width="90px">
+               VisibleIndex="1" Width="50px">
                
-                <PropertiesTextEdit ClientInstanceName="gtxtMaDiemThi">
-                    <ClientSideEvents Validation="function(s, e) {
-	//alert('alo alo');
-}" />
-                </PropertiesTextEdit>
+                <EditFormSettings VisibleIndex="1" />
                
-                <EditFormSettings VisibleIndex="0" />
             </dxwgv:GridViewDataTextColumn>
+            <dxwgv:GridViewDataSpinEditColumn Caption="SL" FieldName="SoThSinhToiDa" 
+                Name="gcSoThSinhToiDa" ToolTip="So luong thi sinh trong phong" VisibleIndex="2" 
+                Width="40px">
+                <PropertiesSpinEdit DisplayFormatString="g">
+                </PropertiesSpinEdit>
+                <Settings AutoFilterCondition="Contains" />
+                <EditFormSettings VisibleIndex="2" />
+            </dxwgv:GridViewDataSpinEditColumn>
+            <dxwgv:GridViewDataComboBoxColumn Caption="Điểm Thi" FieldName="DiaChi" 
+                Name="gcMaDiemThi" VisibleIndex="3">
+                <PropertiesComboBox DataMember="MaDiemThi" ValueType="System.String" 
+                    ValueField="MaDiemThi">
+                    <Columns>
+                        <dxe:ListBoxColumn Caption="Tên điểm thi" FieldName="DiaChi" 
+                            Name="gcboDiemThi" />
+                    </Columns>
+                </PropertiesComboBox>
+                <EditFormSettings ColumnSpan="3" VisibleIndex="0" />
+            </dxwgv:GridViewDataComboBoxColumn>
             <dxwgv:GridViewDataTextColumn Caption="Mô Tả" FieldName="MoTa" Name="gcMoTa" 
-                VisibleIndex="3" Width="100px">
+                VisibleIndex="4" Width="100px">
                 <PropertiesTextEdit DisplayFormatString="dd/MM/yyyy">
                 </PropertiesTextEdit>
-                <EditFormSettings VisibleIndex="1" />
+                <EditFormSettings ColumnSpan="3" VisibleIndex="4" />
             </dxwgv:GridViewDataTextColumn>
-            <dxwgv:GridViewDataTextColumn Caption="Số Thí Sinh Tối Đa" FieldName="SoThSinhToiDa" 
-                Name="gcSoThSinhToiDa" VisibleIndex="4">
-                <Settings AutoFilterCondition="Contains" />
-                <EditFormSettings ColumnSpan="3" VisibleIndex="2" />
-            </dxwgv:GridViewDataTextColumn>
-            <dxwgv:GridViewDataTextColumn Caption="Trạng Thái" FieldName="TrangThai" 
-                Name="gcTrangThai" VisibleIndex="5" Width="100px">
-                <EditFormSettings VisibleIndex="2" />
-            </dxwgv:GridViewDataTextColumn>
+            <dxwgv:GridViewDataCheckColumn Caption="Trạng Thái" FieldName="TrangThai" 
+                Name="gcTrangThai" VisibleIndex="5" Width="50px">
+                <PropertiesCheckEdit DisplayTextChecked="Sử dụng" 
+                    DisplayTextUnchecked="Không sử dụng">
+                </PropertiesCheckEdit>
+                <EditFormSettings VisibleIndex="3" />
+            </dxwgv:GridViewDataCheckColumn>
             <dxwgv:GridViewCommandColumn VisibleIndex="6" Caption = "Sửa" Width = "30px">
                 <EditButton Visible="True" Text = "Sửa">
                 </EditButton>
@@ -109,11 +121,7 @@ function GetUpdateResult(errorText)
                 </ClearFilterButton>
             </dxwgv:GridViewCommandColumn>
             <dxwgv:GridViewDataTextColumn Caption="Error" 
-                Visible="False" VisibleIndex="6">
-            </dxwgv:GridViewDataTextColumn>
-            <dxwgv:GridViewDataTextColumn Caption="Mã Điểm Thi" FieldName="MaDiemThi" 
-                Name="gcMaDiemThi" VisibleIndex="0">
-                <EditFormSettings VisibleIndex="3" />
+                Visible="False" VisibleIndex="7">
             </dxwgv:GridViewDataTextColumn>
         </Columns>
         <Settings ShowFilterRow="True" />
