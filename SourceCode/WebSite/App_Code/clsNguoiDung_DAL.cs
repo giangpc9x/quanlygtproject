@@ -32,7 +32,7 @@ public class clsNguoiDung_DAL : NTT.Web.UI.BasePage
         DataTable dt = new DataTable();
         try
         {
-            dt = obj.GetDataTable("Select_Nguoi_Dung", CommandType.StoredProcedure);
+            dt = obj.GetDataTable("Select_Nguoi_Dung",_list, CommandType.StoredProcedure);
         }
         catch
         {
