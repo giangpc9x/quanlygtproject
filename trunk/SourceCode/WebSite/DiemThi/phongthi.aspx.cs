@@ -34,8 +34,12 @@ public partial class DiemThi_phongthi : NTT.Web.UI.BasePage
         {
            
         }
-        gvPhongThi.DataSource = loadDataToUI();
+        if (!Page.IsPostBack)
+        {
+           
+        }
         loadMasterData();
+        gvPhongThi.DataSource = loadDataToUI();
         gvPhongThi.DataBind();
     }
 
