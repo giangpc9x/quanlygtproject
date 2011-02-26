@@ -6,11 +6,10 @@ using System.Web;
 /// <summary>
 /// Summary description for clsDiaDiemThi_DTO
 /// </summary>
-public class clsQuyen_DTO
+public class clsLoaiCauHoi_DTO
 {
-    private string _oldID,_MaQuyen, _MoTa;
-     
-    public clsQuyen_DTO()
+    private string _oldID, _MaloaiCauHoi, _TenLoai;
+    public clsLoaiCauHoi_DTO()
     {
         //
         // TODO: Add constructor logic here
@@ -21,14 +20,15 @@ public class clsQuyen_DTO
         get { return this._oldID; }
         set { this._oldID = value; }
     }
-    public string MaQuyen
+   
+    public string MaloaiCauHoi
     {
-        get { return this._MaQuyen; }
-        set { this._MaQuyen = value; }
+        get { return this._MaloaiCauHoi; }
+        set { this._MaloaiCauHoi = value; }
     }
-    public string MoTa
+    public string TenLoai
     {
-        get { return this._MoTa; }
-        set { this._MoTa = value; }
+        get { return this._TenLoai; }
+        set { this._TenLoai = value; }
     }
 }

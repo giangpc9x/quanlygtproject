@@ -48,12 +48,7 @@ function GetUpdateResult(errorText)
 <div style = "clear:both;">
     <dxwgv:ASPxGridView ID="gvQuyen" ClientInstanceName = "gvQuyen" 
         Width = "100%" KeyFieldName = "MaQuyen" 
-        runat="server" AutoGenerateColumns="False" 
-        onrowinserting="gvQuyen_RowInserting" 
-        onrowvalidating="gvQuyen_RowValidating" 
-        oncustomcallback="gvQuyen_CustomCallback" 
-        oncustomdatacallback="gvQuyen_CustomDataCallback" 
-        onrowupdating="gvQuyen_RowUpdating" >
+        runat="server" AutoGenerateColumns="False" >
       
         <SettingsBehavior ConfirmDelete="True" />
         <SettingsPager>
@@ -88,7 +83,7 @@ function GetUpdateResult(errorText)
                
                 <EditFormSettings VisibleIndex="0" Visible="False" />
             </dxwgv:GridViewDataTextColumn>
-            <dxwgv:GridViewDataTextColumn Caption="MoTa" FieldName="MoTa" 
+            <dxwgv:GridViewDataTextColumn Caption="Mô Tả" FieldName="MoTa" 
                 Name="gcMoTa" VisibleIndex="2">
                 <PropertiesTextEdit Width="100%">
                 </PropertiesTextEdit>

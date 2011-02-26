@@ -6,23 +6,23 @@ using System.Collections.Specialized;
 using NTT.Web.Core.XSQL;
 using System.Data.SqlClient;
 
-public class clsCTQuyen_DAL
+public class clsLoaiCauHoi_DAL
 {
     DataObject obj;
-    public clsCTQuyen_DAL()
+    public clsLoaiCauHoi_DAL()
 	{
         obj = new DataObject();
 	}
-    public DataTable getCTQuyen(clsCTQuyen_DTO ctqDTO)
+    public DataTable getLoaiCauHoi(clsLoaiCauHoi_DTO loaiCHDTO)
     {
         ListDictionary _list = new ListDictionary();
-        _list.Add("MaQuyen", ctqDTO.MaQuyen);
-        _list.Add("MaNhom", ctqDTO.MaNhom);
+        _list.Add("MaloaiCauHoi", loaiCHDTO.MaloaiCauHoi);
+        _list.Add("TenLoai", loaiCHDTO.TenLoai);
        
         DataTable dt = new DataTable();
         try
         {
-            dt = obj.GetDataTable("Select_CT_Quyen", CommandType.StoredProcedure);
+            dt = obj.GetDataTable("Select_Loai_Cau_Hoi", CommandType.StoredProcedure);
         }
         catch
         {
@@ -30,18 +30,17 @@ public class clsCTQuyen_DAL
         }
         return dt;
     }
-    public int InsertUpdate(clsCTQuyen_DTO ctqDTO)
+    public int InsertUpdate(clsLoaiCauHoi_DTO loaiCHDTO)
     {
         
         try
         {
             ListDictionary _list = new ListDictionary();
-            _list.Add("old_id_MaQuyen", ctqDTO.OldID_MaQuyen);
-            _list.Add("old_id_MaNhom", ctqDTO.OldID_MaNhom);
-            _list.Add("MaQuyen", ctqDTO.MaQuyen);
-            _list.Add("MaNhom", ctqDTO.MaNhom);
+            _list.Add("old_id", loaiCHDTO.OldID);
+            _list.Add("MaloaiCauHoi", loaiCHDTO.MaloaiCauHoi);
+            _list.Add("TenLoai", loaiCHDTO.TenLoai);
 
-            int iReturn = obj.ExcSql("Insert_Update_CT_Quyen", _list, CommandType.StoredProcedure);
+            int iReturn = obj.ExcSql("Insert_Update_Loai_Cau_Hoi", _list, CommandType.StoredProcedure);
             return iReturn;
         }        
         catch (Exception)
@@ -50,15 +49,15 @@ public class clsCTQuyen_DAL
             return -1111; // Đặt số này làm ngoại lệ ko lường trước được. ở StoredProcedure không được return có số này tránh trường hợp trùng
         }
     }
-    public int Delete(clsCTQuyen_DTO ctqDTO)
+    public int Delete(clsLoaiCauHoi_DTO loaiCHDTO)
     {
 
         try
         {
             ListDictionary _list = new ListDictionary();
-            _list.Add("MaQuyen", ctqDTO.MaQuyen);
-            _list.Add("MaNhom", ctqDTO.MaQuyen);
-            int iReturn = obj.ExcSql("Delete_CT_Quyen", _list, CommandType.StoredProcedure);
+            _list.Add("MaloaiCauHoi", loaiCHDTO.MaloaiCauHoi);
+
+            int iReturn = obj.ExcSql("Delete_Loai_Cau_Hoi", _list, CommandType.StoredProcedure);
             return iReturn;
         }
         catch (Exception)
