@@ -9,25 +9,32 @@
 
 
 <script type="text/javascript">
-function StartDelete() 
-{
-    if (gvNguoiDung.GetSelectedRowCount()) 
-    {
-        if (confirm('Xác nhận xóa dữ liệu'))
-            gvNguoiDung.GetValuesOnCustomCallback("Delete", GetUpdateResult);
+    function StartDelete() {
+        if (gvNguoiDung.GetSelectedRowCount()) {
+            if (confirm('Xác nhận xóa dữ liệu'))
+                gvNguoiDung.GetValuesOnCustomCallback("Delete", GetUpdateResult);
+        }
+        else
+            alert('Vui lòng chọn một hoặc nhiều dòng dữ liệu trước khi xóa');
     }
-    else
-        alert('Vui lòng chọn một hoặc nhiều dòng dữ liệu trước khi xóa');    
-}
-function GetUpdateResult(errorText) 
-{
-    if (errorText != "")
-        alert(errorText);
-    gvNguoiDung.PerformCallback("Update");
-}
+    function GetUpdateResult(errorText) {
+        if (errorText != "")
+            alert(errorText);
+        gvNguoiDung.PerformCallback("Update");
+    }
 </script>
 
-<div style ="width:90px; float:left; padding-bottom:5px;">
+
+<div style ="width:100%; float:left; padding-bottom:10px;">
+    <dxe:ASPxComboBox ID="cboDienThi" runat="server" Width="70%" 
+        ClientInstanceName="cboDiemThi" ValueType="System.String">
+        <ClientSideEvents ValueChanged="function(s, e) {
+	 gvNguoiDung.PerformCallback(cboDiemThi.GetValue().toString());
+}" />
+    </dxe:ASPxComboBox>
+</div>
+
+<div style ="width:90px; float:left; padding-bottom:5px; clear:both;">
     <dxe:ASPxButton ID="btnThemMoi" ClientInstanceName = "btnThemMoi" runat="server" 
          Text="Thêm Mới" Width = "90px" AutoPostBack="False">
         <ClientSideEvents Click="function(s, e) {
@@ -46,90 +53,101 @@ function GetUpdateResult(errorText)
     <dxwgv:ASPxGridView ID="gvNguoiDung" ClientInstanceName = "gvNguoiDung" 
         Width = "100%" KeyFieldName = "TenDangNhap" 
         runat="server" AutoGenerateColumns="False" 
-        onrowvalidating="gvNguoiDung_RowValidating" 
         onrowinserting="gvNguoiDung_RowInserting" 
-        onrowupdating="gvNguoiDung_RowUpdating" 
+        onrowvalidating="gvNguoiDung_RowValidating" 
+        oncustomcallback="gvNguoiDung_CustomCallback" 
         oncustomdatacallback="gvNguoiDung_CustomDataCallback" 
-        oncustomcallback="gvNguoiDung_CustomCallback"> 
+        onrowupdating="gvNguoiDung_RowUpdating" >
+      
         <SettingsBehavior ConfirmDelete="True" />
         <SettingsPager>
             <Summary Text="Trang {0}/{1} ({2} dòng)" />
         </SettingsPager>
-        <SettingsEditing EditFormColumnCount="3" Mode="EditForm" 
+        <SettingsEditing EditFormColumnCount="3" Mode="PopupEditForm" 
             PopupEditFormHorizontalAlign="Center" PopupEditFormModal="True" 
             PopupEditFormWidth="600px" />
         <SettingsText EmptyDataRow="Không có dữ liệu" CommandCancel="Hủy" 
             CommandUpdate="Lưu" PopupEditFormCaption="Thông Tin Điểm Thi" 
             ConfirmDelete="Xác nhận xóa dữ liệu ?" />
         <Columns>
-            <dxwgv:GridViewDataTextColumn 
-               VisibleIndex="0">
+            <dxwgv:GridViewCommandColumn ShowSelectCheckbox="True" VisibleIndex="0" Width = "25px">
+             <HeaderTemplate>
+                     <input type="checkbox" onclick="gvNhomNguoiDung.SelectAllRowsOnPage(this.checked);" style="vertical-align:middle;" title="Chọn/Bỏ chọn tất cả dòng trên trang này"></input>
+                 </HeaderTemplate>
+                 <HeaderStyle Paddings-PaddingTop="1" Paddings-PaddingBottom="1" 
+                    HorizontalAlign="Center">
+<Paddings PaddingTop="1px" PaddingBottom="1px"></Paddings>
+                </HeaderStyle>
+                <ClearFilterButton Visible="True">
+                </ClearFilterButton>
+            </dxwgv:GridViewCommandColumn>
+            <dxwgv:GridViewDataTextColumn Caption="Tên Đăng Nhập" Name = "gtxtTenDangNhap" FieldName="TenDangNhap" 
+               VisibleIndex="1" Width="90px">
+               
+            
                
             </dxwgv:GridViewDataTextColumn>
-            <dxwgv:GridViewDataTextColumn Caption="Tên Đăng Nhập" FieldName="TenDangNhap" 
-                Name="gtxtTenDangNhap" VisibleIndex="1" Width="90px">
-            </dxwgv:GridViewDataTextColumn>
-            <dxwgv:GridViewDataTextColumn Caption="Mã Điểm Thi" FieldName="MaDiemThi" 
-                Name="gtxtMaDiemThi" VisibleIndex="2" Width="90px">
-                <PropertiesTextEdit ClientInstanceName="gtxtMaDiemThi">
-                    <ClientSideEvents Validation="function(s, e) {
-	//alert('alo alo');
-}" />
-                </PropertiesTextEdit>
-                <EditFormSettings VisibleIndex="0" />
-            </dxwgv:GridViewDataTextColumn>
-            <dxwgv:GridViewDataTextColumn Caption="Mật Khẩu" FieldName="MatKhau" 
-                Name="gcMatKhau" VisibleIndex="3" Width="90px">
-            </dxwgv:GridViewDataTextColumn>
-            <dxwgv:GridViewDataTextColumn Caption="Họ" FieldName="Ho" Name="gcHo" 
-                VisibleIndex="4" Width="90px">
+            <dxwgv:GridViewDataTextColumn Caption="Họ" FieldName="Ho" 
+                Name="gcHo" VisibleIndex="2" Width="90px">
             </dxwgv:GridViewDataTextColumn>
             <dxwgv:GridViewDataTextColumn Caption="Tên" FieldName="Ten" Name="gcTen" 
-                VisibleIndex="5" Width="90px">
+                VisibleIndex="3" Width="90px">
             </dxwgv:GridViewDataTextColumn>
-            <dxwgv:GridViewDataTextColumn Caption="CMND" FieldName="CMND" Name="gcCMND" 
-                VisibleIndex="6" Width="90px">
+            <dxwgv:GridViewDataTextColumn Caption="Ngày  Sinh" FieldName="NgaySinh" Name="gcNgaySinh" 
+                VisibleIndex="4" Width="90px">
             </dxwgv:GridViewDataTextColumn>
-            <dxwgv:GridViewDataDateColumn Caption="Ngày Sinh" FieldName="NgaySinh" 
-                Name="gcNgaySinh" VisibleIndex="7" Width="90px">
-                <PropertiesDateEdit DisplayFormatString="dd/MM/yyyy">
-                </PropertiesDateEdit>
-                <EditFormSettings VisibleIndex="1" />
-            </dxwgv:GridViewDataDateColumn>
             <dxwgv:GridViewDataTextColumn Caption="Địa Chỉ" FieldName="DiaChi" 
-                Name="gcDiaChi" VisibleIndex="8" Width="90px">
-                <Settings AutoFilterCondition="Contains" />
-                <EditFormSettings ColumnSpan="3" VisibleIndex="3" />
+                Name="gcDiaChi" VisibleIndex="5" Width="90px">
             </dxwgv:GridViewDataTextColumn>
             <dxwgv:GridViewDataTextColumn Caption="Điện Thoại" FieldName="DienThoai" 
-                Name="gcDienThoai" VisibleIndex="9" Width="90px">
-                <EditFormSettings VisibleIndex="2" />
-            </dxwgv:GridViewDataTextColumn>
-            <dxwgv:GridViewDataTextColumn Caption="Email" FieldName="Email" Name="gcEmail" 
-                VisibleIndex="10" Width="90px">
-            </dxwgv:GridViewDataTextColumn>
-            <dxwgv:GridViewDataTextColumn Caption="Ngày Đăng Ký" FieldName="NgayDK" 
-                Name="gcNgayDK" VisibleIndex="11" Width="90px">
+                Name="gcDienThoai" VisibleIndex="6" Width="90px">
             </dxwgv:GridViewDataTextColumn>
             <dxwgv:GridViewDataTextColumn Caption="Trạng Thái" FieldName="TrangThai" 
-                Name="gcTrangThai" VisibleIndex="12" Width="90px">
+                Name="gcTrangThai" VisibleIndex="7" Width="90px">
             </dxwgv:GridViewDataTextColumn>
-            <dxwgv:GridViewDataTextColumn Caption="Mã Nhóm" FieldName="MaNhom" 
-                Name="gcMaNhom" VisibleIndex="13" Width="90px">
-            </dxwgv:GridViewDataTextColumn>
-            <dxwgv:GridViewCommandColumn VisibleIndex="14" Caption = "Sửa" Width = "30px">
+            <dxwgv:GridViewCommandColumn VisibleIndex="8" Caption = "Sửa" Width = "50px">
                 <EditButton Visible="True" Text = "Sửa">
                 </EditButton>
                 <ClearFilterButton Visible="True">
                 </ClearFilterButton>
             </dxwgv:GridViewCommandColumn>
-            <dxwgv:GridViewDataTextColumn Caption="Error" 
-                Visible="False" VisibleIndex="6">
+            <dxwgv:GridViewDataTextColumn Caption="Error" VisibleIndex="6" Visible="False">
+            </dxwgv:GridViewDataTextColumn>
+            <dxwgv:GridViewDataTextColumn Caption="Email" FieldName="Email" Name="gcEmail" 
+                VisibleIndex="10" Width="90px" Visible="False">
+                <EditFormSettings Visible="True" />
+            </dxwgv:GridViewDataTextColumn>
+            <dxwgv:GridViewDataTextColumn Caption="Mã Nhóm" FieldName="MaNhom" 
+                Name="gcMaNhom" VisibleIndex="11" Width="90px" Visible="False">
+                <EditFormSettings Visible="True" />
+            </dxwgv:GridViewDataTextColumn>
+            <dxwgv:GridViewDataTextColumn Caption="Mật Khẩu" FieldName="MatKhau" 
+                Name="gcMatKhau" VisibleIndex="10" Width="90px" Visible="False">
+                <PropertiesTextEdit Password="True">
+                </PropertiesTextEdit>
+                <EditFormSettings Visible="True" />
+            </dxwgv:GridViewDataTextColumn>
+            <dxwgv:GridViewDataTextColumn Caption="Ngày Đăng Ký" FieldName="NgayDK" 
+                Name="gcNgayDK" VisibleIndex="11" Width="90px" Visible="False">
+                <EditFormSettings Visible="True" />
+            </dxwgv:GridViewDataTextColumn>
+            <dxwgv:GridViewDataTextColumn Caption="CMND" FieldName="CMND" Name="gcCMND" 
+                VisibleIndex="14" Width="90px" Visible="False">
+                <EditFormSettings Visible="True" />
             </dxwgv:GridViewDataTextColumn>
         </Columns>
         <Settings ShowFilterRow="True" />
     </dxwgv:ASPxGridView>
     </div>
+
+<div style ="width:90px; float:left; padding-bottom:5px; clear:both;">
+    <dxe:ASPxButton ID="ASPxButton1" ClientInstanceName = "btnThemMoi" runat="server" 
+         Text="Thêm Mới" Width = "90px" AutoPostBack="False">
+        <ClientSideEvents Click="function(s, e) {
+	gvNguoiDung.AddNewRow();
+}" />
+    </dxe:ASPxButton>
+</div>
 
 
 </asp:Content>

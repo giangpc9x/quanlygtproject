@@ -14,6 +14,9 @@ public partial class HeThong_qlnguoidung : NTT.Web.UI.BasePage
     #region Khai báo các đối tượng và các biến toàn cục
     clsNguoiDung_DAL ndungDAL;
     clsNguoiDung_DTO ndungDTO;
+
+    clsDiaDiemThi_DAL dthiDAL;
+    clsDiaDiemThi_DTO dthiDTO;
     clsCommon cmn;
     string strMess = string.Empty;
     #endregion
@@ -21,9 +24,23 @@ public partial class HeThong_qlnguoidung : NTT.Web.UI.BasePage
     {
         ndungDAL = new clsNguoiDung_DAL();
         ndungDTO = new clsNguoiDung_DTO();
+
+        dthiDAL = new clsDiaDiemThi_DAL();
+        dthiDTO = new clsDiaDiemThi_DTO();
         cmn = new clsCommon();
+        loadMasterData();
         gvNguoiDung.DataSource = loadDataToUI();
         gvNguoiDung.DataBind();
+    }
+
+    private void loadMasterData()
+    {
+        DataTable dt = new DataTable();
+        dt = dthiDAL.getDiaDiemThi(dthiDTO);
+        cboDienThi.ValueField = "MaDiemThi";
+        cboDienThi.TextField = "DiaChi";
+        cboDienThi.DataSource = dt;
+        cboDienThi.DataBind();
     }
     private DataTable loadDataToUI()
     {
@@ -40,6 +57,12 @@ public partial class HeThong_qlnguoidung : NTT.Web.UI.BasePage
         {
             AddError(e.Errors, gvNguoiDung.Columns["Error"], strMess);
             e.RowError = strMess;
+            return;
+        }
+        if (cboDienThi.Value == null)
+        {
+            AddError(e.Errors, gvNguoiDung.Columns["Error"], "");
+            e.RowError = "Vui long chon 1 diem thi";
             return;
         }
         foreach (GridViewColumn column in gvNguoiDung.Columns)
@@ -63,6 +86,7 @@ public partial class HeThong_qlnguoidung : NTT.Web.UI.BasePage
             e.RowError = "Trùng tên đăng nhập, vui lòng kiểm tra lại";
             return;
         }
+       
     }
     void AddError(Dictionary<GridViewColumn, string> errors, GridViewColumn column, string errorText)
     {
@@ -74,14 +98,14 @@ public partial class HeThong_qlnguoidung : NTT.Web.UI.BasePage
     {
         e.Cancel = true;
         ndungDTO.TenDangNhap = e.NewValues["TenDangNhap"].ToString();
-        ndungDTO.MaDiemThi = e.NewValues["MaDiemThi"].ToString();
+        ndungDTO.MaDiemThi = cboDienThi.Value.ToString();
         ndungDTO.MatKhau = e.NewValues["MatKhau"].ToString();
         ndungDTO.Ho = e.NewValues["Ho"].ToString();
         ndungDTO.Ten = e.NewValues["Ten"].ToString();
         ndungDTO.CMND = e.NewValues["CMND"].ToString();
         ndungDTO.NgaySinh = cmn.Convert_DMY_To_MDY(e.NewValues["NgaySinh"].ToString());
         ndungDTO.DiaChi = e.NewValues["DiaChi"].ToString();
-        ndungDTO.DienThoai = e.NewValues["DienThoai"].ToString();
+        ndungDTO.DienThoai = e.NewValues["DienThoai"].ToString().Trim();
         ndungDTO.Email = e.NewValues["Email"].ToString();
         ndungDTO.NgayDK = cmn.Convert_DMY_To_MDY(e.NewValues["NgayDK"].ToString());
         ndungDTO.TrangThai = e.NewValues["TrangThai"].ToString();
@@ -102,7 +126,7 @@ public partial class HeThong_qlnguoidung : NTT.Web.UI.BasePage
     {
         e.Cancel = true;
         ndungDTO.TenDangNhap = e.NewValues["TenDangNhap"].ToString();
-        ndungDTO.MaDiemThi = e.NewValues["MaDiemThi"].ToString();
+        ndungDTO.MaDiemThi = cboDienThi.Value.ToString();
         ndungDTO.MatKhau = e.NewValues["MatKhau"].ToString();
         ndungDTO.Ho = e.NewValues["Ho"].ToString();
         ndungDTO.Ten = e.NewValues["Ten"].ToString();
@@ -157,6 +181,12 @@ public partial class HeThong_qlnguoidung : NTT.Web.UI.BasePage
         {
             gvNguoiDung.DataSource = loadDataToUI();
             gvNguoiDung.Selection.UnselectAll();
+        }
+        else
+        {
+            ndungDTO.MaDiemThi = e.Parameters;
+            gvNguoiDung.DataSource = loadDataToUI();
+            gvNguoiDung.DataBind();
         }
     }
 }
