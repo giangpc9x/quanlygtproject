@@ -1,5 +1,4 @@
 ﻿using System;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -14,16 +13,43 @@ public partial class DiemThi_phongthi : NTT.Web.UI.BasePage
     #region Khai báo các đối tượng và các biến toàn cục
     clsPhongThi_DAL pthiDAL;
     clsPhongThi_DTO pthiDTO;
+
+    clsDiaDiemThi_DAL dthiDAL;
+    clsDiaDiemThi_DTO dthiDTO;
+
     clsCommon cmn;
     string strMess = string.Empty;
     #endregion
     protected void Page_Load(object sender, EventArgs e)
     {
+
         pthiDAL = new clsPhongThi_DAL();
         pthiDTO = new clsPhongThi_DTO();
+
+        dthiDAL = new clsDiaDiemThi_DAL();
+        dthiDTO = new clsDiaDiemThi_DTO();
+
         cmn = new clsCommon();
+        if (!IsPostBack || !IsCallback)
+        {
+           
+        }
         gvPhongThi.DataSource = loadDataToUI();
+        loadMasterData();
         gvPhongThi.DataBind();
+    }
+
+    private void loadMasterData()
+    {
+        DataTable dt = new DataTable();
+        dt = dthiDAL.getDiaDiemThi(dthiDTO);
+        GridViewDataComboBoxColumn gclDiemThi = gvPhongThi.Columns["DiaChi"] as GridViewDataComboBoxColumn;
+        gclDiemThi.PropertiesComboBox.DataSource = dt;
+        //gclDiemThi.PropertiesComboBox.ValueField = "MaDienThi";
+        //gclDiemThi.PropertiesComboBox.TextField = "TenDiemThi";
+
+        GridViewDataCheckColumn gclTrangThai = gvPhongThi.Columns["TrangThai"] as GridViewDataCheckColumn;
+        gclTrangThai.PropertiesCheckEdit.DisplayTextChecked = "Chon";
     }
     private DataTable loadDataToUI()
     {
@@ -80,7 +106,7 @@ public partial class DiemThi_phongthi : NTT.Web.UI.BasePage
         pthiDTO.MoTa = e.NewValues["MoTa"].ToString(); ;
         pthiDTO.SoThSinhToiDa = e.NewValues["SoThSinhToiDa"].ToString();
         pthiDTO.TrangThai = e.NewValues["TrangThai"].ToString();
-        pthiDTO.MaDiemThi = e.NewValues["MaDiemThi"].ToString();
+        pthiDTO.MaDiemThi = e.NewValues["DiaChi"].ToString();
         int iReturn = pthiDAL.InsertUpdate(pthiDTO);
         if (iReturn >= 0)
         {
