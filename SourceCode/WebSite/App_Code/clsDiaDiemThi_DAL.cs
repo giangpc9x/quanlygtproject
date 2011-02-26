@@ -23,7 +23,7 @@ public class clsDiaDiemThi_DAL
         DataTable dt = new DataTable();
         try
         {
-            dt = obj.GetDataTable("Select_Dia_Diem_Thi",CommandType.StoredProcedure);
+            dt = obj.GetDataTable("Select_Dia_Diem_Thi", _list, CommandType.StoredProcedure);
         }
         catch
         {
