@@ -24,7 +24,7 @@ public class clsPhongThi_DAL
         DataTable dt = new DataTable();
         try
         {
-            dt = obj.GetDataTable("Select_Phong_Thi", CommandType.StoredProcedure);
+            dt = obj.GetDataTable("Select_Phong_Thi", _list, CommandType.StoredProcedure);
         }
         catch
         {
