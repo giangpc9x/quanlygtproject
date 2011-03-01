@@ -76,7 +76,7 @@
 
         </Description>
       </Demo>
-        <Demo Text="Quản lý loại bằng lái" NavigateUrl="~/qlch/Sorting.aspx" Title="Data Sorting - ASP.NET Grid Control">
+        <Demo Text="Quản lý loại bằng lái" NavigateUrl="~/DeThi/qlloaibanglai.aspx" Title="Data Sorting - ASP.NET Grid Control">
             <Description>
               
             </Description>
