@@ -81,9 +81,7 @@ function GetUpdateResult(errorText)
                VisibleIndex="1" Width="90px">
                
                 <PropertiesTextEdit ClientInstanceName="gtxtMaDiemThi">
-                    <ClientSideEvents Validation="function(s, e) {
-	//alert('alo alo');
-}" />
+                    
                 </PropertiesTextEdit>
                
                 <EditFormSettings VisibleIndex="0" />
