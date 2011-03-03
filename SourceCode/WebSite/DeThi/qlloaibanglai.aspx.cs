@@ -28,7 +28,7 @@ public partial class DeThi_qlloaibanglai : NTT.Web.UI.BasePage
     {
 
         DataTable dt = new DataTable();
-        dt = lblaiDAL.getDiaDiemThi(lblaiDTO);
+        dt = lblaiDAL.getMaLoaibang(lblaiDTO);
         return dt;
     }
     #region Kiểm tra nhập dữ liệu trên GridView
