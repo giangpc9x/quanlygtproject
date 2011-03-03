@@ -13,7 +13,7 @@ public class clsLoaiBanglai_DAL
 	{
         obj = new DataObject();
 	}
-    public DataTable getDiaDiemThi(clsLoaiBanglai_DTO loaibanglaiDTO)
+    public DataTable getMaLoaibang(clsLoaiBanglai_DTO loaibanglaiDTO)
     {
         ListDictionary _list = new ListDictionary();
         _list.Add("MaLoaiBang", loaibanglaiDTO.MaLoaiBang);
