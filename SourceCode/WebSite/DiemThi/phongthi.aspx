@@ -88,7 +88,7 @@ function GetUpdateResult(errorText)
                 <PropertiesSpinEdit DisplayFormatString="g">
                 </PropertiesSpinEdit>
                 <Settings AutoFilterCondition="Contains" />
-                <EditFormSettings VisibleIndex="2" />
+               
             </dxwgv:GridViewDataSpinEditColumn>
             <dxwgv:GridViewDataComboBoxColumn Caption="Điểm Thi" FieldName="DiaChi" 
                 Name="gcMaDiemThi" VisibleIndex="3">
@@ -99,7 +99,7 @@ function GetUpdateResult(errorText)
                             Name="gcboDiemThi" />
                     </Columns>
                 </PropertiesComboBox>
-                <EditFormSettings ColumnSpan="3" VisibleIndex="0" />
+             
             </dxwgv:GridViewDataComboBoxColumn>
             <dxwgv:GridViewDataTextColumn Caption="Mô Tả" FieldName="MoTa" Name="gcMoTa" 
                 VisibleIndex="4" Width="100px">
