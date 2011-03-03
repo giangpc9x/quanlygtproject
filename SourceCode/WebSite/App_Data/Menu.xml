@@ -93,7 +93,7 @@
             <Description>
             </Description>
         </Demo>
-        <Demo Text="Thông tin đợt thi" NavigateUrl="~/dt/aab.aspx" Title="Handle Large Datasets, Bind Using LINQ - Grid and Editors for ASP.NET">
+        <Demo Text="Thông tin đợt thi" NavigateUrl="~/DiemThi/dotthi.aspx" Title="Handle Large Datasets, Bind Using LINQ - Grid and Editors for ASP.NET">
             <Description>
             </Description>
         </Demo>
