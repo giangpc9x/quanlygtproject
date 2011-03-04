@@ -22,7 +22,7 @@ public class clsLoaiCauHoi_DAL
         DataTable dt = new DataTable();
         try
         {
-            dt = obj.GetDataTable("Select_Loai_Cau_Hoi", CommandType.StoredProcedure);
+            dt = obj.GetDataTable("Select_Loai_Cau_Hoi", _list, CommandType.StoredProcedure);
         }
         catch
         {
