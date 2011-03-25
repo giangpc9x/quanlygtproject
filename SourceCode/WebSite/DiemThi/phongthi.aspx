@@ -93,7 +93,7 @@ function GetUpdateResult(errorText)
             <dxwgv:GridViewDataComboBoxColumn Caption="Điểm Thi" FieldName="DiaChi" 
                 Name="gcMaDiemThi" VisibleIndex="3">
                 <PropertiesComboBox DataMember="MaDiemThi" ValueType="System.String" 
-                    ValueField="MaDiemThi">
+                    ValueField="DiaChi">
                     <Columns>
                         <dxe:ListBoxColumn Caption="Tên điểm thi" FieldName="DiaChi" 
                             Name="gcboDiemThi" />
