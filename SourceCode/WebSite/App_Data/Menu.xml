@@ -97,14 +97,14 @@
             <Description>
             </Description>
         </Demo>
-      <Demo Text="Thông tin ca thi" NavigateUrl="~/dt/ServerMode.aspx" Title="Handle Large Datasets, Bind Using LINQ - Grid and Editors for ASP.NET">
+      <Demo Text="Thông tin ca thi" NavigateUrl="~/DiemThi/cathi.aspx" Title="Handle Large Datasets, Bind Using LINQ - Grid and Editors for ASP.NET">
         <Description>
         </Description>
       </Demo>
     </DemoGroup>
   
     <DemoGroup Text="Hồ sơ thí sinh" ImageUrl="~/Images/TitleImages/GridView.png" ImageWidth="76px" ImageHeight="76px">
-        <Demo Text="Tiếp nhận hồ sơ" NavigateUrl="~/hs/FilterRow.aspx" Title="Filter Row - ASP.NET Grid and Data Editors">
+        <Demo Text="Tiếp nhận hồ sơ" NavigateUrl="~/HoSoThiSinh/thisinh.aspx" Title="Filter Row - ASP.NET Grid and Data Editors">
             <Description>
            
             </Description>
