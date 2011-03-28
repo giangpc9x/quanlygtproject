@@ -117,7 +117,7 @@
            
             </Description>
         </Demo>
-        <Demo Text="Điểm danh thí sinh" NavigateUrl="~/tc/Group.aspx" Title="Group Summary Calculation - ASP.NET Grid Control">
+        <Demo Text="Điểm danh thí sinh" NavigateUrl="~/ToChucDotThi/diemdanhthisinh.aspx" Title="Group Summary Calculation - ASP.NET Grid Control">
             <Description>
                 <p>
                     A <b>Group summary</b> represents a value of an aggregate function calculated across all data rows within a group.
