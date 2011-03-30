@@ -48,7 +48,7 @@ public partial class dethi_qlcautrucdethi :NTT.Web.UI.BasePage
         GridViewDataComboBoxColumn gclLoaiBang = gvCauTrucDeThi.Columns["MaLoaiBang"] as GridViewDataComboBoxColumn;
         gclLoaiBang.PropertiesComboBox.DataSource = dt;
 
-        GridViewDataComboBoxColumn gclLoaiCauHoi = gvCauTrucDeThi.Columns["TenLoai"] as GridViewDataComboBoxColumn;
+        GridViewDataComboBoxColumn gclLoaiCauHoi = gvCauTrucDeThi.Columns["MaloaiCauHoi"] as GridViewDataComboBoxColumn;
         gclLoaiCauHoi.PropertiesComboBox.DataSource = dt;
         //gclDiemThi.PropertiesComboBox.ValueField = "MaDienThi";
         //gclDiemThi.PropertiesComboBox.TextField = "TenDiemThi";

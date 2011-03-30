@@ -95,8 +95,8 @@ function GetUpdateResult(errorText)
                 </PropertiesComboBox>
                 <EditFormSettings VisibleIndex="2" />
             </dxwgv:GridViewDataComboBoxColumn>
-            <dxwgv:GridViewDataComboBoxColumn Caption="Loại câu hỏi" FieldName="TenLoai" 
-                Name="gcMaDiemThi" VisibleIndex="3">
+            <dxwgv:GridViewDataComboBoxColumn Caption="Loại câu hỏi" FieldName="MaloaiCauHoi" 
+                Name="gcLoaiCauHoi" VisibleIndex="3">
                 <PropertiesComboBox DataMember="MaloaiCauHoi" ValueType="System.String" 
                     ValueField="MaloaiCauHoi">
                     <Columns>
