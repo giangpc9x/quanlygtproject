@@ -112,7 +112,7 @@
     </DemoGroup>
   
     <DemoGroup Text="Tổ chức đợt thi" ImageUrl="~/Images/TitleImages/GridView.png" ImageWidth="76px" ImageHeight="76px">
-        <Demo Text="Phân công coi thi" NavigateUrl="~/tc/Total.aspx" Title="Total Summary Calculation - AJAX DataGrid for ASP.NET">
+        <Demo Text="Phân công coi thi" NavigateUrl="~/ToChucDotThi/phancongcoithi.aspx" Title="Total Summary Calculation - AJAX DataGrid for ASP.NET">
             <Description>
            
             </Description>
