@@ -17,6 +17,8 @@ public partial class dethi_qlcautrucdethi :NTT.Web.UI.BasePage
     clsLoaiCauHoi_DAL loaichoiDAL;
     clsLoaiCauHoi_DTO loaichoiDTO;
 
+    
+
     clsCommon cmn;
     string strMess = string.Empty;
     #endregion
@@ -27,6 +29,10 @@ public partial class dethi_qlcautrucdethi :NTT.Web.UI.BasePage
 
         loaichoiDAL = new clsLoaiCauHoi_DAL();
         loaichoiDTO = new clsLoaiCauHoi_DTO();
+
+
+
+        
 
         cmn = new clsCommon();
         if (!IsPostBack || !IsCallback)
@@ -44,12 +50,23 @@ public partial class dethi_qlcautrucdethi :NTT.Web.UI.BasePage
     private void loadMasterData()
     {
         DataTable dt = new DataTable();
-        dt = loaichoiDAL.getLoaiCauHoi(loaichoiDTO);
-        GridViewDataComboBoxColumn gclLoaiBang = gvCauTrucDeThi.Columns["MaLoaiBang"] as GridViewDataComboBoxColumn;
-        gclLoaiBang.PropertiesComboBox.DataSource = dt;
+    
+       // dt = loaichoiDAL.getLoaiCauHoi(loaichoiDTO);
+        dt = ctdthiDAL.getCauTrucDeThi(ctdthiDTO);
 
-        GridViewDataComboBoxColumn gclLoaiCauHoi = gvCauTrucDeThi.Columns["MaloaiCauHoi"] as GridViewDataComboBoxColumn;
-        gclLoaiCauHoi.PropertiesComboBox.DataSource = dt;
+       
+        cboLoaiBang.ValueField = "MaLoaiBang";
+        cboLoaiBang.TextField = "MaLoaiBang";
+       
+       // GridViewDataComboBoxColumn gclLoaiBang = gvCauTrucDeThi.Columns["MaLoaiBang"] as GridViewDataComboBoxColumn;
+        //gclLoaiBang.PropertiesComboBox.DataSource = dt;
+
+       // GridViewDataComboBoxColumn gclLoaiCauHoi = gvCauTrucDeThi.Columns["MaloaiCauHoi"] as GridViewDataComboBoxColumn;
+       // gclLoaiCauHoi.PropertiesComboBox.DataSource = dt;
+
+
+        cboLoaiBang.DataSource = dt;
+        cboLoaiBang.DataBind();
         //gclDiemThi.PropertiesComboBox.ValueField = "MaDienThi";
         //gclDiemThi.PropertiesComboBox.TextField = "TenDiemThi";
 
@@ -91,7 +108,8 @@ public partial class dethi_qlcautrucdethi :NTT.Web.UI.BasePage
     protected void gvCauTrucDeThi_RowInserting(object sender, DevExpress.Web.Data.ASPxDataInsertingEventArgs e)
     {
         e.Cancel = true;
-        ctdthiDTO.MaLoaiBang = e.NewValues["MaLoaiBang"].ToString();
+       // ctdthiDTO.MaLoaiBang = e.NewValues["MaLoaiBang"].ToString();
+        ctdthiDTO.MaLoaiBang = cboLoaiBang.Value.ToString();
         ctdthiDTO.MaloaiCauHoi = e.NewValues["TenLoai"].ToString(); ;
         ctdthiDTO.SoCau = e.NewValues["SoCau"].ToString();
 
@@ -112,7 +130,8 @@ public partial class dethi_qlcautrucdethi :NTT.Web.UI.BasePage
     {
         e.Cancel = true;
         ctdthiDTO.OldID = e.OldValues["STT"].ToString();
-        ctdthiDTO.MaLoaiBang = e.NewValues["MaLoaiBang"].ToString();
+       // ctdthiDTO.MaLoaiBang = e.NewValues["MaLoaiBang"].ToString();
+        ctdthiDTO.MaLoaiBang = cboLoaiBang.Value.ToString();
         ctdthiDTO.MaloaiCauHoi = e.NewValues["TenLoai"].ToString(); ;
         ctdthiDTO.SoCau = e.NewValues["SoCau"].ToString();
 
