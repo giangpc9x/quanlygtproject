@@ -47,7 +47,7 @@
 </dxe:ASPxButton></div>
 <div style = "clear:both;">
     <dxwgv:ASPxGridView ID="gvCTQuyen" ClientInstanceName = "gvCTQuyen" 
-        Width = "100%" KeyFieldName = "MaQuyen,MaNhom" 
+        Width = "100%" KeyFieldName = "MaQuyen" 
         runat="server" AutoGenerateColumns="False" 
         onrowinserting="gvCTQuyen_RowInserting" 
         onrowvalidating="gvCTQuyen_RowValidating" 
@@ -78,7 +78,7 @@
                 </ClearFilterButton>
             </dxwgv:GridViewCommandColumn>
             <dxwgv:GridViewDataTextColumn Caption="Mã Quyền" Name = "gtxtMaQuyen" FieldName="MaQuyen" 
-               VisibleIndex="1" Width="90px" ReadOnly="True">
+               VisibleIndex="1" Width="90px">
                
                 <PropertiesTextEdit ClientInstanceName="gtxtMaDiemThi">
                     <ClientSideEvents Validation="function(s, e) {
