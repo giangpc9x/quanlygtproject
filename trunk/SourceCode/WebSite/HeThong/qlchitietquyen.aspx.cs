@@ -74,8 +74,11 @@ public partial class HeThong_qlchitietquyen : NTT.Web.UI.BasePage
     protected void gvCTQuyen_RowUpdating(object sender, DevExpress.Web.Data.ASPxDataUpdatingEventArgs e)
     {
         e.Cancel = true;
+        ctquyenDTO.OldID_MaQuyen = e.OldValues["MaQuyen"].ToString();
         ctquyenDTO.MaQuyen = e.NewValues["MaQuyen"].ToString();
+
         ctquyenDTO.MaNhom = e.NewValues["MaNhom"].ToString();
+
         int iReturn = ctquyenDAL.InsertUpdate(ctquyenDTO);
         if (iReturn >= 0)
         {
@@ -92,7 +95,6 @@ public partial class HeThong_qlchitietquyen : NTT.Web.UI.BasePage
             strMess = "Do ràng buộc dữ liệu. Không thể thực hiện cập nhật";
             gvCTQuyen.DoRowValidation();
         }
-
     }
     protected void gvCTQuyen_CustomDataCallback(object sender, ASPxGridViewCustomDataCallbackEventArgs e)
     {

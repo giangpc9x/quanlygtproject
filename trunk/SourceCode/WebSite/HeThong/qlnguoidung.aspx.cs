@@ -62,7 +62,7 @@ public partial class HeThong_qlnguoidung : NTT.Web.UI.BasePage
         if (cboDienThi.Value == null)
         {
             AddError(e.Errors, gvNguoiDung.Columns["Error"], "");
-            e.RowError = "Vui long chon 1 diem thi";
+            e.RowError = "Vui lòng chọn 1 điểm thi";
             return;
         }
         foreach (GridViewColumn column in gvNguoiDung.Columns)
@@ -125,6 +125,7 @@ public partial class HeThong_qlnguoidung : NTT.Web.UI.BasePage
     protected void gvNguoiDung_RowUpdating(object sender, DevExpress.Web.Data.ASPxDataUpdatingEventArgs e)
     {
         e.Cancel = true;
+        ndungDTO.OldID = e.NewValues["TenDangNhap"].ToString();
         ndungDTO.TenDangNhap = e.NewValues["TenDangNhap"].ToString();
         ndungDTO.MaDiemThi = cboDienThi.Value.ToString();
         ndungDTO.MatKhau = e.NewValues["MatKhau"].ToString();
