@@ -35,6 +35,15 @@ function GetUpdateResult(errorText)
 }
 </script>
 
+<div style ="width:100%; float:left; padding-bottom:10px;">
+    <dxe:ASPxComboBox ID="cboLoaiBang" runat="server" Width="70%" 
+        ClientInstanceName="cboLoaiBang" ValueType="System.String">
+        <ClientSideEvents ValueChanged="function(s, e) {
+	 gvCauHoiLoaiBang.PerformCallback(cboLoaiBang.GetValue().toString());
+}" />
+    </dxe:ASPxComboBox>
+</div>
+
 <div style ="width:90px; float:left; padding-bottom:5px;">
     <dxe:ASPxButton ID="btnThemMoi" ClientInstanceName = "btnThemMoi" runat="server" 
          Text="Thêm Mới" Width = "90px" AutoPostBack="False">
@@ -85,28 +94,15 @@ function GetUpdateResult(errorText)
                 VisibleIndex="1">
     <EditFormSettings VisibleIndex="1" />
 </dxwgv:GridViewDataTextColumn>
-            <dxwgv:GridViewDataComboBoxColumn Caption="Mã loại bằng" FieldName="MaLoaiBang" 
-                Name="gcMaLoaiBang" VisibleIndex="2">
-                <PropertiesComboBox ClientInstanceName="gcMaLoaiBang" 
-                    ValueType="System.String" DataMember="MaLoaiBang">
-                    
-                    <ClientSideEvents Validation="function(s, e) {
-	//alert('alo alo');
-}" />
-                    
-                </PropertiesComboBox>
-                <EditFormSettings VisibleIndex="2" />
-            </dxwgv:GridViewDataComboBoxColumn>
             <dxwgv:GridViewDataComboBoxColumn Caption="Mã câu hỏi" FieldName="MaCauHoi" 
-                Name="gcMaCauHoi" VisibleIndex="3">
-                <PropertiesComboBox DataMember="MaCauHoi" ValueType="System.String" 
-                    ValueField="MaCauHoi">
-                    
+                Name="gcMaCauHoi" VisibleIndex="2">
+                <PropertiesComboBox 
+                    ValueType="System.String" DataMember="MaCauHoi" ValueField="MaCauHoi">
                     
                 </PropertiesComboBox>
-                <EditFormSettings ColumnSpan="2" VisibleIndex="3" />
+                <EditFormSettings VisibleIndex="3" ColumnSpan="2" />
             </dxwgv:GridViewDataComboBoxColumn>
-            <dxwgv:GridViewCommandColumn VisibleIndex="4" Caption = "Sửa" Width = "30px">
+            <dxwgv:GridViewCommandColumn VisibleIndex="3" Caption = "Sửa" Width = "30px">
                 <EditButton Visible="True" Text = "Sửa">
                 </EditButton>
                 <ClearFilterButton Visible="True">
