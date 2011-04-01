@@ -47,8 +47,14 @@ public partial class DiemThi_phongthi : NTT.Web.UI.BasePage
     {
         DataTable dt = new DataTable();
         dt = dthiDAL.getDiaDiemThi(dthiDTO);
-        GridViewDataComboBoxColumn gclDiemThi = gvPhongThi.Columns["DiaChi"] as GridViewDataComboBoxColumn;
-        gclDiemThi.PropertiesComboBox.DataSource = dt;
+        cboDiemThi.ValueField = "DiaChi";
+        cboDiemThi.TextField = "DiaChi";
+
+        cboDiemThi.DataSource = dt;
+        cboDiemThi.DataBind();
+       
+        //GridViewDataComboBoxColumn gclDiemThi = gvPhongThi.Columns["DiaChi"] as GridViewDataComboBoxColumn;
+        //gclDiemThi.PropertiesComboBox.DataSource = dt;
         //gclDiemThi.PropertiesComboBox.ValueField = "MaDienThi";
         //gclDiemThi.PropertiesComboBox.TextField = "TenDiemThi";
 
@@ -131,7 +137,7 @@ public partial class DiemThi_phongthi : NTT.Web.UI.BasePage
         pthiDTO.MoTa = e.NewValues["MoTa"].ToString(); ;
         pthiDTO.SoThSinhToiDa = e.NewValues["SoThSinhToiDa"].ToString();
         pthiDTO.TrangThai = e.NewValues["TrangThai"].ToString();
-        pthiDTO.MaDiemThi = e.NewValues["MaDiemThi"].ToString();
+        pthiDTO.MaDiemThi = e.NewValues["DiaChi"].ToString();
         int iReturn = pthiDAL.InsertUpdate(pthiDTO);
         if (iReturn >= 0)
         {
