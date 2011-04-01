@@ -46,8 +46,15 @@ public partial class DiemThi_dotthi : NTT.Web.UI.BasePage
     {
         DataTable dt = new DataTable();
         dt = lblDAL.getMaLoaibang(lblDTO);
-        GridViewDataComboBoxColumn gcloaibang = gvDotThi.Columns["TenLoai"] as GridViewDataComboBoxColumn;
-        gcloaibang.PropertiesComboBox.DataSource = dt;
+
+
+        cboLoaiBang.ValueField = "TenLoai";
+        cboLoaiBang.TextField = "TenLoai";
+
+        cboLoaiBang.DataSource = dt;
+        cboLoaiBang.DataBind();
+        //GridViewDataComboBoxColumn gcloaibang = gvDotThi.Columns["TenLoai"] as GridViewDataComboBoxColumn;
+        //gcloaibang.PropertiesComboBox.DataSource = dt;
         //gclDiemThi.PropertiesComboBox.ValueField = "MaDienThi";
         //gclDiemThi.PropertiesComboBox.TextField = "TenDiemThi";
 
