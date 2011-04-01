@@ -53,14 +53,30 @@ public partial class HoSoThiSinh_thisinh : NTT.Web.UI.BasePage
         DataTable dt = new DataTable();
         dt = cathiDAL.getCaThi(cathiDTO);
 
-        GridViewDataComboBoxColumn gclCathi = gvThiSinh.Columns["MaCaThi"] as GridViewDataComboBoxColumn;
-        gclCathi.PropertiesComboBox.DataSource = dt;
+
+        cboCaThi.ValueField = "MaCaThi";
+        cboCaThi.TextField = "MaCaThi";
+
+        cboCaThi.DataSource = dt;
+        cboCaThi.DataBind();
+
+
+        //GridViewDataComboBoxColumn gclCathi = gvThiSinh.Columns["MaCaThi"] as GridViewDataComboBoxColumn;
+        //gclCathi.PropertiesComboBox.DataSource = dt;
         //gclDiemThi.PropertiesComboBox.ValueField = "MaDienThi";
         //gclDiemThi.PropertiesComboBox.TextField = "TenDiemThi";
 
         dt = pthiDAL.getPhongThi(pthiDTO);
-        GridViewDataComboBoxColumn gclPhongthi = gvThiSinh.Columns["MaPhong"] as GridViewDataComboBoxColumn;
-        gclPhongthi.PropertiesComboBox.DataSource = dt;
+
+
+        cboPhongThi.ValueField = "MaPhong";
+        cboPhongThi.TextField = "MaPhong";
+
+        cboPhongThi.DataSource = dt;
+        cboPhongThi.DataBind();
+
+        //GridViewDataComboBoxColumn gclPhongthi = gvThiSinh.Columns["MaPhong"] as GridViewDataComboBoxColumn;
+        //gclPhongthi.PropertiesComboBox.DataSource = dt;
     }
 
     private DataTable loadDataToUI()
