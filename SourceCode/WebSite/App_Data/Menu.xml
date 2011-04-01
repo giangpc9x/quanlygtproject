@@ -66,21 +66,26 @@
     </DemoGroup>
 
     <DemoGroup Text="Quản lý đề thi" ImageUrl="~/Images/TitleImages/GridView.png" ImageWidth="76px" ImageHeight="76px">
-        <Demo Text="Quản lý câu hỏi" NavigateUrl="~/DeThi/qlcauhoi.aspx" Title="Outlook Style Data Grouping - AJAX Grid Control for ASP.NET">
+        <Demo Text="Quản lý câu hỏi" NavigateUrl="~/DeThi/qlcauhoi.aspx" Title="Quản lý câu hỏi">
             <Description>
               
             </Description>
         </Demo>
-      <Demo Text="Quản lý loại câu hỏi" NavigateUrl="~/DeThi/qlloaicauhoi.aspx" Title="Advanced Data Grouping - AJAX DataGrid for ASP.NET">
+      <Demo Text="Quản lý loại câu hỏi" NavigateUrl="~/DeThi/qlloaicauhoi.aspx" Title="Quản lý các loại câu hỏi có trong hệ thống">
         <Description>
 
         </Description>
       </Demo>
-        <Demo Text="Quản lý loại bằng lái" NavigateUrl="~/DeThi/qlloaibanglai.aspx" Title="Data Sorting - ASP.NET Grid Control">
+        <Demo Text="Quản lý loại bằng lái" NavigateUrl="~/DeThi/qlloaibanglai.aspx" Title="Quản lý các loại bằng lái trong hệ thống">
             <Description>
               
             </Description>
         </Demo>
+      <Demo Text="Quản lý cấu trúc đề thi" NavigateUrl="~/DeThi/qlcautrucdethi.aspx" Title="Quản lý cấu trúc đề thi trong hệ thống">
+        <Description>
+
+        </Description>
+      </Demo>
     </DemoGroup>
   
     <DemoGroup Text="Điểm Thi" ImageUrl="~/Images/TitleImages/GridView.png" ImageWidth="76px" ImageHeight="76px">
