@@ -17,7 +17,9 @@ public partial class dethi_qlcautrucdethi :NTT.Web.UI.BasePage
     clsLoaiCauHoi_DAL loaichoiDAL;
     clsLoaiCauHoi_DTO loaichoiDTO;
 
-    
+    clsLoaiBanglai_DAL lbangDAL;
+    clsLoaiBanglai_DTO lbangDTO;
+
 
     clsCommon cmn;
     string strMess = string.Empty;
@@ -31,7 +33,8 @@ public partial class dethi_qlcautrucdethi :NTT.Web.UI.BasePage
         loaichoiDTO = new clsLoaiCauHoi_DTO();
 
 
-
+        lbangDAL = new clsLoaiBanglai_DAL();
+        lbangDTO = new clsLoaiBanglai_DTO();
         
 
         cmn = new clsCommon();
@@ -51,22 +54,26 @@ public partial class dethi_qlcautrucdethi :NTT.Web.UI.BasePage
     {
         DataTable dt = new DataTable();
     
-       // dt = loaichoiDAL.getLoaiCauHoi(loaichoiDTO);
-        dt = ctdthiDAL.getCauTrucDeThi(ctdthiDTO);
+       
+       // dt = ctdthiDAL.getCauTrucDeThi(ctdthiDTO);
+        dt = lbangDAL.getMaLoaibang(lbangDTO);
 
        
         cboLoaiBang.ValueField = "MaLoaiBang";
         cboLoaiBang.TextField = "MaLoaiBang";
+
+        cboLoaiBang.DataSource = dt;
+        cboLoaiBang.DataBind();
        
        // GridViewDataComboBoxColumn gclLoaiBang = gvCauTrucDeThi.Columns["MaLoaiBang"] as GridViewDataComboBoxColumn;
         //gclLoaiBang.PropertiesComboBox.DataSource = dt;
+       // dt = loaichoiDAL.getLoaiCauHoi(loaichoiDTO);
 
        // GridViewDataComboBoxColumn gclLoaiCauHoi = gvCauTrucDeThi.Columns["MaloaiCauHoi"] as GridViewDataComboBoxColumn;
        // gclLoaiCauHoi.PropertiesComboBox.DataSource = dt;
 
 
-        cboLoaiBang.DataSource = dt;
-        cboLoaiBang.DataBind();
+       
         //gclDiemThi.PropertiesComboBox.ValueField = "MaDienThi";
         //gclDiemThi.PropertiesComboBox.TextField = "TenDiemThi";
 
