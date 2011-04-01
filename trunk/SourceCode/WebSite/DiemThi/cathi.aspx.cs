@@ -45,8 +45,15 @@ public partial class DiemThi_cathi : NTT.Web.UI.BasePage
     {
         DataTable dt = new DataTable();
         dt = dotthiDAL.getDotThi(dotthiDTO);
-        GridViewDataComboBoxColumn gcCathi = gvCaThi.Columns["MaDotThi"] as GridViewDataComboBoxColumn;
-        gcCathi.PropertiesComboBox.DataSource = dt;
+
+        cboDotThi.ValueField = "MaDotThi";
+        cboDotThi.TextField = "MaDotThi";
+
+        cboDotThi.DataSource = dt;
+        cboDotThi.DataBind();
+        
+        //GridViewDataComboBoxColumn gcCathi = gvCaThi.Columns["MaDotThi"] as GridViewDataComboBoxColumn;
+        //gcCathi.PropertiesComboBox.DataSource = dt;
         //gclDiemThi.PropertiesComboBox.ValueField = "MaDienThi";
         //gclDiemThi.PropertiesComboBox.TextField = "TenDiemThi";
 
