@@ -12,6 +12,10 @@ public partial class dethi_qlcauhoiloaibang : NTT.Web.UI.BasePage
     #region Khai báo các đối tượng và các biến toàn cục
     clsCauHoi_LoaiBang_DAL choilbangDAL;
     clsCauHoi_LoaiBang_DTO choilbangDTO;
+
+    clsLoaiBanglai_DAL lbangDAL;
+    clsLoaiBanglai_DTO lbangDTO;
+
     clsCommon cmn;
     string strMess = string.Empty;
     #endregion
@@ -19,17 +23,50 @@ public partial class dethi_qlcauhoiloaibang : NTT.Web.UI.BasePage
     {
         choilbangDAL = new clsCauHoi_LoaiBang_DAL();
         choilbangDTO = new clsCauHoi_LoaiBang_DTO();
+
+        lbangDAL = new clsLoaiBanglai_DAL();
+        lbangDTO = new clsLoaiBanglai_DTO();
+
+
         cmn = new clsCommon();
+        if (!IsPostBack || !IsCallback)
+        {
+
+        }
+        if (!Page.IsPostBack)
+        {
+
+        }
+        loadMasterData();
         gvCauHoiLoaiBang.DataSource = loadDataToUI();
         gvCauHoiLoaiBang.DataBind();
+    }
+    private void loadMasterData()
+    {
+        DataTable dt = new DataTable();
+
+
+        // dt = ctdthiDAL.getCauTrucDeThi(ctdthiDTO);
+        dt = lbangDAL.getMaLoaibang(lbangDTO);
+
+
+        cboLoaiBang.ValueField = "MaLoaiBang";
+        cboLoaiBang.TextField = "MaLoaiBang";
+
+        cboLoaiBang.DataSource = dt;
+        cboLoaiBang.DataBind();
+
+       
+
+    
     }
     private DataTable loadDataToUI()
     {
 
         DataTable dt = new DataTable();
 
-        GridViewDataComboBoxColumn gclLoaiBang = gvCauHoiLoaiBang.Columns["MaLoaiBang"] as GridViewDataComboBoxColumn;
-        gclLoaiBang.PropertiesComboBox.DataSource = dt;
+       // GridViewDataComboBoxColumn gclLoaiBang = gvCauHoiLoaiBang.Columns["MaLoaiBang"] as GridViewDataComboBoxColumn;
+        //gclLoaiBang.PropertiesComboBox.DataSource = dt;
 
         GridViewDataComboBoxColumn gclMaCauHoi = gvCauHoiLoaiBang.Columns["MaCauHoi"] as GridViewDataComboBoxColumn;
         gclMaCauHoi.PropertiesComboBox.DataSource = dt;
@@ -67,8 +104,8 @@ public partial class dethi_qlcauhoiloaibang : NTT.Web.UI.BasePage
     protected void gvCauHoiLoaiBang_RowInserting(object sender, DevExpress.Web.Data.ASPxDataInsertingEventArgs e)
     {
         e.Cancel = true;
-        choilbangDTO.MaLoaiBang = e.NewValues["MaLoaiBang"].ToString();
-        
+       // choilbangDTO.MaLoaiBang = e.NewValues["MaLoaiBang"].ToString();
+        choilbangDTO.MaLoaiBang = cboLoaiBang.Value.ToString();
         choilbangDTO.MaCauHoi = e.NewValues["MaCauHoi"].ToString();
         choilbangDTO.STT = e.NewValues["STT"].ToString();
         int iReturn = choilbangDAL.InsertUpdate(choilbangDTO);
@@ -87,8 +124,8 @@ public partial class dethi_qlcauhoiloaibang : NTT.Web.UI.BasePage
     {
         e.Cancel = true;
         choilbangDTO.OldID = e.OldValues["STT"].ToString();
-        choilbangDTO.MaLoaiBang = e.NewValues["MaLoaiBang"].ToString();
-
+        //choilbangDTO.MaLoaiBang = e.NewValues["MaLoaiBang"].ToString();
+        choilbangDTO.MaLoaiBang = cboLoaiBang.Value.ToString();
         choilbangDTO.MaCauHoi = e.NewValues["MaCauHoi"].ToString();
         choilbangDTO.STT = e.NewValues["STT"].ToString();
         int iReturn = choilbangDAL.InsertUpdate(choilbangDTO);
