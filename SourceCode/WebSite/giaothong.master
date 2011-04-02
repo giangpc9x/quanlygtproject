@@ -20,7 +20,10 @@
         <form id="form1" runat="server" class="Form">           
             <table border="0" cellpadding="0" cellspacing="0" class="Main" id="Main" style = "width:100%;">
                 <tr id="Header">                    
-                    <td valign="top" class="Navigation Header"><dxe:ASPxHyperLink EnableViewState="False" ID="Logotype" runat="server" NavigateUrl="~/Default.aspx" SkinID="Logotype" /></td>
+                    <td valign="top" class="Navigation Header">
+                        <dxe:ASPxHyperLink EnableViewState="False" ID="Logotype" runat="server" 
+                            NavigateUrl="~/Default.aspx" SkinID="Logotype" 
+                            ImageUrl="~/hinh/VN_NTSC_logo.jpg" /></td>
                     <td align="right" class="HeaderPanel" valign="top">
                         <table border="0" cellpadding="0" cellspacing="0"><tr>
                             <td><dxe:ASPxLabel ID="lblSkins" CssClass="lblSkins" runat="server" Text="Select Appearance:" AssociatedControlID="cbSkins" /></td>
@@ -40,7 +43,19 @@
                                 </dxm:ASPxMenu>
                             </td>
                         </tr></table>
-                    </td>                    
+                        
+                        <table border="0" cellpadding="0" cellspacing="0" style = "clear:both;">
+                        <tr>
+                            <td>
+                            alo alo
+                            </td>
+                            
+                        </tr>
+                        </table>
+                        
+                    </td>       
+                    
+                                 
                 </tr>
                 <tr>
                     <td valign="top" class="Navigation" style="padding-left: 1px;">
