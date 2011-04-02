@@ -6,6 +6,8 @@ using NTT.Web.UI;
 public partial class _DefaultPage : BasePage {
     protected void Page_Load(object sender, EventArgs e) {
 
+        if (Convert.ToString(Session["TenDangNhap"]) == "")
+            Response.Redirect("~/dangnhap.aspx");
         CSSLink = "~/CSS/Default.css"; // Register css file
         if (Theme == "Youthful")
             CSSLink = "~/CSS/DefaultYouthful.css"; // Register css file

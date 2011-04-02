@@ -3,7 +3,7 @@
 <%@ Register Assembly="DevExpress.Web.ASPxEditors.v9.1, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxEditors" TagPrefix="dxe" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="phOnceContent" Runat="Server">
     <div class="RootPage">
-        <div class="Slogan">Build Your Best<br /><span class="MiniSlogan">Without Limits or Compromise</span></div>
+        <div class="Slogan">He Thong Thi Giay Phep Lai Xe<br /><span class="MiniSlogan">Mo Ta...</span></div>
         <dxe:ASPxImage ID="Image1" SkinID="MainBanner" CssClass="MainBanner" ImageAlign="Right" runat="server" EnableViewState="False" Width="453px" Height="235px" ImageUrl="~/Images/Main.png" />
         <br class="Clear" />
         <asp:Literal ID="lGeneralTerms" EnableViewState="False" runat="server" />
