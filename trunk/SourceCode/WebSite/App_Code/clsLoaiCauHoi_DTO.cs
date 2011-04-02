@@ -8,7 +8,7 @@ using System.Web;
 /// </summary>
 public class clsLoaiCauHoi_DTO
 {
-    private string _oldID, _MaloaiCauHoi, _TenLoai;
+    private string _oldID, _MaloaiCauHoi, _TenLoaiCH;
     public clsLoaiCauHoi_DTO()
     {
         //
@@ -26,9 +26,9 @@ public class clsLoaiCauHoi_DTO
         get { return this._MaloaiCauHoi; }
         set { this._MaloaiCauHoi = value; }
     }
-    public string TenLoai
+    public string TenLoaiCH
     {
-        get { return this._TenLoai; }
-        set { this._TenLoai = value; }
+        get { return this._TenLoaiCH; }
+        set { this._TenLoaiCH = value; }
     }
 }
