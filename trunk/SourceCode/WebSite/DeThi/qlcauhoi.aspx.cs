@@ -52,13 +52,7 @@ public partial class dethi_qlcauhoi : NTT.Web.UI.BasePage
         DataTable dt = new DataTable();
         dt = choiclcDAL.getCauHoi_CauLuaChon(choiclcDTO);
         dt = loaichoiDAL.getLoaiCauHoi(loaichoiDTO);
-
-        GridViewDataComboBoxColumn gclLoaiCauHoi = gvcauhoi.Columns["TenLoai"] as GridViewDataComboBoxColumn;
-        gclLoaiCauHoi.PropertiesComboBox.DataSource = dt;
-
-        GridViewDataCheckColumn gclDapAn = gvcauhoi.Columns["DapAn"] as GridViewDataCheckColumn;
-        gclDapAn.PropertiesCheckEdit.DisplayTextChecked = "Chon";
-    }
+}
     private DataTable loadDataToUI()
     {
 
