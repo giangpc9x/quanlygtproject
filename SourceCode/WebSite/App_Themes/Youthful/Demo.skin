@@ -10,7 +10,7 @@
 <dxe:ASPxImage Visible="False" runat="server" SkinID="BottomRightCorner" Width="6" Height="6" ImageUrl="Demo/BottomRightCorner.png" />
 <dxe:ASPxImage runat="server" SkinID="Copyright" Width="164" Height="47" ImageUrl="Demo/Copyright.png" />
 <%-- ASPxHyperLink --%>
-<dxe:ASPxHyperLink runat="server" SkinID="Logotype" ImageWidth="231px" ImageHeight="61px" />
+<dxe:ASPxHyperLink runat="server" SkinID="Logotype" ImageWidth="144px" ImageHeight="96px" />
 <%-- ASPxRoundPanel --%>
 <dxrp:ASPxRoundPanel runat="server" SkinID="Banner" Width="230px">
     <ContentPaddings PaddingTop="29px" PaddingBottom="0px" PaddingLeft="6px" PaddingRight="6px" />
