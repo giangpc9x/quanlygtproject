@@ -60,7 +60,7 @@ public partial class dethi_qlcautrucdethi :NTT.Web.UI.BasePage
        dt = lbangDAL.getMaLoaibang(lbangDTO);
 
         cboLoaiBang.ValueField = "MaLoaiBang";
-        cboLoaiBang.TextField = "TenLoai";
+        cboLoaiBang.TextField = "MaLoaiBang";
 
         cboLoaiBang.DataSource = dt;
         cboLoaiBang.DataBind();
@@ -187,6 +187,14 @@ public partial class dethi_qlcautrucdethi :NTT.Web.UI.BasePage
         {
             gvCauTrucDeThi.DataSource = loadDataToUI();
             gvCauTrucDeThi.Selection.UnselectAll();
+        }
+        else
+        {
+            ctdthiDTO = new clsCauTrucDeThi_DTO();
+            ctdthiDTO.MaLoaiBang = e.Parameters;
+            DataTable dt = ctdthiDAL.getCauTrucDeThi(ctdthiDTO);
+            gvCauTrucDeThi.DataSource = dt;
+            gvCauTrucDeThi.DataBind();
         }
     }
 }
