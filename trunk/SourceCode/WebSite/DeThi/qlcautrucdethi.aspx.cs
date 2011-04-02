@@ -53,33 +53,37 @@ public partial class dethi_qlcautrucdethi :NTT.Web.UI.BasePage
     private void loadMasterData()
     {
         DataTable dt = new DataTable();
+       // DataTable dt1 = new DataTable();
     
        
        // dt = ctdthiDAL.getCauTrucDeThi(ctdthiDTO);
-        dt = lbangDAL.getMaLoaibang(lbangDTO);
+       dt = lbangDAL.getMaLoaibang(lbangDTO);
 
-       
         cboLoaiBang.ValueField = "MaLoaiBang";
         cboLoaiBang.TextField = "TenLoai";
 
         cboLoaiBang.DataSource = dt;
         cboLoaiBang.DataBind();
 
+
         dt = loaichoiDAL.getLoaiCauHoi(loaichoiDTO);
-        GridViewDataComboBoxColumn gclLoaiCauHoi = gvCauTrucDeThi.Columns["TenLoaiCH"] as GridViewDataComboBoxColumn;
-       
-       
-       // dt = loaichoiDAL.getLoaiCauHoi(loaichoiDTO);
-
-       // GridViewDataComboBoxColumn gclLoaiCauHoi = gvCauTrucDeThi.Columns["MaloaiCauHoi"] as GridViewDataComboBoxColumn;
+        GridViewDataComboBoxColumn gclLcauhoi = gvCauTrucDeThi.Columns["MaloaiCauHoi"] as GridViewDataComboBoxColumn ;
+        gclLcauhoi.PropertiesComboBox.DataSource = dt ;
        // gclLoaiCauHoi.PropertiesComboBox.DataSource = dt;
-
-
+        
+       
+       
     }
     private DataTable loadDataToUI()
     {
 
         DataTable dt = new DataTable();
+
+
+       
+
+
+
         dt = ctdthiDAL.getCauTrucDeThi(ctdthiDTO);
         return dt;
     }
