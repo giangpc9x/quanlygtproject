@@ -78,12 +78,6 @@ public partial class dethi_qlcautrucdethi :NTT.Web.UI.BasePage
     {
 
         DataTable dt = new DataTable();
-
-
-       
-
-
-
         dt = ctdthiDAL.getCauTrucDeThi(ctdthiDTO);
         return dt;
     }
