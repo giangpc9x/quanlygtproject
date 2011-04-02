@@ -95,9 +95,12 @@ function GetUpdateResult(errorText)
     <EditFormSettings VisibleIndex="1" />
 </dxwgv:GridViewDataTextColumn>
             <dxwgv:GridViewDataComboBoxColumn Caption="Loại câu hỏi" 
-                FieldName="TenLoaiCH" Name="gcLoaiCauHoi" VisibleIndex="1">
-                <PropertiesComboBox DataMember="MaloaiCauHoi" ValueField="TenLoaiCH" 
+                FieldName="MaloaiCauHoi" Name="gcLoaiCauHoi" VisibleIndex="1">
+                <PropertiesComboBox DataMember="MaloaiCauHoi" ValueField="MaLoaiCauHoi" 
                     ValueType="System.String">
+                    <Columns>
+                        <dxe:ListBoxColumn Caption="Chọn loại câu hỏi" FieldName="TenLoaiCH" />
+                    </Columns>
                 </PropertiesComboBox>
                 <EditFormSettings ColumnSpan="2" VisibleIndex="3" />
             </dxwgv:GridViewDataComboBoxColumn>
