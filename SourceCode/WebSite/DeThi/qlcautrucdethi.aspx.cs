@@ -60,25 +60,21 @@ public partial class dethi_qlcautrucdethi :NTT.Web.UI.BasePage
 
        
         cboLoaiBang.ValueField = "MaLoaiBang";
-        cboLoaiBang.TextField = "MaLoaiBang";
+        cboLoaiBang.TextField = "TenLoai";
 
         cboLoaiBang.DataSource = dt;
         cboLoaiBang.DataBind();
+
+        dt = loaichoiDAL.getLoaiCauHoi(loaichoiDTO);
+        GridViewDataComboBoxColumn gclLoaiCauHoi = gvCauTrucDeThi.Columns["TenLoaiCH"] as GridViewDataComboBoxColumn;
        
-       // GridViewDataComboBoxColumn gclLoaiBang = gvCauTrucDeThi.Columns["MaLoaiBang"] as GridViewDataComboBoxColumn;
-        //gclLoaiBang.PropertiesComboBox.DataSource = dt;
+       
        // dt = loaichoiDAL.getLoaiCauHoi(loaichoiDTO);
 
        // GridViewDataComboBoxColumn gclLoaiCauHoi = gvCauTrucDeThi.Columns["MaloaiCauHoi"] as GridViewDataComboBoxColumn;
        // gclLoaiCauHoi.PropertiesComboBox.DataSource = dt;
 
 
-       
-        //gclDiemThi.PropertiesComboBox.ValueField = "MaDienThi";
-        //gclDiemThi.PropertiesComboBox.TextField = "TenDiemThi";
-
-      //  GridViewDataCheckColumn gclTrangThai = gvPhongThi.Columns["TrangThai"] as GridViewDataCheckColumn;
-        //gclTrangThai.PropertiesCheckEdit.DisplayTextChecked = "Chon";
     }
     private DataTable loadDataToUI()
     {
@@ -117,7 +113,7 @@ public partial class dethi_qlcautrucdethi :NTT.Web.UI.BasePage
         e.Cancel = true;
        // ctdthiDTO.MaLoaiBang = e.NewValues["MaLoaiBang"].ToString();
         ctdthiDTO.MaLoaiBang = cboLoaiBang.Value.ToString();
-        ctdthiDTO.MaloaiCauHoi = e.NewValues["TenLoai"].ToString(); ;
+        ctdthiDTO.MaloaiCauHoi = e.NewValues["TenLoaiCH"].ToString(); ;
         ctdthiDTO.SoCau = e.NewValues["SoCau"].ToString();
 
         ctdthiDTO.STT = e.NewValues["STT"].ToString();
@@ -139,7 +135,7 @@ public partial class dethi_qlcautrucdethi :NTT.Web.UI.BasePage
         ctdthiDTO.OldID = e.OldValues["STT"].ToString();
        // ctdthiDTO.MaLoaiBang = e.NewValues["MaLoaiBang"].ToString();
         ctdthiDTO.MaLoaiBang = cboLoaiBang.Value.ToString();
-        ctdthiDTO.MaloaiCauHoi = e.NewValues["TenLoai"].ToString(); ;
+        ctdthiDTO.MaloaiCauHoi = e.NewValues["TenLoaiCH"].ToString(); ;
         ctdthiDTO.SoCau = e.NewValues["SoCau"].ToString();
 
         ctdthiDTO.STT = e.NewValues["STT"].ToString();

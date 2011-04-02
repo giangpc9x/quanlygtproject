@@ -91,21 +91,21 @@ function GetUpdateResult(errorText)
                 </ClearFilterButton>
             </dxwgv:GridViewCommandColumn>
 <dxwgv:GridViewDataTextColumn FieldName="STT" Name="gcSTT" Width="90px" Caption="STT" 
-                VisibleIndex="1">
+                VisibleIndex="1" Visible="False">
     <EditFormSettings VisibleIndex="1" />
 </dxwgv:GridViewDataTextColumn>
             <dxwgv:GridViewDataComboBoxColumn Caption="Loại câu hỏi" 
-                FieldName="MaloaiCauHoi" Name="gcLoaiCauHoi" VisibleIndex="2">
-                <PropertiesComboBox DataMember="MaloaiCauHoi" ValueField="TenLoai" 
+                FieldName="MaloaiCauHoi" Name="gcLoaiCauHoi" VisibleIndex="1">
+                <PropertiesComboBox DataMember="MaloaiCauHoi" ValueField="TenLoaiCH" 
                     ValueType="System.String">
                 </PropertiesComboBox>
                 <EditFormSettings ColumnSpan="2" VisibleIndex="3" />
             </dxwgv:GridViewDataComboBoxColumn>
             <dxwgv:GridViewDataTextColumn Caption="Số câu" FieldName="SoCau" Name="gcSoCau" 
-                VisibleIndex="3">
+                VisibleIndex="2">
                 <EditFormSettings VisibleIndex="4" />
             </dxwgv:GridViewDataTextColumn>
-            <dxwgv:GridViewCommandColumn VisibleIndex="4" Caption = "Sửa" Width = "30px">
+            <dxwgv:GridViewCommandColumn VisibleIndex="3" Caption = "Sửa" Width = "30px">
                 <EditButton Visible="True" Text = "Sửa">
                 </EditButton>
                 <ClearFilterButton Visible="True">
