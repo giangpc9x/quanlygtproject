@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Demos Name="HeThongThiGiayPhepLaiXe" ColumnCount="3" Title="Hệ Thống Thi Giấy Phép Lại Xe Đường Bộ" TitleFormatString="{2} - {0}">
-    <DemoGroup Text="Trang chủ" Caption="Build Your Best - Without Limits or Compromise" BeginCategory="true">
+    <DemoGroup Text="Trang chủ" Caption="He Thong Thi Giay Phep Lai Xe - Chi tiet..." BeginCategory="true">
         <Demo Text="Bảng điều kiển" NavigateUrl="~/Default.aspx" UseFullTitle="false" Title="Hệ thống sát hạch giấy phép lại xe đường bộ">
-            <GeneralTerms ShowHeader="false">
+            <GeneralTerms ShowHeader="false" >
                 <p>
                     <b>Giới thiệu hệ thống</b>
                 </p>
@@ -11,10 +11,10 @@
                   Ngày nay, với sự phát triển của Công nghệ thông tin, ngành tin học đã trở thành một trong những ngành khoa học quan trọng đã và đang được sử dụng rộng rãi trong mọi lĩnh vực, vì thế, sử dụng máy tính thì việc lưu trữ, xử lý số liệu một cách dễ dàng, thuận tiện, nhanh chóng và đạt được độ chính xác cao.
                 </p>
 
-                <p>Trong bối cảnh như vậy cùng với tình trạng thiếu trầm trọng các trung tâm sat hạch thi giấy phép lái xe, hệ thống website thi giấy phép lái xe đường bộ được xây dựng nhằm đưa toàn bộ việc lưu trữ,xử lý số liệu trên máy và đáp ứng nhanh và kịp thời nhu cầu về giấy phép lái xe cho người dân.Với hệ thống này người sử dụng không cần kiến thức về chuyên môn cao mà vẫn có thể sử dụng và khai thác hệ thống một cách hiệu quả.</p>
+                <p>Trong bối cảnh như vậy cùng với tình trạng thiếu trầm trọng các trung tâm sát hạch thi giấy phép lái xe, hệ thống website thi giấy phép lái xe đường bộ được xây dựng nhằm đưa toàn bộ việc lưu trữ,xử lý số liệu trên máy và đáp ứng nhanh và kịp thời nhu cầu về giấy phép lái xe cho người dân.Với hệ thống này người sử dụng không cần kiến thức về chuyên môn cao mà vẫn có thể sử dụng và khai thác hệ thống một cách hiệu quả.</p>
 
                 <p>
-                  Hệ thống còn cho phép phân quyền theo nhóm người dùng nhằm quản lý thông tin,dữ liệu về việc thi sát hạch giấy phép lái xe đường bộ một cách an toàn và hiệu quả hơn.Ngoài ra hệ thống còn cho phép lấy đề thi một cách ngẫu nhiên với đầy đủ loại câu hỏi dựa vào cấu trúc đề thi nhằm hạn chế tiêu cực trong quá trình thi và thể hiện được tính chính xác trong bài làm của thí sinh.
+                  Hệ thống còn cho phép phân quyền theo nhóm người dùng nhằm quản lý thông tin, dữ liệu về việc thi sát hạch giấy phép lái xe đường bộ một cách an toàn và hiệu quả hơn.Ngoài ra hệ thống còn cho phép lấy đề thi một cách ngẫu nhiên với đầy đủ loại câu hỏi dựa vào cấu trúc đề thi nhằm hạn chế tiêu cực trong quá trình thi và thể hiện được tính chính xác trong bài làm của thí sinh.
                 </p>
                 <br/>
                 <hr noshade="noshade" />
