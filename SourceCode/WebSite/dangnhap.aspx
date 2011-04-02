@@ -11,6 +11,7 @@
         .style2
         {
             width: 100%;
+            margin-top: 20%;
         }
         .style3
         {
@@ -48,6 +49,7 @@
 </head>
 <body alink="#ffffff">
     <form id="form1" runat="server">
+    <br />
     <table class="style2">
         <tr>
             <td class="style3">
@@ -55,6 +57,12 @@
                     <tr>
                         <td>
                             <table class="style4">
+                             <tr>
+                                    <td colspan="2" valign="middle">
+                                        <dxe:ASPxLabel ID="lblThongBao" runat="server" ForeColor="Red">
+                                        </dxe:ASPxLabel>
+                                    </td>
+                                </tr>
                                 <tr>
                                     <td colspan="2" valign="middle">
                                         LOG IN</td>
@@ -68,21 +76,22 @@
                                             </tr>
                                             <tr>
                                                 <td class="style10">
-                                                    Pass Word</td>
+                                                    Password</td>
                                             </tr>
                                         </table>
                                     </td>
+                                    
                                     <td width="250px">
                                         <table class="style6">
                                             <tr>
                                                 <td class="style7">
-                                                    <dxe:ASPxTextBox ID="ASPxTextBoxusrename" runat="server" Width="170px">
+                                                    <dxe:ASPxTextBox ID="txtUserName" runat="server" Width="170px">
                                                     </dxe:ASPxTextBox>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td class="style8">
-                                                    <dxe:ASPxTextBox ID="ASPxTextBoxpass" runat="server" Width="170px">
+                                                    <dxe:ASPxTextBox ID="txtPassword" runat="server" Width="170px">
                                                     </dxe:ASPxTextBox>
                                                 </td>
                                             </tr>
@@ -98,13 +107,13 @@
                                                         <tr>
                                                             <td width="200px">
                                                                 &nbsp;</td>
-                                                            <td width="100px">
-                                                                <dxe:ASPxButton ID="ASPxButtonlogin" runat="server" 
+                                                            <td width="35px">
+                                                                &nbsp;</td>
+                                                            <td width="200px" align="left">
+                                                                <dxe:ASPxButton ID="btnLogin" runat="server" 
                                                                     onclick="ASPxButtonlogin_Click" Text="LOG IN">
                                                                 </dxe:ASPxButton>
                                                             </td>
-                                                            <td width="200px">
-                                                                &nbsp;</td>
                                                         </tr>
                                                     </table>
                                                 </td>
