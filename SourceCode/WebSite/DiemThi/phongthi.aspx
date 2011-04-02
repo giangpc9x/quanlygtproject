@@ -101,7 +101,7 @@
             </dxwgv:GridViewDataTextColumn>
             <dxwgv:GridViewDataCheckColumn Caption="Trạng Thái" FieldName="TrangThai" 
                 Name="gcTrangThai" VisibleIndex="3" Width="50px">
-                <PropertiesCheckEdit DisplayTextChecked="có" DisplayTextUnchecked="không ">
+                <PropertiesCheckEdit DisplayTextChecked="có" DisplayTextUnchecked="không" >
                 </PropertiesCheckEdit>
             </dxwgv:GridViewDataCheckColumn>
             <dxwgv:GridViewCommandColumn VisibleIndex="4" Caption = "Sửa" Width = "30px">

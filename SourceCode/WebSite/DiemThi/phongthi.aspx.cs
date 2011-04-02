@@ -47,7 +47,7 @@ public partial class DiemThi_phongthi : NTT.Web.UI.BasePage
     {
         DataTable dt = new DataTable();
         dt = dthiDAL.getDiaDiemThi(dthiDTO);
-        cboDiemThi.ValueField = "DiaChi";
+        cboDiemThi.ValueField = "MaDiemThi";
         cboDiemThi.TextField = "DiaChi";
 
         cboDiemThi.DataSource = dt;
@@ -181,6 +181,14 @@ public partial class DiemThi_phongthi : NTT.Web.UI.BasePage
         {
             gvPhongThi.DataSource = loadDataToUI();
             gvPhongThi.Selection.UnselectAll();
+        }
+        else
+        {
+            pthiDTO = new clsPhongThi_DTO();
+            pthiDTO.MaDiemThi = e.Parameters;
+            DataTable dt = pthiDAL.getPhongThi(pthiDTO);
+            gvPhongThi.DataSource = dt;
+            gvPhongThi.DataBind();
         }
     } 
     #endregion    
