@@ -91,18 +91,22 @@ function GetUpdateResult(errorText)
                 </ClearFilterButton>
             </dxwgv:GridViewCommandColumn>
 <dxwgv:GridViewDataTextColumn FieldName="STT" Name="gcSTT" Width="90px" Caption="STT" 
-                VisibleIndex="1">
+                VisibleIndex="1" Visible="False">
     <EditFormSettings VisibleIndex="1" />
 </dxwgv:GridViewDataTextColumn>
             <dxwgv:GridViewDataComboBoxColumn Caption="Mã câu hỏi" FieldName="MaCauHoi" 
-                Name="gcMaCauHoi" VisibleIndex="2">
+                Name="gcMaCauHoi" VisibleIndex="1">
                 <PropertiesComboBox 
                     ValueType="System.String" DataMember="MaCauHoi" ValueField="MaCauHoi">
+                    
+                    <Columns>
+                        <dxe:ListBoxColumn Caption="Mã câu hỏi" FieldName="MaCauHoi" />
+                    </Columns>
                     
                 </PropertiesComboBox>
                 <EditFormSettings VisibleIndex="3" ColumnSpan="2" />
             </dxwgv:GridViewDataComboBoxColumn>
-            <dxwgv:GridViewCommandColumn VisibleIndex="3" Caption = "Sửa" Width = "30px">
+            <dxwgv:GridViewCommandColumn VisibleIndex="2" Caption = "Sửa" Width = "30px">
                 <EditButton Visible="True" Text = "Sửa">
                 </EditButton>
                 <ClearFilterButton Visible="True">

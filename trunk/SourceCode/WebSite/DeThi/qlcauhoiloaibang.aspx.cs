@@ -16,6 +16,10 @@ public partial class dethi_qlcauhoiloaibang : NTT.Web.UI.BasePage
     clsLoaiBanglai_DAL lbangDAL;
     clsLoaiBanglai_DTO lbangDTO;
 
+    clsCauHoi_DAL choiDAL;
+    clsCauHoi_DTO choiDTO;
+    
+
     clsCommon cmn;
     string strMess = string.Empty;
     #endregion
@@ -26,6 +30,9 @@ public partial class dethi_qlcauhoiloaibang : NTT.Web.UI.BasePage
 
         lbangDAL = new clsLoaiBanglai_DAL();
         lbangDTO = new clsLoaiBanglai_DTO();
+
+        choiDAL = new clsCauHoi_DAL();
+        choiDTO = new clsCauHoi_DTO();
 
 
         cmn = new clsCommon();
@@ -56,7 +63,12 @@ public partial class dethi_qlcauhoiloaibang : NTT.Web.UI.BasePage
         cboLoaiBang.DataSource = dt;
         cboLoaiBang.DataBind();
 
-       
+
+       // dt = choilbangDAL.getCauHoi_LoaiBang(choilbangDTO);
+        dt = choiDAL.getCauHoi(choiDTO);
+
+        GridViewDataComboBoxColumn gclMaCauHoi = gvCauHoiLoaiBang.Columns["MaCauHoi"] as GridViewDataComboBoxColumn;
+        gclMaCauHoi.PropertiesComboBox.DataSource = dt;
 
     
     }
@@ -64,14 +76,6 @@ public partial class dethi_qlcauhoiloaibang : NTT.Web.UI.BasePage
     {
 
         DataTable dt = new DataTable();
-
-       // GridViewDataComboBoxColumn gclLoaiBang = gvCauHoiLoaiBang.Columns["MaLoaiBang"] as GridViewDataComboBoxColumn;
-        //gclLoaiBang.PropertiesComboBox.DataSource = dt;
-
-        GridViewDataComboBoxColumn gclMaCauHoi = gvCauHoiLoaiBang.Columns["MaCauHoi"] as GridViewDataComboBoxColumn;
-        gclMaCauHoi.PropertiesComboBox.DataSource = dt;
-
-
         dt = choilbangDAL.getCauHoi_LoaiBang(choilbangDTO);
         return dt;
     }
@@ -172,6 +176,14 @@ public partial class dethi_qlcauhoiloaibang : NTT.Web.UI.BasePage
         {
             gvCauHoiLoaiBang.DataSource = loadDataToUI();
             gvCauHoiLoaiBang.Selection.UnselectAll();
+        }
+        else
+        {
+            choilbangDTO = new clsCauHoi_LoaiBang_DTO();
+            choilbangDTO.MaLoaiBang = e.Parameters;
+            DataTable dt = choilbangDAL.getCauHoi_LoaiBang(choilbangDTO);
+            gvCauHoiLoaiBang.DataSource = dt;
+            gvCauHoiLoaiBang.DataBind();
         }
     }
 }
