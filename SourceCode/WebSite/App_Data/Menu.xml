@@ -8,29 +8,19 @@
                 </p>
 
                 <p>
-                    These adjectives help describe our new <b>ASPxGridView</b> but you will find that our competitors use the same phrases to describe their product offerings. So how do you decide who's telling the truth and which product delivers on its promises? How can you be certain that the hassles and frustrations you've encountered in the past with ASP.NET controls will not be repeated just because a tool vendor tells you their approach is better?
+                  Ngày nay, với sự phát triển của Công nghệ thông tin, ngành tin học đã trở thành một trong những ngành khoa học quan trọng đã và đang được sử dụng rộng rãi trong mọi lĩnh vực, vì thế, sử dụng máy tính thì việc lưu trữ, xử lý số liệu một cách dễ dàng, thuận tiện, nhanh chóng và đạt được độ chính xác cao.
                 </p>
 
-                <p>Fact is that no amount of marketing can hide the limitations of a product and as such, the best way to determine whether a given product addresses your business needs and those of your customers is to try it. If you currently own a competing ASP.NET grid and data editors library or if you are in the evaluation process, we invite you to download and evaluate the ASPxGridView Suite - and decide for yourself.</p>
+                <p>Trong bối cảnh như vậy cùng với tình trạng thiếu trầm trọng các trung tâm sat hạch thi giấy phép lái xe, hệ thống website thi giấy phép lái xe đường bộ được xây dựng nhằm đưa toàn bộ việc lưu trữ,xử lý số liệu trên máy và đáp ứng nhanh và kịp thời nhu cầu về giấy phép lái xe cho người dân.Với hệ thống này người sử dụng không cần kiến thức về chuyên môn cao mà vẫn có thể sử dụng và khai thác hệ thống một cách hiệu quả.</p>
 
                 <p>
-                    The demos contained within these web pages lay out our evidence - that the <b>ASPxGridView</b> has no equal in the marketplace…but you are both the judge and jury and we welcome your thoughts and look forward to your feedback.
+                  Hệ thống còn cho phép phân quyền theo nhóm người dùng nhằm quản lý thông tin,dữ liệu về việc thi sát hạch giấy phép lái xe đường bộ một cách an toàn và hiệu quả hơn.Ngoài ra hệ thống còn cho phép lấy đề thi một cách ngẫu nhiên với đầy đủ loại câu hỏi dựa vào cấu trúc đề thi nhằm hạn chế tiêu cực trong quá trình thi và thể hiện được tính chính xác trong bài làm của thí sinh.
                 </p>
                 <br/>
                 <hr noshade="noshade" />
-                <p>
-                    Below you will find hot-button features that frankly every single one of our competitors claims they offer. We'd be remiss if we did not mention them as well, but before you read about these features, please indulge us for a brief moment so we can mention the two attributes we feel to be most important - SPEED and MEMORY FOOTPRINT.
-                </p>
-
-                <p>When we set out to re-write our ASP.NET grid and data editors library, our mission was rather simple: Create a grid control that is fast - really fast and not a memory hog. A grid that will not choke and collapse on itself when the dataset contains 50,000 or more rows... A grid that will not make end-users cringe as they load a page and then attempt to navigate from page to page... A grid that fully exploits data operations against the database server, so features such as sorting, grouping, filtering and summary computations can actually be responsive rather than atrociously slow.</p>
-
-                <p>
-                    YES, the <b>ASPxGridView</b> is all about maximizing SPEED and conserving MEMORY. All the big ticket features a company claims to have in their grid are worthless without these. With that said, here is a general overview of all features you can expect to find when evaluating the <b>ASPxGridView and Editors Library</b>:
-                </p>
+                
             </GeneralTerms>
-            <Description>
-                To view any of the demos within these web pages, use the menu on the left hand side of this page. If you would like to explore the capabilities of these libraries further, we offer a free evaluation version and all of our products are backed by a 60 day no questions asked money back guarantee. For assistance, feel free to contact us at <a href="mailto:support@devexpress.com">support@devexpress.com</a>.
-            </Description>
+         
         </Demo>
     </DemoGroup>
 
