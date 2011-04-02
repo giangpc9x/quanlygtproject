@@ -97,7 +97,7 @@ function GetUpdateResult(errorText)
                
                 <EditFormSettings VisibleIndex="1" />
             </dxwgv:GridViewDataTextColumn>
-            <dxwgv:GridViewDataTextColumn Caption="Tên loại" FieldName="TenLoai" 
+            <dxwgv:GridViewDataTextColumn Caption="Tên loại" FieldName="TenLoaiCH" 
                 Name="gcTenLoai" VisibleIndex="2" Width="100px">
                 <EditFormSettings VisibleIndex="2" />
             </dxwgv:GridViewDataTextColumn>

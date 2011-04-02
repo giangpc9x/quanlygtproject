@@ -60,7 +60,7 @@ public partial class dethi_qlloaicauhoi : NTT.Web.UI.BasePage
     {
         e.Cancel = true;
       
-        loaichoiDTO.TenLoai = e.NewValues["TenLoai"].ToString();
+        loaichoiDTO.TenLoaiCH = e.NewValues["TenLoaiCH"].ToString();
 
         int iReturn = loaichoiDAL.InsertUpdate(loaichoiDTO);
         if (iReturn >= 0)
@@ -81,7 +81,7 @@ public partial class dethi_qlloaicauhoi : NTT.Web.UI.BasePage
         loaichoiDTO.OldID = e.OldValues["MaloaiCauHoi"].ToString();
         loaichoiDTO.MaloaiCauHoi = e.NewValues["MaloaiCauHoi"].ToString();
 
-        loaichoiDTO.TenLoai = e.NewValues["TenLoai"].ToString();
+        loaichoiDTO.TenLoaiCH = e.NewValues["TenLoaiCH"].ToString();
 
         int iReturn = loaichoiDAL.InsertUpdate(loaichoiDTO);
         if (iReturn >= 0)
