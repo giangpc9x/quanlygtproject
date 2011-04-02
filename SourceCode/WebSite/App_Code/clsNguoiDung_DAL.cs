@@ -101,5 +101,21 @@ public class clsNguoiDung_DAL : NTT.Web.UI.BasePage
               return -1111;
           }
       }
+     public int Check_Login(string strTenDangNhap, string strKhauKhau)
+     {
+
+         try
+         {
+             ListDictionary _list = new ListDictionary();
+             _list.Add("TenDangNhap", strTenDangNhap);
+             _list.Add("MatKhau", strKhauKhau);
+             int iReturn = obj.ExcSql("[Check_Login]", _list, CommandType.StoredProcedure);
+             return iReturn;
+         }
+         catch (Exception)
+         {
+             return -1111;
+         }
+     }
     
 }
