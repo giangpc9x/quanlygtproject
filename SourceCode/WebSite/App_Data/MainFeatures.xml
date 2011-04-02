@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Features>
   <Item Title="Người dùng" NavigateUrl="~/HeThong/qlnguoidung.aspx" Text="Cho phép người quản trị có thể quản lý được thông tin người dùng theo điểm thi." ImageUrl="~/Images/IconImages/AJAX.png" Visible="True" />
-  <Item Title="Nhóm người dùng" NavigateUrl="~/HeThong/qlnhomnguoidung.aspx" Text="Quản lý thông tin các nhóm người dùng trong hệ thống." ImageUrl="~/Images/IconImages/ClientSideEvent.png" Visible="True" />
+  <Item Title="Nhóm người dùng" NavigateUrl="~/HeThong/qlnhomnguoidung.aspx" Text="Quản lý thông tin các nhóm người dùng trong hệ thống." ImageUrl="~/Images/IconImages/AJAX.png" Visible="True" />
+  <Item Title="Quản lý quyền" NavigateUrl="~/HeThong/qlquyen.aspx" Text="Cho phép người quản trị có thể quản lý được các loại quyền trong hệ thống." ImageUrl="~/Images/IconImages/AJAX.png" Visible="True" />
+  <Item Title="Quản lý chi tiết quyền" NavigateUrl="~/HeThong/qlchitietquyen.aspx" Text="Cho phép người quản trị có thể quản lý được thông tin chi tiết loại quyền." ImageUrl="~/Images/IconImages/AJAX.png" Visible="True" />
   <Item Title="Câu hỏi" NavigateUrl="~/DeThi/qlcauhoi.aspx" Text="Quản lý thông tin câu hỏi,câu lựa chọn và đáp án của câu hỏi." ImageUrl="~/Images/IconImages/Binding.png" Visible="True" />
-  <Item Title="Loại câu hỏi" NavigateUrl="~/DeThi/qlloaicauhoi.aspx" Text="Quản lý loại câu hỏi có trong hệ thống." ImageUrl="~/Images/IconImages/Appearance.png" Visible="True" />
-  <Item Title="Cấu trúc đề thi" NavigateUrl="~/DeThi/qlcautrucdethi.aspx" Text="Cho phép quản lý cấu trúc đề thi theo loại bằng." ImageUrl="~/Images/IconImages/Cookies.png" Visible="True" />
-  <Item Title="Loại bằng lái" NavigateUrl="~/HeThong/qlnguoidung.aspx" Text="Templates are fully supported. For each control and each element inside it, you can completely customize the appearance or layout using any HTML or server-side control." ImageUrl="~/Images/IconImages/Template.png" Visible="True" />
-  <Item Title="Thông tin điểm thi" NavigateUrl="~/DiemThi/diemthi.aspx" Text="Quản lý các thông tin về địa điểm thi trong hệ thống." ImageUrl="~/Images/IconImages/ClientSide.png" Visible="True" />
+  <Item Title="Loại câu hỏi" NavigateUrl="~/DeThi/qlloaicauhoi.aspx" Text="Quản lý loại câu hỏi có trong hệ thống." ImageUrl="~/Images/IconImages/Binding.png" Visible="True" />
+  <Item Title="Cấu trúc đề thi" NavigateUrl="~/DeThi/qlcautrucdethi.aspx" Text="Cho phép quản lý cấu trúc đề thi theo loại bằng." ImageUrl="~/Images/IconImages/Binding.png" Visible="True" />
+  <Item Title="Câu hỏi bằng lái" NavigateUrl="~/DeThi/qlcauhoiloaibang.aspx" Text="Cho phép quản lý câu hỏi theo loại bằng." ImageUrl="~/Images/IconImages/Binding.png" Visible="True" />
+  <Item Title="Loại bằng lái" NavigateUrl="~/HeThong/qlloaibanglai.aspx" Text="Quản lý thông tin về các loại bằng lái trong hệ thống." ImageUrl="~/Images/IconImages/ClientSide.png" Visible="True" />
+  <Item Title="Hồ sơ thí sinh dự thi" NavigateUrl="~/HoSoThiSinh/thisinh.aspx" Text="Quản lý thông tin thí sinh đăng ký dự thi giấy phép lái xe các loại." ImageUrl="~/Images/IconImages/ClientSideEvent.png" Visible="True" />
+  
+  <Item Title="Thông tin điểm thi" NavigateUrl="~/DiemThi/diemthi.aspx" Text="Quản lý các thông tin về địa điểm thi trong hệ thống." ImageUrl="~/Images/IconImages/CrossBrowser.png" Visible="True" />
   <Item Title="Thông tin phòng thi" NavigateUrl="~/DiemThi/phongthi.aspx" Text="Quản lý các thông tin về phòng thi theo từng điểm thi." ImageUrl="~/Images/IconImages/CrossBrowser.png" Visible="True" />
-  <Item Title="Thông tin đợt thi" NavigateUrl="~/DiemThi/dotthi.aspx" Text="Quản lý thông tin các đợt thi." ImageUrl="~/Images/IconImages/Cookies.png" Visible="True" />
-  <Item Title="Hồ sơ thí sinh dự thi" NavigateUrl="~/HoSoThiSinh/thisinh.aspx" Text="Quản lý thông tin thí sinh đăng ký dự thi giấy phép lái xe các loại." ImageUrl="~/Images/IconImages/Cookies.png" Visible="True" />
+  <Item Title="Thông tin đợt thi" NavigateUrl="~/DiemThi/dotthi.aspx" Text="Quản lý thông tin các đợt thi." ImageUrl="~/Images/IconImages/CrossBrowser.png" Visible="True" />
+  <Item Title="Thông tin ca thi" NavigateUrl="~/DiemThi/cathi.aspx" Text="Quản lý các thông tin về ca thi của từng phòng thi theo điểm thi." ImageUrl="~/Images/IconImages/CrossBrowser.png" Visible="True" />
+  
   <Item Title="Phân công coi thi" NavigateUrl="~/ToChucDotThi/phancongcoithi.aspx" Text="Hệ thống cho phép quản lý thông tin về việc phân công coi thi." ImageUrl="~/Images/IconImages/Cookies.png" Visible="True" />
   <Item Title="Điểm danh thi sinh dự thi" NavigateUrl="~/ToChucDotThi/diemdanhthisinh.aspx" Text="Cho phép quản lý việc dự thi của thí sinh." ImageUrl="~/Images/IconImages/Cookies.png" Visible="True" />
 </Features>
