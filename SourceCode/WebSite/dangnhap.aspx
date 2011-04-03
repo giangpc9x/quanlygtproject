@@ -11,7 +11,7 @@
         .style2
         {
             width: 100%;
-            margin-top: 20%;
+            margin-top: 10%;
         }
         .style3
         {
@@ -21,29 +21,31 @@
         {
             width: 500px;
         }
-        .style5
-        {
-            width: 250px;
-        }
         .style6
         {
-            width: 250%;
+            text-align: right;
+            height: 30px;
         }
         .style7
         {
             text-align: justify;
-        }
-        .style8
-        {
-            text-align: justify;
+            height: 30px;
         }
         .style9
         {
-            text-align: right;
+            text-align: left;
+            font-weight: bold;
+            color: #0000FF;
+            font-size: x-large;
+            height: 38px;
         }
         .style10
         {
-            text-align: right;
+            text-align: justify;
+        }
+        .style11
+        {
+            height: 30px;
         }
     </style>
 </head>
@@ -57,68 +59,45 @@
                     <tr>
                         <td>
                             <table class="style4">
-                             <tr>
-                                    <td colspan="2" valign="middle">
-                                        <dxe:ASPxLabel ID="lblThongBao" runat="server" ForeColor="Red">
+                                <tr>
+                                    <td class="style9" colspan="3">
+                                        Đăng Nhập Hệ Thống</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                        <dxe:ASPxLabel ID="lblthongbao" runat="server" ForeColor="Red">
                                         </dxe:ASPxLabel>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td colspan="2" valign="middle">
-                                        LOG IN</td>
-                                </tr>
-                                <tr>
-                                    <td width="250px">
-                                        <table class="style5">
-                                            <tr>
-                                                <td class="style9">
-                                                    User Name</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="style10">
-                                                    Password</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    
-                                    <td width="250px">
-                                        <table class="style6">
-                                            <tr>
-                                                <td class="style7">
-                                                    <dxe:ASPxTextBox ID="txtUserName" runat="server" Width="170px">
-                                                    </dxe:ASPxTextBox>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="style8">
-                                                    <dxe:ASPxTextBox ID="txtPassword" runat="server" Width="170px">
-                                                    </dxe:ASPxTextBox>
-                                                </td>
-                                            </tr>
-                                        </table>
+                                    <td class="style6" width="280px">
+                                        Tên Đăng Nhập</td>
+                                    <td width="20px" class="style11">
+                                        </td>
+                                    <td class="style7" width="200px">
+                                        <dxe:ASPxTextBox ID="txttendangnhap" runat="server" Width="200px">
+                                        </dxe:ASPxTextBox>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td colspan="2" width="500px">
-                                        <table class="style4">
-                                            <tr>
-                                                <td>
-                                                    <table class="style4">
-                                                        <tr>
-                                                            <td width="200px">
-                                                                &nbsp;</td>
-                                                            <td width="35px">
-                                                                &nbsp;</td>
-                                                            <td width="200px" align="left">
-                                                                <dxe:ASPxButton ID="btnLogin" runat="server" 
-                                                                    onclick="ASPxButtonlogin_Click" Text="LOG IN">
-                                                                </dxe:ASPxButton>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                </td>
-                                            </tr>
-                                        </table>
+                                    <td class="style6" width="280px">
+                                        Mật Khẩu</td>
+                                    <td width="20px" class="style11">
+                                        </td>
+                                    <td class="style7" width="200px">
+                                        <dxe:ASPxTextBox ID="txtmatkhau" runat="server" Password="True" Width="200px">
+                                        </dxe:ASPxTextBox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        &nbsp;</td>
+                                    <td width="20px">
+                                        &nbsp;</td>
+                                    <td class="style10" width="200px">
+                                        <dxe:ASPxButton ID="btndangnhap" runat="server" onclick="btndangnhap_Click" 
+                                            Text="Đăng Nhập">
+                                        </dxe:ASPxButton>
                                     </td>
                                 </tr>
                             </table>
