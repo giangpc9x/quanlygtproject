@@ -137,7 +137,7 @@ public partial class DiemThi_phongthi : NTT.Web.UI.BasePage
         pthiDTO.MoTa = e.NewValues["MoTa"].ToString(); ;
         pthiDTO.SoThSinhToiDa = e.NewValues["SoThSinhToiDa"].ToString();
         pthiDTO.TrangThai = e.NewValues["TrangThai"].ToString();
-        pthiDTO.MaDiemThi = e.NewValues["DiaChi"].ToString();
+        pthiDTO.MaDiemThi = cboDiemThi.Value.ToString();
         int iReturn = pthiDAL.InsertUpdate(pthiDTO);
         if (iReturn >= 0)
         {
