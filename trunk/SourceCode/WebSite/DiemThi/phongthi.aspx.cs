@@ -81,7 +81,7 @@ public partial class DiemThi_phongthi : NTT.Web.UI.BasePage
         foreach (GridViewColumn column in gvPhongThi.Columns)
         {
             GridViewDataColumn dataColumn = column as GridViewDataColumn;
-            if (dataColumn == null || dataColumn.Caption == "Error") continue;
+            if (dataColumn == null || dataColumn.Caption == "Error" ) continue;
             if (e.NewValues[dataColumn.FieldName] == null || e.NewValues[dataColumn.FieldName].ToString().Trim() == string.Empty)
             {
                 e.Errors[dataColumn] = "Vui lòng điền dữ liệu.";
@@ -116,7 +116,7 @@ public partial class DiemThi_phongthi : NTT.Web.UI.BasePage
         pthiDTO.MoTa = e.NewValues["MoTa"].ToString(); ;
         pthiDTO.SoThSinhToiDa = e.NewValues["SoThSinhToiDa"].ToString();
         pthiDTO.TrangThai = e.NewValues["TrangThai"].ToString();
-        pthiDTO.MaDiemThi = e.NewValues["DiaChi"].ToString();
+        pthiDTO.MaDiemThi = cboDiemThi.Value.ToString();
         int iReturn = pthiDAL.InsertUpdate(pthiDTO);
         if (iReturn >= 0)
         {
