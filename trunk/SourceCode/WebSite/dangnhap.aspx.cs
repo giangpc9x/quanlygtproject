@@ -23,8 +23,13 @@ public partial class dangnhap : NTT.Web.UI.BasePage//System.Web.UI.Page
 
     protected void ASPxButtonlogin_Click(object sender, EventArgs e)
     {
-        string strTenDangNhap = txtUserName.Text.Trim();
-        string strPassword = txtPassword.Text.Trim();
+        
+
+    }
+    protected void btndangnhap_Click(object sender, EventArgs e)
+    {
+        string strTenDangNhap = txttendangnhap.Text.Trim();
+        string strPassword = txtmatkhau.Text.Trim();
         if (nguoidungDAL.Check_Login(strTenDangNhap, strPassword) > 0)
         {
             nguoidungDTO = new clsNguoiDung_DTO();
@@ -40,9 +45,8 @@ public partial class dangnhap : NTT.Web.UI.BasePage//System.Web.UI.Page
         }
         else
         {
-            lblThongBao.Text = "Dang Nhap That bai! vui long kiem tra lai";
-            txtUserName.Focus();
+            lblthongbao.Text = "Dang Nhap That bai! vui long kiem tra lai";
+            txttendangnhap.Focus();
         }
-
     }
 }
