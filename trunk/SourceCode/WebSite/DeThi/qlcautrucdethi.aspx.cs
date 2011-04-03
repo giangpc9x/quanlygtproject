@@ -49,6 +49,8 @@ public partial class dethi_qlcautrucdethi :NTT.Web.UI.BasePage
         loadMasterData();
         gvCauTrucDeThi.DataSource = loadDataToUI();
         gvCauTrucDeThi.DataBind();
+
+       
     }
     private void loadMasterData()
     {
