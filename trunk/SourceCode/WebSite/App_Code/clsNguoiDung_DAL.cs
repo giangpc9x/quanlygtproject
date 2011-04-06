@@ -6,7 +6,7 @@ using System.Collections.Specialized;
 using NTT.Web.Core.XSQL;
 using System.Data.SqlClient;
 
-public class clsNguoiDung_DAL : NTT.Web.UI.BasePage
+public class clsNguoiDung_DAL
 {
     DataObject obj;
     public clsNguoiDung_DAL()
@@ -56,7 +56,6 @@ public class clsNguoiDung_DAL : NTT.Web.UI.BasePage
             _list.Add("CMND", nguoidungDTO.CMND);
             _list.Add("NgaySinh", nguoidungDTO.NgaySinh);
             _list.Add("DiaChi", nguoidungDTO.DiaChi);
-            _list.Add("DienThoai", nguoidungDTO.DienThoai);
             _list.Add("DienThoai", nguoidungDTO.DienThoai);
             _list.Add("NgayDK", nguoidungDTO.NgayDK);
             _list.Add("TrangThai", nguoidungDTO.TrangThai);
