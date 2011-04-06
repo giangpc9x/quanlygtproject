@@ -52,6 +52,18 @@ public partial class dethi_qlcauhoi : NTT.Web.UI.BasePage
         DataTable dt = new DataTable();
         dt = choiclcDAL.getCauHoi_CauLuaChon(choiclcDTO);
         dt = loaichoiDAL.getLoaiCauHoi(loaichoiDTO);
+
+        popcboLoaiCauHoi.ValueField = "MaloaiCauHoi";
+        popcboLoaiCauHoi.TextField = "TenLoaiCH";
+
+        popcboLoaiCauHoi.DataSource = dt;
+        popcboLoaiCauHoi.DataBind();
+       // if(gvcauhoi.KeyFieldName == )
+
+        poptxtNoiDung.Value = "NoiDung";
+
+      //  poptxtNoiDung.Text = "NoiDung";
+        
 }
     private DataTable loadDataToUI()
     {
@@ -107,7 +119,7 @@ public partial class dethi_qlcauhoi : NTT.Web.UI.BasePage
 
         // insert cau hoi cau lua chon
 
-        choiclcDTO.MaCauHoi = e.NewValues["MaCauHoi"].ToString();
+      /*  choiclcDTO.MaCauHoi = e.NewValues["MaCauHoi"].ToString();
         choiclcDTO.MaCauLuaChon = e.NewValues["MaCauLuaChon"].ToString();
         choiclcDTO.DapAn = e.NewValues["DapAn"].ToString();
 
@@ -139,14 +151,14 @@ public partial class dethi_qlcauhoi : NTT.Web.UI.BasePage
         {
             strMess = "Lưu Dữ Liệu Không Thành Công";
             gvcauhoi.DoRowValidation();
-        }
+        }*/
     }
 
     protected void gvcauhoi_RowUpdating(object sender, DevExpress.Web.Data.ASPxDataUpdatingEventArgs e)
     {
         e.Cancel = true;
         choiDTO.OldID = e.NewValues["MaCauHoi"].ToString();
-        clchonDTO.OldID = e.NewValues["MaCauLuaChon"].ToString();
+        //clchonDTO.OldID = e.NewValues["MaCauLuaChon"].ToString();
  
         // sua cau hoi
         choiDTO.MaCauHoi = e.NewValues["MaCauHoi"].ToString();
@@ -176,7 +188,7 @@ public partial class dethi_qlcauhoi : NTT.Web.UI.BasePage
         }
 
         // sua cau hoi_cau lua chon
-        choiclcDTO.MaCauHoi = e.NewValues["MaCauHoi"].ToString();
+       /* choiclcDTO.MaCauHoi = e.NewValues["MaCauHoi"].ToString();
         choiclcDTO.MaCauLuaChon = e.NewValues["MaCauLuaChon"].ToString();
         choiclcDTO.DapAn = e.NewValues["DapAn"].ToString();
 
@@ -216,6 +228,6 @@ public partial class dethi_qlcauhoi : NTT.Web.UI.BasePage
         {
             strMess = "Do ràng buộc dữ liệu. Không thể thực hiện cập nhật";
             gvcauhoi.DoRowValidation();
-        }
+        }*/
     }
 }
