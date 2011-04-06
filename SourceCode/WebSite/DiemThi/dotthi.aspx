@@ -91,20 +91,20 @@
                 </ClearFilterButton>
             </dxwgv:GridViewCommandColumn>
 <dxwgv:GridViewDataTextColumn FieldName="MaDotThi" Name="gcMaDotThi" Width="50px" Caption="Mã Đợt Thi" 
-                VisibleIndex="1">
+                VisibleIndex="1" Visible="False">
     <EditFormSettings VisibleIndex="0" ColumnSpan="2" RowSpan="1" Visible="False" />
 </dxwgv:GridViewDataTextColumn>
             <dxwgv:GridViewDataDateColumn Caption="Ngày Tạo" FieldName="NgayTao" 
-                Name="gcNgayTao" VisibleIndex="2" Width="90px">
+                Name="gcNgayTao" VisibleIndex="1" Width="90px">
                 <PropertiesDateEdit DisplayFormatString="dd/MM/yyyy">
                 </PropertiesDateEdit>
                 <EditFormSettings ColumnSpan="2" VisibleIndex="0" RowSpan="1" />
             </dxwgv:GridViewDataDateColumn>
             <dxwgv:GridViewDataTextColumn Caption="Mô Tả" FieldName="MoTa" Name="gcMoTa" 
-                VisibleIndex="3" Width="100px">
+                VisibleIndex="2" Width="100px">
                 <EditFormSettings VisibleIndex="1" ColumnSpan="2" RowSpan="1" />
             </dxwgv:GridViewDataTextColumn>
-            <dxwgv:GridViewCommandColumn VisibleIndex="4" Caption = "Sửa" Width = "30px">
+            <dxwgv:GridViewCommandColumn VisibleIndex="3" Caption = "Sửa" Width = "30px">
                 <EditButton Visible="True" Text = "Sửa">
                 </EditButton>
                 <ClearFilterButton Visible="True">

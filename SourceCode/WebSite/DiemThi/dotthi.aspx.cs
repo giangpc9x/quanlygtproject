@@ -26,7 +26,6 @@ public partial class DiemThi_dotthi : NTT.Web.UI.BasePage
         dotthiDTO = new clsDotThi_DTO();
 
         lblDAL = new clsLoaiBanglai_DAL();
-        lblDTO = new clsLoaiBanglai_DTO();
 
         cmn = new clsCommon();
         if (!IsPostBack || !IsCallback)
@@ -38,12 +37,17 @@ public partial class DiemThi_dotthi : NTT.Web.UI.BasePage
 
         }
         loadMasterData();
-        gvDotThi.DataSource = loadDataToUI();
-        gvDotThi.DataBind();
+        if (cboLoaiBang.Value != null)
+        {
+            dotthiDTO.MaLoaiBang = cboLoaiBang.Value.ToString();
+            gvDotThi.DataSource = loadDataToUI(dotthiDTO);
+            gvDotThi.DataBind();
+        }
 
     }
     private void loadMasterData()
     {
+        lblDTO = new clsLoaiBanglai_DTO();
         DataTable dt = new DataTable();
         dt = lblDAL.getMaLoaibang(lblDTO);
 
@@ -61,9 +65,8 @@ public partial class DiemThi_dotthi : NTT.Web.UI.BasePage
         //GridViewDataCheckColumn gclTrangThai = gvDotThi.Columns["TrangThai"] as GridViewDataCheckColumn;
         //gclTrangThai.PropertiesCheckEdit.DisplayTextChecked = "Chon";
     }
-    private DataTable loadDataToUI()
+    private DataTable loadDataToUI(clsDotThi_DTO dotthiDTO)
     {
-
         DataTable dt = new DataTable();
         dt = dotthiDAL.getDotThi(dotthiDTO);
         return dt;
@@ -93,13 +96,7 @@ public partial class DiemThi_dotthi : NTT.Web.UI.BasePage
             e.RowError = "Vui lòng điền đầy đủ thông tin trước khi lưu.";
             return;
         }
-       // strOldValues = e.OldValues["MaDotThi"] == null ? string.Empty : e.OldValues["MaDotThi"].ToString();
-        //if (e.NewValues["MaDotThi"].ToString() != strOldValues && dotthiDAL.Check_Dot_Thi(e.NewValues["MaDotThi"].ToString()) == 1)
-        //{
-        //    AddError(e.Errors, gvDotThi.Columns["MaDotThi"], "Đã tồn tại Mã Đợt Thi, không thể lưu");
-        //    e.RowError = "Trùng mã Đợt Thi, vui lòng kiểm tra lại";
-        //    return;
-        //}
+        strOldValues = e.OldValues["MaDotThi"] == null ? string.Empty : e.OldValues["MaDotThi"].ToString();
     }
     void AddError(Dictionary<GridViewColumn, string> errors, GridViewColumn column, string errorText)
     {
@@ -112,8 +109,8 @@ public partial class DiemThi_dotthi : NTT.Web.UI.BasePage
 
     protected void gvDotThi_RowInserting(object sender, DevExpress.Web.Data.ASPxDataInsertingEventArgs e)
     {
+        dotthiDTO = new clsDotThi_DTO();
         e.Cancel = true;
-        dotthiDTO.MaDotThi = e.NewValues["MaDotThi"].ToString();
         dotthiDTO.MaLoaiBang = cboLoaiBang.Value.ToString() ;
         dotthiDTO.NgayTao = cmn.Convert_DMY_To_MDY(e.NewValues["NgayTao"].ToString());
         dotthiDTO.MoTa = e.NewValues["MoTa"].ToString();
@@ -121,7 +118,9 @@ public partial class DiemThi_dotthi : NTT.Web.UI.BasePage
         int iReturn = dotthiDAL.InsertUpdate(dotthiDTO);
         if (iReturn >= 0)
         {
-            gvDotThi.DataSource = loadDataToUI();
+            dotthiDTO = new clsDotThi_DTO();
+            dotthiDTO.MaLoaiBang = cboLoaiBang.Value.ToString();
+            gvDotThi.DataSource = loadDataToUI(dotthiDTO);
             gvDotThi.CancelEdit();
         }
         else
@@ -133,6 +132,7 @@ public partial class DiemThi_dotthi : NTT.Web.UI.BasePage
 
     protected void gvDotThi_RowUpdating(object sender, DevExpress.Web.Data.ASPxDataUpdatingEventArgs e)
     {
+        dotthiDTO = new clsDotThi_DTO();
         e.Cancel = true;
         dotthiDTO.OldID = e.OldValues["MaDotThi"].ToString();
         dotthiDTO.MaDotThi = e.NewValues["MaDotThi"].ToString();
@@ -142,7 +142,9 @@ public partial class DiemThi_dotthi : NTT.Web.UI.BasePage
         int iReturn = dotthiDAL.InsertUpdate(dotthiDTO);
         if (iReturn >= 0)
         {
-            gvDotThi.DataSource = loadDataToUI();
+            dotthiDTO = new clsDotThi_DTO();
+            dotthiDTO.MaLoaiBang = cboLoaiBang.Value.ToString();
+            gvDotThi.DataSource = loadDataToUI(dotthiDTO);
             gvDotThi.CancelEdit();
         }
         else if (iReturn == -2)
@@ -159,6 +161,7 @@ public partial class DiemThi_dotthi : NTT.Web.UI.BasePage
 
     protected void gvDotThi_CustomDataCallback(object sender, ASPxGridViewCustomDataCallbackEventArgs e)
     {
+        dotthiDTO = new clsDotThi_DTO();
         string strReturn = string.Empty;
         string strMess = string.Empty;
         int iRow = gvDotThi.VisibleRowCount;
@@ -174,20 +177,24 @@ public partial class DiemThi_dotthi : NTT.Web.UI.BasePage
             e.Result = "Do ràng buộc dữ liệu, không thể xóa " + strMess;
         else
             e.Result = string.Empty;
-        gvDotThi.DataSource = loadDataToUI();
+        dotthiDTO = new clsDotThi_DTO();
+        dotthiDTO.MaLoaiBang = cboLoaiBang.Value.ToString();
+        gvDotThi.DataSource = loadDataToUI(dotthiDTO);
         gvDotThi.Selection.SelectAll();
     }
 
     protected void gvDotThi_CustomCallback(object sender, ASPxGridViewCustomCallbackEventArgs e)
     {
+        dotthiDTO = new clsDotThi_DTO();
         if (e.Parameters == "Update")
         {
-            gvDotThi.DataSource = loadDataToUI();
+            dotthiDTO.MaLoaiBang = cboLoaiBang.Value.ToString();
+            gvDotThi.DataSource = loadDataToUI(dotthiDTO);
             gvDotThi.Selection.UnselectAll();
         }
         else
         {
-            dotthiDTO = new clsDotThi_DTO();
+           
             dotthiDTO.MaLoaiBang = e.Parameters;
             DataTable dt = dotthiDAL.getDotThi(dotthiDTO);
             gvDotThi.DataSource = dt;
