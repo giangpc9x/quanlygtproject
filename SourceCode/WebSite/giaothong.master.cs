@@ -133,6 +133,17 @@ public partial class MasterPage : System.Web.UI.MasterPage
         // Version
         string[] versionInfo = AssemblyInfo.Version.Split('.');
         //lblVersion.Text = string.Format("v{0} vol {1}.{2}", 2000 + Int32.Parse(versionInfo[0]), versionInfo[1], versionInfo[2]);
+        if (Session["TenDangNhap"] != null)
+        {
+            clsNguoiDung_DAL ndungDAL = new clsNguoiDung_DAL();
+            clsNguoiDung_DTO ndungDTO = new clsNguoiDung_DTO();
+            ndungDTO.TenDangNhap = Session["TenDangNhap"].ToString();
+            DataTable dt = ndungDAL.getNguoiDung(ndungDTO);
+            if (dt != null)
+            {
+                lblNguoiDung.Text = "Đăng nhâp: " + dt.Rows[0]["Ho"].ToString() + " " + dt.Rows[0]["Ten"].ToString();
+            }
+        }
     }
 
 	void CreateHighlightedFeatures() {
