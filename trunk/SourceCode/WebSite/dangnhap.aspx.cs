@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using NTT.Web.Core.XSQL;
+
 
 public partial class dangnhap : NTT.Web.UI.BasePage//System.Web.UI.Page
 {
@@ -41,6 +41,7 @@ public partial class dangnhap : NTT.Web.UI.BasePage//System.Web.UI.Page
             Session["TenDangNhap"] = dt.Rows[0]["TenDangNhap"].ToString();
             Session["HoTen"] = dt.Rows[0]["Ho"].ToString() + " " + dt.Rows[0]["Ten"].ToString();
             Session["MaDiemThi"] = dt.Rows[0]["MaDiemThi"].ToString();
+            
             Response.Redirect("~/Default.aspx");
         }
         else
