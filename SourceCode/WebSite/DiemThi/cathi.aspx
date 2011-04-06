@@ -32,9 +32,9 @@
 <div style ="width:100%; float:left; padding-bottom:10px;">
     <dxe:ASPxComboBox ID="cboDotThi" runat="server" Width="10%" 
         ClientInstanceName="cboDotThi" ValueType="System.String" 
-        TextField="MaDotThi" ValueField="MaDotThi">
+        ValueField="MaDotThi">
         <ClientSideEvents ValueChanged="function(s, e) {
-	 gvCaThi.PerformCallback(cboLoaiBang.GetValue().toString());
+	 gvCaThi.PerformCallback(cboDotThi.GetValue().toString());
 }" />
     </dxe:ASPxComboBox>
 </div>
@@ -74,7 +74,8 @@
             CommandUpdate="Lưu" PopupEditFormCaption="Thông Tin cấu trúc đề thi" 
             ConfirmDelete="Xác nhận xóa dữ liệu ?" />
         <Columns>
-            <dxwgv:GridViewCommandColumn ShowSelectCheckbox="True" VisibleIndex="0" Width = "25px">
+            <dxwgv:GridViewCommandColumn ShowSelectCheckbox="True" VisibleIndex="0" 
+                Width = "10px">
              <HeaderTemplate>
                      <input type="checkbox" onclick="gvCaThi.SelectAllRowsOnPage(this.checked);" style="vertical-align:middle;" title="Chọn/Bỏ chọn tất cả dòng trên trang này"></input>
                  </HeaderTemplate>
@@ -85,19 +86,19 @@
                 <ClearFilterButton Visible="True">
                 </ClearFilterButton>
             </dxwgv:GridViewCommandColumn>
-<dxwgv:GridViewDataTextColumn FieldName="MaCaThi" Name="gcxtMaCaThi" Width="50px" Caption="Mã Ca Thi" 
-                VisibleIndex="1" Visible="False">
-    <EditFormSettings VisibleIndex="1" />
+<dxwgv:GridViewDataTextColumn FieldName="MaCaThi" Name="gcxtMaCaThi" Width="30px" Caption="Mã Ca Thi" 
+                VisibleIndex="1">
+    <EditFormSettings VisibleIndex="1" Visible="False" />
 </dxwgv:GridViewDataTextColumn>
             <dxwgv:GridViewDataTextColumn Caption="Mô Tả" FieldName="MoTa" Name="gcMoTa" 
-                VisibleIndex="1" Width="100px">
+                VisibleIndex="2" Width="200px">
                 <EditFormSettings VisibleIndex="1" ColumnSpan="2" RowSpan="1" />
             </dxwgv:GridViewDataTextColumn>
             <dxwgv:GridViewDataTextColumn Caption="Giờ Bắt Đầu" FieldName="GioBatDau" 
-                Name="gcGioBatDau" VisibleIndex="2" Width="50px">
+                Name="gcGioBatDau" VisibleIndex="3" Width="50px">
                 <EditFormSettings ColumnSpan="2" RowSpan="1" VisibleIndex="2" />
             </dxwgv:GridViewDataTextColumn>
-            <dxwgv:GridViewCommandColumn VisibleIndex="3" Caption = "Sửa" Width = "30px">
+            <dxwgv:GridViewCommandColumn VisibleIndex="4" Caption = "Sửa" Width = "30px">
                 <EditButton Visible="True" Text = "Sửa">
                 </EditButton>
                 <ClearFilterButton Visible="True">

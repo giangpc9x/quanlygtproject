@@ -81,7 +81,7 @@ public partial class DiemThi_cathi : NTT.Web.UI.BasePage
         foreach (GridViewColumn column in gvCaThi.Columns)
         {
             GridViewDataColumn dataColumn = column as GridViewDataColumn;
-            if (dataColumn == null || dataColumn.Caption == "Error") continue;
+            if (dataColumn == null || dataColumn.Caption == "Error" || dataColumn.Caption == "Mã Ca Thi") continue;
             if (e.NewValues[dataColumn.FieldName] == null || e.NewValues[dataColumn.FieldName].ToString().Trim() == string.Empty)
             {
                 e.Errors[dataColumn] = "Vui lòng điền dữ liệu.";
@@ -115,7 +115,7 @@ public partial class DiemThi_cathi : NTT.Web.UI.BasePage
         cathiDTO.MaCaThi = e.NewValues["MaCaThi"].ToString();
         cathiDTO.MoTa = e.NewValues["MoTa"].ToString(); ;
         cathiDTO.GioBatDau = e.NewValues["GioBatDau"].ToString(); 
-        cathiDTO.MaDotThi = e.NewValues["MaDotThi"].ToString();
+        cathiDTO.MaDotThi = cboDotThi.Value.ToString();
 
         int iReturn = cathiDAL.InsertUpdate(cathiDTO);
         if (iReturn >= 0)
@@ -137,7 +137,7 @@ public partial class DiemThi_cathi : NTT.Web.UI.BasePage
         cathiDTO.MaCaThi = e.NewValues["MaCaThi"].ToString();
         cathiDTO.MoTa = e.NewValues["MoTa"].ToString(); ;
         cathiDTO.GioBatDau = e.NewValues["GioBatDau"].ToString();
-        cathiDTO.MaDotThi = e.NewValues["MaDotThi"].ToString();
+        cathiDTO.MaDotThi = cboDotThi.Value.ToString();
         int iReturn = cathiDAL.InsertUpdate(cathiDTO);
         if (iReturn >= 0)
         {
@@ -184,6 +184,14 @@ public partial class DiemThi_cathi : NTT.Web.UI.BasePage
         {
             gvCaThi.DataSource = loadDataToUI();
             gvCaThi.Selection.UnselectAll();
+        }
+        else
+        {
+            cathiDTO = new clsCaThi_DTO();
+            cathiDTO.MaDotThi = e.Parameters;
+            DataTable dt = cathiDAL.getCaThi(cathiDTO);
+            gvCaThi.DataSource = dt;
+            gvCaThi.DataBind();
         }
     }
      #endregion
