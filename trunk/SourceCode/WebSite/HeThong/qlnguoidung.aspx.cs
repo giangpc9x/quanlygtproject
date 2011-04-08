@@ -37,8 +37,13 @@ public partial class HeThong_qlnguoidung : NTT.Web.UI.BasePage
         nhomNDDTO = new clsNhomNguoiDung_DTO();
         cmn = new clsCommon();
         loadMasterData();
-        gvNguoiDung.DataSource = loadDataToUI();
-        gvNguoiDung.DataBind();
+        if (cboDienThi.Value != null)
+        {
+            //dotthiDTO.MaLoaiBang = cboLoaiBang.Value.ToString();
+            ndungDTO.MaDiemThi = cboDienThi.Value.ToString();
+            gvNguoiDung.DataSource = loadDataToUI();
+            gvNguoiDung.DataBind();
+        }
     }
 
     private void loadMasterData()
@@ -108,6 +113,7 @@ public partial class HeThong_qlnguoidung : NTT.Web.UI.BasePage
 
     protected void gvNguoiDung_RowInserting(object sender, DevExpress.Web.Data.ASPxDataInsertingEventArgs e)
     {
+        ndungDTO = new clsNguoiDung_DTO();
         e.Cancel = true;
         ndungDTO.TenDangNhap = e.NewValues["TenDangNhap"].ToString();
         ndungDTO.MaDiemThi = cboDienThi.Value.ToString();
@@ -136,6 +142,8 @@ public partial class HeThong_qlnguoidung : NTT.Web.UI.BasePage
     }
     protected void gvNguoiDung_RowUpdating(object sender, DevExpress.Web.Data.ASPxDataUpdatingEventArgs e)
     {
+
+        ndungDTO = new clsNguoiDung_DTO();
         e.Cancel = true;
         ndungDTO.OldID = e.NewValues["TenDangNhap"].ToString();
         ndungDTO.TenDangNhap = e.NewValues["TenDangNhap"].ToString();
@@ -170,6 +178,8 @@ public partial class HeThong_qlnguoidung : NTT.Web.UI.BasePage
     }
     protected void gvNguoiDung_CustomDataCallback(object sender, ASPxGridViewCustomDataCallbackEventArgs e)
     {
+        ndungDTO = new clsNguoiDung_DTO();
+
         string strReturn = string.Empty;
         string strMess = string.Empty;
         int iRow = gvNguoiDung.VisibleRowCount;
@@ -190,6 +200,7 @@ public partial class HeThong_qlnguoidung : NTT.Web.UI.BasePage
     }
     protected void gvNguoiDung_CustomCallback(object sender, ASPxGridViewCustomCallbackEventArgs e)
     {
+        ndungDTO = new clsNguoiDung_DTO();
         if (e.Parameters == "Update")
         {
             gvNguoiDung.DataSource = loadDataToUI();
