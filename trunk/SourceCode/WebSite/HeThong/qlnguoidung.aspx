@@ -134,12 +134,15 @@
                 VisibleIndex="10" Width="90px" Visible="False">
                 <EditFormSettings Visible="True" VisibleIndex="9" />
             </dxwgv:GridViewDataTextColumn>
-            <dxwgv:GridViewDataSpinEditColumn Caption="Mã Nhóm" FieldName="MaNhom" 
+            <dxwgv:GridViewDataComboBoxColumn Caption="Nhóm người dùng" FieldName="MaNhom" 
                 Name="gcMaNhom" Visible="False" VisibleIndex="11" Width="90px">
-                <PropertiesSpinEdit DisplayFormatString="g">
-                </PropertiesSpinEdit>
+                <PropertiesComboBox DisplayFormatString="g" ValueType="System.String">
+                    <Columns>
+                        <dxe:ListBoxColumn Caption="Nhóm người dùng" FieldName="TenNhom" />
+                    </Columns>
+                </PropertiesComboBox>
                 <EditFormSettings Visible="True" VisibleIndex="10" />
-            </dxwgv:GridViewDataSpinEditColumn>
+            </dxwgv:GridViewDataComboBoxColumn>
             <dxwgv:GridViewDataTextColumn Caption="Mật Khẩu" FieldName="MatKhau" 
                 Name="gcMatKhau" VisibleIndex="10" Width="90px" Visible="False">
                 <PropertiesTextEdit Password="True">
