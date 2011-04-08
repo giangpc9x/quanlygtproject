@@ -17,6 +17,10 @@ public partial class HeThong_qlnguoidung : NTT.Web.UI.BasePage
 
     clsDiaDiemThi_DAL dthiDAL;
     clsDiaDiemThi_DTO dthiDTO;
+
+    clsNhomNguoiDung_DAL nhomNDDAL;
+    clsNhomNguoiDung_DTO nhomNDDTO;
+
     clsCommon cmn;
     string strMess = string.Empty;
     #endregion
@@ -27,6 +31,10 @@ public partial class HeThong_qlnguoidung : NTT.Web.UI.BasePage
 
         dthiDAL = new clsDiaDiemThi_DAL();
         dthiDTO = new clsDiaDiemThi_DTO();
+
+
+        nhomNDDAL = new clsNhomNguoiDung_DAL();
+        nhomNDDTO = new clsNhomNguoiDung_DTO();
         cmn = new clsCommon();
         loadMasterData();
         gvNguoiDung.DataSource = loadDataToUI();
@@ -41,6 +49,10 @@ public partial class HeThong_qlnguoidung : NTT.Web.UI.BasePage
         cboDienThi.TextField = "DiaChi";
         cboDienThi.DataSource = dt;
         cboDienThi.DataBind();
+
+        dt = nhomNDDAL.getNhomNguoiDung(nhomNDDTO);
+        GridViewDataComboBoxColumn gclNhomnguoidung = gvNguoiDung.Columns["MaNhom"] as GridViewDataComboBoxColumn ;
+        gclNhomnguoidung.PropertiesComboBox.DataSource = dt ;
     }
     private DataTable loadDataToUI()
     {
@@ -109,7 +121,7 @@ public partial class HeThong_qlnguoidung : NTT.Web.UI.BasePage
         ndungDTO.Email = e.NewValues["Email"].ToString();
         ndungDTO.NgayDK = cmn.Convert_DMY_To_MDY(e.NewValues["NgayDK"].ToString());
         ndungDTO.TrangThai = e.NewValues["TrangThai"].ToString();
-        ndungDTO.MaNhom = e.NewValues["MaNhom"].ToString();
+        ndungDTO.MaNhom = e.NewValues["TenNhom"].ToString();
         int iReturn = ndungDAL.InsertUpdate(ndungDTO);
         if (iReturn >= 0)
         {
@@ -138,7 +150,7 @@ public partial class HeThong_qlnguoidung : NTT.Web.UI.BasePage
         ndungDTO.Email = e.NewValues["Email"].ToString();
         ndungDTO.NgayDK = cmn.Convert_DMY_To_MDY(e.NewValues["NgayDK"].ToString());
         ndungDTO.TrangThai = e.NewValues["TrangThai"].ToString();
-        ndungDTO.MaNhom = e.NewValues["MaNhom"].ToString();
+        ndungDTO.MaNhom = e.NewValues["TenNhom"].ToString();
         int iReturn = ndungDAL.InsertUpdate(ndungDTO);
         if (iReturn >= 0)
         {
