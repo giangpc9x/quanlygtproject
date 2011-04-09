@@ -5,8 +5,12 @@ using System.Data;
 using System.Collections.Specialized;
 using NTT.Web.Core.XSQL;
 using System.Data.SqlClient;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
 
 public class clsNguoiDung_DAL
+
 {
     DataObject obj;
     public clsNguoiDung_DAL()
