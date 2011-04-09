@@ -15,7 +15,7 @@
         }
         .style3
         {
-            text-align: center;
+            text-align: left;
         }
         .style4
         {
