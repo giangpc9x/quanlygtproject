@@ -8,6 +8,7 @@ public partial class _DefaultPage : BasePage {
 
         if (Convert.ToString(Session["TenDangNhap"]) == "")
             Response.Redirect("~/dangnhap.aspx");
+        
         CSSLink = "~/CSS/Default.css"; // Register css file
         if (Theme == "Youthful")
             CSSLink = "~/CSS/DefaultYouthful.css"; // Register css file
