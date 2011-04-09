@@ -44,8 +44,10 @@ public partial class dethi_qlcauhoi : NTT.Web.UI.BasePage
 
         cmn = new clsCommon();
         loadMasterData();
+
         gvcauhoi.DataSource = loadDataToUI();
         gvcauhoi.DataBind();
+       
     }
     private void loadMasterData()
     {
@@ -58,9 +60,10 @@ public partial class dethi_qlcauhoi : NTT.Web.UI.BasePage
 
         popcboLoaiCauHoi.DataSource = dt;
         popcboLoaiCauHoi.DataBind();
-       // if(gvcauhoi.KeyFieldName == )
+        //if(gvcauhoi.s)
 
-        poptxtNoiDung.Value = "NoiDung";
+        poptxtNoiDung.Text = dt.Columns["NoiDung"].ToString();
+        
 
       //  poptxtNoiDung.Text = "NoiDung";
         
@@ -119,7 +122,7 @@ public partial class dethi_qlcauhoi : NTT.Web.UI.BasePage
 
         // insert cau hoi cau lua chon
 
-      /*  choiclcDTO.MaCauHoi = e.NewValues["MaCauHoi"].ToString();
+        choiclcDTO.MaCauHoi = e.NewValues["MaCauHoi"].ToString();
         choiclcDTO.MaCauLuaChon = e.NewValues["MaCauLuaChon"].ToString();
         choiclcDTO.DapAn = e.NewValues["DapAn"].ToString();
 
@@ -151,7 +154,7 @@ public partial class dethi_qlcauhoi : NTT.Web.UI.BasePage
         {
             strMess = "Lưu Dữ Liệu Không Thành Công";
             gvcauhoi.DoRowValidation();
-        }*/
+        }
     }
 
     protected void gvcauhoi_RowUpdating(object sender, DevExpress.Web.Data.ASPxDataUpdatingEventArgs e)
@@ -188,7 +191,7 @@ public partial class dethi_qlcauhoi : NTT.Web.UI.BasePage
         }
 
         // sua cau hoi_cau lua chon
-       /* choiclcDTO.MaCauHoi = e.NewValues["MaCauHoi"].ToString();
+        choiclcDTO.MaCauHoi = e.NewValues["MaCauHoi"].ToString();
         choiclcDTO.MaCauLuaChon = e.NewValues["MaCauLuaChon"].ToString();
         choiclcDTO.DapAn = e.NewValues["DapAn"].ToString();
 
@@ -228,6 +231,6 @@ public partial class dethi_qlcauhoi : NTT.Web.UI.BasePage
         {
             strMess = "Do ràng buộc dữ liệu. Không thể thực hiện cập nhật";
             gvcauhoi.DoRowValidation();
-        }*/
+        }
     }
 }
