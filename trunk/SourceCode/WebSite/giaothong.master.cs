@@ -32,6 +32,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
     private CodeRender fCodeRender = new CodeRender();
     private bool showCodePages = true;
 	const string HighlightedFeaturesName = "Highlighted Features";
+    
 
     public bool IsHomePage {
         get { return isHomePage; }
