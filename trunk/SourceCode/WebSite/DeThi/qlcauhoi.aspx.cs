@@ -62,7 +62,7 @@ public partial class dethi_qlcauhoi : NTT.Web.UI.BasePage
         popcboLoaiCauHoi.DataBind();
         //if(gvcauhoi.s)
 
-        poptxtNoiDung.Text = dt.Columns["NoiDung"].ToString();
+       // poptxtNoiDung.Text = dt.Columns["NoiDung"].ToString();
         
 
       //  poptxtNoiDung.Text = "NoiDung";

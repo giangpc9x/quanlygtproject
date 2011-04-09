@@ -81,10 +81,6 @@
             <ContentCollection>
 <dxpc:PopupControlContentControl runat="server">
 
-   
-
-
-
 <table style="width: 610px; height: 157px">
 <tr><td class="style2">
     <dxe:ASPxLabel ID="poplbLoaiCauHoi" runat="server" Text="Loại Câu Hỏi">
@@ -101,7 +97,7 @@
     </dxe:ASPxLabel>
     </td><td class="style1">
         <dxe:ASPxTextBox ID="poptxtNoiDung" runat="server" 
-            ClientInstanceName="poptxtNoiDung" Width="170px">
+            ClientInstanceName="poptxtNoiDung" Width="250px">
         </dxe:ASPxTextBox>
     </td>
 
@@ -126,11 +122,42 @@
 <td class="style1">
 <table><tr><td>
 <dxe:ASPxTextBox ID="txtcauluachon" runat="server" 
-        ClientInstanceName="txtcauluachon" Width="170px">
+        ClientInstanceName="txtcauluachon" Width="250px">
     </dxe:ASPxTextBox> 
     </td>
+    
     <td>   
-    <dxe:ASPxCheckBox ID="chbDapAn" runat="server">
+    <dxe:ASPxCheckBox ID="chbDapAn1" runat="server">
+    </dxe:ASPxCheckBox></td>
+    </tr>
+    <tr><td>
+<dxe:ASPxTextBox ID="txtcauluachon2" runat="server" 
+        ClientInstanceName="txtcauluachon" Width="250px">
+    </dxe:ASPxTextBox> 
+    </td>
+    
+    <td>   
+    <dxe:ASPxCheckBox ID="chbDapAn2" runat="server">
+    </dxe:ASPxCheckBox></td>
+    </tr>
+    <tr><td>
+<dxe:ASPxTextBox ID="txtcauluachon3" runat="server" 
+        ClientInstanceName="txtcauluachon" Width="250px">
+    </dxe:ASPxTextBox> 
+    </td>
+    
+    <td>   
+    <dxe:ASPxCheckBox ID="chbDapAn3" runat="server">
+    </dxe:ASPxCheckBox></td>
+    </tr>
+    <tr><td>
+<dxe:ASPxTextBox ID="txtcauluachon4" runat="server" 
+        ClientInstanceName="txtcauluachon" Width="250px">
+    </dxe:ASPxTextBox> 
+    </td>
+    
+    <td>   
+    <dxe:ASPxCheckBox ID="chbDapAn4" runat="server">
     </dxe:ASPxCheckBox></td>
     </tr>
     </table>
