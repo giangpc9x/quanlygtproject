@@ -134,9 +134,10 @@
                 VisibleIndex="10" Width="90px" Visible="False">
                 <EditFormSettings Visible="True" VisibleIndex="9" />
             </dxwgv:GridViewDataTextColumn>
-            <dxwgv:GridViewDataComboBoxColumn Caption="Nhóm người dùng" FieldName="MaNhom" 
+            <dxwgv:GridViewDataComboBoxColumn Caption="Chọn nhóm người dùng" FieldName="MaNhom" 
                 Name="gcMaNhom" Visible="False" VisibleIndex="11" Width="90px">
-                <PropertiesComboBox DisplayFormatString="g" ValueType="System.String">
+                <PropertiesComboBox DisplayFormatString="g" ValueType="System.String" 
+                    DataMember="MaNhom">
                     <Columns>
                         <dxe:ListBoxColumn Caption="Nhóm người dùng" FieldName="TenNhom" />
                     </Columns>
