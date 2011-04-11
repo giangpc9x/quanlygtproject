@@ -15,7 +15,7 @@
 
 <script type="text/javascript">
     function StartDelete() {
-        if (gvCauTrucDeThi.GetSelectedRowCount()) {
+        if (gvCaThi.GetSelectedRowCount()) {
             if (confirm('Xác nhận xóa dữ liệu'))
                 gvCaThi.GetValuesOnCustomCallback("Delete", GetUpdateResult);
         }
@@ -30,6 +30,18 @@
 </script>
 
 <div style ="width:100%; float:left; padding-bottom:10px;">
+
+    <dxe:ASPxLabel ID="lblchondotthi" runat="server" 
+        Text="vui lòng chọn Đợt Thi" BackColor ForeColor="Blue" 
+        Font-Bold="True" Font-Italic="False" Font-Size="Medium" >
+    </dxe:ASPxLabel>
+     <table>
+     <tr>
+     <td>
+     </td>
+     </tr>
+     </table>
+
     <dxe:ASPxComboBox ID="cboDotThi" runat="server" Width="10%" 
         ClientInstanceName="cboDotThi" ValueType="System.String" 
         ValueField="MaDotThi">
@@ -87,18 +99,18 @@
                 </ClearFilterButton>
             </dxwgv:GridViewCommandColumn>
 <dxwgv:GridViewDataTextColumn FieldName="MaCaThi" Name="gcxtMaCaThi" Width="30px" Caption="Mã Ca Thi" 
-                VisibleIndex="1">
+                VisibleIndex="1" Visible="False">
     <EditFormSettings VisibleIndex="1" Visible="False" />
 </dxwgv:GridViewDataTextColumn>
             <dxwgv:GridViewDataTextColumn Caption="Mô Tả" FieldName="MoTa" Name="gcMoTa" 
-                VisibleIndex="2" Width="200px">
+                VisibleIndex="1" Width="200px">
                 <EditFormSettings VisibleIndex="1" ColumnSpan="2" RowSpan="1" />
             </dxwgv:GridViewDataTextColumn>
             <dxwgv:GridViewDataTextColumn Caption="Giờ Bắt Đầu" FieldName="GioBatDau" 
-                Name="gcGioBatDau" VisibleIndex="3" Width="50px">
+                Name="gcGioBatDau" VisibleIndex="2" Width="50px">
                 <EditFormSettings ColumnSpan="2" RowSpan="1" VisibleIndex="2" />
             </dxwgv:GridViewDataTextColumn>
-            <dxwgv:GridViewCommandColumn VisibleIndex="4" Caption = "Sửa" Width = "30px">
+            <dxwgv:GridViewCommandColumn VisibleIndex="3" Caption = "Sửa" Width = "30px">
                 <EditButton Visible="True" Text = "Sửa">
                 </EditButton>
                 <ClearFilterButton Visible="True">

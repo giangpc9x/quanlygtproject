@@ -38,11 +38,17 @@ public partial class DiemThi_cathi : NTT.Web.UI.BasePage
 
         }
         loadMasterData();
-        gvCaThi.DataSource = loadDataToUI();
-        gvCaThi.DataBind();
+        if (cboDotThi.Value != null)
+        {
+            cathiDTO = new clsCaThi_DTO();
+            cathiDTO.MaDotThi = cboDotThi.Value.ToString();
+            gvCaThi.DataSource = loadDataToUI(cathiDTO);
+            gvCaThi.DataBind();
+        }
     }
     private void loadMasterData()
     {
+        dotthiDTO = new clsDotThi_DTO();
         DataTable dt = new DataTable();
         dt = dotthiDAL.getDotThi(dotthiDTO);
 
@@ -60,7 +66,7 @@ public partial class DiemThi_cathi : NTT.Web.UI.BasePage
         //GridViewDataCheckColumn gclTrangThai = gvDotThi.Columns["TrangThai"] as GridViewDataCheckColumn;
         //gclTrangThai.PropertiesCheckEdit.DisplayTextChecked = "Chon";
     }
-    private DataTable loadDataToUI()
+    private DataTable loadDataToUI(clsCaThi_DTO cathiDTO)
     {
 
         DataTable dt = new DataTable();
@@ -93,12 +99,7 @@ public partial class DiemThi_cathi : NTT.Web.UI.BasePage
             return;
         }
         strOldValues = e.OldValues["MaCaThi"] == null ? string.Empty : e.OldValues["MaCaThi"].ToString();
-        if (e.NewValues["MaCaThi"].ToString() != strOldValues && cathiDAL.Check_MaCaThi(e.NewValues["MaCaThi"].ToString()) == 1)
-        {
-            AddError(e.Errors, gvCaThi.Columns["MaCaThi"], "Đã tồn tại Mã Ca Thi, không thể lưu");
-            e.RowError = "Trùng Mã Ca Thi, vui lòng kiểm tra lại";
-            return;
-        }
+     
     }
     void AddError(Dictionary<GridViewColumn, string> errors, GridViewColumn column, string errorText)
     {
@@ -109,18 +110,20 @@ public partial class DiemThi_cathi : NTT.Web.UI.BasePage
 
         #region Sự kiện thêm - Xóa - Sửa dữ liệu trên GridView
 
-    protected void gvCaThi_RowInserting(object sender, DevExpress.Web.Data.ASPxDataInsertingEventArgs e)
-    {
+  protected void gvCaThi_RowInserting(object sender, DevExpress.Web.Data.ASPxDataInsertingEventArgs e)
+  {
+        cathiDTO = new clsCaThi_DTO();
         e.Cancel = true;
-        cathiDTO.MaCaThi = e.NewValues["MaCaThi"].ToString();
+        cathiDTO.MaDotThi = cboDotThi.Value.ToString();
         cathiDTO.MoTa = e.NewValues["MoTa"].ToString(); ;
         cathiDTO.GioBatDau = e.NewValues["GioBatDau"].ToString(); 
-        cathiDTO.MaDotThi = cboDotThi.Value.ToString();
-
+        
         int iReturn = cathiDAL.InsertUpdate(cathiDTO);
         if (iReturn >= 0)
         {
-            gvCaThi.DataSource = loadDataToUI();
+            cathiDTO = new clsCaThi_DTO();
+            cathiDTO.MaDotThi = cboDotThi.Value.ToString();
+            gvCaThi.DataSource = loadDataToUI(cathiDTO);
             gvCaThi.CancelEdit();
         }
         else
@@ -132,16 +135,19 @@ public partial class DiemThi_cathi : NTT.Web.UI.BasePage
 
     protected void gvCaThi_RowUpdating(object sender, DevExpress.Web.Data.ASPxDataUpdatingEventArgs e)
     {
+        cathiDTO = new clsCaThi_DTO();
         e.Cancel = true;
-        cathiDTO.OldID = e.OldValues["MaCaThi"].ToString();
-        cathiDTO.MaCaThi = e.NewValues["MaCaThi"].ToString();
+        //cathiDTO.OldID = e.OldValues["MaCaThi"].ToString();
+        //cathiDTO.MaCaThi = e.NewValues["MaCaThi"].ToString();
         cathiDTO.MoTa = e.NewValues["MoTa"].ToString(); ;
         cathiDTO.GioBatDau = e.NewValues["GioBatDau"].ToString();
         cathiDTO.MaDotThi = cboDotThi.Value.ToString();
         int iReturn = cathiDAL.InsertUpdate(cathiDTO);
         if (iReturn >= 0)
         {
-            gvCaThi.DataSource = loadDataToUI();
+            cathiDTO = new clsCaThi_DTO();
+            cathiDTO.MaDotThi = cboDotThi.Value.ToString();
+            gvCaThi.DataSource = loadDataToUI(cathiDTO);
             gvCaThi.CancelEdit();
         }
         else if (iReturn == -2)
@@ -159,6 +165,7 @@ public partial class DiemThi_cathi : NTT.Web.UI.BasePage
 
     protected void gvCaThi_CustomDataCallback(object sender, ASPxGridViewCustomDataCallbackEventArgs e)
     {
+        cathiDTO = new clsCaThi_DTO();
         string strReturn = string.Empty;
         string strMess = string.Empty;
         int iRow = gvCaThi.VisibleRowCount;
@@ -174,15 +181,19 @@ public partial class DiemThi_cathi : NTT.Web.UI.BasePage
             e.Result = "Do ràng buộc dữ liệu, không thể xóa " + strMess;
         else
             e.Result = string.Empty;
-        gvCaThi.DataSource = loadDataToUI();
+        cathiDTO = new clsCaThi_DTO();
+        cathiDTO.MaDotThi = cboDotThi.Value.ToString();
+        gvCaThi.DataSource = loadDataToUI(cathiDTO);
         gvCaThi.Selection.SelectAll();
     }
 
     protected void gvCaThi_CustomCallback(object sender, ASPxGridViewCustomCallbackEventArgs e)
     {
+        cathiDTO = new clsCaThi_DTO();
         if (e.Parameters == "Update")
         {
-            gvCaThi.DataSource = loadDataToUI();
+            cathiDTO.MaDotThi=cboDotThi.Value.ToString();
+            gvCaThi.DataSource = loadDataToUI(cathiDTO);
             gvCaThi.Selection.UnselectAll();
         }
         else
