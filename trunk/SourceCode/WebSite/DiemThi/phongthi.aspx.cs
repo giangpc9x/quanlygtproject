@@ -99,7 +99,12 @@ public partial class DiemThi_phongthi : NTT.Web.UI.BasePage
             return;
         }
         strOldValues = e.OldValues["MaPhong"] == null ? string.Empty : e.OldValues["MaPhong"].ToString();
-        
+        if (e.NewValues["MaPhong"].ToString() != strOldValues && pthiDAL.Check_MaPhong(e.NewValues["MaPhong"].ToString()) == 1)
+        {
+            AddError(e.Errors, gvPhongThi.Columns["MaPhong"], "Đã tồn tại Mã phong Thi, không thể lưu");
+            e.RowError = "Trùng Mã phong thi, vui lòng kiểm tra lại";
+            return;
+        }
     }
 
     void AddError(Dictionary<GridViewColumn, string> errors, GridViewColumn column, string errorText)
