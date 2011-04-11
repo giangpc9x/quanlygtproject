@@ -134,8 +134,8 @@ public partial class DiemThi_dotthi : NTT.Web.UI.BasePage
     {
         dotthiDTO = new clsDotThi_DTO();
         e.Cancel = true;
-        dotthiDTO.OldID = e.OldValues["MaDotThi"].ToString();
-        dotthiDTO.MaDotThi = e.NewValues["MaDotThi"].ToString();
+        //dotthiDTO.OldID = e.OldValues["MaDotThi"].ToString();
+        //dotthiDTO.MaDotThi = e.NewValues["MaDotThi"].ToString();
         dotthiDTO.MaLoaiBang =cboLoaiBang.Value.ToString();
         dotthiDTO.NgayTao = cmn.Convert_DMY_To_MDY(e.NewValues["NgayTao"].ToString());
         dotthiDTO.MoTa = e.NewValues["MoTa"].ToString();
