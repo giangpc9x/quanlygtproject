@@ -27,7 +27,7 @@ public partial class DiemThi_phongthi : NTT.Web.UI.BasePage
         pthiDTO = new clsPhongThi_DTO();
 
         dthiDAL = new clsDiaDiemThi_DAL();
-        dthiDTO = new clsDiaDiemThi_DTO();
+        //dthiDTO = new clsDiaDiemThi_DTO();
 
         cmn = new clsCommon();
         if (!IsPostBack || !IsCallback)
@@ -39,14 +39,20 @@ public partial class DiemThi_phongthi : NTT.Web.UI.BasePage
            
         }
         loadMasterData();
-        gvPhongThi.DataSource = loadDataToUI();
-        gvPhongThi.DataBind();
+        if (cboDiemThi.Value != null)
+        {
+            pthiDTO.MaDiemThi = cboDiemThi.Value.ToString();
+            gvPhongThi.DataSource = loadDataToUI(pthiDTO);
+            gvPhongThi.DataBind();
+        }
     }
 
     private void loadMasterData()
     {
+        dthiDTO = new clsDiaDiemThi_DTO();
         DataTable dt = new DataTable();
         dt = dthiDAL.getDiaDiemThi(dthiDTO);
+
         cboDiemThi.ValueField = "MaDiemThi";
         cboDiemThi.TextField = "DiaChi";
 
@@ -61,7 +67,7 @@ public partial class DiemThi_phongthi : NTT.Web.UI.BasePage
         GridViewDataCheckColumn gclTrangThai = gvPhongThi.Columns["TrangThai"] as GridViewDataCheckColumn;
         gclTrangThai.PropertiesCheckEdit.DisplayTextChecked = "Chon";
     }
-    private DataTable loadDataToUI()
+    private DataTable loadDataToUI(clsPhongThi_DTO pthiDTO)
     {
 
         DataTable dt = new DataTable();
@@ -93,12 +99,7 @@ public partial class DiemThi_phongthi : NTT.Web.UI.BasePage
             return;
         }
         strOldValues = e.OldValues["MaPhong"] == null ? string.Empty : e.OldValues["MaPhong"].ToString();
-        if (e.NewValues["MaPhong"].ToString() != strOldValues && pthiDAL.Check_MaPhong(e.NewValues["MaPhong"].ToString()) == 1)
-        {
-            AddError(e.Errors, gvPhongThi.Columns["MaPhong"], "Đã tồn tại Mã Phòng, không thể lưu");
-            e.RowError = "Trùng mã phòng, vui lòng kiểm tra lại";
-            return;
-        }
+        
     }
 
     void AddError(Dictionary<GridViewColumn, string> errors, GridViewColumn column, string errorText)
@@ -111,6 +112,7 @@ public partial class DiemThi_phongthi : NTT.Web.UI.BasePage
     #region Sự kiện thêm - Xóa - Sửa dữ liệu trên GridView
     protected void gvPhongThi_RowInserting(object sender, DevExpress.Web.Data.ASPxDataInsertingEventArgs e)
     {
+        pthiDTO = new clsPhongThi_DTO();
         e.Cancel = true;
         pthiDTO.MaPhong = e.NewValues["MaPhong"].ToString();
         pthiDTO.MoTa = e.NewValues["MoTa"].ToString(); ;
@@ -120,7 +122,9 @@ public partial class DiemThi_phongthi : NTT.Web.UI.BasePage
         int iReturn = pthiDAL.InsertUpdate(pthiDTO);
         if (iReturn >= 0)
         {
-            gvPhongThi.DataSource = loadDataToUI();
+            pthiDTO = new clsPhongThi_DTO();
+            pthiDTO.MaDiemThi = cboDiemThi.Value.ToString();
+            gvPhongThi.DataSource = loadDataToUI(pthiDTO);
             gvPhongThi.CancelEdit();
         }
         else
@@ -131,6 +135,7 @@ public partial class DiemThi_phongthi : NTT.Web.UI.BasePage
     }
     protected void gvPhongThi_RowUpdating(object sender, DevExpress.Web.Data.ASPxDataUpdatingEventArgs e)
     {
+        pthiDTO = new clsPhongThi_DTO();
         e.Cancel = true;
         pthiDTO.OldID = e.OldValues["MaPhong"].ToString();
         pthiDTO.MaPhong = e.NewValues["MaPhong"].ToString();
@@ -141,7 +146,9 @@ public partial class DiemThi_phongthi : NTT.Web.UI.BasePage
         int iReturn = pthiDAL.InsertUpdate(pthiDTO);
         if (iReturn >= 0)
         {
-            gvPhongThi.DataSource = loadDataToUI();
+            pthiDTO = new clsPhongThi_DTO();
+            pthiDTO.MaDiemThi = cboDiemThi.Value.ToString();
+            gvPhongThi.DataSource = loadDataToUI(pthiDTO);
             gvPhongThi.CancelEdit();
         }
         else if (iReturn == -2)
@@ -157,6 +164,7 @@ public partial class DiemThi_phongthi : NTT.Web.UI.BasePage
     }
     protected void gvPhongThi_CustomDataCallback(object sender, ASPxGridViewCustomDataCallbackEventArgs e)
     {
+        pthiDTO = new clsPhongThi_DTO();
         string strReturn = string.Empty;
         string strMess = string.Empty;
         int iRow = gvPhongThi.VisibleRowCount;
@@ -172,14 +180,17 @@ public partial class DiemThi_phongthi : NTT.Web.UI.BasePage
             e.Result = "Do ràng buộc dữ liệu, không thể xóa " + strMess;
         else
             e.Result = string.Empty;
-        gvPhongThi.DataSource = loadDataToUI();
+        pthiDTO.MaDiemThi = cboDiemThi.Value.ToString();
+        gvPhongThi.DataSource = loadDataToUI(pthiDTO);
         gvPhongThi.Selection.SelectAll();
     }
     protected void gvPhongThi_CustomCallback(object sender, ASPxGridViewCustomCallbackEventArgs e)
     {
+        pthiDTO = new clsPhongThi_DTO();
         if (e.Parameters == "Update")
         {
-            gvPhongThi.DataSource = loadDataToUI();
+            pthiDTO.MaDiemThi = cboDiemThi.Value.ToString();
+            gvPhongThi.DataSource = loadDataToUI(pthiDTO);
             gvPhongThi.Selection.UnselectAll();
         }
         else

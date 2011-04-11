@@ -33,6 +33,17 @@
 </script>
 
 <div style ="width:100%; float:left; padding-bottom:10px;">
+    <dxe:ASPxLabel ID="lblcondiemthi" runat="server" 
+        Text="vui lòng chọn một Điểm Thi" BackColor ForeColor="Blue" 
+        Font-Bold="True" Font-Italic="False" Font-Size="Medium" >
+    </dxe:ASPxLabel>
+     <table>
+     <tr>
+     <td>
+     </td>
+     </tr>
+     </table>
+      
     <dxe:ASPxComboBox ID="cboDiemThi" runat="server" Width="70%" 
         ClientInstanceName="cboDiemThi" ValueType="System.String" 
         ValueField="MaDiemThi">
