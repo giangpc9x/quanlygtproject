@@ -20,7 +20,7 @@
 
 <script type="text/javascript">
     function StartDelete() {
-        if (gvCauTrucDeThi.GetSelectedRowCount()) {
+        if (gvDotThi.GetSelectedRowCount()) {
             if (confirm('Xác nhận xóa dữ liệu'))
                 gvDotThi.GetValuesOnCustomCallback("Delete", GetUpdateResult);
         }
@@ -35,6 +35,20 @@
 </script>
 
 <div style ="width:100%; float:left; padding-bottom:10px;">
+
+ <dxe:ASPxLabel ID="lblchonlbl" runat="server" 
+        Text="vui lòng chọn chọn Loại Bằng Lái" BackColor ForeColor="Blue" 
+        Font-Bold="True" Font-Italic="False" Font-Size="Medium" >
+    </dxe:ASPxLabel>
+     <table>
+     <tr>
+     <td>
+     </td>
+     </tr>
+     </table>
+
+
+
     <dxe:ASPxComboBox ID="cboLoaiBang" runat="server" Width="70%" 
         ClientInstanceName="cboLoaiBang" ValueType="System.String" 
         ValueField="TenLoai">
