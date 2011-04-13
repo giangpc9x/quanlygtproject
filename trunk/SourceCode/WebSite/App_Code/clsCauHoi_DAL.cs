@@ -70,4 +70,8 @@ public class clsCauHoi_DAL
             return -1111;
         }
     }
+    public void Laymacauhoimoi(clsCauHoi_DTO cauhoiDTO)
+    {
+            string sql = "Select top 1 MaCauHoi from CauHoi order by MaCauHoi";       
+    }
 }
