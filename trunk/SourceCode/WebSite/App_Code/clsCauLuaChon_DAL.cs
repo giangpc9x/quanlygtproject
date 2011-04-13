@@ -66,4 +66,8 @@ public class clsCauLuaChon_DAL
             return -1111;
         }
     }
+    public void laymacauluachonmoi(clsCauLuaChon_DTO cauluachonDTO)
+    {
+        string sql = "Select top 1 MaCauLuaChon from Cau_Lua_Chon order by MaCauLuaChon";
+    }
 }
