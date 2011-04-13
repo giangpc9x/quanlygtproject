@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using DevExpress.Web.ASPxGridView;
+using System.IO;
 
 public partial class dethi_qlcauhoi : NTT.Web.UI.BasePage
 {
@@ -55,18 +56,16 @@ public partial class dethi_qlcauhoi : NTT.Web.UI.BasePage
         dt = choiclcDAL.getCauHoi_CauLuaChon(choiclcDTO);
         dt = loaichoiDAL.getLoaiCauHoi(loaichoiDTO);
 
-        popcboLoaiCauHoi.ValueField = "MaloaiCauHoi";
-        popcboLoaiCauHoi.TextField = "TenLoaiCH";
+    
 
-        popcboLoaiCauHoi.DataSource = dt;
-        popcboLoaiCauHoi.DataBind();
-        //if(gvcauhoi.s)
+      /*  if (gvcauhoi.KeyFieldName != null)
+        {
+            dt = choiDAL.getCauHoi(choiDTO);
+            poptxtNoiDung.Value = "NoiDung";
 
-       // poptxtNoiDung.Text = dt.Columns["NoiDung"].ToString();
-        
-
-      //  poptxtNoiDung.Text = "NoiDung";
-        
+            dt = choiclcDAL.getCauHoi_CauLuaChon(choiclcDTO);
+            txtcauluachon.Value = "NoiDung";
+        }*/
 }
     private DataTable loadDataToUI()
     {
@@ -100,137 +99,13 @@ public partial class dethi_qlcauhoi : NTT.Web.UI.BasePage
         errors[column] = errorText;
     }
 
-    protected void gvcauhoi_RowInserting(object sender, DevExpress.Web.Data.ASPxDataInsertingEventArgs e)
+    protected void btnThemMoi_Click(object sender, EventArgs e)
     {
-        e.Cancel = true;
-        choiDTO.MaCauHoi = e.NewValues["MaCauHoi"].ToString();
-        choiDTO.NoiDung = e.NewValues["NoiDung"].ToString();
-        choiDTO.HinhAnh = e.NewValues["HinhAnh"].ToString();
-        choiDTO.MaloaiCauHoi = e.NewValues["TenLoai"].ToString();
-
-        int iReturn1 = choiDAL.InsertUpdate(choiDTO);
-        if (iReturn1 >= 0)
-        {
-            gvcauhoi.DataSource = loadDataToUI();
-            gvcauhoi.CancelEdit();
-        }
-        else
-        {
-            strMess = "Lưu Dữ Liệu Không Thành Công";
-            gvcauhoi.DoRowValidation();
-        }
-
-        // insert cau hoi cau lua chon
-
-        choiclcDTO.MaCauHoi = e.NewValues["MaCauHoi"].ToString();
-        choiclcDTO.MaCauLuaChon = e.NewValues["MaCauLuaChon"].ToString();
-        choiclcDTO.DapAn = e.NewValues["DapAn"].ToString();
-
-
-        int iReturn2 = choiclcDAL.InsertUpdate(choiclcDTO);
-        if (iReturn2 >= 0)
-        {
-            gvcauhoi.DataSource = loadDataToUI();
-            gvcauhoi.CancelEdit();
-        }
-        else
-        {
-            strMess = "Lưu Dữ Liệu Không Thành Công";
-            gvcauhoi.DoRowValidation();
-        }
-
-        // insert cau lua chon
-        clchonDTO.MaCauLuaChon = e.NewValues["MaCauLuaChon"].ToString();
-        clchonDTO.NoiDungCLC = e.NewValues["NoiDungCLC"].ToString();
-
-
-        int iReturn3 = clchonDAL.InsertUpdate(clchonDTO);
-        if (iReturn3 >= 0)
-        {
-            gvcauhoi.DataSource = loadDataToUI();
-            gvcauhoi.CancelEdit();
-        }
-        else
-        {
-            strMess = "Lưu Dữ Liệu Không Thành Công";
-            gvcauhoi.DoRowValidation();
-        }
+        Response.Redirect("~/DeThi/chitietcauhoi.aspx");       
     }
-
-    protected void gvcauhoi_RowUpdating(object sender, DevExpress.Web.Data.ASPxDataUpdatingEventArgs e)
+    protected void btnSua_Click(object sender, EventArgs e)
     {
-        e.Cancel = true;
-        choiDTO.OldID = e.NewValues["MaCauHoi"].ToString();
-        //clchonDTO.OldID = e.NewValues["MaCauLuaChon"].ToString();
- 
-        // sua cau hoi
-        choiDTO.MaCauHoi = e.NewValues["MaCauHoi"].ToString();
-        choiDTO.NoiDung = e.NewValues["NoiDung"].ToString();
-        choiDTO.HinhAnh = e.NewValues["HinhAnh"].ToString();
-        choiDTO.MaloaiCauHoi = e.NewValues["TenLoai"].ToString();
-
-
-              
-
-        
-        int iReturn1 = choiDAL.InsertUpdate(choiDTO);
-        if (iReturn1 >= 0)
-        {
-            gvcauhoi.DataSource = loadDataToUI();
-            gvcauhoi.CancelEdit();
-        }
-        else if (iReturn1 == -2)
-        {
-            strMess = "Không tồn tại tên đăng nhập để cập nhật";
-            gvcauhoi.DoRowValidation();
-        }
-        else
-        {
-            strMess = "Do ràng buộc dữ liệu. Không thể thực hiện cập nhật";
-            gvcauhoi.DoRowValidation();
-        }
-
-        // sua cau hoi_cau lua chon
-        choiclcDTO.MaCauHoi = e.NewValues["MaCauHoi"].ToString();
-        choiclcDTO.MaCauLuaChon = e.NewValues["MaCauLuaChon"].ToString();
-        choiclcDTO.DapAn = e.NewValues["DapAn"].ToString();
-
-        int iReturn2 = choiclcDAL.InsertUpdate(choiclcDTO);
-        if (iReturn2 >= 0)
-        {
-            gvcauhoi.DataSource = loadDataToUI();
-            gvcauhoi.CancelEdit();
-        }
-        else if (iReturn2 == -2)
-        {
-            strMess = "Không tồn tại tên đăng nhập để cập nhật";
-            gvcauhoi.DoRowValidation();
-        }
-        else
-        {
-            strMess = "Do ràng buộc dữ liệu. Không thể thực hiện cập nhật";
-            gvcauhoi.DoRowValidation();
-        }
-
-        //sua cau lua chon
-        clchonDTO.MaCauLuaChon = e.NewValues["MaCauLuaChon"].ToString();
-        clchonDTO.NoiDungCLC = e.NewValues["NoiDungCLC"].ToString();
-
-        int iReturn3 = clchonDAL.InsertUpdate(clchonDTO);
-        if (iReturn3 >= 0)
-        {
-            gvcauhoi.DataSource = loadDataToUI();
-            gvcauhoi.CancelEdit();
-        }
-        else if (iReturn3 == -2)
-        {
-            strMess = "Không tồn tại tên đăng nhập để cập nhật";
-            gvcauhoi.DoRowValidation();
-        }
-        else
-        {
-            strMess = "Do ràng buộc dữ liệu. Không thể thực hiện cập nhật";
-            gvcauhoi.DoRowValidation();
-        }
+        Response.Redirect("~/DeThi/chitietcauhoi.aspx");
     }
+   
 }
