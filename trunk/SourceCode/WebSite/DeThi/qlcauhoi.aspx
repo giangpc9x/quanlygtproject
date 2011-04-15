@@ -31,7 +31,8 @@
 
  <div style ="width:90px; float:left; padding-left:15px;">
     <dxe:ASPxButton ID="btnSua" ClientInstanceName = "btnSua" runat="server" 
-         Text="Sửa" Width = "90px" AutoPostBack="False" onclick="btnSua_Click">
+         Text="Sửa" Width = "90px" AutoPostBack="False" onclick="btnSua_Click" 
+         CommandName="sua">
         <ClientSideEvents Click="function(s, e) {
 	PupChiTietCauHoi.Show();
 }" />
