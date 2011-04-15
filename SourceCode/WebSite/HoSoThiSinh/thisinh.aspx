@@ -14,7 +14,7 @@
 
 <script type="text/javascript">
     function StartDelete() {
-        if (gvCauTrucDeThi.GetSelectedRowCount()) {
+        if (gvThiSinh.GetSelectedRowCount()) {
             if (confirm('Xác nhận xóa dữ liệu'))
                 gvThiSinh.GetValuesOnCustomCallback("Delete", GetUpdateResult);
         }
@@ -36,7 +36,6 @@
 	 gvThiSinh.PerformCallback(cboLoaiBang.GetValue().toString());
 }" />
     </dxe:ASPxComboBox>
-    <br />
     <dxe:ASPxComboBox ID="cboPhongThi" runat="server" Width="20%" 
         ClientInstanceName="cboPhongThi" ValueType="System.String" 
         TextField="MaPhong" ValueField="MaPhong">
@@ -44,6 +43,7 @@
 	 gvThiSinh.PerformCallback(cboLoaiBang.GetValue().toString());
 }" />
     </dxe:ASPxComboBox>
+    <br />
 &nbsp;&nbsp;&nbsp;
 </div>
 
