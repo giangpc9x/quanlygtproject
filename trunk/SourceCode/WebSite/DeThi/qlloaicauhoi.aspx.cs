@@ -17,6 +17,8 @@ public partial class dethi_qlloaicauhoi : NTT.Web.UI.BasePage
     #endregion
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Convert.ToString(Session["TenDangNhap"]) == "")
+            Response.Redirect("~/dangnhap.aspx");
         loaichoiDAL = new clsLoaiCauHoi_DAL();
         loaichoiDTO = new clsLoaiCauHoi_DTO();
         cmn = new clsCommon();
