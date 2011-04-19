@@ -16,6 +16,8 @@ public partial class DeThi_qlloaibanglai : NTT.Web.UI.BasePage
     string strMess = string.Empty;
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Convert.ToString(Session["TenDangNhap"]) == "")
+            Response.Redirect("~/dangnhap.aspx");
         lbangDAL = new clsLoaiBanglai_DAL();
         lbangDTO = new clsLoaiBanglai_DTO();
         cmn = new clsCommon();
