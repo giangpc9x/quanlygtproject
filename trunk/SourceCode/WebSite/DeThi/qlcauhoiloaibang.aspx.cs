@@ -25,6 +25,8 @@ public partial class dethi_qlcauhoiloaibang : NTT.Web.UI.BasePage
     #endregion
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Convert.ToString(Session["TenDangNhap"]) == "")
+            Response.Redirect("~/dangnhap.aspx");
         choilbangDAL = new clsCauHoi_LoaiBang_DAL();
         choilbangDTO = new clsCauHoi_LoaiBang_DTO();
 
