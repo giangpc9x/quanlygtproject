@@ -105,7 +105,7 @@ public partial class dethi_qlcauhoi : NTT.Web.UI.BasePage
     }
     protected void btnSua_Click(object sender, EventArgs e)
     {
-        Response.Redirect("~/DeThi/chitietcauhoi.aspx");
+        Response.Redirect("~/DeThi/chitietcauhoi.aspx?MaCauHoi = gvCauHoi.selected");
     }
    
 }
