@@ -4,7 +4,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="phOnceContent" Runat="Server">
     <div class="RootPage">
         <div class="Slogan">Hệ Thống Thi Giấy Phép Lái Xe<br /><span class="MiniSlogan"> </span></div>
-        <dxe:ASPxImage ID="Image1" SkinID="MainBanner" CssClass="MainBanner" ImageAlign="Right" runat="server" EnableViewState="False" Width="453px" Height="235px" ImageUrl="~/Images/Main.png" />
+        <dxe:ASPxImage ID="Image1" SkinID="MainBanner" CssClass="MainBanner" 
+            ImageAlign="Right" runat="server" EnableViewState="False" Width="453px" 
+            Height="235px" ImageUrl="~/Images/antoangiaothong.gif" />
         <br class="Clear" />
         <asp:Literal ID="lGeneralTerms" EnableViewState="False" runat="server" />
         <br /><br /><br />
