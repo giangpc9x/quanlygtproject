@@ -76,6 +76,11 @@
 
         </Description>
       </Demo>
+      <Demo Text="Quản lý câu hỏi loại bằng lái" NavigateUrl="~/DeThi/qlcauhoiloaibang.aspx" Title="Quản lý câu hỏi thuộc loại bằng lái nào trong hệ thống">
+        <Description>
+
+        </Description>
+      </Demo>
     </DemoGroup>
   
     <DemoGroup Text="Điểm Thi" ImageUrl="~/Images/TitleImages/GridView.png" ImageWidth="76px" ImageHeight="76px">
