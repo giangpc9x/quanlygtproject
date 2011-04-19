@@ -26,6 +26,8 @@ public partial class dethi_qlcautrucdethi :NTT.Web.UI.BasePage
     #endregion
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Convert.ToString(Session["TenDangNhap"]) == "")
+            Response.Redirect("~/dangnhap.aspx");
         ctdthiDAL = new clsCauTrucDeThi_DAL();
         ctdthiDTO = new clsCauTrucDeThi_DTO();
 
