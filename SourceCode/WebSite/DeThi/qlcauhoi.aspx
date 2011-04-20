@@ -23,15 +23,19 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="phContent" Runat="Server">
     <div style ="width:90px; float:left; padding-bottom:5px;">
     <dxe:ASPxButton ID="btnThemMoi" ClientInstanceName = "btnThemMoi" runat="server" 
-         Text="Thêm Mới" Width = "90px" AutoPostBack="False" 
-            onclick="btnThemMoi_Click">
+         Text="Thêm Mới" Width = "90px" AutoPostBack="False">
+        <ClientSideEvents CheckedChanged="function(s, e) {
+		
+}" Click="function(s, e) {
+		PupChiTietCauHoi.Show();
+}" />
     </dxe:ASPxButton>
     
 </div>
 
  <div style ="width:90px; float:left; padding-left:15px;">
     <dxe:ASPxButton ID="btnSua" ClientInstanceName = "btnSua" runat="server" 
-         Text="Sửa" Width = "90px" AutoPostBack="False" onclick="btnSua_Click" 
+         Text="Sửa" Width = "90px" AutoPostBack="False" 
          CommandName="sua">
         <ClientSideEvents Click="function(s, e) {
 	PupChiTietCauHoi.Show();
@@ -67,7 +71,163 @@
         <SettingsBehavior AllowFocusedRow="True"/>
     </dxwgv:ASPxGridView>
 </div>
+
+
+  alo alo
+
+<dxpc:ASPxPopupControl ID="PupChiTietCauHoi" runat="server" 
+            ClientInstanceName="PupChiTietCauHoi" HeaderText="Chi Tiết Câu Hoi" 
+            Height="265px" Width="683px" AllowDragging="True" 
+            CloseAction="CloseButton" EnableAnimation="False" Modal="True" 
+            PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter">
+            <ContentCollection>
+<dxpc:PopupControlContentControl ID="PopupControlContentControl1" runat="server">
+
+   
+
+
+
+<table style="width: 610px; height: 157px">
+<tr><td class="style2">
+    <dxe:ASPxLabel ID="poplbLoaiCauHoi" runat="server" Text="Loại Câu Hỏi">
+    </dxe:ASPxLabel>
+    </td><td class="style1">
+        <dxe:ASPxComboBox ID="popcboLoaiCauHoi" runat="server" 
+            ClientInstanceName="popcboLoaiCauHoi" ValueType="System.String">
+        </dxe:ASPxComboBox>
+    </td>
+
+</tr>
+<tr><td class="style2">
+    <dxe:ASPxLabel ID="poplbNoiDung" runat="server" Text="Nội Dung">
+    </dxe:ASPxLabel>
+    </td><td class="style1">
+        <dxe:ASPxTextBox ID="poptxtNoiDung" runat="server" 
+            ClientInstanceName="poptxtNoiDung" Width="170px">
+        </dxe:ASPxTextBox>
+    </td>
+
+</tr>
+<tr><td class="style2">
+    <dxe:ASPxBinaryImage ID="popimHinhAnh" runat="server" 
+        ClientInstanceName="popimHinhAnh" Height="80px" Width="79px">
+    </dxe:ASPxBinaryImage>
     
+    </td><td class="style1">
+        <dxuc:ASPxUploadControl ID="uplFile" runat="server" 
+            ClientInstanceName="uplFile">
+        </dxuc:ASPxUploadControl>
+    </td>
+
+</tr>
+<tr>
+<td>
+    <dxe:ASPxLabel ID="poplbCauLuaChon" runat="server" Text="Câu Lựa CHọn">
+    </dxe:ASPxLabel>
+    </td>
+    
+    
+    
+<td >
+<table><tr><td>
+<dxe:ASPxTextBox ID="txtcauluachon" runat="server" 
+        ClientInstanceName="txtcauluachon" Width="170px">
+    </dxe:ASPxTextBox> 
+    </td>
+    <td>   
+    <dxe:ASPxCheckBox ID="chbDapAn" runat="server">
+    </dxe:ASPxCheckBox></td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  <tr> <dxe:ASPxTextBox ID="txtcauluachon2" runat="server" 
+        ClientInstanceName="txtcauluachon2" Width="170px">
+    </dxe:ASPxTextBox> 
+    </td>
+    <td>   
+    <dxe:ASPxCheckBox ID="chbDapAn2" runat="server">
+    </dxe:ASPxCheckBox></td>
+    </tr>
+    
+    
+    
+ <tr> <dxe:ASPxTextBox ID="txtcauluachon3" runat="server" 
+        ClientInstanceName="txtcauluachon3" Width="170px">
+    </dxe:ASPxTextBox> 
+    </td>
+    <td>   
+    <dxe:ASPxCheckBox ID="chbDapAn3" runat="server">
+    </dxe:ASPxCheckBox></td>
+    </tr>
+       
+    
+    
+    </table>
+    </td>
+</tr>
+
+<tr><td class="style1" style="margin-left: 40px"><dxe:ASPxButton ID="btnSavePup" 
+            runat="server" AutoPostBack="False" 
+        Text="Lưu" Width="90px" VerticalAlign="Middle" HorizontalAlign="Center">
+        <ClientSideEvents Click="function(s, e) {
+	PupChiTietCauHoi.Hide();
+}" />
+    </dxe:ASPxButton></td>
+    <td><dxe:ASPxButton ID="btnCancelPup" runat="server" AutoPostBack="False" 
+        Text="Hủy" Width="90px" VerticalAlign="Middle">
+        <ClientSideEvents Click="function(s, e) {
+	PupChiTietCauHoi.Hide();
+}" />
+    </dxe:ASPxButton></td>
+    <td> <dxe:ASPxButton ID="btnClosePup" runat="server" AutoPostBack="False" 
+        Text="Đóng" Width="90px" VerticalAlign="Middle">
+        <ClientSideEvents Click="function(s, e) {
+	PupChiTietCauHoi.Hide();
+}" />
+    </dxe:ASPxButton>
+    </td>
+    </tr>
+
+
+   
+
+
+
+
+</table>
+
+
+                </dxpc:PopupControlContentControl>
+</ContentCollection>
+        </dxpc:ASPxPopupControl>
+
+    
+ 
    
    
 </asp:Content>

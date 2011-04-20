@@ -58,16 +58,10 @@ public partial class dethi_qlcauhoi : NTT.Web.UI.BasePage
         dt = choiclcDAL.getCauHoi_CauLuaChon(choiclcDTO);
         dt = loaichoiDAL.getLoaiCauHoi(loaichoiDTO);
 
-    
+        
+     
 
-      /*  if (gvcauhoi.KeyFieldName != null)
-        {
-            dt = choiDAL.getCauHoi(choiDTO);
-            poptxtNoiDung.Value = "NoiDung";
 
-            dt = choiclcDAL.getCauHoi_CauLuaChon(choiclcDTO);
-            txtcauluachon.Value = "NoiDung";
-        }*/
 }
     private DataTable loadDataToUI()
     {
@@ -77,7 +71,7 @@ public partial class dethi_qlcauhoi : NTT.Web.UI.BasePage
         return dt;
     }
 
-    protected void gvcauhoi_RowValidating(object sender, DevExpress.Web.Data.ASPxDataValidationEventArgs e)
+   protected void gvcauhoi_RowValidating(object sender, DevExpress.Web.Data.ASPxDataValidationEventArgs e)
     {
       
         foreach (GridViewColumn column in gvcauhoi.Columns)
@@ -101,13 +95,15 @@ public partial class dethi_qlcauhoi : NTT.Web.UI.BasePage
         errors[column] = errorText;
     }
 
-    protected void btnThemMoi_Click(object sender, EventArgs e)
+   /* protected void btnThemMoi_Click(object sender, EventArgs e)
     {
         Response.Redirect("~/DeThi/chitietcauhoi.aspx");       
     }
     protected void btnSua_Click(object sender, EventArgs e)
     {
         Response.Redirect("~/DeThi/chitietcauhoi.aspx?MaCauHoi = gvCauHoi.selected");
-    }
+    }*/
+
+
    
 }
