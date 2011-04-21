@@ -24,9 +24,9 @@
             <table border="0" cellpadding="0" cellspacing="0" class="Main" id="Main" style = "width:100%;">
                 <tr id="Header">                    
                     <td valign="top" class="Navigation Header">
-                        <dxe:ASPxHyperLink EnableViewState="False" ID="Logotype" runat="server" 
+                        <dxe:ASPxHyperLink EnableViewState="False" ID="Logotype" runat="server" Width = "300px" 
                             NavigateUrl="~/Default.aspx" SkinID="Logotype" 
-                            ImageUrl="~/hinh/VN_NTSC_logo.jpg" /></td>
+                            ImageUrl="~/hinh/Logo_ATGT_02.jpg" /></td>
                     <td align="right" class="HeaderPanel" valign="top">
                         <table border="0" cellpadding="0" cellspacing="0"><tr>
                             <td><dxe:ASPxLabel ID="lblSkins" CssClass="lblSkins" runat="server" Text="Select Appearance:" AssociatedControlID="cbSkins" /></td>
