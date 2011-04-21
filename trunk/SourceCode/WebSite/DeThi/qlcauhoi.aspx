@@ -8,6 +8,8 @@
 <%@ Register assembly="DevExpress.Web.v9.1" namespace="DevExpress.Web.ASPxUploadControl" tagprefix="dxuc" %>
 <%@ Register assembly="DevExpress.Web.v9.1" namespace="DevExpress.Web.ASPxObjectContainer" tagprefix="dxoc" %>
 
+<%@ Register assembly="DevExpress.Web.v9.1" namespace="DevExpress.Web.ASPxPanel" tagprefix="dxp" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="localCssPlaceholder" Runat="Server">
     <style type="text/css">
         .style1
@@ -17,6 +19,10 @@
         .style2
         {
             width: 144px;
+        }
+        .style3
+        {
+            width: 365px;
         }
     </style>
     </asp:Content>
@@ -91,8 +97,8 @@
 <tr><td class="style2">
     <dxe:ASPxLabel ID="poplbLoaiCauHoi" runat="server" Text="Loại Câu Hỏi">
     </dxe:ASPxLabel>
-    </td><td class="style1">
-        <dxe:ASPxComboBox ID="popcboLoaiCauHoi" runat="server" 
+    </td><td class="style3">
+        <dxe:ASPxComboBox ID="popcboLoaiCauHoi" runat="server" Width="300px"
             ClientInstanceName="popcboLoaiCauHoi" ValueType="System.String">
         </dxe:ASPxComboBox>
     </td>
@@ -101,9 +107,9 @@
 <tr><td class="style2">
     <dxe:ASPxLabel ID="poplbNoiDung" runat="server" Text="Nội Dung">
     </dxe:ASPxLabel>
-    </td><td class="style1">
+    </td><td class="style3">
         <dxe:ASPxTextBox ID="poptxtNoiDung" runat="server" 
-            ClientInstanceName="poptxtNoiDung" Width="170px">
+            ClientInstanceName="poptxtNoiDung" Width="300px">
         </dxe:ASPxTextBox>
     </td>
 
@@ -113,7 +119,7 @@
         ClientInstanceName="popimHinhAnh" Height="80px" Width="79px">
     </dxe:ASPxBinaryImage>
     
-    </td><td class="style1">
+    </td><td class="style3">
         <dxuc:ASPxUploadControl ID="uplFile" runat="server" 
             ClientInstanceName="uplFile">
         </dxuc:ASPxUploadControl>
@@ -128,77 +134,61 @@
     
     
     
-<td >
-<table><tr><td>
-<dxe:ASPxTextBox ID="txtcauluachon" runat="server" 
-        ClientInstanceName="txtcauluachon" Width="170px">
-    </dxe:ASPxTextBox> 
-    </td>
-    <td>   
-    <dxe:ASPxCheckBox ID="chbDapAn" runat="server">
-    </dxe:ASPxCheckBox></td>
-    </tr>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  <tr> <dxe:ASPxTextBox ID="txtcauluachon2" runat="server" 
-        ClientInstanceName="txtcauluachon2" Width="170px">
-    </dxe:ASPxTextBox> 
-    </td>
-    <td>   
-    <dxe:ASPxCheckBox ID="chbDapAn2" runat="server">
-    </dxe:ASPxCheckBox></td>
-    </tr>
-    
-    
-    
- <tr> <dxe:ASPxTextBox ID="txtcauluachon3" runat="server" 
-        ClientInstanceName="txtcauluachon3" Width="170px">
-    </dxe:ASPxTextBox> 
-    </td>
-    <td>   
-    <dxe:ASPxCheckBox ID="chbDapAn3" runat="server">
-    </dxe:ASPxCheckBox></td>
-    </tr>
-       
-    
-    
-    </table>
+<td class="style3" >
+
+
+    <dxp:ASPxPanel ID="pnelCauLuaCHon" runat="server" Width="300px">
+        <PanelCollection>
+            <dxp:PanelContent runat="server">
+            
+            
+            <table><tr><td style="margin-right: 5px">
+                <dxe:ASPxTextBox ID="txtcauluachon" runat="server" Width="300px">
+                </dxe:ASPxTextBox>
+            </td><td style="margin-left: 5px">
+                <dxe:ASPxRadioButton ID="rdodapan"  runat="server" GroupName="DapAn">
+                </dxe:ASPxRadioButton>
+            </td></tr>
+            <tr><td>
+                <dxe:ASPxTextBox ID="txtcauluachon2" runat="server" Width="300px">
+                </dxe:ASPxTextBox>
+            </td><td>
+                 <dxe:ASPxRadioButton ID="rdodapan2"  runat="server" GroupName="DapAn">
+                </dxe:ASPxRadioButton>
+            </td></tr><tr><td>
+                <dxe:ASPxTextBox ID="txtcauluachon3" runat="server" Width="300px">
+                </dxe:ASPxTextBox>
+            </td><td>
+                <dxe:ASPxRadioButton ID="rdodapan3"  runat="server" GroupName="DapAn">
+                </dxe:ASPxRadioButton>
+            </td></tr>
+            <tr><td>
+                <dxe:ASPxTextBox ID="txtcauluachon4" runat="server" Width="300px">
+                </dxe:ASPxTextBox>
+            </td><td>
+                 <dxe:ASPxRadioButton ID="rdodapan4"  runat="server" GroupName="DapAn">
+                </dxe:ASPxRadioButton>
+            </td></tr>
+            </table>
+            
+            
+            </dxp:PanelContent>
+        </PanelCollection>
+    </dxp:ASPxPanel>
+
+
     </td>
 </tr>
 
 <tr><td class="style1" style="margin-left: 40px"><dxe:ASPxButton ID="btnSavePup" 
             runat="server" AutoPostBack="False" 
-        Text="Lưu" Width="90px" VerticalAlign="Middle" HorizontalAlign="Center">
+        Text="Lưu" Width="90px" VerticalAlign="Middle" HorizontalAlign="Center" 
+        OnClick="btnSavePup_Click">
         <ClientSideEvents Click="function(s, e) {
 	PupChiTietCauHoi.Hide();
 }" />
     </dxe:ASPxButton></td>
-    <td><dxe:ASPxButton ID="btnCancelPup" runat="server" AutoPostBack="False" 
+    <td class="style3"><dxe:ASPxButton ID="btnCancelPup" runat="server" AutoPostBack="False" 
         Text="Hủy" Width="90px" VerticalAlign="Middle">
         <ClientSideEvents Click="function(s, e) {
 	PupChiTietCauHoi.Hide();

@@ -29,8 +29,8 @@ public partial class dethi_qlcauhoi : NTT.Web.UI.BasePage
     #endregion
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Convert.ToString(Session["TenDangNhap"]) == "")
-            Response.Redirect("~/dangnhap.aspx");
+       /* if (Convert.ToString(Session["TenDangNhap"]) == "")
+            Response.Redirect("~/dangnhap.aspx");*/
         choiDAL = new clsCauHoi_DAL();
         choiDTO = new clsCauHoi_DTO();
 
@@ -50,19 +50,37 @@ public partial class dethi_qlcauhoi : NTT.Web.UI.BasePage
 
         gvcauhoi.DataSource = loadDataToUI();
         gvcauhoi.DataBind();
+
+        PupChiTietCauHoi.DataSource = loadDataToUI();
+        PupChiTietCauHoi.DataBind();
+        
        
     }
     private void loadMasterData()
     {
         DataTable dt = new DataTable();
+        choiDAL.getCauHoi(choiDTO);
+       
+        dt = clchonDAL.getCauLuaChon(clchonDTO);
+
+
+      /*  if (gvcauhoi.Selection != null)
+        {
+            poptxtNoiDung.Text = "NoiDung";
+
+          //  popimHinhAnh.Value = 
+
+        }*/
+
         dt = choiclcDAL.getCauHoi_CauLuaChon(choiclcDTO);
         dt = loaichoiDAL.getLoaiCauHoi(loaichoiDTO);
 
-        
-     
+        popcboLoaiCauHoi.ValueField = "MaloaiCauHoi";
+        popcboLoaiCauHoi.TextField = "TenLoaiCH";
 
-
-}
+        popcboLoaiCauHoi.DataSource = dt;
+        popcboLoaiCauHoi.DataBind();
+    }
     private DataTable loadDataToUI()
     {
 
@@ -94,16 +112,104 @@ public partial class dethi_qlcauhoi : NTT.Web.UI.BasePage
         if (errors.ContainsKey(column)) return;
         errors[column] = errorText;
     }
-
-   /* protected void btnThemMoi_Click(object sender, EventArgs e)
+    protected void gvcauhoi_CustomDataCallback(object sender, ASPxGridViewCustomDataCallbackEventArgs e)
     {
-        Response.Redirect("~/DeThi/chitietcauhoi.aspx");       
+        string strReturn = string.Empty;
+        string strMess = string.Empty;
+        int iRow = gvcauhoi.VisibleRowCount;
+        List<object> keyValues = gvcauhoi.GetSelectedFieldValues("MaCauHoi");
+        foreach (object key in keyValues)
+        {
+            choiDTO.MaCauHoi= key.ToString();
+            int iReturn = choiDAL.Delete(choiDTO);
+            if (iReturn < 0)
+                strMess += " " + key.ToString();
+        }
+        if (strMess != string.Empty)
+            e.Result = "Do ràng buộc dữ liệu, không thể xóa " + strMess;
+        else
+            e.Result = string.Empty;
+        gvcauhoi.DataSource = loadDataToUI();
+        gvcauhoi.Selection.SelectAll();
     }
-    protected void btnSua_Click(object sender, EventArgs e)
+    protected void gvcauhoi_CustomCallback(object sender, ASPxGridViewCustomCallbackEventArgs e)
     {
-        Response.Redirect("~/DeThi/chitietcauhoi.aspx?MaCauHoi = gvCauHoi.selected");
-    }*/
+        if (e.Parameters == "Update")
+        {
+            gvcauhoi.DataSource = loadDataToUI();
+            gvcauhoi.Selection.UnselectAll();
+        }
+    }
+
+    /* protected void btnThemMoi_Click(object sender, EventArgs e)
+     {
+         Response.Redirect("~/DeThi/chitietcauhoi.aspx");       
+     }
+     protected void btnSua_Click(object sender, EventArgs e)
+     {
+         Response.Redirect("~/DeThi/chitietcauhoi.aspx?MaCauHoi = gvcauhoi.DataMember");
+     }*/
 
 
+
+    protected void btnSavePup_Click(object sender, EventArgs e)
+    {
+        DataTable dt = new DataTable();
+        choiDTO = new clsCauHoi_DTO();
+        clchonDTO = new clsCauLuaChon_DTO();
+        choiclcDTO = new clsCauHoi_CauLuaChon_DTO();
+
+        choiDTO.NoiDung = poptxtNoiDung.Text.ToString();
+        choiDTO.HinhAnh = uplFile.FileName.ToString();
+        choiDTO.MaloaiCauHoi = popcboLoaiCauHoi.SelectedIndex.ToString();
+        int iReturn = choiDAL.InsertUpdate(choiDTO);
+        if(iReturn > 0)
+        {
+            PupChiTietCauHoi.DataSource = dt;
+            PupChiTietCauHoi.DataBind();
+        }
+        else
+        {
+            strMess = "Lưu Dữ Liệu Không Thành Công";
+            PupChiTietCauHoi.Focus();
+        }
+
+
+    
+        clchonDTO.NoiDungCLC = txtcauluachon.Text.ToString();
+        clchonDTO.NoiDungCLC = txtcauluachon2.Text.ToString();
+        clchonDTO.NoiDungCLC = txtcauluachon3.Text.ToString();
+        clchonDTO.NoiDungCLC = txtcauluachon4.Text.ToString();
+        int iReturn1 = clchonDAL.InsertUpdate(clchonDTO);
+        if(iReturn1 > 0)
+        {
+            PupChiTietCauHoi.DataSource = dt;
+            PupChiTietCauHoi.DataBind();
+        }
+        else
+        {
+            strMess = "Lưu Dữ Liệu Không Thành Công";
+            PupChiTietCauHoi.Focus();
+        }
+        choiclcDTO.MaCauHoi = iReturn.ToString();
+        choiclcDTO.MaCauLuaChon = iReturn1.ToString();
+        choiclcDTO.DapAn = rdodapan.Checked.ToString();
+        choiclcDTO.DapAn = rdodapan2.Checked.ToString();
+        choiclcDTO.DapAn = rdodapan3.Checked.ToString();
+        choiclcDTO.DapAn = rdodapan4.Checked.ToString();
+        int iReturn3 = choiclcDAL.InsertUpdate(choiclcDTO);
+        if (iReturn3 > 0)
+        {
+            PupChiTietCauHoi.DataSource = dt;
+            PupChiTietCauHoi.DataBind();
+        }
+        else
+        {
+            strMess = "Lưu Dữ Liệu Không Thành Công";
+            PupChiTietCauHoi.Focus();
+
+        }
+
+    }
    
 }
