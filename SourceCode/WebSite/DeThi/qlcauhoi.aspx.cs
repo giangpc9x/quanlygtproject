@@ -29,8 +29,8 @@ public partial class dethi_qlcauhoi : NTT.Web.UI.BasePage
     #endregion
     protected void Page_Load(object sender, EventArgs e)
     {
-       /* if (Convert.ToString(Session["TenDangNhap"]) == "")
-            Response.Redirect("~/dangnhap.aspx");*/
+       if (Convert.ToString(Session["TenDangNhap"]) == "")
+            Response.Redirect("~/dangnhap.aspx");
         choiDAL = new clsCauHoi_DAL();
         choiDTO = new clsCauHoi_DTO();
 
@@ -62,15 +62,6 @@ public partial class dethi_qlcauhoi : NTT.Web.UI.BasePage
         choiDAL.getCauHoi(choiDTO);
        
         dt = clchonDAL.getCauLuaChon(clchonDTO);
-
-
-      /*  if (gvcauhoi.Selection != null)
-        {
-            poptxtNoiDung.Text = "NoiDung";
-
-          //  popimHinhAnh.Value = 
-
-        }*/
 
         dt = choiclcDAL.getCauHoi_CauLuaChon(choiclcDTO);
         dt = loaichoiDAL.getLoaiCauHoi(loaichoiDTO);
@@ -140,18 +131,6 @@ public partial class dethi_qlcauhoi : NTT.Web.UI.BasePage
             gvcauhoi.Selection.UnselectAll();
         }
     }
-
-    /* protected void btnThemMoi_Click(object sender, EventArgs e)
-     {
-         Response.Redirect("~/DeThi/chitietcauhoi.aspx");       
-     }
-     protected void btnSua_Click(object sender, EventArgs e)
-     {
-         Response.Redirect("~/DeThi/chitietcauhoi.aspx?MaCauHoi = gvcauhoi.DataMember");
-     }*/
-
-
-
     protected void btnSavePup_Click(object sender, EventArgs e)
     {
         DataTable dt = new DataTable();
@@ -172,10 +151,7 @@ public partial class dethi_qlcauhoi : NTT.Web.UI.BasePage
         {
             strMess = "Lưu Dữ Liệu Không Thành Công";
             PupChiTietCauHoi.Focus();
-        }
-
-
-    
+        }    
         clchonDTO.NoiDungCLC = txtcauluachon.Text.ToString();
         clchonDTO.NoiDungCLC = txtcauluachon2.Text.ToString();
         clchonDTO.NoiDungCLC = txtcauluachon3.Text.ToString();
@@ -189,7 +165,7 @@ public partial class dethi_qlcauhoi : NTT.Web.UI.BasePage
         else
         {
             strMess = "Lưu Dữ Liệu Không Thành Công";
-            PupChiTietCauHoi.Focus();
+            txtcauluachon.Focus();
         }
         choiclcDTO.MaCauHoi = iReturn.ToString();
         choiclcDTO.MaCauLuaChon = iReturn1.ToString();
