@@ -45,11 +45,24 @@ public partial class HoSoThiSinh_thisinh : NTT.Web.UI.BasePage
 
         }
         loadMasterData();
-        gvThiSinh.DataSource = loadDataToUI();
-        gvThiSinh.DataBind();
+        if (cboCaThi.Value != null)
+        {
+            thisinhDTO = new clsThiSinh_DTO();
+            thisinhDTO.MaTS = cboCaThi.Value.ToString();
+            gvThiSinh.DataSource = loadDataToUI(thisinhDTO);
+            gvThiSinh.DataBind();
+        }
+        if (cboPhongThi.Value != null)
+        {
+            thisinhDTO = new clsThiSinh_DTO();
+            thisinhDTO.MaTS = cboPhongThi.Value.ToString();
+            gvThiSinh.DataSource = loadDataToUI(thisinhDTO);
+            gvThiSinh.DataBind();
+        }
     }
     private void loadMasterData()
     {
+        cathiDTO = new clsCaThi_DTO();
         DataTable dt = new DataTable();
         dt = cathiDAL.getCaThi(cathiDTO);
 
@@ -65,7 +78,7 @@ public partial class HoSoThiSinh_thisinh : NTT.Web.UI.BasePage
         //gclCathi.PropertiesComboBox.DataSource = dt;
         //gclDiemThi.PropertiesComboBox.ValueField = "MaDienThi";
         //gclDiemThi.PropertiesComboBox.TextField = "TenDiemThi";
-
+        pthiDTO = new clsPhongThi_DTO();
         dt = pthiDAL.getPhongThi(pthiDTO);
 
 
@@ -79,7 +92,7 @@ public partial class HoSoThiSinh_thisinh : NTT.Web.UI.BasePage
         //gclPhongthi.PropertiesComboBox.DataSource = dt;
     }
 
-    private DataTable loadDataToUI()
+    private DataTable loadDataToUI(clsThiSinh_DTO thisinhDTO)
     {
 
         DataTable dt = new DataTable();
@@ -132,6 +145,7 @@ public partial class HoSoThiSinh_thisinh : NTT.Web.UI.BasePage
 
     protected void gvThiSinh_RowInserting(object sender, DevExpress.Web.Data.ASPxDataInsertingEventArgs e)
     {
+        thisinhDTO = new clsThiSinh_DTO();
         e.Cancel = true;
         thisinhDTO.MaTS = e.NewValues["MaTS"].ToString();
         thisinhDTO.MatKhau = e.NewValues["MatKhau"].ToString();
@@ -154,7 +168,10 @@ public partial class HoSoThiSinh_thisinh : NTT.Web.UI.BasePage
         int iReturn = thisinhDAL.InsertUpdate(thisinhDTO);
         if (iReturn >= 0)
         {
-            gvThiSinh.DataSource = loadDataToUI();
+            thisinhDTO = new clsThiSinh_DTO();
+            thisinhDTO.MaTS = cboPhongThi.Value.ToString();
+            thisinhDTO.MaTS = cboCaThi.Value.ToString();
+            gvThiSinh.DataSource = loadDataToUI(thisinhDTO);
             gvThiSinh.CancelEdit();
         }
         else
@@ -166,6 +183,7 @@ public partial class HoSoThiSinh_thisinh : NTT.Web.UI.BasePage
 
     protected void gvThiSinh_RowUpdating(object sender, DevExpress.Web.Data.ASPxDataUpdatingEventArgs e)
     {
+        thisinhDTO = new clsThiSinh_DTO();
         e.Cancel = true;
         thisinhDTO.OldID = e.OldValues["MaTS"].ToString();
         thisinhDTO.MaTS = e.NewValues["MaTS"].ToString();
@@ -189,7 +207,7 @@ public partial class HoSoThiSinh_thisinh : NTT.Web.UI.BasePage
         int iReturn = thisinhDAL.InsertUpdate(thisinhDTO);
         if (iReturn >= 0)
         {
-            gvThiSinh.DataSource = loadDataToUI();
+            gvThiSinh.DataSource = loadDataToUI(thisinhDTO);
             gvThiSinh.CancelEdit();
         }
         else if (iReturn == -2)
@@ -206,6 +224,7 @@ public partial class HoSoThiSinh_thisinh : NTT.Web.UI.BasePage
     
     protected void gvThiSinh_CustomDataCallback(object sender, ASPxGridViewCustomDataCallbackEventArgs e)
     {
+        thisinhDTO = new clsThiSinh_DTO();
         string strReturn = string.Empty;
         string strMess = string.Empty;
         int iRow = gvThiSinh.VisibleRowCount;
@@ -221,16 +240,47 @@ public partial class HoSoThiSinh_thisinh : NTT.Web.UI.BasePage
             e.Result = "Do ràng buộc dữ liệu, không thể xóa " + strMess;
         else
             e.Result = string.Empty;
-        gvThiSinh.DataSource = loadDataToUI();
+        gvThiSinh.DataSource = loadDataToUI(thisinhDTO);
         gvThiSinh.Selection.SelectAll();
     }
     protected void gvThiSinh_CustomCallback(object sender, ASPxGridViewCustomCallbackEventArgs e)
     {
+        thisinhDTO = new clsThiSinh_DTO();
         if (e.Parameters == "Update")
         {
-            gvThiSinh.DataSource = loadDataToUI();
+            thisinhDTO.MaTS =  cboCaThi.Value.ToString();
+            gvThiSinh.DataSource = loadDataToUI(thisinhDTO);
             gvThiSinh.Selection.UnselectAll();
         }
+        else
+        {
+            thisinhDTO = new clsThiSinh_DTO();
+            thisinhDTO.MaTS = e.Parameters;
+            DataTable dt = thisinhDAL.getThiSinh(thisinhDTO);
+            gvThiSinh.DataSource = dt;
+            gvThiSinh.DataBind();
+        }
+        thisinhDTO = new clsThiSinh_DTO();
+        if (e.Parameters == "Update")
+        {
+            thisinhDTO.MaTS = cboPhongThi.Value.ToString();
+            gvThiSinh.DataSource = loadDataToUI(thisinhDTO);
+            gvThiSinh.Selection.UnselectAll();
+        }
+        else
+        {
+            thisinhDTO = new clsThiSinh_DTO();
+            thisinhDTO.MaTS = e.Parameters;
+            DataTable dt = thisinhDAL.getThiSinh(thisinhDTO);
+            gvThiSinh.DataSource = dt;
+            gvThiSinh.DataBind();
+        }
+        
     }
     #endregion
+
+    protected void cboCaThi_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
 }
