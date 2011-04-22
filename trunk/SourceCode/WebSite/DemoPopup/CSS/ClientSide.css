@@ -1,4 +1,0 @@
-﻿.WhiteControlArea { font-size: 12px; background-color: #FFFFFF; color: #3D3D3D; padding: 16px; font-family: Verdana; line-height: 20px; margin: 0px; }
-.WhiteControlArea img { cursor: pointer; cursor: hand; vertical-align: baseline; margin: 0px 0px 0px 1px; }
-.WhiteControlArea img { width: 10px; height: 20px; cursor: pointer; cursor: hand; vertical-align: middle; margin: 0px 0px 0px 2px; }
-.WhiteControlArea span>img { vertical-align: top; }
