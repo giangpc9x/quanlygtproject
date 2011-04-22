@@ -31,16 +31,17 @@
 <div style ="width:100%; float:left; padding-bottom:10px;">
     <dxe:ASPxComboBox ID="cboCaThi" runat="server" Width="20%" 
         ClientInstanceName="cboCaThi" ValueType="System.String" 
-        TextField="MaCaThi" ValueField="MaCaThi">
+        TextField="MaCaThi" ValueField="MaCaThi" 
+        onselectedindexchanged="cboCaThi_SelectedIndexChanged">
         <ClientSideEvents ValueChanged="function(s, e) {
-	 gvThiSinh.PerformCallback(cboLoaiBang.GetValue().toString());
+	 gvThiSinh.PerformCallback(cboCaThi.GetValue().toString());
 }" />
     </dxe:ASPxComboBox>
     <dxe:ASPxComboBox ID="cboPhongThi" runat="server" Width="20%" 
         ClientInstanceName="cboPhongThi" ValueType="System.String" 
         TextField="MaPhong" ValueField="MaPhong">
         <ClientSideEvents ValueChanged="function(s, e) {
-	 gvThiSinh.PerformCallback(cboLoaiBang.GetValue().toString());
+	 gvThiSinh.PerformCallback(cboPhongThi.GetValue().toString());
 }" />
     </dxe:ASPxComboBox>
     <br />
