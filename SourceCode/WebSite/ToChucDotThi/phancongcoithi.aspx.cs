@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+//using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -28,8 +28,8 @@ public partial class HoSoThiSinh_phancongcoithi : NTT.Web.UI.BasePage
     #endregion
     protected void Page_Load(object sender, EventArgs e)
     {
-        pcctDAL = new clsPhanCongCoithi_DAL();
-        pcctDTO = new clsPhanCongCoiThi_DTO();
+      //  pcctDAL = new clsPhanCongCoithi_DAL();
+       // pcctDTO = new clsPhanCongCoiThi_DTO();
 
         pthiDAL = new clsPhongThi_DAL();
         pthiDTO = new clsPhongThi_DTO();
