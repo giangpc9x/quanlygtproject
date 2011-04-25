@@ -10,30 +10,31 @@
 
 
    <div style="width:90px; float:left; padding-bottom:5px;"> 
-       <dxe:ASPxButton ID="btThemmoi" ClientInstanceName="btThemmoi" runat="server" Text="Thêm mới">
+       <dxe:ASPxButton ID="btThemmoi" ClientInstanceName="btThemmoi" runat="server" Text="Thêm mới" Width="90px">
        </dxe:ASPxButton>
    </div>
    
    <div style="width:90px; float:left; padding-left:15px;"> 
-       <dxe:ASPxButton ID="btSua" ClientInstanceName="btSua" runat="server" Text="Sửa">
+       <dxe:ASPxButton ID="btSua" ClientInstanceName="btSua" runat="server" Text="Sửa" Width="90px">
        </dxe:ASPxButton>
    </div>
    
    <div style="width:90px; float:left; padding-left:20px;"> 
-       <dxe:ASPxButton ID="btXoa" ClientInstanceName="btXoa" runat="server" Text="Xóa">
+       <dxe:ASPxButton ID="btXoa" ClientInstanceName="btXoa" runat="server" Text="Xóa" Width="90px">
        </dxe:ASPxButton>
    </div>
    
    <div style = "clear:both;">
        <dxwgv:ASPxGridView ID="gvCauHoi" runat="server" AutoGenerateColumns="False" 
-           KeyFieldName="MaCauHoi" Width="284px">
+           KeyFieldName="MaCauHoi" Width="100%">
+           <SettingsBehavior AllowFocusedRow="True" />
            <Columns>
                <dxwgv:GridViewCommandColumn ShowSelectCheckbox="True" VisibleIndex="0">
                    <ClearFilterButton Visible="True">
                    </ClearFilterButton>
                </dxwgv:GridViewCommandColumn>
                <dxwgv:GridViewDataTextColumn Caption="Mã câu hỏi" FieldName="MaCauHoi" 
-                   Name="gcMaCauHoi" VisibleIndex="1">
+                   Name="gcMaCauHoi" VisibleIndex="1" Width="120px">
                </dxwgv:GridViewDataTextColumn>
                <dxwgv:GridViewDataTextColumn Caption="Nội dung câu hỏi" FieldName="NoiDung" 
                    Name="gcNoiDung" VisibleIndex="2">

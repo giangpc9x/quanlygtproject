@@ -1,25 +1,15 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/giaothong.master" AutoEventWireup="true" CodeFile="qlloaicauhoi.aspx.cs" Inherits="dethi_qlloaicauhoi" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/giaothong.master" AutoEventWireup="true" CodeFile="qlloaicauhoi.aspx.cs" Inherits="DeThi_qlloaicauhoi" %>
 
-<%@ Register assembly="DevExpress.Web.ASPxEditors.v9.1" namespace="DevExpress.Web.ASPxEditors" tagprefix="dxe" %>
+<%@ Register Assembly="DevExpress.Web.ASPxEditors.v9.1" Namespace="DevExpress.Web.ASPxEditors"
+    TagPrefix="dxe" %>
 
+<%@ Register assembly="DevExpress.Web.v9.1" namespace="DevExpress.Web.ASPxPanel" tagprefix="dxp" %>
+<%@ Register assembly="DevExpress.Web.v9.1" namespace="DevExpress.Web.ASPxUploadControl" tagprefix="dxuc" %>
 <%@ Register assembly="DevExpress.Web.ASPxGridView.v9.1" namespace="DevExpress.Web.ASPxGridView" tagprefix="dxwgv" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="localCssPlaceholder" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="phContent" Runat="Server">
-
-
-
-
-
-
-
-
-
-
-
-
-
 <script type="text/javascript">
 function StartDelete() 
 {
@@ -58,11 +48,11 @@ function GetUpdateResult(errorText)
     <dxwgv:ASPxGridView ID="gvLoaiCauHoi" ClientInstanceName = "gvLoaiCauHoi" 
         Width = "100%" KeyFieldName = "MaloaiCauHoi" 
         runat="server" AutoGenerateColumns="False" 
-        onrowvalidating="gvLoaiCauHoi_RowValidating" 
         onrowinserting="gvLoaiCauHoi_RowInserting" 
         onrowupdating="gvLoaiCauHoi_RowUpdating" 
         oncustomdatacallback="gvLoaiCauHoi_CustomDataCallback" 
-        oncustomcallback="gvLoaiCauHoi_CustomCallback"> 
+        oncustomcallback="gvLoaiCauHoi_CustomCallback" 
+        onrowvalidating="gvLoaiCauHoi_RowValidating"> 
         <SettingsBehavior ConfirmDelete="True" />
         <SettingsPager>
             <Summary Text="Trang {0}/{1} ({2} dòng)" />
@@ -86,8 +76,8 @@ function GetUpdateResult(errorText)
                 </ClearFilterButton>
             </dxwgv:GridViewCommandColumn>
             <dxwgv:GridViewDataTextColumn Caption="Mã loại câu hỏi" 
-                Name = "gtxtMaloaiCauHoi" FieldName="MaloaiCauHoi" 
-               VisibleIndex="1" Width="50px">
+                Name = "gtxtMaloai CauHoi" FieldName="MaloaiCauHoi" 
+               VisibleIndex="1" Width="50px" Visible="False">
                
                 <PropertiesTextEdit ClientInstanceName="gtxtMaloaiCauHoi">
                     <ClientSideEvents Validation="function(s, e) {
@@ -95,20 +85,20 @@ function GetUpdateResult(errorText)
 }" />
                 </PropertiesTextEdit>
                
-                <EditFormSettings VisibleIndex="1" Visible="False" />
+                <EditFormSettings VisibleIndex="1" />
             </dxwgv:GridViewDataTextColumn>
             <dxwgv:GridViewDataTextColumn Caption="Tên loại" FieldName="TenLoaiCH" 
-                Name="gcTenLoai" VisibleIndex="2" Width="100px">
+                Name="gcTenLoai" VisibleIndex="1" Width="100px">
                 <EditFormSettings VisibleIndex="2" />
             </dxwgv:GridViewDataTextColumn>
-            <dxwgv:GridViewCommandColumn VisibleIndex="3" Caption = "Sửa" Width = "30px">
+            <dxwgv:GridViewCommandColumn VisibleIndex="2" Caption = "Sửa" Width = "30px">
                 <EditButton Visible="True" Text = "Sửa">
                 </EditButton>
                 <ClearFilterButton Visible="True">
                 </ClearFilterButton>
             </dxwgv:GridViewCommandColumn>
             <dxwgv:GridViewDataTextColumn Caption="Error" 
-                Visible="False" VisibleIndex="6">
+                VisibleIndex="6" Visible="False">
             </dxwgv:GridViewDataTextColumn>
         </Columns>
         <Settings ShowFilterRow="True" />
@@ -121,8 +111,26 @@ function GetUpdateResult(errorText)
 
 
 
-
-
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="phOnceContent" Runat="Server">
