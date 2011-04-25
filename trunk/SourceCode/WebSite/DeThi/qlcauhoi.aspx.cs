@@ -37,4 +37,8 @@ public partial class DeThi_qlcauhoi : NTT.Web.UI.BasePage
         return dt;
     }
 
+    protected void btThemmoi_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/DeThi/qlchitietcauhoi.aspx");
+    }
 }
