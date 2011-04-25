@@ -7,34 +7,31 @@ using System.Web.UI.WebControls;
 using System.Data;
 using DevExpress.Web.ASPxGridView;
 
-public partial class dethi_qlloaicauhoi : NTT.Web.UI.BasePage
+public partial class DeThi_qlloaicauhoi : NTT.Web.UI.BasePage
 {
-    #region Khai báo các đối tượng và các biến toàn cục
-    clsLoaiCauHoi_DAL loaichoiDAL;
-    clsLoaiCauHoi_DTO loaichoiDTO;
+    clsLoaiCauHoi_DAL lchoiDAL;
+    clsLoaiCauHoi_DTO lchoiDTO;
+
     clsCommon cmn;
     string strMess = string.Empty;
-    #endregion
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Convert.ToString(Session["TenDangNhap"]) == "")
-            Response.Redirect("~/dangnhap.aspx");
-        loaichoiDAL = new clsLoaiCauHoi_DAL();
-        loaichoiDTO = new clsLoaiCauHoi_DTO();
+        lchoiDAL = new clsLoaiCauHoi_DAL();
+        lchoiDTO = new clsLoaiCauHoi_DTO();
         cmn = new clsCommon();
         gvLoaiCauHoi.DataSource = loadDataToUI();
         gvLoaiCauHoi.DataBind();
+
     }
     private DataTable loadDataToUI()
     {
 
         DataTable dt = new DataTable();
-        dt = loaichoiDAL.getLoaiCauHoi(loaichoiDTO);
+        dt = lchoiDAL.getLoaiCauHoi(lchoiDTO);
         return dt;
     }
     protected void gvLoaiCauHoi_RowValidating(object sender, DevExpress.Web.Data.ASPxDataValidationEventArgs e)
     {
-
         foreach (GridViewColumn column in gvLoaiCauHoi.Columns)
         {
             GridViewDataColumn dataColumn = column as GridViewDataColumn;
@@ -49,22 +46,19 @@ public partial class dethi_qlloaicauhoi : NTT.Web.UI.BasePage
             e.RowError = "Vui lòng điền đầy đủ thông tin trước khi lưu.";
             return;
         }
-
-       
     }
     void AddError(Dictionary<GridViewColumn, string> errors, GridViewColumn column, string errorText)
     {
         if (errors.ContainsKey(column)) return;
         errors[column] = errorText;
     }
-
     protected void gvLoaiCauHoi_RowInserting(object sender, DevExpress.Web.Data.ASPxDataInsertingEventArgs e)
     {
         e.Cancel = true;
+        lchoiDTO.MaloaiCauHoi = e.NewValues["MaloaiCauHoi"].ToString();
+        lchoiDTO.TenLoaiCH = e.NewValues["TenLoaiCH"].ToString();
       
-        loaichoiDTO.TenLoaiCH = e.NewValues["TenLoaiCH"].ToString();
-
-        int iReturn = loaichoiDAL.InsertUpdate(loaichoiDTO);
+        int iReturn = lchoiDAL.InsertUpdate(lchoiDTO);
         if (iReturn >= 0)
         {
             gvLoaiCauHoi.DataSource = loadDataToUI();
@@ -80,12 +74,13 @@ public partial class dethi_qlloaicauhoi : NTT.Web.UI.BasePage
     protected void gvLoaiCauHoi_RowUpdating(object sender, DevExpress.Web.Data.ASPxDataUpdatingEventArgs e)
     {
         e.Cancel = true;
-        loaichoiDTO.OldID = e.OldValues["MaloaiCauHoi"].ToString();
-        loaichoiDTO.MaloaiCauHoi = e.NewValues["MaloaiCauHoi"].ToString();
+        lchoiDTO.OldID = e.NewValues["MaloaiCauHoi"].ToString();
 
-        loaichoiDTO.TenLoaiCH = e.NewValues["TenLoaiCH"].ToString();
+        lchoiDTO.MaloaiCauHoi = e.NewValues["MaloaiCauHoi"].ToString();
+        lchoiDTO.TenLoaiCH = e.NewValues["TenLoaiCH"].ToString();
 
-        int iReturn = loaichoiDAL.InsertUpdate(loaichoiDTO);
+        int iReturn = lchoiDAL.InsertUpdate(lchoiDTO);
+      
         if (iReturn >= 0)
         {
             gvLoaiCauHoi.DataSource = loadDataToUI();
@@ -102,6 +97,7 @@ public partial class dethi_qlloaicauhoi : NTT.Web.UI.BasePage
             gvLoaiCauHoi.DoRowValidation();
         }
     }
+
     protected void gvLoaiCauHoi_CustomDataCallback(object sender, ASPxGridViewCustomDataCallbackEventArgs e)
     {
         string strReturn = string.Empty;
@@ -110,8 +106,8 @@ public partial class dethi_qlloaicauhoi : NTT.Web.UI.BasePage
         List<object> keyValues = gvLoaiCauHoi.GetSelectedFieldValues("MaloaiCauHoi");
         foreach (object key in keyValues)
         {
-            loaichoiDTO.MaloaiCauHoi = key.ToString();
-            int iReturn = loaichoiDAL.Delete(loaichoiDTO);
+            lchoiDTO.MaloaiCauHoi = key.ToString();
+            int iReturn = lchoiDAL.Delete(lchoiDTO);
             if (iReturn < 0)
                 strMess += " " + key.ToString();
         }
