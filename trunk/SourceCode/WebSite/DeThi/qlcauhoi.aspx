@@ -9,8 +9,28 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="phContent" Runat="Server">
 
 
+
+
+
+
+
+
+<script type="text/javascript">
+    function StartDelete() {
+        if (gvCauHoi.GetSelectedRowCount()) {
+            if (confirm('Xác nhận xóa dữ liệu'))
+                gvCauHoi.GetValuesOnCustomCallback("Delete", GetUpdateResult);
+        }
+        else
+            alert('Vui lòng chọn một hoặc nhiều dòng dữ liệu trước khi xóa');
+    }
+  
+</script>
+
+
    <div style="width:90px; float:left; padding-bottom:5px;"> 
-       <dxe:ASPxButton ID="btThemmoi" ClientInstanceName="btThemmoi" runat="server" Text="Thêm mới" Width="90px">
+       <dxe:ASPxButton ID="btThemmoi" ClientInstanceName="btThemmoi" runat="server" 
+           Text="Thêm mới" Width="90px" onclick="btThemmoi_Click">
        </dxe:ASPxButton>
    </div>
    
@@ -21,6 +41,9 @@
    
    <div style="width:90px; float:left; padding-left:20px;"> 
        <dxe:ASPxButton ID="btXoa" ClientInstanceName="btXoa" runat="server" Text="Xóa" Width="90px">
+        <ClientSideEvents Click="function(s, e) {    
+	            StartDelete();
+}" />
        </dxe:ASPxButton>
    </div>
    
@@ -41,6 +64,18 @@
                </dxwgv:GridViewDataTextColumn>
            </Columns>
        </dxwgv:ASPxGridView>
+       <dxwgv:GridViewCommandColumn VisibleIndex="2" Caption = "Sửa" Width = "30px">
+                <EditButton Visible="True" Text = "Sửa">
+                </EditButton>
+                <ClearFilterButton Visible="True">
+                </ClearFilterButton>
+            </dxwgv:GridViewCommandColumn>
+            <dxwgv:GridViewDataTextColumn Caption="Error" 
+                Visible="False" VisibleIndex="6">
+            </dxwgv:GridViewDataTextColumn>
+        </Columns>
+        <Settings ShowFilterRow="True" />
+    </dxwgv:ASPxGridView>
    </div>
    
     
