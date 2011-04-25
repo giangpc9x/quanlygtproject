@@ -1,15 +1,25 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/giaothong.master" AutoEventWireup="true" CodeFile="qlloaicauhoi.aspx.cs" Inherits="DeThi_qlloaicauhoi" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/giaothong.master" AutoEventWireup="true" CodeFile="qlloaicauhoi.aspx.cs" Inherits="dethi_qlloaicauhoi" %>
 
-<%@ Register Assembly="DevExpress.Web.ASPxEditors.v9.1" Namespace="DevExpress.Web.ASPxEditors"
-    TagPrefix="dxe" %>
+<%@ Register assembly="DevExpress.Web.ASPxEditors.v9.1" namespace="DevExpress.Web.ASPxEditors" tagprefix="dxe" %>
 
-<%@ Register assembly="DevExpress.Web.v9.1" namespace="DevExpress.Web.ASPxPanel" tagprefix="dxp" %>
-<%@ Register assembly="DevExpress.Web.v9.1" namespace="DevExpress.Web.ASPxUploadControl" tagprefix="dxuc" %>
 <%@ Register assembly="DevExpress.Web.ASPxGridView.v9.1" namespace="DevExpress.Web.ASPxGridView" tagprefix="dxwgv" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="localCssPlaceholder" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="phContent" Runat="Server">
+
+
+
+
+
+
+
+
+
+
+
+
+
 <script type="text/javascript">
 function StartDelete() 
 {
@@ -48,11 +58,11 @@ function GetUpdateResult(errorText)
     <dxwgv:ASPxGridView ID="gvLoaiCauHoi" ClientInstanceName = "gvLoaiCauHoi" 
         Width = "100%" KeyFieldName = "MaloaiCauHoi" 
         runat="server" AutoGenerateColumns="False" 
+        onrowvalidating="gvLoaiCauHoi_RowValidating" 
         onrowinserting="gvLoaiCauHoi_RowInserting" 
         onrowupdating="gvLoaiCauHoi_RowUpdating" 
         oncustomdatacallback="gvLoaiCauHoi_CustomDataCallback" 
-        oncustomcallback="gvLoaiCauHoi_CustomCallback" 
-        onrowvalidating="gvLoaiCauHoi_RowValidating"> 
+        oncustomcallback="gvLoaiCauHoi_CustomCallback"> 
         <SettingsBehavior ConfirmDelete="True" />
         <SettingsPager>
             <Summary Text="Trang {0}/{1} ({2} dòng)" />
@@ -76,7 +86,7 @@ function GetUpdateResult(errorText)
                 </ClearFilterButton>
             </dxwgv:GridViewCommandColumn>
             <dxwgv:GridViewDataTextColumn Caption="Mã loại câu hỏi" 
-                Name = "gtxtMaloai CauHoi" FieldName="MaloaiCauHoi" 
+                Name = "gtxtMaloaiCauHoi" FieldName="MaloaiCauHoi" 
                VisibleIndex="1" Width="50px">
                
                 <PropertiesTextEdit ClientInstanceName="gtxtMaloaiCauHoi">
@@ -85,7 +95,7 @@ function GetUpdateResult(errorText)
 }" />
                 </PropertiesTextEdit>
                
-                <EditFormSettings VisibleIndex="1" />
+                <EditFormSettings VisibleIndex="1" Visible="False" />
             </dxwgv:GridViewDataTextColumn>
             <dxwgv:GridViewDataTextColumn Caption="Tên loại" FieldName="TenLoaiCH" 
                 Name="gcTenLoai" VisibleIndex="2" Width="100px">
@@ -98,7 +108,7 @@ function GetUpdateResult(errorText)
                 </ClearFilterButton>
             </dxwgv:GridViewCommandColumn>
             <dxwgv:GridViewDataTextColumn Caption="Error" 
-                VisibleIndex="6" Visible="False">
+                Visible="False" VisibleIndex="6">
             </dxwgv:GridViewDataTextColumn>
         </Columns>
         <Settings ShowFilterRow="True" />
@@ -111,26 +121,8 @@ function GetUpdateResult(errorText)
 
 
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
     
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="phOnceContent" Runat="Server">
