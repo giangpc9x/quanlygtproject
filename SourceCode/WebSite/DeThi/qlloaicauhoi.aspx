@@ -77,7 +77,7 @@ function GetUpdateResult(errorText)
             </dxwgv:GridViewCommandColumn>
             <dxwgv:GridViewDataTextColumn Caption="Mã loại câu hỏi" 
                 Name = "gtxtMaloai CauHoi" FieldName="MaloaiCauHoi" 
-               VisibleIndex="1" Width="50px" Visible="False">
+               VisibleIndex="1" Width="50px">
                
                 <PropertiesTextEdit ClientInstanceName="gtxtMaloaiCauHoi">
                     <ClientSideEvents Validation="function(s, e) {
@@ -88,10 +88,10 @@ function GetUpdateResult(errorText)
                 <EditFormSettings VisibleIndex="1" />
             </dxwgv:GridViewDataTextColumn>
             <dxwgv:GridViewDataTextColumn Caption="Tên loại" FieldName="TenLoaiCH" 
-                Name="gcTenLoai" VisibleIndex="1" Width="100px">
+                Name="gcTenLoai" VisibleIndex="2" Width="100px">
                 <EditFormSettings VisibleIndex="2" />
             </dxwgv:GridViewDataTextColumn>
-            <dxwgv:GridViewCommandColumn VisibleIndex="2" Caption = "Sửa" Width = "30px">
+            <dxwgv:GridViewCommandColumn VisibleIndex="3" Caption = "Sửa" Width = "30px">
                 <EditButton Visible="True" Text = "Sửa">
                 </EditButton>
                 <ClearFilterButton Visible="True">
