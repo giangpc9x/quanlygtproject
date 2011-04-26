@@ -35,7 +35,8 @@
    </div>
    
    <div style="width:90px; float:left; padding-left:15px;"> 
-       <dxe:ASPxButton ID="btSua" ClientInstanceName="btSua" runat="server" Text="Sửa" Width="90px">
+       <dxe:ASPxButton ID="btSua" ClientInstanceName="btSua" runat="server" Text="Sửa" 
+           Width="90px" onclick="btSua_Click">
        </dxe:ASPxButton>
    </div>
    
@@ -49,7 +50,10 @@
    
    <div style = "clear:both;">
        <dxwgv:ASPxGridView ID="gvCauHoi" runat="server" AutoGenerateColumns="False" 
-           KeyFieldName="MaCauHoi" Width="100%">
+           KeyFieldName="MaCauHoi" Width="100%" 
+           oncustomcallback="gvCauHoi_CustomCallback" 
+           oncustomdatacallback="gvCauHoi_CustomDataCallback" 
+           onrowvalidating="gvCauHoi_RowValidating">
            <SettingsBehavior AllowFocusedRow="True" />
            <Columns>
                <dxwgv:GridViewCommandColumn ShowSelectCheckbox="True" VisibleIndex="0">

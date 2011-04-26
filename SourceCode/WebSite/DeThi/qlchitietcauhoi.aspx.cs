@@ -38,13 +38,6 @@ public partial class DeThi_qlchitietcauhoi : NTT.Web.UI.BasePage
         choi_clchonDTO = new clsCauHoi_CauLuaChon_DTO();
         cmn = new clsCommon();
         loadMasterData();
-   
-      
-        
-           
-           // ndungDTO.MaDiemThi = cboDienThi.Value.ToString();
-          //  gvNguoiDung.DataSource = loadDataToUI();
-          //  gvNguoiDung.DataBind();
         
     }
 
@@ -57,6 +50,8 @@ public partial class DeThi_qlchitietcauhoi : NTT.Web.UI.BasePage
 
         cboLoaiCauHoi.DataSource = dt;
         cboLoaiCauHoi.DataBind();
+
+        
 
     }
     private DataTable loadDataToUI()
