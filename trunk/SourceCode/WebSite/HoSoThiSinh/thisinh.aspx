@@ -29,21 +29,46 @@
 </script>
 
 <div style ="width:100%; float:left; padding-bottom:10px;">
-    <dxe:ASPxComboBox ID="cboCaThi" runat="server" Width="20%" 
+
+
+
+
+     <table>
+     <tr>
+     <td>
+     </td>
+     </tr>
+     </table>
+<table width="600px">
+    <tr><td><dxe:ASPxLabel ID="lblchondotthi" runat="server" 
+        Text="vui lòng chọn Ca Thi" BackColor ForeColor="Blue" 
+        Font-Bold="True" Font-Italic="False" Font-Size="Medium" >
+    </dxe:ASPxLabel></td>
+    <td><dxe:ASPxLabel ID="ASPxLabel1" runat="server" 
+        Text="vui lòng chọn Ca Thi" BackColor ForeColor="Blue" 
+        Font-Bold="True" Font-Italic="False" Font-Size="Medium" >
+    </dxe:ASPxLabel></td></tr>
+    <tr><td colspan="2"> &nbsp;</td></tr>
+    <tr><td><dxe:ASPxComboBox ID="cboCaThi" runat="server" Width="200px" 
         ClientInstanceName="cboCaThi" ValueType="System.String" 
         TextField="MaCaThi" ValueField="MaCaThi" 
         onselectedindexchanged="cboCaThi_SelectedIndexChanged">
         <ClientSideEvents ValueChanged="function(s, e) {
 	 gvThiSinh.PerformCallback(cboCaThi.GetValue().toString());
 }" />
-    </dxe:ASPxComboBox>
-    <dxe:ASPxComboBox ID="cboPhongThi" runat="server" Width="20%" 
+    </dxe:ASPxComboBox></td>
+    <td>  <dxe:ASPxComboBox ID="cboPhongThi" runat="server" Width="200px" 
         ClientInstanceName="cboPhongThi" ValueType="System.String" 
         TextField="MaPhong" ValueField="MaPhong">
         <ClientSideEvents ValueChanged="function(s, e) {
 	 gvThiSinh.PerformCallback(cboPhongThi.GetValue().toString());
 }" />
-    </dxe:ASPxComboBox>
+    </dxe:ASPxComboBox></td></tr></table>
+
+
+
+    
+  
     <br />
 &nbsp;&nbsp;&nbsp;
 </div>
