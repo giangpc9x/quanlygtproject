@@ -32,6 +32,26 @@ public class clsLoaiBanglai_DAL
         }
         return dt;
     }
+    //Get Lay dethi theoloaibang
+    public DataTable getDeThiTheoLoaiBang(clsLoaiBanglai_DTO loaibanglaiDTO)
+    {
+        ListDictionary _list = new ListDictionary();
+        _list.Add("MaLoaiBang", loaibanglaiDTO.MaLoaiBang);
+        //_list.Add("TenLoai", loaibanglaiDTO.TenLoai);
+        //_list.Add("MoTa", loaibanglaiDTO.MoTa);
+        //_list.Add("TGThi", loaibanglaiDTO.TGThi);
+        //_list.Add("SoCauDat", loaibanglaiDTO.SoCauDat);
+        DataTable dt = new DataTable();
+        try
+        {
+            dt = obj.GetDataTable("Select_dethitheoloaibang", _list, CommandType.StoredProcedure);
+        }
+        catch
+        {
+            dt = null;
+        }
+        return dt;
+    }
     public int InsertUpdate(clsLoaiBanglai_DTO loaibanglaiDTO)
     {
         
