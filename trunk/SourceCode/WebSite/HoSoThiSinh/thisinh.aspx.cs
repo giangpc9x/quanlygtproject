@@ -99,7 +99,7 @@ public partial class HoSoThiSinh_thisinh : NTT.Web.UI.BasePage
         dt = thisinhDAL.getThiSinh(thisinhDTO);
         return dt;
     }
-     #region Kiểm tra nhập dữ liệu trên GridView
+    #region Kiểm tra nhập dữ liệu trên GridView
 
     protected void gvThiSinh_RowValidating(object sender, DevExpress.Web.Data.ASPxDataValidationEventArgs e)
     {
@@ -138,7 +138,7 @@ public partial class HoSoThiSinh_thisinh : NTT.Web.UI.BasePage
         if (errors.ContainsKey(column)) return;
         errors[column] = errorText;
     }
-     #endregion
+    #endregion
 
 
     #region Sự kiện thêm - Xóa - Sửa dữ liệu trên GridView
@@ -221,7 +221,7 @@ public partial class HoSoThiSinh_thisinh : NTT.Web.UI.BasePage
             gvThiSinh.DoRowValidation();
         }
     }
-    
+
     protected void gvThiSinh_CustomDataCallback(object sender, ASPxGridViewCustomDataCallbackEventArgs e)
     {
         thisinhDTO = new clsThiSinh_DTO();
@@ -248,14 +248,18 @@ public partial class HoSoThiSinh_thisinh : NTT.Web.UI.BasePage
         thisinhDTO = new clsThiSinh_DTO();
         if (e.Parameters == "Update")
         {
-            thisinhDTO.MaTS =  cboCaThi.Value.ToString();
+            thisinhDTO.MaTS = cboCaThi.Value.ToString();
             gvThiSinh.DataSource = loadDataToUI(thisinhDTO);
             gvThiSinh.Selection.UnselectAll();
         }
         else
         {
             thisinhDTO = new clsThiSinh_DTO();
-            thisinhDTO.MaTS = e.Parameters;
+            //thisinhDTO.MaTS = e.Parameters;
+            if (cboPhongThi.Value != null)
+                thisinhDTO.MaPhong = cboPhongThi.Value.ToString();
+            if (cboCaThi.Value!= null)
+                thisinhDTO.MaCaThi = cboCaThi.Value.ToString();
             DataTable dt = thisinhDAL.getThiSinh(thisinhDTO);
             gvThiSinh.DataSource = dt;
             gvThiSinh.DataBind();
@@ -275,7 +279,7 @@ public partial class HoSoThiSinh_thisinh : NTT.Web.UI.BasePage
             gvThiSinh.DataSource = dt;
             gvThiSinh.DataBind();
         }
-        
+
     }
     #endregion
 
