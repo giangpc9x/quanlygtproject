@@ -139,26 +139,56 @@ public partial class DeThi_qlchitietcauhoi : NTT.Web.UI.BasePage
         choi_clchonDTO.MaCauLuaChon = iReturn1.ToString();
         choi_clchonDTO.DapAn = rbtDapAn.Checked.ToString();
 
-        choi_clchonDAL.InsertUpdate(choi_clchonDTO);
+         int iReturn5 = choi_clchonDAL.InsertUpdate(choi_clchonDTO);
+         if (iReturn5 >= 0)
+         {
+             // uplFile.SaveAs(Server.MapPath(@"~\hinh\") + uplFile.FileName);
+             Response.Write("Lưu dữ liệu thành công");
+         }
+         else
+         {
+             Response.Write("lưu dữ liệu thất bại");
+             // txtNoiDung.Focus();
+         }
 
         choi_clchonDTO.MaCauHoi = iReturn.ToString();
         choi_clchonDTO.MaCauLuaChon = iReturn2.ToString();
         choi_clchonDTO.DapAn = rbtDapAn1.Checked.ToString();
 
-        choi_clchonDAL.InsertUpdate(choi_clchonDTO);
+        int iReturn6 = choi_clchonDAL.InsertUpdate(choi_clchonDTO);
+        if (iReturn6 >= 0)
+        {
+            // uplFile.SaveAs(Server.MapPath(@"~\hinh\") + uplFile.FileName);
+            Response.Write("Lưu dữ liệu thành công");
+        }
+        else
+        {
+            Response.Write("lưu dữ liệu thất bại");
+            // txtNoiDung.Focus();
+        }
 
         choi_clchonDTO.MaCauHoi = iReturn.ToString();
         choi_clchonDTO.MaCauLuaChon = iReturn3.ToString();
         choi_clchonDTO.DapAn = rbtDapAn2.Checked.ToString();
 
-        choi_clchonDAL.InsertUpdate(choi_clchonDTO);
+        int iReturn7 = choi_clchonDAL.InsertUpdate(choi_clchonDTO);
+        if (iReturn7 >= 0)
+        {
+            // uplFile.SaveAs(Server.MapPath(@"~\hinh\") + uplFile.FileName);
+            Response.Write("Lưu dữ liệu thành công");
+        }
+        else
+        {
+            Response.Write("lưu dữ liệu thất bại");
+            // txtNoiDung.Focus();
+        }
 
         choi_clchonDTO.MaCauHoi = iReturn.ToString();
         choi_clchonDTO.MaCauLuaChon = iReturn4.ToString();
         choi_clchonDTO.DapAn = rbtDapAn3.Checked.ToString();
 
-        int iReturn5 = choi_clchonDAL.InsertUpdate(choi_clchonDTO);
-        if (iReturn5 >= 0)
+        int iReturn8 = choi_clchonDAL.InsertUpdate(choi_clchonDTO);
+        if (iReturn8 >= 0)
         {
             // uplFile.SaveAs(Server.MapPath(@"~\hinh\") + uplFile.FileName);
             Response.Write("Lưu dữ liệu thành công");
