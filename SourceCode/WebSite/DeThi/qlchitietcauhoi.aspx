@@ -77,7 +77,8 @@
         </dxe:ASPxRadioButton>
     </td></tr>
     <tr><td>
-        <dxe:ASPxButton ID="btnLuu" runat="server" Text="Lưu" Width="90px">
+        <dxe:ASPxButton ID="btnLuu" runat="server" Text="Lưu" Width="90px" 
+            onclick="btnLuu_Click">
         </dxe:ASPxButton>
     </td><td> <dxe:ASPxButton ID="btnHuy" runat="server" Text="Hủy" Width="90px">
         </dxe:ASPxButton></td>
