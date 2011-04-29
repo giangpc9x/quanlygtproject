@@ -17,7 +17,7 @@ public class clsCauLuaChon_DAL
     {
         ListDictionary _list = new ListDictionary();
         _list.Add("MaCauLuaChon", clcDTO.MaCauLuaChon);
-        _list.Add("NoiDung", clcDTO.NoiDungCLC);
+        _list.Add("NoiDungCLC", clcDTO.NoiDungCLC);
        
         DataTable dt = new DataTable();
         try
@@ -39,7 +39,7 @@ public class clsCauLuaChon_DAL
 
             _list.Add("old_id", clcDTO.OldID);
             _list.Add("MaCauLuaChon", clcDTO.MaCauLuaChon);
-            _list.Add("NoiDung", clcDTO.NoiDungCLC);
+            _list.Add("NoiDungCLC", clcDTO.NoiDungCLC);
 
             int iReturn = obj.ExcSql("Insert_Update_Cau_Lua_Chon", _list, CommandType.StoredProcedure);
             return iReturn;
