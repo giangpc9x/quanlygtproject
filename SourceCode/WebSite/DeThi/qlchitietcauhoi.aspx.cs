@@ -46,7 +46,7 @@ public partial class DeThi_qlchitietcauhoi : NTT.Web.UI.BasePage
     {
         DataTable dt = new DataTable();
         dt = lchoiDAL.getLoaiCauHoi(lchoiDTO);
-         cboLoaiCauHoi.TextField = "TenLoaiCH";
+        cboLoaiCauHoi.TextField = "TenLoaiCH";
         cboLoaiCauHoi.ValueField = "MaloaiCauHoi";
 
         cboLoaiCauHoi.DataSource = dt;
