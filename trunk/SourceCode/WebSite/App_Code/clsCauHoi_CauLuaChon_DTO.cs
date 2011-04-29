@@ -8,17 +8,22 @@ using System.Web;
 /// </summary>
 public class clsCauHoi_CauLuaChon_DTO
 {
-    private string _oldID, _MaCauHoi, _MaCauLuaChon, _DapAn;
+    private string _oldID_MaCauHoi, _oldID_MaCauLuaChon, _MaCauHoi, _MaCauLuaChon, _DapAn;
     public clsCauHoi_CauLuaChon_DTO()
     {
         //
         // TODO: Add constructor logic here
         //
     }
-    public string OldID
+    public string OldID_MaCauHoi
     {
-        get { return this._oldID; }
-        set { this._oldID = value; }
+        get { return this._oldID_MaCauHoi; }
+        set { this._oldID_MaCauHoi = value; }
+    }
+    public string OldID_MaCauLuaChon
+    {
+        get { return this._oldID_MaCauLuaChon; }
+        set { this._oldID_MaCauLuaChon = value; }
     }
 
     public string MaCauHoi
