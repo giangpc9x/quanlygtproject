@@ -16,6 +16,7 @@ public class clsCauHoi_CauLuaChon_DAL
     public DataTable getCauHoi_CauLuaChon(clsCauHoi_CauLuaChon_DTO ch_clcDTO)
     {
         ListDictionary _list = new ListDictionary();
+
         _list.Add("MaCauHoi", ch_clcDTO.MaCauHoi);
         _list.Add("MaCauLuaChon", ch_clcDTO.MaCauLuaChon);
         _list.Add("DapAn", ch_clcDTO.DapAn);
@@ -38,7 +39,8 @@ public class clsCauHoi_CauLuaChon_DAL
         {
             ListDictionary _list = new ListDictionary();
 
-            _list.Add("old_id", ch_clcDTO.OldID);
+            _list.Add("old_id_MaCauHoi", ch_clcDTO.OldID_MaCauHoi);
+            _list.Add("old_id_MaCauLuaChon", ch_clcDTO.OldID_MaCauLuaChon);
             _list.Add("MaCauHoi", ch_clcDTO.MaCauHoi);
             _list.Add("MaCauLuaChon", ch_clcDTO.MaCauLuaChon);
             _list.Add("DapAn", ch_clcDTO.DapAn);
