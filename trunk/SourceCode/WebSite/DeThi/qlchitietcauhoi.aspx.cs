@@ -86,12 +86,45 @@ public partial class DeThi_qlchitietcauhoi : NTT.Web.UI.BasePage
         }
 
         clchonDTO.NoiDungCLC = txtCauLuaChon.Text.ToString();
-        clchonDTO.NoiDungCLC = txtCauLuaChon1.Text.ToString();
-        clchonDTO.NoiDungCLC = txtCauLuaChon2.Text.ToString();
-        clchonDTO.NoiDungCLC = txtCauLuaChon3.Text.ToString();
-
         int iReturn1 = clchonDAL.InsertUpdate(clchonDTO);
         if (iReturn1 > 0)
+        {
+            // uplFile.SaveAs(Server.MapPath(@"~\hinh\") + uplFile.FileName);
+            Response.Write("Lưu dữ liệu thành công");
+        }
+        else
+        {
+            Response.Write("lưu dữ liệu thất bại");
+            // txtNoiDung.Focus();
+        }
+        clchonDTO.NoiDungCLC = txtCauLuaChon1.Text.ToString();
+        int iReturn2 = clchonDAL.InsertUpdate(clchonDTO);
+        if (iReturn2 > 0)
+        {
+            // uplFile.SaveAs(Server.MapPath(@"~\hinh\") + uplFile.FileName);
+            Response.Write("Lưu dữ liệu thành công");
+        }
+        else
+        {
+            Response.Write("lưu dữ liệu thất bại");
+            // txtNoiDung.Focus();
+        }
+        clchonDTO.NoiDungCLC = txtCauLuaChon2.Text.ToString();
+        int iReturn3 = clchonDAL.InsertUpdate(clchonDTO);
+        if (iReturn3 > 0)
+        {
+            // uplFile.SaveAs(Server.MapPath(@"~\hinh\") + uplFile.FileName);
+            Response.Write("Lưu dữ liệu thành công");
+        }
+        else
+        {
+            Response.Write("lưu dữ liệu thất bại");
+            // txtNoiDung.Focus();
+        }
+        clchonDTO.NoiDungCLC = txtCauLuaChon3.Text.ToString();
+
+        int iReturn4 = clchonDAL.InsertUpdate(clchonDTO);
+        if (iReturn4 > 0)
         {
            // uplFile.SaveAs(Server.MapPath(@"~\hinh\") + uplFile.FileName);
             Response.Write("Lưu dữ liệu thành công");
@@ -105,12 +138,27 @@ public partial class DeThi_qlchitietcauhoi : NTT.Web.UI.BasePage
         choi_clchonDTO.MaCauHoi = iReturn.ToString();
         choi_clchonDTO.MaCauLuaChon = iReturn1.ToString();
         choi_clchonDTO.DapAn = rbtDapAn.Checked.ToString();
+
+        choi_clchonDAL.InsertUpdate(choi_clchonDTO);
+
+        choi_clchonDTO.MaCauHoi = iReturn.ToString();
+        choi_clchonDTO.MaCauLuaChon = iReturn2.ToString();
         choi_clchonDTO.DapAn = rbtDapAn1.Checked.ToString();
+
+        choi_clchonDAL.InsertUpdate(choi_clchonDTO);
+
+        choi_clchonDTO.MaCauHoi = iReturn.ToString();
+        choi_clchonDTO.MaCauLuaChon = iReturn3.ToString();
         choi_clchonDTO.DapAn = rbtDapAn2.Checked.ToString();
+
+        choi_clchonDAL.InsertUpdate(choi_clchonDTO);
+
+        choi_clchonDTO.MaCauHoi = iReturn.ToString();
+        choi_clchonDTO.MaCauLuaChon = iReturn4.ToString();
         choi_clchonDTO.DapAn = rbtDapAn3.Checked.ToString();
 
-        int iReturn2 = choi_clchonDAL.InsertUpdate(choi_clchonDTO);
-        if (iReturn2 > 0)
+        int iReturn5 = choi_clchonDAL.InsertUpdate(choi_clchonDTO);
+        if (iReturn5 >= 0)
         {
             // uplFile.SaveAs(Server.MapPath(@"~\hinh\") + uplFile.FileName);
             Response.Write("Lưu dữ liệu thành công");
