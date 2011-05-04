@@ -51,7 +51,7 @@
                         <tr>
                             <td>
 
-                                Chào&nbsp;
+                                Chao&nbsp;
 
                             <dxe:ASPxLabel ID="lblNguoiDung" runat="server" Text="">
                                 </dxe:ASPxLabel>
