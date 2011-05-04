@@ -12,9 +12,13 @@ public partial class Test_Khanh : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        clsDeThi_DAL dethi = new clsDeThi_DAL();
+        DataTable dt = new DataTable();
+        dt = dethi.getDeThi("A2");
+        gvTest.DataSource = dt;
+        gvTest.DataBind();
     }
-    protected void btnInsert_Click(object sender, EventArgs e)
+   protected void btnInsert_Click(object sender, EventArgs e)
     {
         try
         {
