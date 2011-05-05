@@ -42,15 +42,17 @@ public partial class DeThi_qlchitietcauhoi : NTT.Web.UI.BasePage
         
     }
 
-    private void loadMasterData()
+    protected void loadMasterData()
     {
         DataTable dt = new DataTable();
         dt = lchoiDAL.getLoaiCauHoi(lchoiDTO);
-        cboLoaiCauHoi.TextField = "TenLoaiCH";
-        cboLoaiCauHoi.ValueField = "MaloaiCauHoi";
+      
+            cboLoaiCauHoi.TextField = "TenLoaiCH";
+            cboLoaiCauHoi.ValueField = "MaloaiCauHoi";
 
-        cboLoaiCauHoi.DataSource = dt;
-        cboLoaiCauHoi.DataBind();
+            cboLoaiCauHoi.DataSource = dt;
+            cboLoaiCauHoi.DataBind();
+       
 
         
 
