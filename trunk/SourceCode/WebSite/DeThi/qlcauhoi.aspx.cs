@@ -117,7 +117,7 @@ public partial class DeThi_qlcauhoi : NTT.Web.UI.BasePage
         int index = gvCauHoi.FocusedRowIndex;
         DataRow dr = gvCauHoi.GetDataRow(index);
         string id = dr["MaCauHoi"].ToString();
-        Response.Redirect("~/DeThi/qlchitietcauhoi.aspx");
+        Response.Redirect("~/DeThi/qlchitietcauhoi.aspx?MaCauHoi = " + "id" );
 
     }
 }
