@@ -47,8 +47,12 @@ public partial class dethi_qlcauhoiloaibang : NTT.Web.UI.BasePage
 
         }
         loadMasterData();
-        gvCauHoiLoaiBang.DataSource = loadDataToUI();
-        gvCauHoiLoaiBang.DataBind();
+
+        if (cboLoaiBang.Value != null)
+        {
+            gvCauHoiLoaiBang.DataSource = loadDataToUI();
+            gvCauHoiLoaiBang.DataBind();
+        }
     }
     private void loadMasterData()
     {
