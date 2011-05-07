@@ -25,6 +25,8 @@ public partial class HoSoThiSinh_thisinh : NTT.Web.UI.BasePage
     #endregion
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Convert.ToString(Session["TenDangNhap"]) == "")
+            Response.Redirect("~/dangnhap.aspx");
         thisinhDAL = new clsThiSinh_DAL();
         thisinhDTO = new clsThiSinh_DTO();
 
