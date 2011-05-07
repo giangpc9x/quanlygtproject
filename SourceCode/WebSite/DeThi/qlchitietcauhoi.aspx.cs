@@ -49,7 +49,7 @@ public partial class DeThi_qlchitietcauhoi : NTT.Web.UI.BasePage
     protected void loadMasterData()
     {
         //string maCauHoi = Request.Params["MaCauHoi"].ToString();
-        String id = Request.QueryString["MaCauHoi"].ToString();
+        //String id = Request.QueryString["MaCauHoi"].ToString();
 
         DataTable dt = new DataTable();
         dt = lchoiDAL.getLoaiCauHoi(lchoiDTO);
@@ -62,9 +62,9 @@ public partial class DeThi_qlchitietcauhoi : NTT.Web.UI.BasePage
 
           
 
-            DataTable dt1 = new DataTable();
-            dt1 = ctchoiDAL.getChiTietCauHoi("id");
-            txtNoiDung.Text = dt1.Columns["NoiDung"].ToString();
+            //DataTable dt1 = new DataTable();
+            //dt1 = ctchoiDAL.getChiTietCauHoi("id");
+            //txtNoiDung.Text = dt1.Columns["NoiDung"].ToString();
 
 
 
