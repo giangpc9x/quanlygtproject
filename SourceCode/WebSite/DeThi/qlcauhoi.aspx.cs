@@ -21,8 +21,8 @@ public partial class DeThi_qlcauhoi : NTT.Web.UI.BasePage
     protected void Page_Load(object sender, EventArgs e)
     
     {
-        //if (Convert.ToString(Session["TenDangNhap"]) == "")
-          //  Response.Redirect("~/dangnhap.aspx");
+        if (Convert.ToString(Session["TenDangNhap"]) == "")
+            Response.Redirect("~/dangnhap.aspx");
         choiDAL = new clsCauHoi_DAL();
         choiDTO = new clsCauHoi_DTO();
         cmn = new clsCommon();

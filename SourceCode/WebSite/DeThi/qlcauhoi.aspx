@@ -34,15 +34,9 @@
        </dxe:ASPxButton>
    </div>
    
-   <div style="width:90px; float:left; padding-left:15px;"> 
-       <dxe:ASPxButton ID="btSua" ClientInstanceName="btSua" runat="server" Text="Sửa" 
-           Width="90px" onclick="btSua_Click">
-       </dxe:ASPxButton>
-   </div>
-   
    <div style="width:90px; float:left; padding-left:20px;"> 
        <dxe:ASPxButton ID="btXoa" ClientInstanceName="btXoa" runat="server" Text="Xóa" Width="90px">
-        <ClientSideEvents Click="function(s, e) {    
+           <ClientSideEvents Click="function(s, e) {    
 	            StartDelete();
 }" />
        </dxe:ASPxButton>
