@@ -21,6 +21,8 @@ public partial class ToChucDotThi_diemdanhthisinh : NTT.Web.UI.BasePage
     #endregion
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Convert.ToString(Session["TenDangNhap"]) == "")
+            Response.Redirect("~/dangnhap.aspx");
         kqtDAL = new clsKetQuaThi_DAL();
         kqtDTO = new clsKetQuaThi_DTO();
 
