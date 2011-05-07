@@ -36,7 +36,8 @@ function GetUpdateResult(errorText)
 </script>
 
 <div style ="width:100%; float:left; padding-bottom:10px;">
-    <dxe:ASPxComboBox ID="cboLoaiBang" runat="server" Width="70%" 
+Chọn loại bằng lái
+    <dxe:ASPxComboBox ID="cboLoaiBang" runat="server" Width="50%" 
         ClientInstanceName="cboLoaiBang" ValueType="System.String">
         <ClientSideEvents ValueChanged="function(s, e) {
 	 gvCauTrucDeThi.PerformCallback(cboLoaiBang.GetValue().toString());
