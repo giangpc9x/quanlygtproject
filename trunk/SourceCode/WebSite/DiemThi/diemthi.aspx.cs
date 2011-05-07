@@ -21,6 +21,8 @@ public partial class DiemThi_diemthi : BasePage
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Convert.ToString(Session["TenDangNhap"]) == "")
+            Response.Redirect("~/dangnhap.aspx");
         dthiDAL = new clsDiaDiemThi_DAL();
         dthiDTO = new clsDiaDiemThi_DTO();
         cmn = new clsCommon();
