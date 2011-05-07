@@ -45,7 +45,7 @@
         Font-Bold="True" Font-Italic="False" Font-Size="Medium" >
     </dxe:ASPxLabel></td>
     <td><dxe:ASPxLabel ID="ASPxLabel1" runat="server" 
-        Text="vui lòng chọn Ca Thi" BackColor ForeColor="Blue" 
+        Text="vui lòng chọn Phong Thi" BackColor ForeColor="Blue" 
         Font-Bold="True" Font-Italic="False" Font-Size="Medium" >
     </dxe:ASPxLabel></td></tr>
     <tr><td colspan="2"> &nbsp;</td></tr>
