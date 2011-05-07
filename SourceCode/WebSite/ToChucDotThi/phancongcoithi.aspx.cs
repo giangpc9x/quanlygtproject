@@ -28,6 +28,8 @@ public partial class HoSoThiSinh_phancongcoithi : NTT.Web.UI.BasePage
     #endregion
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Convert.ToString(Session["TenDangNhap"]) == "")
+            Response.Redirect("~/dangnhap.aspx");
         pcctDAL = new clsPhanCongCoithi_DAL();
         pcctDTO = new clsPhanCongCoiThi_DTO();
 
