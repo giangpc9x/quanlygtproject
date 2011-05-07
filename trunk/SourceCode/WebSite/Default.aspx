@@ -3,7 +3,8 @@
 <%@ Register Assembly="DevExpress.Web.ASPxEditors.v9.1, Version=9.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxEditors" TagPrefix="dxe" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="phOnceContent" Runat="Server">
     <div class="RootPage">
-        <div class="Slogan">Hệ Thống Thi Giấy Phép Lái Xe<br /><span class="MiniSlogan"> </span></div>
+        <div class="Slogan">Hệ Thống Thi Giấy Phép Lái Xe<br /> <br /><br /><br />
+        <br /><br /><span class="MiniSlogan"> </span></div>
         <dxe:ASPxImage ID="Image1" SkinID="MainBanner" CssClass="MainBanner" 
             ImageAlign="Right" runat="server" EnableViewState="False" Width="453px" 
             Height="235px" ImageUrl="~/Images/antoangiaothong.gif" />
