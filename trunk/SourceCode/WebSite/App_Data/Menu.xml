@@ -132,6 +132,13 @@
             </Description>
         </Demo>      
     </DemoGroup>
+  <DemoGroup Text="Đề Thi" ImageUrl="~/Images/TitleImages/GridView.png" ImageWidth="76px" ImageHeight="76px">
+    <Demo Text="Đề Thi" NavigateUrl="~/DeThi.aspx" Title="Filter Row - ASP.NET Grid and Data Editors">
+      <Description>
+
+      </Description>
+    </Demo>
+  </DemoGroup>
 
   
   <!--Phầm Menu Cho Tutorials Không  sữa phần này nhé -->
