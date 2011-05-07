@@ -264,21 +264,21 @@ public partial class HoSoThiSinh_thisinh : NTT.Web.UI.BasePage
             gvThiSinh.DataSource = dt;
             gvThiSinh.DataBind();
         }
-        thisinhDTO = new clsThiSinh_DTO();
-        if (e.Parameters == "Update")
-        {
-            thisinhDTO.MaTS = cboPhongThi.Value.ToString();
-            gvThiSinh.DataSource = loadDataToUI(thisinhDTO);
-            gvThiSinh.Selection.UnselectAll();
-        }
-        else
-        {
-            thisinhDTO = new clsThiSinh_DTO();
-            thisinhDTO.MaTS = e.Parameters;
-            DataTable dt = thisinhDAL.getThiSinh(thisinhDTO);
-            gvThiSinh.DataSource = dt;
-            gvThiSinh.DataBind();
-        }
+        //thisinhDTO = new clsThiSinh_DTO();
+        //if (e.Parameters == "Update")
+        //{
+        //    thisinhDTO.MaTS = cboPhongThi.Value.ToString();
+        //    gvThiSinh.DataSource = loadDataToUI(thisinhDTO);
+        //    gvThiSinh.Selection.UnselectAll();
+        //}
+        //else
+        //{
+        //    thisinhDTO = new clsThiSinh_DTO();
+        //    thisinhDTO.MaTS = e.Parameters;
+        //    DataTable dt = thisinhDAL.getThiSinh(thisinhDTO);
+        //    gvThiSinh.DataSource = dt;
+        //    gvThiSinh.DataBind();
+        //}
 
     }
     #endregion
