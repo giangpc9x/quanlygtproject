@@ -12,11 +12,17 @@ public partial class Test_Khanh : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        clsDeThi_DAL dethi = new clsDeThi_DAL();
+        /*clsDeThi_DAL dethi = new clsDeThi_DAL();
         DataTable dt = new DataTable();
         dt = dethi.getDeThi("A2");
         gvtest.DataSource = dt;
+        gvtest.DataBind();*/
+        clsDeThi_DAL dethi = new clsDeThi_DAL();
+        DataTable dt = new DataTable();
+        dt = dethi.getcauluachon_cauhoi("316");
+        gvtest.DataSource = dt;
         gvtest.DataBind();
+
     }
    protected void btnInsert_Click(object sender, EventArgs e)
     {
