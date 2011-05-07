@@ -44,6 +44,11 @@ public partial class DeThi_qlchitietcauhoi : NTT.Web.UI.BasePage
 
     protected void loadMasterData()
     {
+        string maCauHoi = Request.Params["MaCauHoi"].ToString();
+        if (maCauHoi == Session["MaCauHoi"].ToString())
+        {
+          //  txtNoiDung.Text = da
+        }
         DataTable dt = new DataTable();
         dt = lchoiDAL.getLoaiCauHoi(lchoiDTO);
       
