@@ -104,19 +104,19 @@
     <EditFormSettings VisibleIndex="1" />
 </dxwgv:GridViewDataTextColumn>
             <dxwgv:GridViewDataTextColumn Caption="Mô Tả" FieldName="MoTa" Name="gcMoTa" 
-                VisibleIndex="2" Width="90px">
+                VisibleIndex="2" Width="90px" Visible="False">
                 <EditFormSettings VisibleIndex="3" ColumnSpan="2" />
             </dxwgv:GridViewDataTextColumn>
             <dxwgv:GridViewDataTextColumn Caption="Số Lượng" FieldName="SoThSinhToiDa" 
-                Name="gcSoThSinhToiDa" VisibleIndex="3" Width="50px">
+                Name="gcSoThSinhToiDa" VisibleIndex="2" Width="50px">
                 <EditFormSettings VisibleIndex="4" />
             </dxwgv:GridViewDataTextColumn>
             <dxwgv:GridViewDataCheckColumn Caption="Trạng Thái" FieldName="TrangThai" 
-                Name="gcTrangThai" VisibleIndex="4" Width="50px">
+                Name="gcTrangThai" VisibleIndex="3" Width="50px">
                 <PropertiesCheckEdit DisplayTextChecked="có" DisplayTextUnchecked="không" >
                 </PropertiesCheckEdit>
             </dxwgv:GridViewDataCheckColumn>
-            <dxwgv:GridViewCommandColumn VisibleIndex="5" Caption = "Sửa" Width = "30px">
+            <dxwgv:GridViewCommandColumn VisibleIndex="4" Caption = "Sửa" Width = "30px">
                 <EditButton Visible="True" Text = "Sửa">
                 </EditButton>
                 <ClearFilterButton Visible="True">
