@@ -22,6 +22,8 @@ public partial class DiemThi_dotthi : NTT.Web.UI.BasePage
     #endregion
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Convert.ToString(Session["TenDangNhap"]) == "")
+            Response.Redirect("~/dangnhap.aspx");
         dotthiDAL = new clsDotThi_DAL();
         dotthiDTO = new clsDotThi_DTO();
 
