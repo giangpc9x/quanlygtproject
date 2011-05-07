@@ -17,6 +17,8 @@ public partial class HeThong_qlnhomnguoidung : NTT.Web.UI.BasePage
     #endregion
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Convert.ToString(Session["TenDangNhap"]) == "")
+            Response.Redirect("~/dangnhap.aspx");
         nhomNDDAL = new clsNhomNguoiDung_DAL();
         nhomNDDTO = new clsNhomNguoiDung_DTO();
         cmn = new clsCommon();
