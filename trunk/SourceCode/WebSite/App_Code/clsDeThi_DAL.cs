@@ -83,32 +83,32 @@ public class clsDeThi_DAL
 
     public DataTable getcauluachon_cauhoi(string MaCauHoi)
     {
-        DataTable dt_dethi1 = new DataTable();
+        //DataTable dt_dethi1 = new DataTable();
         DataTable dt_cauhoi_cauluachon = new DataTable();
         try
         {
-            dt_dethi1 = obj.GetDataTable("select top 0 * from View_cauhoi_cauluachon", CommandType.Text);
-            dt_cauhoi_cauluachon = getcauluachon_cauhoi(MaCauHoi);
-            foreach (DataRow dr in dt_cauhoi_cauluachon.Rows)
-            {
+           // dt_dethi1 = obj.GetDataTable("select top 0 * from View_cauhoi_cauluachon", CommandType.Text);
+           // dt_cauhoi_cauluachon = obj.GetDataTable("Select_cauluachontheocauhoi", //getcauluachon_cauhoi(MaCauHoi);
+            //foreach (DataRow dr in dt_cauhoi_cauluachon.Rows)
+            //{
                 ListDictionary _list = new ListDictionary();
-                _list.Add("MaCauHoi", dr["MaCauHoi"].ToString());
-                _list.Add("NoiDung", dr["NoiDung"].ToString());
-                _list.Add("HinhAnh", dr["HinhAnh"].ToString());
-                _list.Add("NoiDungCLC", dr["NoiDungCLC"].ToString());
-                //_list.Add("NoiDung", dr["NoiDung"].ToString());
+                _list.Add("MaCauHoi", MaCauHoi);
+            //    _list.Add("NoiDung", dr["NoiDung"].ToString());
+            //    _list.Add("HinhAnh", dr["HinhAnh"].ToString());
+            //    _list.Add("NoiDungCLC", dr["NoiDungCLC"].ToString());
+            //    //_list.Add("NoiDung", dr["NoiDung"].ToString());
                 dt_cauhoi_cauluachon = obj.GetDataTable("Select_cauluachontheocauhoi", _list, CommandType.StoredProcedure);
-               for (int i = 0; i < dt_cauhoi_cauluachon.Rows.Count; i++)
-                {
-                    DataRow drDeThi = dt_dethi1.NewRow();
-                    drDeThi["MaCauHoi"] = dt_cauhoi_cauluachon.Rows[i]["MaCauHoi"];
-                    drDeThi["NoiDung"] = dt_cauhoi_cauluachon.Rows[i]["NoiDung"];
-                    drDeThi["HinhAnh"] = dt_cauhoi_cauluachon.Rows[i]["HinhAnh"];
-                    drDeThi["NoiDungCLC"] = dt_cauhoi_cauluachon.Rows[i]["NoiDungCLC"];
-                    dt_dethi1.Rows.Add(drDeThi);
-                }
+               //for (int i = 0; i < dt_cauhoi_cauluachon.Rows.Count; i++)
+               // {
+               //     DataRow drDeThi = dt_dethi1.NewRow();
+               //     drDeThi["MaCauHoi"] = dt_cauhoi_cauluachon.Rows[i]["MaCauHoi"];
+               //     drDeThi["NoiDung"] = dt_cauhoi_cauluachon.Rows[i]["NoiDung"];
+               //     drDeThi["HinhAnh"] = dt_cauhoi_cauluachon.Rows[i]["HinhAnh"];
+               //     drDeThi["NoiDungCLC"] = dt_cauhoi_cauluachon.Rows[i]["NoiDungCLC"];
+               //     dt_dethi1.Rows.Add(drDeThi);
+               // }
             }
-        }
+        //}
         catch
         {
             dt_cauhoi_cauluachon = null;
