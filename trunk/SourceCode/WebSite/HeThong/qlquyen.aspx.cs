@@ -17,6 +17,8 @@ public partial class HeThong_qlquyen : NTT.Web.UI.BasePage
     #endregion
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Convert.ToString(Session["TenDangNhap"]) == "")
+            Response.Redirect("~/dangnhap.aspx");
         quyenDAL = new clsQuyen_DAL();
         quyenDTO = new clsQuyen_DTO();
         cmn = new clsCommon();
