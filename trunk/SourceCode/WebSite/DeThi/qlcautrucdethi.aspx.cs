@@ -49,8 +49,11 @@ public partial class dethi_qlcautrucdethi :NTT.Web.UI.BasePage
 
         }
         loadMasterData();
-        gvCauTrucDeThi.DataSource = loadDataToUI();
-        gvCauTrucDeThi.DataBind();
+        if (cboLoaiBang.Value != null)
+        {
+            gvCauTrucDeThi.DataSource = loadDataToUI();
+            gvCauTrucDeThi.DataBind();
+        }
 
        
     }
