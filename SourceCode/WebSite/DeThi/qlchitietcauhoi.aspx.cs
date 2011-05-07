@@ -27,6 +27,8 @@ public partial class DeThi_qlchitietcauhoi : NTT.Web.UI.BasePage
     string strMess = string.Empty;
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Convert.ToString(Session["TenDangNhap"]) == "")
+            Response.Redirect("~/dangnhap.aspx");
         lchoiDAL = new clsLoaiCauHoi_DAL();
         lchoiDTO = new clsLoaiCauHoi_DTO();
 
@@ -49,7 +51,7 @@ public partial class DeThi_qlchitietcauhoi : NTT.Web.UI.BasePage
     protected void loadMasterData()
     {
         //string maCauHoi = Request.Params["MaCauHoi"].ToString();
-        //String id = Request.QueryString["MaCauHoi"].ToString();
+        String id = Request.QueryString["MaCauHoi"].ToString();
 
         DataTable dt = new DataTable();
         dt = lchoiDAL.getLoaiCauHoi(lchoiDTO);
@@ -58,55 +60,7 @@ public partial class DeThi_qlchitietcauhoi : NTT.Web.UI.BasePage
             cboLoaiCauHoi.ValueField = "MaloaiCauHoi";
 
             cboLoaiCauHoi.DataSource = dt;
-            cboLoaiCauHoi.DataBind();
-
-          
-
-            //DataTable dt1 = new DataTable();
-            //dt1 = ctchoiDAL.getChiTietCauHoi("id");
-            //txtNoiDung.Text = dt1.Columns["NoiDung"].ToString();
-
-
-
-
-
-
-       
-      //  txtNoiDung.Text = 
-
-
-
-            //clsDeThi_DAL dethi = new clsDeThi_DAL();
-            //DataTable dt1 = new DataTable();
-          //  dt1 = dethi.getDeThi("A2");
-          //  listDataList1.DataSource = dt;
-           // listDataList1.DataBind();
-           // DataTable dt_CauLuaChon = new DataTable();
-
-           //// DataTable dt_CauLuaChon = new DataTable();
-           // for (int i = 0; i < dt1.Rows.Count; i++)
-           // {
-           //     dt_CauLuaChon = dethi.getcauluachon_cauhoi(dt.Rows[i]["MaCauHoi"].ToString());
-           //    // Image img = listDataList1.Items[i].FindControl("Image1") as Image;
-           //     Image img = imgHinhAnh.FindControl("imHinhAnh") as Image;
-           //     if (dt1.Rows[i]["HinhAnh"] == DBNull.Value || dt1.Rows[i]["HinhAnh"].ToString() == "")
-           //     {
-           //         img.Visible = false;
-           //     }
-           //     else
-           //     {
-           //         img.Visible = true;
-           //         img.ImageUrl = "~/hinh/" + dt.Rows[i]["HinhAnh"].ToString() + "";
-           //     }
-           //   //  ASPxTextBox txtcauhoi = txtNoiDung.FindControl("txtNoiDung") as ASPxTextBox;
-           //     //ASPxRadioButtonList radCauLuaChon = listDataList1.Items[i].FindControl("radCauLuaChon") as ASPxRadioButtonList;
-           //    // radCauLuaChon.DataSource = dt_CauLuaChon;
-           //    // radCauLuaChon.TextField = "NoiDungCLC";
-           //    // radCauLuaChon.DataBind();
-           // }
-       
-
-        
+            cboLoaiCauHoi.DataBind();     
 
     }
     private DataTable loadDataToUI()
