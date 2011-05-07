@@ -23,32 +23,29 @@
                 </tr>
                 <tr>
                     <td width="100px">
-                        <asp:CheckBox ID="CheckBox1" runat="server" />
-                    </td>
+                        &nbsp;</td>
                     <td width="700px">
-                        <asp:Label ID="Label2" runat="server" Text='<%# Eval("MaCauHoi") %>'></asp:Label>
-                    </td>
+                        &nbsp;</td>
                 </tr>
                 <tr>
                     <td width="100px">
-                        <asp:CheckBox ID="CheckBox2" runat="server" />
-                    </td>
+                        &nbsp;</td>
                     <td width="700px">
-                        <asp:Label ID="Label3" runat="server" Text='<%# Eval("MaLoaiCauHoi") %>'></asp:Label>
-                    </td>
+                        &nbsp;</td>
                 </tr>
                 <tr>
                     <td width="100px">
-                        <asp:CheckBox ID="CheckBox3" runat="server" />
-                    </td>
+                        &nbsp;</td>
                     <td width="700px">
                         <asp:Image ID="Image1" runat="server" 
-                            ImageUrl='<%# "~/hinh/"+Eval("HinhAnh")+".jpg" %>' />
+                         />
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        &nbsp;</td>
+                        <dxe:ASPxRadioButtonList ID="radCauLuaChon" runat="server">
+                        </dxe:ASPxRadioButtonList>
+                    </td>
                     <td>
                         &nbsp;</td>
                 </tr>
