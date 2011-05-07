@@ -67,6 +67,11 @@
 
         </Description>
       </Demo>
+      <Demo Text="Thêm câu hỏi" NavigateUrl="~/DeThi/qlchitietcauhoi.aspx" Title="Quản lý việc thêm câu hỏi vào hệ thống">
+        <Description>
+
+        </Description>
+      </Demo>
         <Demo Text="Quản lý loại bằng lái" NavigateUrl="~/DeThi/qlloaibanglai.aspx" Title="Quản lý các loại bằng lái trong hệ thống">
             <Description>
               
